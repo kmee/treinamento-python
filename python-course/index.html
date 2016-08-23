@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title></title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="odoo-developer-training">
+<h1>Odoo Developer Training</h1>
+<p>Luis Felipe Miléo &lt;<a class="reference external" href="mailto:mileo&#64;kmee.com.br">mileo&#64;kmee.com.br</a>&gt;</p>
+<div class="section" id="agenda">
+<h2>Agenda</h2>
+<img alt="images/sumario.jpg" class="align-center" src="images/sumario.jpg" />
+</div>
+</div>
+<div class="section" id="introducao">
+<h1>Introdução</h1>
+<p>Um pouco de arquitetura, historia e experiencias.</p>
+<div class="section" id="o-odoo">
+<h2>O Odoo</h2>
+<blockquote>
+Making companies a better place. One app at a time.</blockquote>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 20)</p>
+<p>Unknown directive type &quot;nextslide&quot;.</p>
+<pre class="literal-block">
+.. nextslide::
+
+</pre>
+</div>
+<p>Odoo is a suite of open-source enterprise management applications. Odoo is used by large companies, small businesses, associations and many different types of organizations to help them manage, automate, measure and optimize their operations, finances and projects.</p>
+</div>
+<div class="section" id="story">
+<h2>Story</h2>
+<p>2015
+- &quot;So, in 2005, I started to develop the TinyERP product, the software that..&quot;
+- SorrySAP.com
+- &quot;To make things happen, I worked hard, very hard. I worked 13 hours a day, 7 days a week, with no vacations for 7 years.&quot;
+- Can you imagine how small you feel in front of Danone's directors asking; &quot;But why should we pay millions of dollars for a tiny software?&quot; So, we renamed TinyERP to OpenERP.
+2010
+- OpenERP a powerful but ugly product;
+- The Pivot: Service company to a software publisher company;</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 36)</p>
+<p>Unknown directive type &quot;nextslide&quot;.</p>
+<pre class="literal-block">
+.. nextslide::
+
+</pre>
+</div>
+<ul class="simple">
+<li>9.8 m€: R&amp;D/ Sales team / Partner network of 500 partners in 100 countries and we started to sign contracts with 6 zeros.</li>
+</ul>
+<p>Then, the dream started to become reality. We started to get clues that what we did would change the world:</p>
+<ul class="simple">
+<li>With 1.000 installations per day, we became the most installed management software in the world,</li>
+<li>Analysts from Big 4 started to prefer OpenERP over SAP,</li>
+<li>OpenERP is now a compulsory subject for the baccalaureate in France like Word, Excel and PowerPoint</li>
+<li>60 new modules are released every month (we became the wikipedia of the management software thanks to our strong community)</li>
+</ul>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 47)</p>
+<p>Unknown directive type &quot;nextslide&quot;.</p>
+<pre class="literal-block">
+.. nextslide::
+
+</pre>
+</div>
+<p>2013
+- We had 2.000.000 users worldwide;
+- Something is happening... And it's big! New financing in 2014;
+- After years of rapid growth, we achieved another amazing goal;
+- USD 10 Millions of financing;</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 55)</p>
+<p>Unknown directive type &quot;nextslide&quot;.</p>
+<pre class="literal-block">
+.. nextslide::
+
+</pre>
+</div>
+<p>The rise of Odoo
+- Far beyond the boundaries of traditional ERP players;
+- In june 2014, we released version 8 with an awesome CMS &amp; eCommerce, a Point of Sale, an integrated Business Intelligence engine and much more. (and 3000+ modules);</p>
+<p>In may 2014, we rename the company and product to Odoo. And a new story just started...</p>
+<p>Source: <a class="reference external" href="https://www.odoo.com/blog/odoo-news-5/post/the-odoo-story-56">https://www.odoo.com/blog/odoo-news-5/post/the-odoo-story-56</a></p>
+</div>
+</div>
+<div class="section" id="communities">
+<h1>Communities</h1>
+<img alt="images/jump.jpg" class="align-center" src="images/jump.jpg" />
+<p>O que tornou o Odoo tao grande!</p>
+<div class="section" id="oca-wtf">
+<h2>OCA? WTF?</h2>
+<img alt="images/oca.jpg" class="align-center" src="images/oca.jpg" />
+<pre class="code literal-block">
+# -*- coding: utf-8 -*-
+# © 2016 Daniel Torres &lt;daniel.torres&#64;grupoidealcare.com.br&gt;
+#  License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
+# Import odoo community association
+from oca import indio
+</pre>
+</div>
+<div class="section" id="the-odoo-community-association">
+<h2>The Odoo Community Association</h2>
+<p>The Odoo Community Association, or OCA, is a nonprofit organization whose mission is to promote the widespread use of Odoo and to support the collaborative development of Odoo features.</p>
+<ul class="simple">
+<li>Apoio finaneiro;</li>
+<li>Suporte legal e organizacional a comunidade codigo aberto odoo;</li>
+<li>99,99% independente dos interesses da Odoo SA;</li>
+</ul>
+</div>
+<div class="section" id="oca-objetivos">
+<h2>OCA: Objetivos</h2>
+<ul class="simple">
+<li>Promover a colaboraçao</li>
+<li>Coordernar</li>
+<li>Defender os interesses</li>
+<li>Divulgar o Odoo</li>
+<li>Facilitar: Sinergia, colaboraçao e levantar fundos</li>
+<li>Roadmaps, implementaçao</li>
+</ul>
+</div>
+<div class="section" id="oca-organizacao">
+<h2>OCA: Organizaçao</h2>
+<img alt="images/oca-structure.jpg" class="align-center" src="images/oca-structure.jpg" />
+</div>
+<div class="section" id="oca-links-importantes">
+<h2>OCA: Links importantes</h2>
+<ul class="simple">
+<li>OCA TWITTER; &#64;odoocommunity &#64;OCA_Bot</li>
+<li>OCA lists: <a class="reference external" href="https://odoo-community.org/groups">https://odoo-community.org/groups</a></li>
+<li>OCA Membership: <a class="reference external" href="https://odoo-community.org/page/Membership">https://odoo-community.org/page/Membership</a></li>
+<li>OCA lists: <a class="reference external" href="https://odoo-community.org/groups">https://odoo-community.org/groups</a></li>
+<li>Blog: <a class="reference external" href="https://odoo-community.org/blog/oca-news-1">https://odoo-community.org/blog/oca-news-1</a></li>
+</ul>
+</div>
+<div class="section" id="odoo-no-brasil">
+<h2>Odoo no Brasil</h2>
+</div>
+</div>
+<div class="section" id="project-patterns">
+<h1>Project Patterns</h1>
+<div class="section" id="criando-um-novo-repositorio">
+<h2>Criando um novo repositorio</h2>
+</div>
+<div class="section" id="criando-um-novo-modulo">
+<h2>Criando um novo modulo</h2>
+</div>
+<div class="section" id="activate-transifex">
+<h2>Activate Transifex</h2>
+<p>First read this to understand how it works : <a class="reference external" href="https://github.com/OCA/maintainer-quality-tools/pull/186#issue-74411066">https://github.com/OCA/maintainer-quality-tools/pull/186#issue-74411066</a></p>
+<p>Then:</p>
+<blockquote>
+<ul class="simple">
+<li>Create a PR to change the .travis.yml and readme.md file</li>
+<li>Refer to this .travis.yml sample page here : <a class="reference external" href="https://github.com/OCA/maintainer-quality-tools/blob/master/sample_files/.travis.yml#L26">https://github.com/OCA/maintainer-quality-tools/blob/master/sample_files/.travis.yml#L26</a></li>
+<li>Take the proper token here : <a class="reference external" href="https://github.com/OCA/maintainer-quality-tools/issues/194#issue-79502151">https://github.com/OCA/maintainer-quality-tools/issues/194#issue-79502151</a></li>
+<li>Tick your project here : <a class="reference external" href="https://github.com/OCA/maintainer-quality-tools/issues/194#issuecomment-107912200">https://github.com/OCA/maintainer-quality-tools/issues/194#issuecomment-107912200</a></li>
+</ul>
+</blockquote>
+<p>Finally, update the readme.md at the root of your repository to add the translation status:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+Translation status
+------------------</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 157); <em><a href="#id2">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<p>[![Transifex Status](<a class="reference external" href="https://www.transifex.com/projects/p/OCA-social-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-social-8-0">https://www.transifex.com/projects/p/OCA-social-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-social-8-0</a>)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 161); <em><a href="#id4">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<div class="system-message" id="id5">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 161); <em><a href="#id6">backlink</a></em></p>
+Inline interpreted text or phrase reference start-string without end-string.</div>
+<ul class="simple">
+<li>O Framework;</li>
+<li>Contruindo um Modulo;</li>
+<li>Criando visões;</li>
+<li>Campos Relacionais;</li>
+<li>Extendendo funcionalidades;</li>
+<li>Métodos do ORM;</li>
+<li>Visões Avançadas;</li>
+<li>Workflows;</li>
+<li>Permissões de segurança;</li>
+<li>Wizards;</li>
+<li>Internacionalização / Traduções;</li>
+<li>Relatórios;</li>
+<li>WebServices;</li>
+</ul>
+</div>
+<div class="section" id="odoo-formerly-openerp">
+<h2>Odoo ( formerly OpenERP )</h2>
+<p>Open Source Bussiness Apps</p>
+<ul class="simple">
+<li>3000 aplicativos;</li>
+<li>27 linguas;</li>
+<li>?paises;</li>
+<li>1058 desenvolvedores;</li>
+</ul>
+<ul class="simple">
+<li>XML   45.3%</li>
+<li>Python 25.5%</li>
+<li>JavaScript 22.7%</li>
+<li>CSS 4.9%</li>
+<li>HTML 0.7%</li>
+</ul>
+</div>
+<div class="section" id="odoo-vs-outros">
+<h2>Odoo vs outros</h2>
+<p>ADempiere:</p>
+<ul class="simple">
+<li>695,425 vs 3,239,894 lines;</li>
+<li>1058 vs 80 developers;</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>Odoo no Brasil</h2>
+<p>Is opened by pressing <a href="#id8"><span class="problematic" id="id9">:kbd:`c`</span></a> (try it)</p>
+<div class="system-message" id="id8">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 209); <em><a href="#id9">backlink</a></em></p>
+Unknown interpreted text role &quot;kbd&quot;.</div>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p>notes become presenter's notes</p>
+<p class="last">They can be <strong>fully</strong> marked up</p>
+</div>
+</div>
+</div>
+<div class="section" id="dia-1-5">
+<h1>Dia 1/5</h1>
+<p>Instalação</p>
+<div class="section" id="zc-buildout">
+<h2>ZC.Buildout</h2>
+<p>sudo apt-get install python-all-dev python-dev libxml2-dev libxslt1-dev libpq-dev libldap2-dev libsasl2-dev libssl-dev
+pip install <a class="reference external" href="http://download.gna.org/pychart/PyChart-1.39.tar.gz">http://download.gna.org/pychart/PyChart-1.39.tar.gz</a></p>
+</div>
+</div>
+<div class="section" id="dia-2-5">
+<h1>Dia 2/5</h1>
+<p>Backend Modules in V8</p>
+</div>
+<div class="section" id="architecture-of-odoo">
+<h1>Architecture of Odoo</h1>
+<div class="section" id="id10">
+<h2>Architecture of Odoo</h2>
+<ul>
+<li><p class="first">Three-tier client/server/database</p>
+</li>
+<li><p class="first">Web client in Javascript</p>
+</li>
+<li><dl class="first docutils">
+<dt>Server and backend modules in Python</dt>
+<dd><ul class="first last simple">
+<li>MVC framework</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-open-academy">
+<h1>Module Open Academy</h1>
+<div class="section" id="the-module">
+<h2>The Module</h2>
+<ul>
+<li><p class="first">Manage courses, sessions, and subscriptions</p>
+</li>
+<li><dl class="first docutils">
+<dt>Learn</dt>
+<dd><ul class="first last simple">
+<li>Structure of a module</li>
+<li>Definition of data models</li>
+<li>Definition of views and menus</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="structure-of-a-module">
+<h2>Structure of a Module</h2>
+<dl class="docutils">
+<dt>An Odoo module is</dt>
+<dd><ul class="first last simple">
+<li>a python module (data models), with</li>
+<li>a manifest file,</li>
+<li>XML and CSV data files (base data, views, menus),</li>
+<li>frontend resources (Javascript, CSS).</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="the-open-academy-module">
+<h2>The Open Academy Module</h2>
+<p>The manifest file <tt class="docutils literal">__odoo__.py</tt>:</p>
+<pre class="literal-block">
+{
+    'name': 'Open Academy',
+    'version': '1.0',
+    'category': 'Tools',
+    'summary': 'Courses, Sessions, Subscriptions',
+    'description': &quot;...&quot;,
+    'depends' : ['base'],
+    'data' : ['view/menu.xml'],
+    'images': [],
+    'demo': [],
+    'application': True,
+}
+</pre>
+</div>
+<div class="section" id="the-course-model">
+<h2>The Course Model</h2>
+<p>A model and its fields are defined in a Python class:</p>
+<pre class="literal-block">
+from odoo import Model, fields
+
+class Course(Model):
+    _name = 'openacademy.course'
+
+    name = fields.Char(string='Title', required=True)
+    description = fields.Text()
+</pre>
+</div>
+<div class="section" id="the-menu-as-xml-data">
+<h2>The Menu as XML data</h2>
+<pre class="code xml literal-block">
+<span class="comment preproc">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="name tag">&lt;openerp&gt;</span>
+    <span class="name tag">&lt;data&gt;</span>
+
+        <span class="name tag">&lt;menuitem</span> <span class="name attribute">name=</span><span class="literal string">&quot;Open Academy&quot;</span> <span class="name attribute">id=</span><span class="literal string">&quot;menu_root&quot;</span> <span class="name attribute">sequence=</span><span class="literal string">&quot;110&quot;</span><span class="name tag">/&gt;</span>
+
+        <span class="name tag">&lt;menuitem</span> <span class="name attribute">name=</span><span class="literal string">&quot;General&quot;</span> <span class="name attribute">id=</span><span class="literal string">&quot;menu_general&quot;</span> <span class="name attribute">parent=</span><span class="literal string">&quot;menu_root&quot;</span><span class="name tag">/&gt;</span>
+
+        <span class="name tag">&lt;record</span> <span class="name attribute">model=</span><span class="literal string">&quot;ir.actions.act_window&quot;</span> <span class="name attribute">id=</span><span class="literal string">&quot;action_courses&quot;</span><span class="name tag">&gt;</span>
+            <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;name&quot;</span><span class="name tag">&gt;</span>Courses<span class="name tag">&lt;/field&gt;</span>
+            <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;res_model&quot;</span><span class="name tag">&gt;</span>openacademy.course<span class="name tag">&lt;/field&gt;</span>
+            <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;view_mode&quot;</span><span class="name tag">&gt;</span>tree,form<span class="name tag">&lt;/field&gt;</span>
+        <span class="name tag">&lt;/record&gt;</span>
+
+        <span class="name tag">&lt;menuitem</span> <span class="name attribute">name=</span><span class="literal string">&quot;Courses&quot;</span> <span class="name attribute">id=</span><span class="literal string">&quot;menu_courses&quot;</span> <span class="name attribute">parent=</span><span class="literal string">&quot;menu_general&quot;</span>
+            <span class="name attribute">sequence=</span><span class="literal string">&quot;1&quot;</span> <span class="name attribute">action=</span><span class="literal string">&quot;action_courses&quot;</span><span class="name tag">/&gt;</span>
+    <span class="name tag">&lt;/data&gt;</span>
+<span class="name tag">&lt;/openerp&gt;</span>
+</pre>
+</div>
+<div class="section" id="let-s-add-a-form-view">
+<h2>Let's add a Form View</h2>
+<pre class="code xml literal-block">
+<span class="name tag">&lt;record</span> <span class="name attribute">model=</span><span class="literal string">&quot;ir.ui.view&quot;</span> <span class="name attribute">id=</span><span class="literal string">&quot;course_form&quot;</span><span class="name tag">&gt;</span>
+    <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;name&quot;</span><span class="name tag">&gt;</span>course form view<span class="name tag">&lt;/field&gt;</span>
+    <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;model&quot;</span><span class="name tag">&gt;</span>openacademy.course<span class="name tag">&lt;/field&gt;</span>
+    <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;arch&quot;</span> <span class="name attribute">type=</span><span class="literal string">&quot;xml&quot;</span><span class="name tag">&gt;</span>
+
+        <span class="name tag">&lt;form</span> <span class="name attribute">string=</span><span class="literal string">&quot;Course&quot;</span> <span class="name attribute">version=</span><span class="literal string">&quot;7.0&quot;</span><span class="name tag">&gt;</span>
+            <span class="name tag">&lt;sheet&gt;</span>
+                <span class="name tag">&lt;h1&gt;</span>
+                    <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;name&quot;</span> <span class="name attribute">placeholder=</span><span class="literal string">&quot;Course Title&quot;</span><span class="name tag">/&gt;</span>
+                <span class="name tag">&lt;/h1&gt;</span>
+                <span class="name tag">&lt;notebook&gt;</span>
+                    <span class="name tag">&lt;page</span> <span class="name attribute">string=</span><span class="literal string">&quot;Description&quot;</span><span class="name tag">&gt;</span>
+                        <span class="name tag">&lt;field</span> <span class="name attribute">name=</span><span class="literal string">&quot;description&quot;</span><span class="name tag">/&gt;</span>
+                    <span class="name tag">&lt;/page&gt;</span>
+                <span class="name tag">&lt;/notebook&gt;</span>
+            <span class="name tag">&lt;/sheet&gt;</span>
+        <span class="name tag">&lt;/form&gt;</span>
+
+    <span class="name tag">&lt;/field&gt;</span>
+<span class="name tag">&lt;/record&gt;</span>
+</pre>
+</div>
+<div class="section" id="the-session-model">
+<h2>The Session Model</h2>
+<pre class="code literal-block">
+class Session(Model):
+    _name = 'openacademy.session'
+
+    name = fields.Char(required=True)
+    start_date = fields.Date()
+    duration = fields.Integer(help=&quot;Duration in days&quot;)
+    seats = fields.Integer(string=&quot;Number of Seats&quot;)
+</pre>
+</div>
+<div class="section" id="relational-fields">
+<h2>Relational Fields</h2>
+<p>Let us link sessions to courses and instructors:</p>
+<pre class="literal-block">
+class Session(Model):
+    _name = 'openacademy.session'
+
+    ...
+
+    course = fields.Many2one('openacademy.course', required=True)
+    instructor = fields.Many2one('res.partner')
+</pre>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 384)</p>
+<p>Unknown directive type &quot;nextslide&quot;.</p>
+<pre class="literal-block">
+.. nextslide::
+
+</pre>
+</div>
+<p>Let us back-link courses and sessions:</p>
+<pre class="literal-block">
+class Course(Model):
+    _name = 'openacademy.course'
+
+    ...
+
+    responsible = fields.Many2one('res.users')
+    sessions = fields.One2many('openacademy.session', 'course')
+</pre>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/opt/treinamento-odoo/odoo-dev-training-slides/odooDevTraining/index.rst</tt>, line 397)</p>
+<p>Unknown directive type &quot;nextslide&quot;.</p>
+<pre class="literal-block">
+.. nextslide::
+
+</pre>
+</div>
+<p>Let us link sessions to partners for attendee subscription:</p>
+<pre class="literal-block">
+class Session(Model):
+    _name = 'openacademy.session'
+
+    ...
+
+    attendees = fields.Many2many('res.partner')
+</pre>
+</div>
+<div class="section" id="computed-fields">
+<h2>Computed Fields</h2>
+<p>The value of those fields is computed:</p>
+<pre class="literal-block">
+class Session(Model):
+    _name = 'openacademy.session'
+
+    ...
+
+    taken_seats = fields.Float(compute='_compute_taken_seats')
+
+    &#64;api.one
+    &#64;api.depends('attendees', 'seats')
+    def _compute_taken_seats(self):
+        if self.seats:
+            self.taken_seats = 100.0 * len(self.attendees) / self.seats
+        else:
+            self.taken_seats = 0.0
+</pre>
+</div>
+<div class="section" id="about-self">
+<h2>About self</h2>
+<p>Model instances are <strong>recordsets</strong>.</p>
+<dl class="docutils">
+<dt>A recordset is an hybrid concept:</dt>
+<dd><ul class="first last simple">
+<li>collection of records</li>
+<li>record</li>
+</ul>
+</dd>
+</dl>
+<pre class="code literal-block">
+for session in self:
+    print session.name
+    print session.course.name
+
+assert self.name == self[0].name
+</pre>
+</div>
+<div class="section" id="feedback-with-onchange-methods">
+<h2>Feedback with &quot;Onchange&quot; Methods</h2>
+<p>Modify form values when some field is filled in:</p>
+<pre class="literal-block">
+class Session(Model):
+    _name = 'openacademy.session'
+
+    ...
+
+    &#64;api.onchange('course')
+    def _onchange_course(self):
+        if not self.name:
+            self.name = self.course.name
+</pre>
+</div>
+<div class="section" id="default-values">
+<h2>Default Values</h2>
+<p>Specify the initial value to use in a form:</p>
+<pre class="literal-block">
+class Session(Model):
+    _name = 'openacademy.session'
+
+    ...
+
+    active = fields.Boolean(default=True)
+    start_date = fields.Date(default=fields.Date.today)
+
+    ...
+</pre>
+</div>
+<div class="section" id="model-constraints">
+<h2>Model Constraints</h2>
+<p>Prevent bad data:</p>
+<pre class="literal-block">
+from odoo.exceptions import Warning
+
+class Session(Model):
+    _name = 'openacademy.session'
+
+    ...
+
+    &#64;api.one
+    &#64;api.constrains('instructor', 'attendees')
+    def _check_instructor(self):
+        if self.instructor in self.attendees:
+            raise Warning(&quot;Instructor of session '%s' &quot;
+                &quot;cannot attend its own session&quot; % self.name)
+</pre>
+</div>
+<div class="section" id="more-stuff">
+<h2>More Stuff</h2>
+<ul class="simple">
+<li>Extend existing models</li>
+<li>Many view types</li>
+<li>Workflows</li>
+<li>Reports</li>
+<li>Security</li>
+<li>Translations</li>
+</ul>
+</div>
+</div>
+<div class="section" id="backend-modules-in-v8">
+<h1>Backend Modules in V8</h1>
+<div class="section" id="conclusion">
+<h2>Conclusion</h2>
+<ul>
+<li><p class="first">Modules have a simple structure</p>
+</li>
+<li><dl class="first docutils">
+<dt>Model definition intuitive and efficient</dt>
+<dd><ul class="first last simple">
+<li>uses Python standards (decorators, descriptors)</li>
+<li>recordsets provide support for &quot;batch&quot; processing</li>
+<li>many model hooks (default values, constraints, computed fields)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>
