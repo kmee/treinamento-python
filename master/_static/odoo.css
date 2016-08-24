@@ -112,6 +112,9 @@
     width: 100%;
     text-align: center;
 }
+.slides > article.level-2 p {
+	font-size: 0.8em;
+}
 .slides > article.level-1:first-of-type p,
 .slides > article.level-1:last-of-type p {
     color: inherit;
