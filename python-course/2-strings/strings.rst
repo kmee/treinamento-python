@@ -1,16 +1,36 @@
 Python Strings
+==============
+
+Python Strings
 --------------
+Python tem uma classe string default chamada "str" com muitos recursos úteis (há um módulo mais antigo chamado "string" que você não deve usar). Declarações de Strings podem ser delimitadas por aspas duplas ou simples, embora aspas simples são mais comumente usadas. Barra invertida para quebras de linhas trabalham da forma habitual tanto com aspas simples e aspas duplas citadas anteriormente - por exemplo, n '". Uma string com aspas duplas pode conter aspas simples sem qualquer problema (por exemplo," I didn't do it ") e da mesma forma uma string com aspas simples pode conter aspas duplas. A delcaração da string pode ocupar várias linhas, mas deve haver um barra invertida no final de cada linha de escape da nova linha. Strings literais entre aspas triplas, """ ou ''', pode se estender por várias linhas de texto.
 
-Python has a built-in string class named "str" with many handy features (there is an older module named "string" which you should not use). String literals can be enclosed by either double or single quotes, although single quotes are more commonly used. Backslash escapes work the usual way within both single and double quoted literals -- e.g. \n \' \". A double quoted string literal can contain single quotes without any fuss (e.g. "I didn't do it") and likewise single quoted string can contain double quotes. A string literal can span multiple lines, but there must be a backslash \ at the end of each line to escape the newline. String literals inside triple quotes, """" or ''', can span multiple lines of text.
 
-Python strings are "immutable" which means they cannot be changed after they are created (Java strings also use this immutable style). Since strings can't be changed, we construct *new* strings as we go to represent computed values. So for example the expression ('hello' + 'there') takes in the 2 strings 'hello' and 'there' and builds a new string 'hellothere'.
+.. nextslide::
 
-Characters in a string can be accessed using the standard [ ] syntax, and like Java and C++, Python uses zero-based indexing, so if str is 'hello' str[1] is 'e'. If the index is out of bounds for the string, Python raises an error. The Python style (unlike Perl) is to halt if it can't tell what to do, rather than just make up a default value. The handy "slice" syntax (below) also works to extract any substring from a string. The len(string) function returns the length of a string. The [ ] syntax and the len() function actually work on any sequence type -- strings, lists, etc.. Python tries to make its operations work consistently across different types. Python newbie gotcha: don't use "len" as a variable name to avoid blocking out the len() function. The '+' operator can concatenate two strings. Notice in the code below that variables are not pre-declared -- just assign to them and go.
+Strings python são "imutáveis", o que significa que elas não podem ser alteradas depois de serem criadas (strings em Java também utilizam este estilo imutável). Sabendo que as strings não podem ser alteradas, podemos construir novas strings como  valores concatenados. Assim, por exemplo a expressão ('Hello' + 'There') concatena as strings "Hello" e "There" resultando em uma nova string "Hello There".
 
-  s = 'hi'
-  print s[1]          ## i
-  print len(s)        ## 2
-  print s + ' there'  ## hi there
+
+.. nextslide::
+
+Caracteres em uma seqüência podem ser acessados usando a sintaxe padrão [] e, como em Java e C++, Python utiliza indexação baseada em zero, por isso, se str é 'Hello' str[1] é a letra 'e'. Se o índice estiver fora dos limites da string, o Python gerará um erro. O estilo Python (ao contrário do Perl) é parar se ele não pode dizer o que fazer, em vez de apenas retornar um valor padrão. A sintaxe útil "slice" (abaixo) também trabalha para extrair qualquer substring de uma string. A função len (string) devolve o comprimento de uma string. A sintaxe [] e a função len() trabalham em qualquer tipo de sequência - strings, lists, etc...
+
+
+.. nextslide::
+
+O Python tenta fazer suas operações funcionarem de forma consistente em diferentes tipos.
+Pegadinha para o novato em Python: não use "len" como um nome de variável para evitar o bloqueio a função len(). O operador '+' pode concatenar duas strings. Observe no código abaixo que as variáveis não são pré-declarados - apenas para atribuir.
+
+.. code-block:: python
+
+	s = 'hi'
+	print s[1]          ## i
+	print len(s)        ## 2
+	print s + ' there'  ## hi there
+
+
+Python Strings
+--------------
 Unlike Java, the '+' does not automatically convert numbers or other types to string form. The str() function converts values to a string form so they can be combined with other strings.
 
   pi = 3.14
