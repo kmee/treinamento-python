@@ -1,50 +1,109 @@
-Python Lists
+Listas Python
+=============
 
-Python has a great built-in list type named "list". List literals are written within square brackets [ ]. Lists work similarly to strings -- use the len() function and square brackets [ ] to access data, with the first element at index 0. (See the official python.org list docs.)
+Listas Python
+-------------
 
-  colors = ['red', 'blue', 'green']
-  print colors[0]    ## red
-  print colors[2]    ## green
-  print len(colors)  ## 3
-list of strings 'red' 'blue 'green'
+O Python tem um otimo tipo embutido de listas chamado **list**. As declarações de listas
+são escritas entre colchetes []. Listas funcionam de maneira similar aos strings, podemos usar a função len()
+e acessar informações através de []. Com o primeiro elemento iniciado por 0. `(Veja a documentação oficial) <https://docs.python.org/2.7/tutorial/>`_
 
-Assignment with an = on lists does not make a copy. Instead, assignment makes the two variables point to the one list in memory.
 
-  b = colors   ## Does not copy the list
-both colors and b point to the one list
 
-The "empty list" is just an empty pair of brackets [ ]. The '+' works to append two lists, so [1, 2] + [3, 4] yields [1, 2, 3, 4] (this is just like + with strings).
+.. code-block:: python
 
-FOR and IN
+      colors = ['red', 'blue', 'green']
+      print colors[0]    ## red
+      print colors[2]    ## green
+      print len(colors)  ## 3
 
-Python's *for* and *in* constructs are extremely useful, and the first use of them we'll see is with lists. The *for* construct -- for var in list -- is an easy way to look at each element in a list (or other collection). Do not add or remove from the list during iteration.
+.. image:: img/list1.png
+    :align: center
 
-  squares = [1, 4, 9, 16]
-  sum = 0
-  for num in squares:
+.. nextslide::
+
+Atribuições com = em listas não criam cópias. Em ves disso são criadas duas váriáveis apontando para a mesma lista em memória.
+
+.. code-block:: python
+
+    >>> colors = ['red', 'blue', 'green']
+    >>> b=colors
+    >>> b[0]= 'black'
+    >>> colors
+    ['black', 'blue', 'green']
+
+.. image:: img/list2.png
+    :align: center
+
+.. nextslide::
+
+- Uma lista vazia é apenas uma par de colchetes [].
+- O '+' funciona ao adicionar duas listas:
+
+.. code-block:: python
+
+    >>> a = []
+    >>> a
+    []
+    >>> a = ['red']
+    >>> z = ['blue', 'black']
+    >>> a + z
+    ['red', 'blue', 'black']
+
+
+FOR e IN
+--------
+
+As decalrações Python **for** e **in** são extremamente uteis. A palavra reservada **for**
+ -- for var in list -- é a maneira mais facil de percorrer os elementos de uma lista
+ ( ou uma coleção ). **Não adicione ou remova itens de um iterável durante uma iteração.**
+
+.. code-block:: python
+
+    squares = [1, 4, 9, 16]
+    sum = 0
+    for num in squares:
     sum += num
-  print sum  ## 30
-If you know what sort of thing is in the list, use a variable name in the loop that captures that information such as "num", or "name", or "url". Since python code does not have other syntax to remind you of types, your variable names are a key way for you to keep straight what is going on.
+    print sum  ## 30
 
-The *in* construct on its own is an easy way to test if an element appears in a list (or other collection) -- value in collection -- tests if the value is in the collection, returning True/False.
+Se você sabe o que procurar em uma lista, use o nome da variável no loop para
+capturar a informação desejada, como um "num", um "nome" ou uma "url".
 
-  list = ['larry', 'curly', 'moe']
-  if 'curly' in list:
-    print 'yay'
-The for/in constructs are very commonly used in Python code and work on data types other than list, so you should just memorize their syntax. You may have habits from other languages where you start manually iterating over a collection, where in Python you should just use for/in.
+O termo 'in" é uma forma simples de testar se um elemento aparecer em uma lista, retornando True/False.
 
-You can also use for/in to work on a string. The string acts like a list of its chars, so for ch in s: print ch prints all the chars in a string.
+.. code-block:: python
+
+    list = ['larry', 'curly', 'moe']
+    if 'curly' in list:
+        print 'yay'
+
+Os termos for/in são muito utilizados em Python ao trabalhar com dados que não sejam listas,
+então você deve memorizar sua sintaxe. Você pode ter o hábito vindo de outras linguagens
+de iniciar manualmente as iterações em uma coleção, em python você deve usar apenas for/in.
+
+Você pode tambem usar for/in para trabalhar com uma string. Um string atua como uma lista
+com chars, então:
+
+.. code-block:: python
+
+    for ch in 'treinamento':
+        print ch
 
 Range
+-----
 
-The range(n) function yields the numbers 0, 1, ... n-1, and range(a, b) returns a, a+1, ... b-1 -- up to but not including the last number. The combination of the for-loop and the range() function allow you to build a traditional numeric for loop:
+A função range(n) produz uma lista de números 0, 1, ..., n-1 e range(a,b)
+retorna a, a+1, ... b-1 -- até o ultimo número menos um. A combinação de um for-loop e o
+metodo range() permite criarmos for numérico tradicional.
 
-  ## print the numbers from 0 through 99
-  for i in range(100):
-    print i
-There is a variant xrange() which avoids the cost of building the whole list for performance sensitive cases (in Python 3000, range() will have the good performance behavior and you can forget about xrange()).
+.. code-block:: python
+    ## print the numbers from 0 through 99
+    for i in range(100):
+        print i
+
 
 While Loop
+----------
 
 Python also has the standard while-loop, and the *break* and *continue* statements work as in C++ and Java, altering the course of the innermost loop. The above for/in loops solves the common case of iterating over every element in a list, but the while loop gives you total control over the index numbers. Here's a while loop which accesses every 3rd element in a list:
 
