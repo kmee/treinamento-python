@@ -6,9 +6,22 @@ Luis Felipe Miléo <mileo@kmee.com.br>
 Curso de python
 ---------------
 
+"Python é uma linguagem de programação poderosa e facil de aprender" Python Tutorial oficial
+
 - Curso para pessoas com **pouca experiência** em programação que querem aprender **Python**;
 - É voltado para pessoas que têm um pouco de experiência em qualquer linguagem de programação, **o suficiente para saber o que é uma variável ou "if"**.
 - 2 dias de python básico;
+
+.. nextslide::
+
+"Um desenvolvedor experiente pode começar a escrever um programa Python útil em questões de horas.
+A medida que as primeiras horas produtivas se transformam em semanas e meses, muitos programadores continuam
+escrevendo codigo python com um sotaque bem marcado" Luciano Ramalho
+
+- Só sentimos falta daquilo que conhecemos...
+
+- "Pythonico"
+
 
 Ementa
 ------
