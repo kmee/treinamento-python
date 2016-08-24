@@ -283,10 +283,10 @@ Exemplo:
 Indentação
 -----------
 Uma caractéristica do Python é que um espaço em branco pode alterar o significado
- de um trecho de código. Um bloco lógico de declarações que compoem uma função devem
- ter todos a mesma identação, em relaçao ao identação da função ou do bloco if ou
- qualquer outro tipo de bloco. Se uma das linhas em um grupo tem uma identação
- diferente, temos um erro de sintaxe.
+de um trecho de código. Um bloco lógico de declarações que compoem uma função devem
+ter todos a mesma identação, em relaçao ao identação da função ou do bloco if ou
+qualquer outro tipo de bloco. Se uma das linhas em um grupo tem uma identação
+diferente, temos um erro de sintaxe.
 
 O uso de espaços em branco parece ser bem estranho de inicio, mas é lógico e você
 acaba se acostumando muito rapido.
@@ -296,14 +296,16 @@ acaba se acostumando muito rapido.
 Evite usar TABs pois eles detonam o esquema de recuo. (Tabs significam coisas diferentes em diferentes plataformas).
 Configure o seu editor para inserir espaços em vez de tabs.
 
-Uma questão comum: "Com quantos espaços eu devo identar?
+Uma questão comum: "Com quantos espaços eu devo identar meu código?"
 
-De acordo com o a PEP8, deve-se identar com 4 espaços.
+**De acordo com o a PEP8, deve-se identar com 4 espaços.**
 
 PEPs
 -------
 
-O desenvolvimento de Python é conduzido amplamente através do processo Python Enhancement Proposal ("PEP"), em português Proposta de Melhoria do Python. Os PEPs são documentos de projeto padronizados que fornecem informações gerais relacionadas ao Python, incluindo propostas, descrições, justificativas de projeto (design rationales) e explicações para características da linguagem.
+O desenvolvimento de Python é conduzido amplamente através do processo **Python Enhancement Proposal ("PEP")**, em português Proposta de Melhoria do Python.
+
+Os PEPs são documentos de projeto padronizados que fornecem informações gerais relacionadas ao Python, incluindo propostas, descrições, justificativas de projeto (design rationales) e explicações para características da linguagem.
 
 https://www.python.org/dev/peps/
 
@@ -327,6 +329,8 @@ Exemplo:
 Este codigo compila e funciona muito bem desde que o nome não seja 'Guido'. Somente
 quando a aplicação tenta executar o metodo com o nome errado que um erro será exibido.
 
+.. nextslide::
+
 Esta é uma área em que linguagens como Java podem ter vantagens... Pois podem detectar erros deste tipo durante a compilação. Por isso é muito importante
 que os testes percorram todo o trecho do codigo.
 
@@ -334,94 +338,108 @@ Nomes de Variáveis
 ------------------
 
 Como as variáveis em Python não têm seus tipos de especificados no código-fonte,
-É importante darmos nomes com significado as variáveis para lembrarmos o do que ela se trata.
+é importante nomearmos as variáveis com significados que nos auxiliem a lembrar
+do que se trata. Muitos erros básicos ocorrem ao esquecermos o tipo de uma variável.
 
-Muitos erros básicos ocorrem ao esquecermos o tipo de uma variável.
+Para nomes de variáveis a PEP8 recomenda o uso de variáveis de **"mais_de_uma_palavra"**
+com underscore mas recomenda os desenvolvedores a adiar alterar codigos que
+utilizem a notação **camelCase.**
+
+Como toda linguagem palavras como 'print' e 'while' não podem ser usadas como
+nomes de variáveis. Enquanto 'str' e 'lista' pode parecer bons nomes,
+você estaria substituindo essas variáveis ​​do sistema. Built-ins não são palavras-chave
+e, portanto, são suscetíveis ao uso inadvertido por novos desenvolvedores Python.
 
 
+Mais um pouco de modulos e seus Namespaces
+------------------------------------------
 
-As far as actual naming goes, some languages prefer underscored_parts for
- variable names made up of "more than one word," but other languages prefer
- camelCasing. In general, Python prefers the underscore method but guides
- developers to defer to camelCasing if integrating into existing Python code
- that already uses that style. Readability counts. Read more in the section on
-  naming conventions in PEP 8.
+Suponha que você criou um modulo chamado "blink.py" que contem um método "def foo()".
+O nome completo desta função é "blink.foo". Desta forma, vários módulos podem ter
+suas funções e variáveis da maneira que eles quiserem, e suas variáveis não
+entrarão em conflito.
 
-As you can guess, keywords like 'print' and 'while' cannot be used as variable
- names — you'll get a syntax error if you do. However, be careful not to use
-  built-ins as variable names. For example, while 'str' and 'list' may seem
-  like good names, you'd be overriding those system variables. Built-ins are
-  not keywords and thus, are susceptible to inadvertent use by new Python developers.
+- module1.foo é diferente de module2.foo.
 
-More on Modules and their Namespaces
-------------------------------------
+No vocabulário Python dizemos que cada modulo tem seu próprio namespace.
 
-Suppose you've got a module "binky.py" which contains a "def foo()". The fully
-qualified name of that foo function is "binky.foo". In this way, various Python
- modules can name their functions and variables whatever they want, and the
-  variable names won't conflict — module1.foo is different from module2.foo.
-  In the Python vocabulary, we'd say that binky, module1, and module2 each have
-  their own "namespaces," which as you can guess are variable name-to-object bindings.
 
-For example, we have the standard "sys" module that contains some standard
-system facilities, like the argv list, and exit() function. With the statement
- "import sys" you can then access the definitions in the sys module and make
- them available by their fully-qualified name, e.g. sys.exit(). (Yes, 'sys' has a namespace too!)
+Que são vinculos de entre nome de objetos e variáveis.
 
-::
+.. nextslide::
+
+Por exemplo, se o modulo padrão "sys". Que contem algumas ferramentas como argv, exit().
+Com o trecho "import sys" você então pode acessar as definições do modulo sys no seu namespace.
+
+.. code-block:: python
 
   import sys
 
   # Now can refer to sys.xxx facilities
   sys.exit(0)
 
-There is another import form that looks like this: "from sys import argv, exit".
- That makes argv and exit() available by their short names; however, we recommend
- the original form with the fully-qualified names because it's a lot easier
- to determine where a function or attribute came from.
+Outra forma de realizarmos importações:
 
-There are many modules and packages which are bundled with a standard installation
-of the Python interpreter, so you don't have to do anything extra to use them.
-These are collectively known as the "Python Standard Library." Commonly used
-modules/packages include:
+.. code-block:: python
 
-- sys — access to exit(), argv, stdin, stdout, ...
+    from sys import argv, exit
+
+Isto torna o argv e exit() diponiveis através dos seus nomes curtos.
+Mas é recomendado a forma original com nomes completos (fully-qualified) pois é
+muito mais simples determinar de que função pertence certo atributo.
+
+.. nextslide::
+
+Existem vários modulos e pacotes que são empacotados em conjunto com a instalação
+do interpretador padrão do Python, de forma que você não precisa fazer mais nada
+para usa-los.
+
+Eles são conhecidos como a Biblioteca Padrão do Python ("Python Standard Library."). Modulos e pacotes inclusos:
+
+- sys — exit(), argv, stdin, stdout, ...
 - re — regular expressions
-- os — operating system interface, file system
-You can find the documentation of all the Standard Library modules and packages
-at http://docs.python.org/library.
+- os — interface com o sistema operacional, sistema de arquivos.
 
-Online help, help(), and dir()
-------------------------------
+Standard Library Link: http://docs.python.org/library.
 
-There are a variety of ways to get help for Python.
+Ajuda Online, help(), and dir()
+-------------------------------
 
-Do a Google search, starting with the word "python", like "python list" or "python
- string lowercase". The first hit is often the answer. This technique seems to
-  work better for Python than it does for other languages for some reason.
-The official Python docs site — docs.python.org — has high quality docs. Nonetheless,
- I often find a Google search of a couple words to be quicker.
-There is also an official Tutor mailing list specifically designed for those
- who are new to Python and/or programming!
-Many questions (and answers) can be found on StackOverflow and Quora.
-Use the help() and dir() functions (see below).
-Inside the Python interpreter, the help() function pulls up documentation
-strings for various modules, functions, and methods. These doc strings are
- similar to Java's javadoc. The dir() function tells you what the attributes
-  of an object are. Below are some ways to call help() and dir() from the
-   interpreter:
+Existe uma grande variedade de se obter ajuda em Python!
 
-help(len) — help string for the built-in len() function; note that it's "len"
-not "len()", which is a call to the function, which we don't want
-help(sys) — help string for the sys module (must do an import sys first)
-dir(sys) — dir() is like help() but just gives a quick list of its defined
-symbols, or "attributes"
-help(sys.exit) — help string for the exit() function in the sys module
-help('xyz'.split) — help string for the split() method for string objects.
- You can call help() with that object itself or an example of that object,
- plus its attribute. For example, calling help('xyz'.split) is the same as
- calling help(str.split).
-help(list) — help string for list objects
-dir(list) — displays list object attributes, including its methods
-help(list.append) — help string for the append() method for list objects
+1. Pesquisa no google inciando com python;
+    1.1 Que geralmente o primeiro resultado da pesquisa será a documentação oficial — docs.python.org
+2. StackOverflow and Quora;
+3. help()
+4. dir()
+
+Quando você estiver dentro do interpretador python, a função help() imprime o docstring
+do objeto enviado com o parametro.
+
+Já a função dir() imprime quais são os atributos do objeto.
+
+.. nextslide::
+
+Abaixo alguns exemplos:
+
+.. code-block:: python
+
+    help(len) # Ajuda para a função embutida len() function
+    #Note que é "len", não "len()". que é uma chamada da função, algo que não queremos.
+    help(sys) # help string do modulo sys (você deve antes importar o sys)
+    dir(sys) # dir() é como um help() mas retorna uma pequna lista dos atributos do objeto.
+    help(sys.exit) # help string para o exit(), função do modulo sys.
+    help('xyz'.split) # help string do metodo split() de um objeto string 'xyz';
+
+Você pode invocar o help() de de uma instancia de um objeto ou mesmo do objeto.
+
+.. code-block:: python
+
+    help('kmee'.split)
+    a = 'abcd'
+    help(a.split)
+    help(str.split)
+    help(list) # help string para listas;
+    dir(list) # exibe os atributos das listas, incluindo os seus metodos.
+    help(list.append) # help string para o metodo append() de uma lista.
 
