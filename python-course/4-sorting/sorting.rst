@@ -1,32 +1,59 @@
+Sorting
+=======
+
 Python Sorting
+--------------
 
-The easiest way to sort is with the sorted(list) function, which takes a list and returns a new list with those elements in sorted order. The original list is not changed.
+A maneira mais fácil de classificar um resultado é com a função sorted(list), que recebe uma lista e retorna uma nova lista com os elementos na ordem de classificação. A lista original não é alterado.
 
-  a = [5, 1, 4, 3]
-  print sorted(a)  ## [1, 3, 4, 5]
-  print a  ## [5, 1, 4, 3]
-It's most common to pass a list into the sorted() function, but in fact it can take as input any sort of iterable collection. The older list.sort() method is an alternative detailed below. The sorted() function seems easier to use compared to sort(), so I recommend using sorted().
+.. code-block:: python
 
-The sorted() function can be customized though optional arguments. The sorted() optional argument reverse=True, e.g. sorted(list, reverse=True), makes it sort backwards.
+	a = [5, 1, 4, 3]
+	print sorted(a)  ## [1, 3, 4, 5]
+	print a  ## [5, 1, 4, 3]
+
+.. nextslide::
+
+É mais comum passar uma lista para a função sorted(), mas na verdade ele pode tomar como entrada qualquer tipo de coleção iterável. O antigo método list.sort() é uma alternativa detalhado abaixo. A função sorted() parece mais fácil de usar em comparação com sort(), então eu recomendo o uso da função sorted().
+
+A função sorted() pode ser personalizada com argumentos opcionais. O argumento opcional reverse=True do sorted(), por exemplo, sorted(list, reverse=True), retorna os valores ao contrário.
+
+.. code-block:: python
 
   strs = ['aa', 'BB', 'zz', 'CC']
   print sorted(strs)  ## ['BB', 'CC', 'aa', 'zz'] (case sensitive)
   print sorted(strs, reverse=True)   ## ['zz', 'aa', 'CC', 'BB']
+
 Custom Sorting With key=
+------------------------
 
-For more complex custom sorting, sorted() takes an optional "key=" specifying a "key" function that transforms each element before comparison. The key function takes in 1 value and returns 1 value, and the returned "proxy" value is used for the comparisons within the sort.
+Para classificação personalizada mais complexa, a função sorted() recebe um "key=" opcional que especifica uma função "key" que transforma cada elemento antes de comparação. A função key leva em 1 valor e retorna 1 valor, e o valor "proxy" retornado é utilizado para as comparações com o sort. 
 
-For example with a list of strings, specifying key=len (the built in len() function) sorts the strings by length, from shortest to longest. The sort calls len() for each string to get the list of proxy length values, and the sorts with those proxy values.
+Por exemplo, com uma lista de strings, especificando key=len (construído com a função len()) classifica as strings pelo comprimento, do mais curto para o mais longo. O sort chama len() para cada string para obter a lista de valores de comprimento proxy, e os tipos com esses valores de proxy.
+
+.. code-block:: python
 
   strs = ['ccc', 'aaaa', 'd', 'bb']
   print sorted(strs, key=len)  ## ['d', 'bb', 'ccc', 'aaaa']
-calling sorted with key=len
+  calling sorted with key=len
 
-As another example, specifying "str.lower" as the key function is a way to force the sorting to treat uppercase and lowercase the same:
+.. nextslide::
+
+.. image:: img/sorted-key.png
+    :align: center
+
+.. nextslide::
+
+Outro exemplo, especificar "str.lower" como a função chave é uma maneira de forçar a triagem para o tratamento de letras maiúsculas e minúsculas o mesmo:
+
+.. code-block:: python
 
   ## "key" argument specifying str.lower function to use for sorting
   print sorted(strs, key=str.lower)  ## ['aa', 'BB', 'CC', 'zz']
-You can also pass in your own MyFn as the key function, like this:
+
+Você também pode passar em sua própria MyFn como a função chave, como:
+
+.. code-block:: python
 
   ## Say we have a list of strings we want to sort by the last letter of the string.
   strs = ['xc', 'zb', 'yd' ,'wa']
@@ -38,52 +65,85 @@ You can also pass in your own MyFn as the key function, like this:
 
   ## Now pass key=MyFn to sorted() to sort by the last letter:
   print sorted(strs, key=MyFn)  ## ['wa', 'zb', 'xc', 'yd']
-To use key= custom sorting, remember that you provide a function that takes one value and returns the proxy value to guide the sorting. There is also an optional argument "cmp=cmpFn" to sorted() that specifies a traditional two-argument comparison function that takes two values from the list and returns negative/0/positive to indicate their ordering. The built in comparison function for strings, ints, ... is cmp(a, b), so often you want to call cmp() in your custom comparator. The newer one argument key= sorting is generally preferable.
+
+.. nextslide::
+
+Para usar key= custom sorting, lembre-se que você deve fornecer uma função que recebe um valor e retorna o valor proxy para orientar a classificação. Há também um argumento opcional "cmp=cmpFn" para o sorted() que especifica uma função de comparação de dois argumentos que leva dois valores da lista e retorna negativo/0/positiva para indicar a sua ordenação. A função de comparação default para strings, inits, ... é cmp(a, b), então, você pode chamar quantas vezes quiser a função cmp() no seu comparador personalizado. O mais recente um argumento key=sorting é geralmente preferível.
 
 sort() method
+-------------
+Como uma alternativa para, o método sorted(),o metódo sort() em uma lista calassificada que lista os dados em ordem crescente, por exemplo, list.sort(). O método sort () altera a lista subjacente e retorna None, para usá-lo como este:
 
-As an alternative to sorted(), the sort() method on a list sorts that list into ascending order, e.g. list.sort(). The sort() method changes the underlying list and returns None, so use it like this:
+.. code-block:: python
 
-  alist.sort()            ## correct
-  alist = blist.sort()    ## NO incorrect, sort() returns None
-The above is a very common misunderstanding with sort() -- it *does not return* the sorted list. The sort() method must be called on a list; it does not work on any enumerable collection (but the sorted() function above works on anything). The sort() method predates the sorted() function, so you will likely see it in older code. The sort() method does not need to create a new list, so it can be a little faster in the case that the elements to sort are already in a list.
+    alist.sort () ## correta
+    alist = blist.sort () ## NO incorreto, sort () retorna None
+
+A descrição acima é um equívoco muito comum com sort() - que *não retorna* a lista ordenada. O método sort() deve ser chamado em uma lista; ele não funciona em qualquer coleção enumerada (mas a função sorted() acima funciona em qualquer condição). O método sort() antecede a função sorted(), então você provavelmente vai vê-lo em códigos antigos. O método sort() não precisa criar uma nova lista, por isso pode ser um pouco mais rápido no caso em que os elementos a serem classificados já estão em uma lista.
 
 Tuples
+------
+Uma tuple é um agrupamento de elementos de tamanho fixo, tais como um (x, y) de coordenadas. tuples são como listas, exceto que eles são imutáveis e não mudam de tamanho (tuples não são estritamente imutável desde que um dos elementos contidos poderá ser mutável). Tuples desempenham um tipo de papel "struct" em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanho fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.
 
-A tuple is a fixed size grouping of elements, such as an (x, y) co-ordinate. Tuples are like lists, except they are immutable and do not change size (tuples are not strictly immutable since one of the contained elements could be mutable). Tuples play a sort of "struct" role in Python -- a convenient way to pass around a little logical, fixed size bundle of values. A function that needs to return multiple values can just return a tuple of the values. For example, if I wanted to have a list of 3-d coordinates, the natural python representation would be a list of tuples, where each tuple is size 3 holding one (x, y, z) group.
+.. nextslide::
 
-To create a tuple, just list the values within parenthesis separated by commas. The "empty" tuple is just an empty pair of parenthesis. Accessing the elements in a tuple is just like a list -- len(), [ ], for, in, etc. all work the same.
+Para criar uma tuple, basta listar os valores entre parênteses separados por vírgulas. Uma tuple "vazio" é apenas um par vazio de parênteses. Acessando os elementos de uma tuple é como uma lista - len(),[], for, in, etc. todos funcionam da mesma forma.
+
+.. code-block:: python
 
   tuple = (1, 2, 'hi')
   print len(tuple)  ## 3
   print tuple[2]    ## hi
   tuple[2] = 'bye'  ## NO, tuples cannot be changed
   tuple = (1, 2, 'bye')  ## this works
-To create a size-1 tuple, the lone element must be followed by a comma.
+
+
+Para criar um tamanho tuple size-1, o elemento solitário deve ser seguido por uma vírgula.
+
+.. code-block:: python
 
   tuple = ('hi',)   ## size-1 tuple
-It's a funny case in the syntax, but the comma is necessary to distinguish the tuple from the ordinary case of putting an expression in parentheses. In some cases you can omit the parenthesis and Python will see from the commas that you intend a tuple.
 
-Assigning a tuple to an identically sized tuple of variable names assigns all the corresponding values. If the tuples are not the same size, it throws an error. This feature works for lists too.
+.. nextslide::
+
+É um caso engraçado na sintaxe, mas a vírgula é necessário para distinguir a tuple do caso de colocar uma expressão entre parênteses. Em alguns casos, você pode omitir o parêntese e o Python vai ver a partir das vírgulas que você pretende uma tuple.
+
+Atribuindo uma tuple a uma tuple de tamanho idêntico de nomes de variáveis atribui todos os valores correspondentes. Se as tuples não são do mesmo tamanho, ele lança um erro. Este recurso funciona para listas também.
+
+.. code-block:: python
 
   (x, y, z) = (42, 13, "hike")
   print z  ## hike
   (err_string, err_code) = Foo()  ## Foo() returns a length-2 tuple
-List Comprehensions (optional)
 
-List comprehensions are a more advanced feature which is nice for some cases but is not needed for the exercises and is not something you need to learn at first (i.e. you can skip this section). A list comprehension is a compact way to write an expression that expands to a whole list. Suppose we have a list nums [1, 2, 3], here is the list comprehension to compute a list of their squares [1, 4, 9]:
+
+List Comprehensions (optional)
+------------------------------
+
+List comprehensions (Compreensão de listas) é um recurso mais avançado que é bom para alguns casos, mas não é necessário para os exercícios e não é algo que você precisa saber em primeiro lugar. A compreensão de lista é uma forma compacta de escrever uma expressão que se expande para uma lista inteira. Suponha que temos uma lista nums [1, 2, 3], aqui é a compreensão de lista para computar uma lista de seus quadrados [1, 4, 9]:
+
+.. code-block:: python
 
   nums = [1, 2, 3, 4]
 
   squares = [ n * n for n in nums ]   ## [1, 4, 9, 16]
-The syntax is [ expr for var in list ] -- the for var in list looks like a regular for-loop, but without the colon (:). The expr to its left is evaluated once for each element to give the values for the new list. Here is an example with strings, where each string is changed to upper case with '!!!' appended:
+
+
+.. nextslide::
+
+A sintaxe é [ expr for var in list ] - o "for var in list" parece um for-loop regular, mas sem os dois pontos (:). O expr à sua esquerda é avaliada uma vez para cada elemento para dar os valores para a nova lista. Aqui está um exemplo com strings, em que cada string é alterada para maiúsculas com '!!!':
+
+.. code-block:: python
 
   strs = ['hello', 'and', 'goodbye']
 
   shouting = [ s.upper() + '!!!' for s in strs ]
   ## ['HELLO!!!', 'AND!!!', 'GOODBYE!!!']
-You can add an if test to the right of the for-loop to narrow the result. The if test is evaluated for each element, including only the elements where the test is true.
 
+
+Você pode adicionar um caso de teste para a direita do for-loop para estreitar o resultado. O caso de teste é calculado para cada elemento, incluindo apenas os elementos em que o teste é verdadeiro.
+
+.. code-block:: python
   ## Select values <= 2
   nums = [2, 8, 1, 6]
   small = [ n for n in nums if n <= 2 ]  ## [2, 1]
@@ -92,6 +152,6 @@ You can add an if test to the right of the for-loop to narrow the result. The if
   fruits = ['apple', 'cherry', 'bannana', 'lemon']
   afruits = [ s.upper() for s in fruits if 'a' in s ]
   ## ['APPLE', 'BANNANA']
-Exercise: list1.py
 
-To practice the material in this section, try later problems in list1.py that use sorting and tuples (in the Basic Exercises).
+Exercise: list1.py
+------------------

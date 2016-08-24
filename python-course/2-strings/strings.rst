@@ -83,6 +83,9 @@ String Slices
 -------------
 A sintaxe "slice" é uma maneira prática para se referir a sub-partes de sequências - tipicamente strings e lists. O slice s [start:end] são os elementos que começam no início e que se estende até, mas não incluindo o fim. Suponha que temos s = "Hello"
 
+.. image:: img/hello.png
+    :align: center
+
 .. nextslide::
 
 A string 'hello' com indice de letras 0 1 2 3 4 
