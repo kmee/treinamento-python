@@ -69,6 +69,8 @@ As decalrações Python **for** e **in** são extremamente uteis. A palavra rese
 Se você sabe o que procurar em uma lista, use o nome da variável no loop para
 capturar a informação desejada, como um "num", um "nome" ou uma "url".
 
+.. nextslide::
+
 O termo 'in" é uma forma simples de testar se um elemento aparecer em uma lista, retornando True/False.
 
 .. code-block:: python
@@ -104,27 +106,50 @@ metodo range() permite criarmos for numérico tradicional.
 
 While Loop
 ----------
+O Python tambem tem um laço while, e declarações de *break* and *continue* como em C++ e Java,
+que alteram o curso do laço mais próximo.
 
-Python also has the standard while-loop, and the *break* and *continue* statements work as in C++ and Java, altering the course of the innermost loop. The above for/in loops solves the common case of iterating over every element in a list, but the while loop gives you total control over the index numbers. Here's a while loop which accesses every 3rd element in a list:
+Os laços anteriores com laços for/int resolvem os mais communs casos de iteração
+através de cada elemento de uma lista, já o loop while permite controle total dos indices.
+
+Segue um loop while que acessa cada 3º elemento de uma lista:
+
+.. code-block:: python
 
   ## Access every 3rd element in a list
   i = 0
   while i < len(a):
     print a[i]
     i = i + 3
+
 List Methods
+------------
+Alguns metodos comuns de listas:
 
-Here are some other common list methods.
+.. code-block:: python
 
-list.append(elem) -- adds a single element to the end of the list. Common error: does not return the new list, just modifies the original.
-list.insert(index, elem) -- inserts the element at the given index, shifting elements to the right.
-list.extend(list2) adds the elements in list2 to the end of the list. Using + or += on a list is similar to using extend().
-list.index(elem) -- searches for the given element from the start of the list and returns its index. Throws a ValueError if the element does not appear (use "in" to check without a ValueError).
-list.remove(elem) -- searches for the first instance of the given element and removes it (throws ValueError if not present)
-list.sort() -- sorts the list in place (does not return it). (The sorted() function shown below is preferred.)
-list.reverse() -- reverses the list in place (does not return it)
-list.pop(index) -- removes and returns the element at the given index. Returns the rightmost element if index is omitted (roughly the opposite of append()).
-Notice that these are *methods* on a list object, while len() is a function that takes the list (or string or whatever) as an argument.
+    list.append(elem) # adiciona um unico elemento no final de uma lista
+    # Erro comun: não retorna a nova lista, apenas modifica a original
+    list.insert(index, elem) # insere um elemento em um determinado index
+    # movendo elementos para a direita.
+    list.extend(list2) # adiciona os elementos da lista2 no final ta lista
+    # Usar + ou += em um lista temos um comportamento similiar ao extend().
+    list.index(elem) # Procura por um elemento a partir do inicio da lista
+    # retornando seu indice; Lança uma exceção do tipo ValueError se o
+    # elemento não existir (utilize "in" para realizar a verificação s/ um ValueError).
+    list.remove(elem) # Busta por o primeiro elemento dado e o remove
+    # (throws ValueError if not present)
+    list.sort() # ordena uma lista in place (não retorna a mesma).
+    # (A função sorted() é preferível;)
+    list.reverse() # reverte a lista in place (não retorna a mesma)
+    list.pop(index) # remove e retorna um elemento de um determinado index.
+    # Se o index for omitido retorna o elemento mais a direita.
+
+Existem metodos que recebem uma lista como argumento, como por exemplo o len()
+
+.. nextslide::
+
+.. code-block:: python
 
   list = ['larry', 'curly', 'moe']
   list.append('shemp')         ## append elem at end
@@ -136,28 +161,41 @@ Notice that these are *methods* on a list object, while len() is a function that
   list.remove('curly')         ## search and remove that element
   list.pop(1)                  ## removes and returns 'larry'
   print list  ## ['xxx', 'moe', 'shemp', 'yyy', 'zzz']
-Common error: note that the above methods do not *return* the modified list, they just modify the original list.
+
+Erro comum: Note que os metodos acima não retornam a lista modificada, eles apenas modificam a lista original.
+
+.. code-block:: python
 
   list = [1, 2, 3]
   print list.append(4)   ## NO, does not work, append() returns None
   ## Correct pattern:
   list.append(4)
   print list  ## [1, 2, 3, 4]
-List Build Up
 
-One common pattern is to start a list a the empty list [], then use append() or extend() to add elements to it:
+Criação de listas
+-----------------
+
+Um padrão comum é iniciciar uma lista com um colchetes vazios [], então usar append() ou extend() para adicionar elementos:
+
+.. code-block:: python
 
   list = []          ## Start as the empty list
   list.append('a')   ## Use append() to add elements
   list.append('b')
-List Slices
 
-Slices work on lists just as with strings, and can also be used to change sub-parts of the list.
+Fatiamento de Listas
+--------------------
+
+Fatiamento funciona como listas da mesma forma que strings, e podem ser usados para modificar sub-partes de uma lista.
+
+.. code-block:: python
 
   list = ['a', 'b', 'c', 'd']
   print list[1:-1]   ## ['b', 'c']
   list[0:2] = 'z'    ## replace ['a', 'b'] with ['z']
   print list         ## ['z', 'c', 'd']
-Exercise: list1.py
 
-To practice the material in this section, try the problems in list1.py that do not use sorting (in the Basic Exercises).
+
+Exercicio: list1.py
+-------------------
+Para praticarmos os material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação ( nos exercicios básicos).
