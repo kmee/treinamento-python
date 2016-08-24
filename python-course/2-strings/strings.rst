@@ -29,93 +29,147 @@ Pegadinha para o novato em Python: não use "len" como um nome de variável para
 	print s + ' there'  ## hi there
 
 
-Python Strings
---------------
-Unlike Java, the '+' does not automatically convert numbers or other types to string form. The str() function converts values to a string form so they can be combined with other strings.
+.. nextslide::
 
-  pi = 3.14
-  ##text = 'The value of pi is ' + pi      ## NO, does not work
-  text = 'The value of pi is '  + str(pi)  ## yes
-For numbers, the standard operators, +, /, * work in the usual way. There is no ++ operator, but +=, -=, etc. work. If you want integer division, it is most correct to use 2 slashes -- e.g. 6 // 5 is 1 (previous to python 3000, a single / does int division with ints anyway, but moving forward // is the preferred way to indicate that you want int division.)
+Ao contrário do Java, o '+' não converte automaticamente números ou outros tipos de forma de string. A função str() converte valores a uma forma de string para que possam ser combinados com outras strings.
 
-The "print" operator prints out one or more python items followed by a newline (leave a trailing comma at the end of the items to inhibit the newline). A "raw" string literal is prefixed by an 'r' and passes all the chars through without special treatment of backslashes, so r'x\nx' evaluates to the length-4 string 'x\nx'. A 'u' prefix allows you to write a unicode string literal (Python has lots of other unicode support features -- see the docs below).
+.. code-block:: python
+
+	pi = 3.14
+	##text = 'The value of pi is ' + pi      ## NO, does not work
+	text = 'The value of pi is '  + str(pi)  ## yes
+
+
+Para números, os operadores padrão, +,/,* trabalham da maneira usual. Não há operador ++, porém, +=, -=, e outros funcionarão. Se você quiser uma divisão inteira, o correto é utilizar 2 barras - por exemplo, 6 // 5 é 1 (anterior para python 3000, uma / simples faz uma divisão int única com ints de qualquer maneira, mas a utilizar // é a melhor forma para indicar que você deseja divisão int.)
+
+.. nextslide::
+opposite of split(), joins the elements in the given list together using the string as the delimiter. 
+O operador "print" imprime um ou mais itens python seguido por uma nova linha (deixe uma vírgula à direita no final dos itens para inibir a nova linha). Uma string "raw" é prefixado por um 'r' e passa todos os caracteres sem tratamento especial de barras invertidas, então r'x\nx' avalia a string length-4 'x\nx'. O prefixo 'u' permite que você escreva uma string unicode (Python tem muitos outros recursos de suporte unicode - veja a documentação abaixo).
+
+.. code-block:: python
 
   raw = r'this\t\n and that'
   print raw     ## this\t\n and that
     
   multi = """It was the best of times.
   It was the worst of times."""
+
+
 String Methods
+--------------
+Aqui estão alguns dos métodos mais comuns de strings. Um método é como uma função, mas é executada "em um objeto". Se a variável s é uma string, então o código s.lower() executa método lower() nesse objeto e retorna o resultado (esta ideia de um método de execução em um objeto é uma das ideias básicas que compõem a Programação Orientada a Objetos, POO). Aqui estão alguns dos métodos mais comuns:
 
-Here are some of the most common string methods. A method is like a function, but it runs "on" an object. If the variable s is a string, then the code s.lower() runs the lower() method on that string object and returns the result (this idea of a method running on an object is one of the basic ideas that make up Object Oriented Programming, OOP). Here are some of the most common string methods:
+* s.lower(), s.upper() -- retorna a string em minúscula ou maiúscula
+* s.strip() -- retorna a string sem espaços no início e no fim
+* s.isalpha()/s.isdigit()/s.isspace()... -- verifica se todas os caracteres da string correspondem ao teste
 
-s.lower(), s.upper() -- returns the lowercase or uppercase version of the string
-s.strip() -- returns a string with whitespace removed from the start and end
-s.isalpha()/s.isdigit()/s.isspace()... -- tests if all the string chars are in the various character classes
-s.startswith('other'), s.endswith('other') -- tests if the string starts or ends with the given other string
-s.find('other') -- searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
-s.replace('old', 'new') -- returns a string where all occurrences of 'old' have been replaced by 'new'
-s.split('delim') -- returns a list of substrings separated by the given delimiter. The delimiter is not a regular expression, it's just text. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. As a convenient special case s.split() (with no arguments) splits on all whitespace chars.
-s.join(list) -- opposite of split(), joins the elements in the given list together using the string as the delimiter. e.g. '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
-A google search for "python str" should lead you to the official python.org string methods which lists all the str methods.
+.. nextslide::
 
-Python does not have a separate character type. Instead an expression like s[8] returns a string-length-1 containing the character. With that string-length-1, the operators ==, <=, ... all work as you would expect, so mostly you don't need to know that Python does not have a separate scalar "char" type.
+* s.startswith('other'), s.endswith('other') -- testa se a string inicia ou termina com dados de outra string
+* s.find('other') -- procura dados em uma string (não procura expressão regular) e retorna o valor do primeiro caracter. Se retornar -1 o dado não foi encontrado
+* s.replace('old', 'new') -- retorna uma string quando todas as ocorrências de 'old' forem subistituidas por 'new'
+
+.. nextslide::
+
+* s.split('delim') -- retorna uma lista de substrings separadas por um delimitador. O delimitador não é uma expressão regular, é texto puro. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. Caso não seja definido um delimitador, será utilizado por padrão os espaços entre os caracteres
+* s.join(list) -- oposto do split (), junta os elementos de uma lista de dado, utilizando a string como o delimitador. Exemplo '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
+* Uma busca no google por "python str" deverá levar você ao site oficial do Python, `python.org <http://docs.python.org/library/stdtypes.html#string-methods>`_ , que contém uma lista com todos os metódos que podem ser utilizados.
+
+.. nextslide::
+
+Python não tem um tipo de caracter separado. Em vez disso uma expressão como s[8] retorna uma string-length-1 contendo o caracter. Com essa string-length-1, os operadores ==, <=, ... fará todo o trabalho como seria de se esperar, portanto, na maior parte você não precisa saber que o Python não tem uma escala do tipo "char" separado.
 
 String Slices
+-------------
+A sintaxe "slice" é uma maneira prática para se referir a sub-partes de sequências - tipicamente strings e lists. O slice s [start:end] são os elementos que começam no início e que se estende até, mas não incluindo o fim. Suponha que temos s = "Hello"
 
-The "slice" syntax is a handy way to refer to sub-parts of sequences -- typically strings and lists. The slice s[start:end] is the elements beginning at start and extending up to but not including end. Suppose we have s = "Hello"
+.. nextslide::
 
-the string 'hello' with letter indexes 0 1 2 3 4
+A string 'hello' com indice de letras 0 1 2 3 4 
 
-s[1:4] is 'ell' -- chars starting at index 1 and extending up to but not including index 4
-s[1:] is 'ello' -- omitting either index defaults to the start or end of the string
-s[:] is 'Hello' -- omitting both always gives us a copy of the whole thing (this is the pythonic way to copy a sequence like a string or list)
-s[1:100] is 'ello' -- an index that is too big is truncated down to the string length
-The standard zero-based index numbers give easy access to chars near the start of the string. As an alternative, Python uses negative numbers to give easy access to the chars at the end of the string: s[-1] is the last char 'o', s[-2] is 'l' the next-to-last char, and so on. Negative index numbers count back from the end of the string:
+* s[1:4] is 'ell' -- caracter começando com 1 e não exibindo o 4
+* s[1:] is 'ello' -- omite o primeiro caracter (0)
+* s[:] is 'Hello' -- uma cópia da string (é o jeito pythonico de copiar uma sequência como uma string ou lista)
+* s[1:100] is 'ello' -- Um index que é muito grande e será truncado até o comprimento real da string
 
-s[-1] is 'o' -- last char (1st from the end)
-s[-4] is 'e' -- 4th from the end
-s[:-3] is 'He' -- going up to but not including the last 3 chars.
-s[-3:] is 'llo' -- starting with the 3rd char from the end and extending to the end of the string.
-It is a neat truism of slices that for any index n, s[:n] + s[n:] == s. This works even for n negative or out of bounds. Or put another way s[:n] and s[n:] always partition the string into two string parts, conserving all the characters. As we'll see in the list section later, slices work with lists too.
+.. nextslide::
+
+Os números de índice baseado em zero padrão dão acesso fácil a caracteres perto do início da string. Como alternativa, o Python usa números negativos para dar fácil acesso aos caracteres no final da string: s[-1] é o último caractere 'o', s[-2] é 'l' o próximo ao último caracter, e assim por diante. Números de índice negativos são contados para trás a partir do final da string:
+
+.. nextslide::
+
+* s[-1] is 'o' -- último caracter (1º a partir do fim)
+* s[-4] is 'e' -- 4º a partir do fim
+* s[:-3] is 'He' -- indo até o início mas não incluindo os últimos 3 caracteres.
+* s[-3:] is 'llo' -- iniciando com o 3º caracter a partir do final e extendendo até o fim da string.
+
+.. nextslide::
+
+É óbvio que slices que para qualquer índice n, s[:n] + s[n:] == s. Isso funciona mesmo para n negativos ou fora dos limites. Ou dito de outra forma s[:n] e s[n:] sempre dividirão a string em duas partes, conservando todos os caracteres. Como veremos na seção lists mais tarde, slices também trabalham com listas.
 
 String %
+-------
+Python tem um printf() - como facilitador para montar um string. O operador % assume um formato de string printf-type do lado esquerdo (%d int, %s string, %f/%g floating point), e os valores correspondentes em uma tupla à direita (uma tupla é feita de valores separados por vírgulas, geralmente agrupadas dentro de parênteses):
 
-Python has a printf()-like facility to put together a string. The % operator takes a printf-type format string on the left (%d int, %s string, %f/%g floating point), and the matching values in a tuple on the right (a tuple is made of values separated by commas, typically grouped inside parentheses):
+.. code-block:: python
 
   # % operator
   text = "%d little pigs come out or I'll %s and %s and %s" % (3, 'huff', 'puff', 'blow down')
-The above line is kind of long -- suppose you want to break it into separate lines. You cannot just split the line after the '%' as you might in other languages, since by default Python treats each line as a separate statement (on the plus side, this is why we don't need to type semi-colons on each line). To fix this, enclose the whole expression in an outer set of parenthesis -- then the expression is allowed to span multiple lines. This code-across-lines technique works with the various grouping constructs detailed below: ( ), [ ], { }.
 
-  # add parens to make the long-line work:
-  text = ("%d little pigs come out or I'll %s and %s and %s" %
-    (3, 'huff', 'puff', 'blow down'))
+.. nextslide::
+
+A linha acima é um metódo comprido - suponha que você quer dividi-lo em linhas separadas. Você não pode simplesmente dividir a linha após o '%' como você pode em outras linguagens, já que por padrão o Python trata cada linha como uma declaração separada (no lado positivo, é por isso que não precisa digitar ponto e vírgula em cada linha). Para corrigir isso, coloque toda a expressão em um conjunto externo de parênteses - então a expressão é permitida a abranger várias linhas. Esta técnica de códigos através de linhas trabalha com vários construtores agrupados detalhados abaixo: (),[],{}.
+
+.. code-block:: python
+
+	# add parens to make the long-line work:
+	text = ("%d little pigs come out or I'll %s and %s and %s" %
+	(3, 'huff', 'puff', 'blow down'))
+
 i18n Strings (Unicode)
+----------------------
 
-Regular Python strings are *not* unicode, they are just plain bytes. To create a unicode string, use the 'u' prefix on the string literal:
+Strings regulares do Python *não* são unicode, elas são simplesmente bytes. Para criar uma string unicode, use o prefixo 'u' na string:
 
-> ustring = u'A unicode \u018e string \xf1'
-> ustring
-u'A unicode \u018e string \xf1'
-A unicode string is a different type of object from regular "str" string, but the unicode string is compatible (they share the common superclass "basestring"), and the various libraries such as regular expressions work correctly if passed a unicode string instead of a regular string.
+.. code-block:: python
 
-To convert a unicode string to bytes with an encoding such as 'utf-8', call the ustring.encode('utf-8') method on the unicode string. Going the other direction, the unicode(s, encoding) function converts encoded plain bytes to a unicode string:
+	> ustring = u'A unicode \u018e string \xf1'
+	> ustring
+	u'A unicode \u018e string \xf1'
 
-## (ustring from above contains a unicode string)
-> s = ustring.encode('utf-8')
-> s
-'A unicode \xc6\x8e string \xc3\xb1'  ## bytes of utf-8 encoding
-> t = unicode(s, 'utf-8')             ## Convert bytes back to a unicode string
-> t == ustring                      ## It's the same as the original, yay!
-True
 
-The built-in print does not work fully with unicode strings. You can encode() first to print in utf-8 or whatever. In the file-reading section, there's an example that shows how to open a text file with some encoding and read out unicode strings. Note that unicode handling is one area where Python 3000 is significantly cleaned up vs. Python 2.x behavior described here.
+A sequência de caracteres Unicode é um tipo diferente de objeto de string regular "str", mas a seqüência de caracteres Unicode é compatível (que compartilham a superclasse comum "basestring"), e as várias bibliotecas como expressões regulares funcionam corretamente se passarmos uma seqüência de caracteres Unicode em vez de uma sequência regular.
+
+.. nextslide::
+
+Para converter uma sequência de caracteres Unicode para bytes com uma codificação como 'utf-8', chame o método ('utf-8') na string Unicode. Indo na outra direção, a função unicode(s, encoding) converte bytes codificados para uma string unicode:
+
+.. code-block:: python
+
+	## (ustring from above contains a unicode string)
+	> s = ustring.encode('utf-8')
+	> s
+	'A unicode \xc6\x8e string \xc3\xb1'  ## bytes of utf-8 encoding
+	> t = unicode(s, 'utf-8')             ## Convert bytes back to a unicode string
+	> t == ustring                      ## It's the same as the original, yay!
+	True
+
+.. nextslide::
+
+O print default não funciona plenamente com strings unicode. Você pode utilizar encode() primeiro para imprimir em utf-8 ou qualquer outra. Na seção de leitura de arquivo, há um exemplo que mostra como abrir um arquivo de texto com alguns codificação e ler as strings unicode. Observe que o manuseio unicode é uma área onde Python 3000 é significativamente limpo vs. o comportamento do Python 2.x descrito aqui.
 
 If Statement
+------------
 
-Python does not use { } to enclose blocks of code for if/loops/function etc.. Instead, Python uses the colon (:) and indentation/whitespace to group statements. The boolean test for an if does not need to be in parenthesis (big difference from C++/Java), and it can have *elif* and *else* clauses (mnemonic: the word "elif" is the same length as the word "else").
+Python não  utiliza {} para incluir blocos de código para if/strings/funções etc .. Em vez disso, Python usa dois pontos (:) e recuo/espaço em branco com declarações do grupo. O teste booleano para um if não precisa estar em parênteses (grande diferença do C++/Java), e pode ter as cláusulas *elif* e *else* (mnemonic: a palavra "elif" tem o mesmo comprimento que a palavra "else").
 
-Any value can be used as an if-test. The "zero" values all count as false: None, 0, empty string, empty list, empty dictionary. There is also a Boolean type with two values: True and False (converted to an int, these are 1 and 0). Python has the usual comparison operations: ==, !=, <, <=, >, >=. Unlike Java and C, == is overloaded to work correctly with strings. The boolean operators are the spelled out words *and*, *or*, *not* (Python does not use the C-style && || !). Here's what the code might look like for a policeman pulling over a speeder -- notice how each block of then/else statements starts with a : and the statements are grouped by their indentation:
+.. nextslide::
+
+Qualquer valor pode ser usado como um if-test. Todos os valores "zero" contam como falso: None, 0, string vazia, lista vazia, dicionário vazio. Há também um tipo booleano com dois valores: verdadeiro e falso (convertido para um int, estes são 1 e 0). Python tem as operações de comparação habituais: ==, !=, <, <=,>,>=. Ao contrário de Java e C, == está preparado para funcionar corretamente com strings. Os operadores booleanos são identificados pelas palavras *and*, *or*, *not* (Python não usa o estilo C, && ||!). Observe como cada bloco declarado de then/else começa com um : e as demonstrações são agrupados por sua identação:
+
+.. nextslide::
+
+.. code-block:: python
 
   if speed >= 80:
     print 'License and registration please'
@@ -126,10 +180,16 @@ Any value can be used as an if-test. The "zero" values all count as false: None,
       write_ticket()
     else:
       print "Let's try to keep it under 80 ok?"
-I find that omitting the ":" is my most common syntax mistake when typing in the above sort of code, probably since that's an additional thing to type vs. my C++/Java habits. Also, don't put the boolean test in parens -- that's a C/Java habit. If the code is short, you can put the code on the same line after ":", like this (this applies to functions, loops, etc. also), although some people feel it's more readable to space things out on separate lines.
 
-  if speed >= 80: print 'You are so busted'
-  else: print 'Have a nice day'
-Exercise: string1.py
+.. nextslide::
 
-To practice the material in this section, try the string1.py exercise in the Basic Exercises.
+Acho que omitindo o ":" é o meu erro de sintaxe mais comum quando se digita no tipo de código acima, provavelmente já que é uma coisa adicional para digitar vs. meus hábitos C ++ / Java. Além disso, não colocar o teste booleano em parênteses - que é um hábito C / Java. Se o código é curto, você pode colocar o código na mesma linha após ":", como este (isso se aplica a funções, loops, etc. também), embora algumas pessoas acham que é mais legível para o espaço as coisas em linhas separadas.
+
+.. code-block:: python
+
+	if speed >= 80: print 'You are so busted'
+	else: print 'Have a nice day'
+
+
+Exercício: string1.py
+--------------------
