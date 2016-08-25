@@ -1,6 +1,8 @@
 Python Utilities
 ================
 
+Python Utilities
+----------------
 Nesta sessão, vamos dar uma olhada em algumas das muitas funções da biblioteca
 padrão do Python, visando resolver problemas comuns.
 
@@ -13,10 +15,17 @@ com o sistema operacional.
 O modulo **shutil** pode copiar arquivos
 
 - `os module docs <http://docs.python.org/lib/module-os.html/>`_
-- filenames = os.listdir(dir) -- list of filenames in that directory path (not including . and ..). The filenames are just the names in the directory, not their absolute paths.
-- os.path.join(dir, filename) -- given a filename from the above list, use this to put the dir and filename together to make a path
-- os.path.abspath(path) -- given a path, return an absolute form, e.g. /home/nick/foo/bar.html
-- os.path.dirname(path), os.path.basename(path) -- given dir/foo/bar.html, return the dirname "dir/foo" and basename "bar.html"
+
+- filenames = os.listdir(dir) - lista o nome dos arquivos no diretório (não incluindo path atual . e path pai ..). Os nomes dos arquivos são apenas os nomes dos arquivos e não os seus caminhos absolutos.
+
+- os.path.join(dir, filename) - recupera o nome de arquivo da lista acima, usar isso para colocar o diretório (path) e nome do arquivo em conjunto para fazer um caminho completo
+
+- os.path.abspath(path) - recupera um caminho, retorna a forma absoluta, por exemplo, /home/nick/foo/bar.html
+
+- os.path.dirname(caminho), os.path.basename (path) - recupera o caminho completo dir/foo/bar.html, retorna o diretório "dir/foo" e nome do arquivo "bar.html"
+
+.. nextslide::
+
 - os.path.exists(path) -- true if it exists
 - os.mkdir(dir_path) -- makes one dir, os.makedirs(dir_path) makes all the needed dirs in this path
 - shutil.copy(source-path, dest-path) -- copy a file (dest path directories should exist)
@@ -32,7 +41,7 @@ O modulo **shutil** pode copiar arquivos
         print os.path.abspath(os.path.join(dir, filename)) ## /home/nick/dir/foo.txt
 
 
-Explorar um modulo finciona muito bem com as funções da **biblioteca
+Explorar um modulo funciona muito bem com as funções da **biblioteca
 padrão**: help() e dir().
 
 No interpretador execute um import os e use os comandos para avaliar os
@@ -45,10 +54,14 @@ O modulo **commands** é uma forma simples de executar um comando externo e
 capturar sua saida.
 
 - commands module docs
-- (status, output) = commands.getstatusoutput(cmd) -- runs the command, waits for it to exit, and returns its status int and output text as a tuple.  The command is run with its standard output and standard error combined into   the one output text. The status will be non-zero if the command failed.  Since the standard-err of the command is captured, if it fails, we need to  print some indication of what happened. - output = commands.getoutput(cmd) -- as above, but without the status int.
-- There is a commands.getstatus() but it does something else, so don't use it -- dumbest bit of method naming ever!
-- If you want more control over the running of the sub-process, see the "popen2" module (http://docs.python.org/lib/module-popen2.html)
-- There is also a simple os.system(cmd) which runs the command and dumps its output onto your output and returns its error code. This works if you want to run the command but do not need to capture its output into your python data structures.
+- (status, output) = commands.getstatusoutput(cmd) -- executa o comando, aguarda a execução para sair, e retorna status int e texto de saída como uma tupla. O comando é executado com sua saída padrão e erro padrão combinado em uma única saída de texto. O status será diferente de zero se o comando falhou. Desde que o standar-err do comando seja capturado, se ele falhar, é preciso imprimir alguma indicação sobre o que aconteceu.
+- output = commands.getoutput(cmd) -- como o comando acima, mas sem o status int.
+- Há o commands.getstatus(), mas ele faz outra coisa, por isso não utilize.
+
+.. nextslide::
+
+- Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo "popen2" (http://docs.python.org/lib/module-popen2.html)
+- Há também o simples os.system(cmd), que executa o comando e retorna sua saída e retorna seu código de erro. Isso funciona se você deseja executar o comando, mas não precisa capturar a sua saída em suas estruturas de dados python.
 
 .. code-block:: python
 
@@ -63,21 +76,24 @@ capturar sua saida.
         sys.exit(1)
       print output  ## Otherwise do something with the command's output
 
-Exceptions
-----------
+Excessões
+---------
 
-An exception represents a run-time error that halts the normal execution at
-a particular line and transfers control to error handling code. This section
-just introduces the most basic uses of exceptions. For example a run-time
-error might be that a variable used in the program does not have a value
-(ValueError .. you've probably seen that one a few times), or a file
-open operation error because that a does not exist (IOError). (See
-[[http://docs.python.org/tut/node10.html][exception docs]])
+Uma exceção representa um erro de tempo de execução que suspende a execução normal 
+em uma linha particular e transfere o controle para manipulação de erros de código. 
+Esta seção apenas introduz os usos mais básicos de exceções. Por exemplo, um erro 
+de tempo de execução pode ser que uma variável utilizada no programa não tenha um 
+valor (ValueError... você provavelmente já viu este erro algumas vezes), ou um erro 
+de operação de abertura de arquivo por causa do arquivo não existir ( IOError). 
+(Veja docs http://docs.python.org/tut/node10.html][exception~~number=plural)
 
-Without any error handling code (as we have done thus far), a run-time
-exception just halts the program with an error message. That's a good
-default behavior, and you've seen it many times. You can add a "try/except"
-structure to your code to handle exceptions, like this:
+.. nextslide::
+
+Sem qualquer código de manipulação de erro (como temos feito até agora), uma 
+exceção de tempo de execução apenas interrompe o programa com uma mensagem de erro.
+Isso é um bom comportamento padrão, e você já viu isso muitas vezes. Você pode adicionar 
+uma estrutura "try/except" no seu código para lidar com exceções, como esta:
+
 
 .. code-block:: python
 
@@ -92,12 +108,16 @@ structure to your code to handle exceptions, like this:
     sys.stderr.write('problem reading:' + filename)
   ## In any case, the code then continues with the line after the try/except
 
-The try: section includes the code which might throw an exception. The
-except: section holds the code to run if there is an exception. If there is
-no exception, the except: section is skipped (that is, that code is for
-error handling only, not the "normal" case for the code). You can get a
-pointer to the exception object itself with syntax "except IOError, e: ..
-(e points to the exception object)".
+.. nextslide::
+
+A tentativa: seção inclui o código que pode lançar uma exceção. 
+A exceção: seção contém o código para ser executado se houver uma exceção. 
+Se não houver nenhuma exceção, a exceção: a seção é ignorada (isto é, que 
+o código é para a manipulação de erro somente, não é o caso "normal" para 
+o código). 
+
+Você pode obter um ponteiro para a exceção do próprio objeto com 
+a sintaxe ``except IOError, e:`` (e aponta para o objeto de exceção).
 
 HTTP -- urllib and urlparse
 ---------------------------
