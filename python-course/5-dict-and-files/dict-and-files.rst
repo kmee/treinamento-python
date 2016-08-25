@@ -178,6 +178,8 @@ A técnica do for-loop é um simples e eficiência método para olhar todas as
 linhas em um arquivo de texto:
 
 
+.. nextslide::
+
 .. code-block:: python
 
   # Mostra o conteúdo de um arquivo
@@ -186,6 +188,8 @@ linhas em um arquivo de texto:
     print line,    ## print não adicionar um character de fim-de-linha
                    ## já que ‘line’ já tem um no fim de cada linha.
   f.close()
+
+.. nextslide::
 
 Ler uma linha de cada vez tem a boa qualidade de não precisar carregar todo
 o arquivo na memória de uma única vez – vem a calhar se você precisa olhar
