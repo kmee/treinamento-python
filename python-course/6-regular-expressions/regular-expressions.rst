@@ -1,69 +1,107 @@
+Expressões Regulares
+====================
 
-Python Regular Expressions
+Expressões Regulares
+--------------------
 
-Regular expressions are a powerful language for matching text patterns. This page gives a basic introduction to regular expressions themselves sufficient for our Python exercises and shows how regular expressions work in Python. The Python "re" module provides regular expression support.
-In Python a regular expression search is typically written as:
+As expressões regulares são uma linguagem poderosa para a buscas de padrões de texto. Esta página dá uma introdução básica à expressões regulares suficientes para os nossos exercícios Python e mostra como expressões regulares trabalham em Python. 
+
+O módulo Python "re" oferece suporte a expressões regulares.
+
+Em Python uma pesquisa de expressões regulares são tipicamente escritas como:
+
+.. code-block:: python
 
   match = re.search(pat, str)
-The re.search() method takes a regular expression pattern and a string and searches for that pattern within the string. If the search is successful, search() returns a match object or None otherwise. Therefore, the search is usually immediately followed by an if-statement to test if the search succeeded, as shown in the following example which searches for the pattern 'word:' followed by a 3 letter word (details below):
 
-str = 'an example word:cat!!'
-match = re.search(r'word:\w\w\w', str)
-# If-statement after search() tests if it succeeded
-  if match:                      
-    print 'found', match.group() ## 'found word:cat'
-  else:
-    print 'did not find'
-The code match = re.search(pat, str) stores the search result in a variable named "match". Then the if-statement tests the match -- if true the search succeeded and match.group() is the matching text (e.g. 'word:cat'). Otherwise if the match is false (None to be more specific), then the search did not succeed, and there is no matching text.
+.. nextslide::
 
-The 'r' at the start of the pattern string designates a python "raw" string which passes through backslashes without change which is very handy for regular expressions (Java needs this feature badly!). I recommend that you always write pattern strings with the 'r' just as a habit.
+O método re.search() busca um padrão de expressões regulares e strings e realiza a busca dentro da string. Se a pesquisa for bem sucedida, search() retorna um objeto com dados ou None caso contrário. Portanto, a busca é geralmente seguida imediatamente por uma instrução if para testar se a busca bem-sucedida, como mostrado no exemplo a seguir que procura o padrão 'word:' seguido por 3 letras (detalhes abaixo):
 
-Basic Patterns
+.. code-block:: python
 
-The power of regular expressions is that they can specify patterns, not just fixed characters. Here are the most basic patterns which match single chars:
+	str = 'an example word:cat!!'
+	match = re.search(r'word:\\w\\w\\w', str)
+	# If-statement after search() tests if it succeeded
+  	if match:                      
+    	print 'found', match.group() ## 'found word:cat'
+  		else:
+    	print 'did not find'
 
-a, X, 9, < -- ordinary characters just match themselves exactly. The meta-characters which do not match themselves because they have special meanings are: . ^ $ * + ? { [ ] \ | ( ) (details below)
-. (a period) -- matches any single character except newline '\n'
-\w -- (lowercase w) matches a "word" character: a letter or digit or underbar [a-zA-Z0-9_]. Note that although "word" is the mnemonic for this, it only matches a single word char, not a whole word. \W (upper case W) matches any non-word character.
-\b -- boundary between word and non-word
-\s -- (lowercase s) matches a single whitespace character -- space, newline, return, tab, form [ \n\r\t\f]. \S (upper case S) matches any non-whitespace character.
-\t, \n, \r -- tab, newline, return
-\d -- decimal digit [0-9] (some older regex utilities do not support but \d, but they all support \w and \s)
-^ = start, $ = end -- match the start or end of the string
-\ -- inhibit the "specialness" of a character. So, for example, use \. to match a period or \\ to match a slash. If you are unsure if a character has special meaning, such as '@', you can put a slash in front of it, \@, to make sure it is treated just as a character.
-Basic Examples
+.. nextslide::
 
-Joke: what do you call a pig with three eyes? piiig!
+O código match = re.search(pat, str) armazena o resultado da pesquisa em uma variável chamada "match". Em seguida, a instrução if testa o match -- Se for verdadeiro o resultado da busca e match.group() será o texto correspondente (por exemplo, 'word:cat'). Caso contrário, se a resultado é falso (Nada para ser mais específico), então não houve sucesso na busca, e não há nenhum texto correspondente.
 
-The basic rules of regular expression search for a pattern within a string are:
+O 'r' no início da string padrão designa uma string python "row" que passa por barras invertidas sem mudança que é muito útil para expressões regulares (Java precisa deste recurso). 
 
-The search proceeds through the string from start to end, stopping at the first match found
-All of the pattern must be matched, but not all of the string
-If match = re.search(pat, str) is successful, match is not None and in particular match.group() is the matching text
+Eu recomendo que você sempre escrever strings com o 'r'.
+
+Padrões básicos
+---------------
+
+O poder das expressões regulares é que eles podem especificar padrões, não apenas caracteres fixos. Aqui estão os padrões mais básicos que correspondem a caracteres individuais:
+
+* a,X,9, <- caracteres ordinários apenas correspondem a eles mesmos. Os meta-caracteres que não correspondem a sí próprio, porque eles têm significados especiais são eles: . ^ $ * +? {[] \\ | () (detalhes abaixo)
+* . . (a period) - corresponde a qualquer caractere único exceto nova linha '\\n'
+* \\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline [a-zA-Z0-9_]. \\W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.
+
+.. nextslide::
+
+* \\b - limite entre palavra e não-palavra
+* \\s - (s minúsculo) corresponde a um único espaço em branco - espaço, nova linha, retorno/return, tab, form [\\n\\r\\t\\f]. \\S (S maíusculo) corresponde a qualquer caractere sem espaço em branco.
+* \\t,\\n,\\r - tab, nova linha, retorno/return
+* \\d - dígitos decimais [0-9] (alguns utilitários regex mais velhos não suportam mais \\d, mas todos suportam \\w e \\s)
+
+.. nextslide::
+
+* ^ = Começar, $ = end - coincidir com o início ou o fim da string
+* \\ - Inibir a "excepcionalidade" de um caracter. Assim, por exemplo, usar \\. para coincidir com um período ou \\ para coincidir com uma barra. Se você não tem certeza se um caracter tem um significado especial, como '@', você pode colocar uma barra na frente dele, \\@, para ter certeza que é tratada apenas como um caracter.
+
+Exemplos Básicos
+----------------
+Piada: what do you call a pig with three eyes? piiig!
+
+As regras básicas de pesquisa de expressão regular dentro de uma string são:
+
+* A busca prossegue através da string do início ao fim, parando na primeira correspondência encontrada
+* Todo o padrão deve ser correspondido, mas não toda a string
+* Se ``match = re.search(pat, str)`` for bem sucedida, o resultado é Nenhum e em particular match.group() é o texto correspondente
+
+.. nextslide::
+
+.. code-block:: python
+
   ## Search for pattern 'iii' in string 'piiig'.
   ## All of the pattern must match, but it may appear anywhere.
   ## On success, match.group() is matched text.
   match = re.search(r'iii', 'piiig') =>  found, match.group() == "iii"
   match = re.search(r'igs', 'piiig') =>  not found, match == None
 
-  ## . = any char but \n
+  ## . = any char but \\n
   match = re.search(r'..g', 'piiig') =>  found, match.group() == "iig"
 
-  ## \d = digit char, \w = word char
-  match = re.search(r'\d\d\d', 'p123g') =>  found, match.group() == "123"
-  match = re.search(r'\w\w\w', '@@abcd!!') =>  found, match.group() == "abc"
-Repetition
+  ## \\d = digit char, \\w = word char
+  match = re.search(r'\\d\\d\\d', 'p123g') =>  found, match.group() == "123"
+  match = re.search(r'\\w\\w\\w', '@@abcd!!') =>  found, match.group() == "abc"
 
-Things get more interesting when you use + and * to specify repetition in the pattern
+.. nextslide::
 
-+ -- 1 or more occurrences of the pattern to its left, e.g. 'i+' = one or more i's
-* -- 0 or more occurrences of the pattern to its left
-? -- match 0 or 1 occurrences of the pattern to its left
+Repetição
+---------
+As coisas ficam mais interessantes quando você usa + e * para especificar a repetição do padrão
+
+* \\+ : 1 ou mais ocorrências do padrão à sua esquerda, por exemplo, 'i+' = um ou mais 'i'
+* \\* : 0 ou mais ocorrências do padrão à sua esquerda
+* \\? : jogo 0 ou 1 ocorrências do padrão à sua esquerda
+
 Leftmost & Largest
+------------------
 
-First the search finds the leftmost match for the pattern, and second it tries to use up as much of the string as possible -- i.e. + and * go as far as possible (the + and * are said to be "greedy").
+Em primeiro lugar a procura encontra regra leftmost por padrão e, segundo ele tenta usar o máximo da cadeia possível - Exemplo: + e * vão tão longe quanto possível (a + e * são conhecidos como "gananciosos").
 
-Repetition Examples
+Exemplos de repetições
+
+.. code-block:: python
 
   ## i+ = one or more i's, as many as possible.
   match = re.search(r'pi+', 'piiig') =>  found, match.group() == "piii"
@@ -73,115 +111,163 @@ Repetition Examples
   ## In this example, note that it does not get to the second set of i's.
   match = re.search(r'i+', 'piigiiii') =>  found, match.group() == "ii"
 
-  ## \s* = zero or more whitespace chars
+  ## \\s* = zero or more whitespace chars
   ## Here look for 3 digits, possibly separated by whitespace.
-  match = re.search(r'\d\s*\d\s*\d', 'xx1 2   3xx') =>  found, match.group() == "1 2   3"
-  match = re.search(r'\d\s*\d\s*\d', 'xx12  3xx') =>  found, match.group() == "12  3"
-  match = re.search(r'\d\s*\d\s*\d', 'xx123xx') =>  found, match.group() == "123"
+  match = re.search(r'\\d\\s*\\d\\s*\\d', 'xx1 2   3xx') =>  found, match.group() == "1 2   3"
+  match = re.search(r'\\d\\s*\\d\\s*\\d', 'xx12  3xx') =>  found, match.group() == "12  3"
+  match = re.search(r'\\d\\s*\\d\\s*\\d', 'xx123xx') =>  found, match.group() == "123"
 
   ## ^ = matches the start of string, so this fails:
-  match = re.search(r'^b\w+', 'foobar') =>  not found, match == None
+  match = re.search(r'^b\\w+', 'foobar') =>  not found, match == None
   ## but without the ^ it succeeds:
-  match = re.search(r'b\w+', 'foobar') =>  found, match.group() == "bar"
-Emails Example
+  match = re.search(r'b\\w+', 'foobar') =>  found, match.group() == "bar"
 
-Suppose you want to find the email address inside the string 'xyz alice-b@google.com purple monkey'. We'll use this as a running example to demonstrate more regular expression features. Here's an attempt using the pattern r'\w+@\w+':
+
+Exemplos de emails
+------------------
+Suponha que você queira encontrar o endereço de e-mail dentro do string 'xyz alice-b@google.com purple monkey' . Iremos utilizar essa string como um exemplo de execução para demonstrar mais recursos de expressões regulares. Aqui está uma tentativa usando o padrão de r'\\w+@\\w+':
+
+.. code-block:: python
 
   str = 'purple alice-b@google.com monkey dishwasher'
-  match = re.search(r'\w+@\w+', str)
+  match = re.search(r'\\w+@\\w+', str)
   if match:
     print match.group()  ## 'b@google'
-The search does not get the whole email address in this case because the \w does not match the '-' or '.' in the address. We'll fix this using the regular expression features below.
+
+
+A pesquisa não obteu todo o endereço de e-mail, neste caso, porque o \\w não corresponde ao '-' ou '.' no endereço. Vamos corrigir isso usando a expressão regular apresenta abaixo.
 
 Square Brackets
+---------------
+Square brackets (colchetes) pode ser usado para indicar um conjunto de caracteres, então [abc] combina 'a' ou 'b' ou 'c'. Os códigos \\w, \\s etc trabalham dentro de colchetes também com a única exceção que ponto (.) significa apenas um ponto literalmente. Para o problema de e-mails, os colchetes são uma maneira fácil de adicionar '.' e '-' para o conjunto de caracteres que podem aparecer ao redor do @ com a expressão r'[\\w.-]+@[\\w.-]+' para obter todo a e-mail:
 
-Square brackets can be used to indicate a set of chars, so [abc] matches 'a' or 'b' or 'c'. The codes \w, \s etc. work inside square brackets too with the one exception that dot (.) just means a literal dot. For the emails problem, the square brackets are an easy way to add '.' and '-' to the set of chars which can appear around the @ with the pattern r'[\w.-]+@[\w.-]+' to get the whole email address:
+.. code-block:: python
 
-  match = re.search(r'[\w.-]+@[\w.-]+', str)
+  match = re.search(r'[\\w.-]+@[\\w.-]+', str)
   if match:
     print match.group()  ## 'alice-b@google.com'
-(More square-bracket features) You can also use a dash to indicate a range, so [a-z] matches all lowercase letters. To use a dash without indicating a range, put the dash last, e.g. [abc-]. An up-hat (^) at the start of a square-bracket set inverts it, so [^ab] means any char except 'a' or 'b'.
-Group Extraction
 
-The "group" feature of a regular expression allows you to pick out parts of the matching text. Suppose for the emails problem that we want to extract the username and host separately. To do this, add parenthesis ( ) around the username and host in the pattern, like this: r'([\w.-]+)@([\w.-]+)'. In this case, the parenthesis do not change what the pattern will match, instead they establish logical "groups" inside of the match text. On a successful search, match.group(1) is the match text corresponding to the 1st left parenthesis, and match.group(2) is the text corresponding to the 2nd left parenthesis. The plain match.group() is still the whole match text as usual.
+(Mais recursos de colchetes) - Você também pode usar um traço para indicar um intervalo, para isso [a-z] corresponde a todas as letras minúsculas. Para usar um hífen sem indicar um intervalo, basta colocar um hífen no final da string, por exemplo, [abc-]. Um chapéu (^) no início de um conjunto de colchetes inverte a operação, então [^ab] significa qualquer caractere exceto 'a' ou 'b'.
+
+Group Extraction
+----------------
+
+O recurso de "grupo" de uma expressão regular permite escolher partes do texto correspondente. Suponha que para o problema de e-mails que queremos extrair o nome do usuário e o domínio separadamente. Para fazer isso, adicionar parênteses () em torno do nome de usuário e do domínio, como este: r'([\\w.-]+)@([\\w.-]+)'. 
+
+Neste caso, o parêntese não muda o que a busca irá buscar, em vez disso, estabelecerá "grupos" lógicos dentro do texto a ser buscado. Em uma busca com sucesso, match.group(1) é o texto de partida correspondente ao primeiro parêntese esquerdo, e match.group(2) é o texto correspondente ao segundo parêntese esquerdo. O match.group() puro retornará o texto completo.
+
+.. code-block:: python
 
   str = 'purple alice-b@google.com monkey dishwasher'
-  match = re.search('([\w.-]+)@([\w.-]+)', str)
+  match = re.search('([\\w.-]+)@([\\w.-]+)', str)
   if match:
     print match.group()   ## 'alice-b@google.com' (the whole match)
     print match.group(1)  ## 'alice-b' (the username, group 1)
     print match.group(2)  ## 'google.com' (the host, group 2)
-A common workflow with regular expressions is that you write a pattern for the thing you are looking for, adding parenthesis groups to extract the parts you want.
+
+
+.. nextslide::
+
+Um fluxo de trabalho comum com expressões regulares é que você escreve um padrão para as coisas que você está procurando, adicionando grupos de parênteses para extrair as partes que deseja.
 
 findall
+-------
 
-findall() is probably the single most powerful function in the re module. Above we used re.search() to find the first match for a pattern. findall() finds *all* the matches and returns them as a list of strings, with each string representing one match.
+findall() é provavelmente a função mais poderosa do módulo de re. Acima usamos re.search() para encontrar o primeiro dado de uma busca. findall() localiza *todos* os dados e retorna como uma lista de strings, com cada string representando um dado.
+
+.. code-block:: python
+
   ## Suppose we have a text with many email addresses
   str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
 
   ## Here re.findall() returns a list of all the found email strings
-  emails = re.findall(r'[\w\.-]+@[\w\.-]+', str) ## ['alice@google.com', 'bob@abc.com']
+  emails = re.findall(r'[\\w\\.-]+@[\\w\\.-]+', str) ## ['alice@google.com', 'bob@abc.com']
   for email in emails:
     # do something with each found email string
     print email
-findall With Files
 
-For files, you may be in the habit of writing a loop to iterate over the lines of the file, and you could then call findall() on each line. Instead, let findall() do the iteration for you -- much better! Just feed the whole file text into findall() and let it return a list of all the matches in a single step (recall that f.read() returns the whole text of a file in a single string):
+findall com arquivos
+--------------------
+Para arquivos, você deve ter o hábito de escrever um loop para iteragir sobre as linhas do arquivo, e você poderá chamar a função findall() em cada linha. Ao invéz disso, vamos deixar a função findall() fazer a iteração por você -- muito melhor! Apenas alimente todo o arquivo de texto em findall() e deixe-o retornar uma lista de todos os dados da busca em uma única etapa (lembre que f.read () retorna o texto inteiro de um arquivo em uma única string):
+
+.. code-block:: python
 
   # Open file
   f = open('test.txt', 'r')
   # Feed the file text into findall(); it returns a list of all the found strings
   strings = re.findall(r'some pattern', f.read())
-findall and Groups
 
-The parenthesis ( ) group mechanism can be combined with findall(). If the pattern includes 2 or more parenthesis groups, then instead of returning a list of strings, findall() returns a list of *tuples*. Each tuple represents one match of the pattern, and inside the tuple is the group(1), group(2) .. data. So if 2 parenthesis groups are added to the email pattern, then findall() returns a list of tuples, each length 2 containing the username and host, e.g. ('alice', 'google.com').
+findall e Groups
+----------------
+O mecanismo grupo de parêntesis ( ) pode ser combinado com findall(). Se o padrão inclui 2 ou mais grupos de parênteses, em seguida, em vez de retornar uma lista de strings, findall() retorna uma lista de tuples. Cada tuple representa um busca padrão, e dentro das dados das tuples, group(1), o group(2) ... Então, se 2 grupos de parênteses são adicionados ao padrão de e-mail, em seguida, findall() retorna uma lista de tuples, cada length 2 contém o nome de usuário e do domínio, por exemplo, ('Alice', 'google.com').
+
+.. code-block:: python
 
   str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
-  tuples = re.findall(r'([\w\.-]+)@([\w\.-]+)', str)
+  tuples = re.findall(r'([\\w\\.-]+)@([\\w\\.-]+)', str)
   print tuples  ## [('alice', 'google.com'), ('bob', 'abc.com')]
   for tuple in tuples:
     print tuple[0]  ## username
     print tuple[1]  ## host
-Once you have the list of tuples, you can loop over it to do some computation for each tuple. If the pattern includes no parenthesis, then findall() returns a list of found strings as in earlier examples. If the pattern includes a single set of parenthesis, then findall() returns a list of strings corresponding to that single group. (Obscure optional feature: Sometimes you have paren ( ) groupings in the pattern, but which you do not want to extract. In that case, write the parens with a ?: at the start, e.g. (?: ) and that left paren will not count as a group result.)
+
+.. nextslide::
+
+Depois de ter a lista de tuples, você pode executar um loop sobre ele para fazer alguma computação para cada tuple. Se o padrão não inclui parênteses, então findAll() retornará uma lista de strings encontrados como nos exemplos anteriores. Se o padrão inclui um único conjunto de parênteses, então findAll() retornará uma lista de strings correspondentes a esse grupo único. (Recurso opcional Obscuro: Às vezes você tem grupos de parênteses (), mas que você não deseja extrair. 
+
+Nesse caso, escrever os parênteses com ?: no início, por exemplo, (?: ) e que o parêntese da esquerda não vai contar como resultado do grupo.
 
 RE Workflow and Debug
+---------------------
 
-Regular expression patterns pack a lot of meaning into just a few characters , but they are so dense, you can spend a lot of time debugging your patterns. Set up your runtime so you can run a pattern and print what it matches easily, for example by running it on a small test text and printing the result of findall(). If the pattern matches nothing, try weakening the pattern, removing parts of it so you get too many matches. When it's matching nothing, you can't make any progress since there's nothing concrete to look at. Once it's matching too much, then you can work on tightening it up incrementally to hit just what you want.
+O Pacote de expressões regulares padrão contém um monte de significados em apenas alguns caracteres, mas eles são muito densos, você pode gastar um monte de tempo depurando seu código. Configure o tempo de execução para que você possa executar um padrão e imprimir o que corresponde facilmente, por exemplo, executando em um pequeno texto de teste e imprimir o resultado com findall(). Se o padrão corresponde a nada, tente desabilitar os padrões, remover partes dele para que você obtenha mais acertos. 
 
-Options
+Quando não econtrar nada, você não poderá fazer qualquer progresso já que não há nada de concreto para olhar. Uma vez que ele está retornando resultados, você pode trabalhar em melhorar o código de forma incremental para atingir apenas o que você quer.
 
-The re functions take options to modify the behavior of the pattern match. The option flag is added as an extra argument to the search() or findall() etc., e.g. re.search(pat, str, re.IGNORECASE).
+Opções
+------
+As funções re tem opções para modificar o comportamento da busca. A opção é adicionada como um argumento extra para a search() ou findAll(), etc., por exemplo, re.search (pat, str, re.IGNORECASE).
 
-IGNORECASE -- ignore upper/lowercase differences for matching, so 'a' matches both 'a' and 'A'.
-DOTALL -- allow dot (.) to match newline -- normally it matches anything but newline. This can trip you up -- you think .* matches everything, but by default it does not go past the end of a line. Note that \s (whitespace) includes newlines, so if you want to match a run of whitespace that may include a newline, you can just use \s*
-MULTILINE -- Within a string made of many lines, allow ^ and $ to match the start and end of each line. Normally ^/$ would just match the start and end of the whole string.
-Greedy vs. Non-Greedy (optional)
+* IgnoreCase - ignorar as diferenças maiúsculas/minúsculas, de modo 'a' corresponde tanto 'a' e 'A'.
+* Dotall - Permite ponto (.) para coincidir como uma nova linha - normalmente ele corresponde a qualquer coisa, mas uma nova linha. Isso pode te enganar - você pensa que .* corresponde a tudo, mas por padrão ele não vai além do fim de uma linha. Note que \\s (espaços em branco) inclui novas linhas, por isso, se você quer combinar uma série de espaços em branco que podem incluir uma nova linha, você pode apenas usar \\s*
+* MULTILINE - Dentro de uma string feita de muitas linhas, permitem ^ e $ para coincidir com o início e o fim de cada linha. Normalmente ^/$ seria apenas coincidir com o início e o fim de toda a string.
 
-This is optional section which shows a more advanced regular expression technique not needed for the exercises.
+Greedy vs. Non-Greedy (opcional)
+--------------------------------
+Esta é uma seção opcional que mostra uma técnica mais avançada de expressão regular.
 
-Suppose you have text with tags in it: <b>foo</b> and <i>so on</i>
+Supondo que você tem texto com tags: <b>foo</b> e <i>assim por diante</i>
 
-Suppose you are trying to match each tag with the pattern '(<.*>)' -- what does it match first?
+Supondo que você está tentando encontrar cada tag com o padrão '(<*.>)' -- O que isso corresponde em primeiro lugar?
 
-The result is a little surprising, but the greedy aspect of the .* causes it to match the whole '<b>foo</b> and <i>so on</i>' as one big match. The problem is that the .* goes as far as is it can, instead of stopping at the first > (aka it is "greedy").
+O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* Faz com que a busca coincida todo "<b>foo</b> e <i>assim por diante</i>' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira > (por isso é chamado de ganancioso - Greedy).
 
-There is an extension to regular expression where you add a ? at the end, such as .*? or .+?, changing them to be non-greedy. Now they stop as soon as they can. So the pattern '(<.*?>)' will get just '<b>' as the first match, and '</b>' as the second match, and so on getting each <..> pair in turn. The style is typically that you use a .*?, and then immediately its right look for some concrete marker (> in this case) that forces the end of the .*? run.
+.. nextslide::
 
-The *? extension originated in Perl, and regular expressions that include Perl's extensions are known as Perl Compatible Regular Expressions -- pcre. Python includes pcre support. Many command line utils etc. have a flag where they accept pcre patterns.
+Existe uma extensão para a expressão regular, onde você adicionar um ? no final, tais como .*? ou .+?, que irá alterá-lo para não ser tão ganancioso. Agora eles param assim que puder. Assim, o padrão '(<.*?>)' vai ficar apenas '<b>' como o primeiro resultado, e '</b>' como o segundo resultado, e assim por diante para cada par de tags <..>. O recomendado é que normalmente você use um .*?, e logo em seguida encontre o marcador correto (>, neste caso) que força o final da chamada .*?.
 
-An older but widely used technique to code this idea of "all of these chars except stopping at X" uses the square-bracket style. For the above you could write the pattern, but instead of .* to get all the chars, use [^>]* which skips over all characters which are not > (the leading ^ "inverts" the square bracket set, so it matches any char not in the brackets).
+O *? extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito Útil EM linha de comando e tem uma flag onde se aceita utilizar padrões pcre.
 
-Substitution (optional)
+.. nextslide::
 
-The re.sub(pat, replacement, str) function searches for all the instances of pattern in the given string, and replaces them. The replacement string can include '\1', '\2' which refer to the text from group(1), group(2), and so on from the original matching text.
+Uma técnica mais velha, porém, amplamente usado para codificar esta ideia de "todos estes caracteres, exceto parando em X" usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de .* para obter todos os caracteres, use [^>] *, que ignora todos os caracteres que não são > (o ^ "inverte" o conjunto de colchetes, de modo que corresponda qualquer caractere que não esteja presente nos colchetes).
 
-Here's an example which searches for all the email addresses, and changes them to keep the user (\1) but have yo-yo-dyne.com as the host.
+
+Substituição (Opcional)
+-----------------------
+
+A função re.sub(pat, replacement, str) pesquisa por todas os dados na string, e as substitui. O texto de substituição pode incluir '\\1', '\\2', que se referem ao texto do group(1), o group(2), e assim por diante a partir do texto encontrado original.
+
+Aqui está um exemplo que procura todos os endereços de e-mail, e modifica-os para manter o usuário (\\1), mas tem yo-yo-dyne.com como o domínio.
+
+.. code-block:: python
 
   str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
   ## re.sub(pat, replacement, str) -- returns new string with all replacements,
-  ## \1 is group(1), \2 group(2) in the replacement
-  print re.sub(r'([\w\.-]+)@([\w\.-]+)', r'\1@yo-yo-dyne.com', str)
+  ## \\1 is group(1), \\2 group(2) in the replacement
+  print re.sub(r'([\\w\\.-]+)@([\\w\\.-]+)', r'\\1@yo-yo-dyne.com', str)
   ## purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher
-Exercise
 
-To practice regular expressions, see the Baby Names Exercise.
+Exercícios
+----------
+
+Execícios de Expressões Regulares
