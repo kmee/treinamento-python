@@ -20,13 +20,13 @@ O método re.search() busca um padrão de expressões regulares e strings e real
 
 .. code-block:: python
 
-	str = 'an example word:cat!!'
-	match = re.search(r'word:\\w\\w\\w', str)
-	# If-statement after search() tests if it succeeded
-  	if match:                      
-    	print 'found', match.group() ## 'found word:cat'
-  		else:
-    	print 'did not find'
+    str = 'an example word:cat!!'
+    match = re.search(r'word:\\w\\w\\w', str)
+    # If-statement after search() tests if it succeeded
+    if match:
+        print 'found', match.group() ## 'found word:cat'
+    else:
+        print 'did not find'
 
 .. nextslide::
 

@@ -122,8 +122,9 @@ a sintaxe ``except IOError, e:`` (e aponta para o objeto de exceção).
 HTTP -- urllib and urlparse
 ---------------------------
 
-The module *urllib* provides url fetching -- making a url look like a file
-you can read form. The *urlparse* module can take apart and put together urls.
+O modulo **urllib** permite acessar servidores HTTP por meios de requests GET
+e POST de maneira direta -- Tornando as urls acessiveis como um arquivo que
+possa ser lido. O **urlparse** permite você trabalhar com partes de url e unir urls.
 
 -urllib module docs
 -ufile = urllib.urlopen(url) -- returns a file like object for that url
@@ -145,9 +146,9 @@ you can read form. The *urlparse* module can take apart and put together urls.
         text = ufile.read()  ## read all its text
         print text
 
-The above code works fine, but does not include error handling if a url does
-not work for some reason. Here's a version of the function which adds
-try/except logic to print an error message if the url operation fails.
+O codigo acima funciona bem, mas não inclue tratamento de erros caso a url
+não exista. Segue uma versão de uma função que adiciona a lógica try/except
+exibindo uma mensagem em caso de erro.
 
 .. code-block:: python
 
@@ -164,5 +165,4 @@ try/except logic to print an error message if the url operation fails.
 Exercise
 --------
 
-To practice the file system and external-commands material, see the Copy
-Special Exercise. To practice the urllib material, see the Log Puzzle Exercise.
+Log Puzzle Exercise.
