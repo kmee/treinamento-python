@@ -218,3 +218,7 @@ pre {
         top: 0;
     }
 }
+
+.simple li {
+	font-size: 0.65em;
+}
