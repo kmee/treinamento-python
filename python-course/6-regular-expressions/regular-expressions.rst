@@ -239,7 +239,7 @@ Supondo que você tem texto com tags: <b>foo</b> e <i>assim por diante</i>
 
 Supondo que você está tentando encontrar cada tag com o padrão '(<*.>)' -- O que isso corresponde em primeiro lugar?
 
-O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* Faz com que a busca coincida todo "<b>foo</b> e <i>assim por diante</i>' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira > (por isso é chamado de ganancioso - Greedy).
+O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* Faz com que a busca coincida todo '<b>foo</b> e <i>assim por diante</i>' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira > (por isso é chamado de ganancioso - Greedy).
 
 .. nextslide::
 
