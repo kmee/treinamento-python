@@ -43,7 +43,7 @@ O poder das expressões regulares é que eles podem especificar padrões, não a
 
 * a,X,9, <- caracteres ordinários apenas correspondem a eles mesmos. Os meta-caracteres que não correspondem a sí próprio, porque eles têm significados especiais são eles: . ^ $ * +? {[] \\ | () (detalhes abaixo)
 * . . (a period) - corresponde a qualquer caractere único exceto nova linha '\\n'
-* \\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline [a-zA-Z0-9_]. \\W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.
+* \\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline ``[a-zA-Z0-9_]``. \\W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.
 
 .. nextslide::
 
@@ -147,6 +147,8 @@ Square brackets (colchetes) pode ser usado para indicar um conjunto de caractere
   if match:
     print match.group()  ## 'alice-b@google.com'
 
+.. nextslide::
+
 (Mais recursos de colchetes) - Você também pode usar um traço para indicar um intervalo, para isso [a-z] corresponde a todas as letras minúsculas. Para usar um hífen sem indicar um intervalo, basta colocar um hífen no final da string, por exemplo, [abc-]. Um chapéu (^) no início de um conjunto de colchetes inverte a operação, então [^ab] significa qualquer caractere exceto 'a' ou 'b'.
 
 Group Extraction
@@ -237,7 +239,7 @@ Esta é uma seção opcional que mostra uma técnica mais avançada de expressã
 
 Supondo que você tem texto com tags: <b>foo</b> e <i>assim por diante</i>
 
-Supondo que você está tentando encontrar cada tag com o padrão '(<*.>)' -- O que isso corresponde em primeiro lugar?
+Supondo que você está tentando encontrar cada tag com o padrão ``'(<*.>)'`` -- O que isso corresponde em primeiro lugar?
 
 O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* Faz com que a busca coincida todo '<b>foo</b> e <i>assim por diante</i>' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira > (por isso é chamado de ganancioso - Greedy).
 
@@ -245,11 +247,11 @@ O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* Faz com qu
 
 Existe uma extensão para a expressão regular, onde você adicionar um ? no final, tais como .*? ou .+?, que irá alterá-lo para não ser tão ganancioso. Agora eles param assim que puder. Assim, o padrão '(<.*?>)' vai ficar apenas '<b>' como o primeiro resultado, e '</b>' como o segundo resultado, e assim por diante para cada par de tags <..>. O recomendado é que normalmente você use um .*?, e logo em seguida encontre o marcador correto (>, neste caso) que força o final da chamada .*?.
 
-O *? extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito Útil EM linha de comando e tem uma flag onde se aceita utilizar padrões pcre.
+O ``*?`` extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito Útil em linha de comando e tem uma flag onde se aceita utilizar padrões pcre.
 
 .. nextslide::
 
-Uma técnica mais velha, porém, amplamente usado para codificar esta ideia de "todos estes caracteres, exceto parando em X" usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de .* para obter todos os caracteres, use [^>] *, que ignora todos os caracteres que não são > (o ^ "inverte" o conjunto de colchetes, de modo que corresponda qualquer caractere que não esteja presente nos colchetes).
+Uma técnica mais velha, porém, amplamente usado para codificar esta ideia de "todos estes caracteres, exceto parando em X" usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de ``.*`` para obter todos os caracteres, use ``[^>]*``, que ignora todos os caracteres que não são > (o ^ "inverte" o conjunto de colchetes, de modo que corresponda qualquer caractere que não esteja presente nos colchetes).
 
 
 Substituição (Opcional)
