@@ -248,9 +248,8 @@ Funções em Python são definidas desta forma:
             result = result + '!!!'
         return result
 
-::
-
-Note que todas as linhas que compoem a função ou instrução if, são agrupados pelo mesmo nível de identação.
+Note que todas as linhas que compoem a função ou instrução if, são agrupados
+pelo mesmo nível de identação.
 
 .. nextslide::
 

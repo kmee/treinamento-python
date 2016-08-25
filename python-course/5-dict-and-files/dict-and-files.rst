@@ -1,192 +1,213 @@
-Python Dict and File
-====================
+Dicionários e Arquivos Python
+=============================
 
 Dicionários
 -----------
-Qualquer programa python em execução tem diversos dicionários ativos simultaneamente
-mesmo que o codigo do programa do usuário não utilize explicitamente um dicionário.
+Qualquer programa python em execução tem diversos dicionários ativos
+simultaneamente mesmo que o codigo do programa do usuário não utilize
+explicitamente um dicionário.
 
 - Beaultiful Code (O'Reilly 2007), Cap 18, Python's Dictonary Implementation
 
 O tipo dict não só é amplamente usado em nossos programas como também é parte
-fundamental da implentação Python. Namespaces de módulos, atributos de classes
-e de instancia e argmentos nomeados de funções são algumas das contruções básicas
-em que os dicionários estão implementados. As próprias funções embutidas ficam
-em um dicionário: __builtins__.__dict__.
+fundamental da implementação Python. Namespaces de módulos, atributos de
+classes e de instancia e argumentos nomeados de funções são algumas das
+construções básicas em que os dicionários estão implementados. As próprias
+funções embutidas ficam em um dicionário:
+
+__builtins__.__dict__.
 
 Por causa desse papel essencial, os dicts são extremamente otimizados.
 As tabelas hash são o mecanismo responsável pelo seu auto desempenho.
 
 Hashable?
 ---------
-Um objeto é hashable se tiver um valor de hash que nunca muda durante seu tempo
-de vida e puder ser comparado com outros objetos.
+Um objeto é hashable se tiver um valor de hash que nunca muda durante seu
+tempo de vida e puder ser comparado com outros objetos.
 
+A estrutura de hash chave/valor (key/value) é chamada de “dict”. O conteúdo
+de um dict pode ser escrito como uma série de pares chave:valor (key:value)
+dentro de chave {}, ex: dict = {chave1:valor1, chave2:valor2, ... }. Um
+“dicionário vazio” é simplesmente um par de chaves {}.
 
+.. nextslide::
 
-Python's efficient key/value hash table structure is called a "dict". The contents
-of a dict can be written as a series of key:value pairs within braces { }, e.g.
-dict = {key1:value1, key2:value2, ... }. The "empty dict" is just an empty pair
-of curly braces {}.
-
-Looking up or setting a value in a dict uses square brackets, e.g. dict['foo']
-looks up the value under the key 'foo'. Strings, numbers, and tuples work as keys,
-and any type can be a value. Other types may or may not work correctly as keys
-(strings and tuples work cleanly since they are immutable). Looking up a value
-which is not in the dict throws a KeyError -- use "in" to check if the key
-is in the dict, or use dict.get(key) which returns the value or None if the
-key is not present (or get(key, not-found) allows you to specify what value
-to return in the not-found case).
+Para usar ou definir um valor em um dicionário use o formato com colchete,
+ex: dict[‘foo’] busca pelo valor dentro da chave ‘foo’. Strings, números e
+até tuplas (tuples) funcionam como chaves, e qualquer tipo pode ser um valor.
+Outros tipos podem ou não funcionar corretamente com chaves (strings e tuplas
+funcionam lindamente desde que sejam imutáveis). Buscando por um valor que não
+está no dicionário retorna um KeyError – use “in” para checar se uma chave
+existe no dicionário, ou use dict.get(chave) que retorna o valor ou None se
+a chave não existe (ou get(chave, nao-encontrado) permite a você especificar
+o valor do retorno se a chave não for encontrada).
 
 .. code-block:: python
 
-  ## Can build up a dict by starting with the the empty dict {}
-  ## and storing key/value pairs into the dict like this:
-  ## dict[key] = value-for-that-key
-  dict = {}
-  dict['a'] = 'alpha'
-  dict['g'] = 'gamma'
-  dict['o'] = 'omega'
+    ## Pode construer um dicionário iniciando um vazio {}
+    ## e guardando pares de chave/valor no dicionário neste formato:
+    ## dict[chave] = valor-para-esta-chave
+    dict = {}
+    dict['a'] = 'alpha'
+    dict['g'] = 'gamma'
+    dict['o'] = 'omega'
 
-  print dict  ## {'a': 'alpha', 'o': 'omega', 'g': 'gamma'}
+    print dict  ## {'a': 'alpha', 'o': 'omega', 'g': 'gamma'}
 
-  print dict['a']     ## Simple lookup, returns 'alpha'
-  dict['a'] = 6       ## Put new key/value into dict
-  'a' in dict         ## True
-  ## print dict['z']                  ## Throws KeyError
-  if 'z' in dict: print dict['z']     ## Avoid KeyError
-  print dict.get('z')  ## None (instead of KeyError)
+    print dict['a']     ## Busca simples, retorna 'alpha'
+    dict['a'] = 6       ## Altera chave/valor no dicionário
+    'a' in dict         ## True
+    ## print dict['z']                  ## Retorna KeyError
+    if 'z' in dict: print dict['z']     ## Evita KeyError
+    print dict.get('z')  ## None (ao invés de KeyError)
 
 
 .. image:: img/dict.png
     :align: center
 
-A for loop on a dictionary iterates over its keys by default.
-The keys will appear in an arbitrary order. The methods dict.keys()
-and dict.values() return lists of the keys or values explicitly.
-There's also an items() which returns a list of (key, value) tuples,
-which is the most efficient way to examine all the key value data in
-the dictionary. All of these lists can be passed to the sorted() function.
+.. nextslide::
+
+Um laço “for” em um dicionário interage sobre suas chaves por padrão.
+As chaves aparecerão em uma ordem arbitrária. Os métodos dict.keys() e
+dict.values() retornam listas de chaves ou valores explicitamente.
+Também existe um método items() que retorna a lista de tuplas (chave, valor),
+que é o método mais eficiente de examinar todasos dados em um dicionário.
+Todas estas listas podem ser passadas pela função sorted().
 
 .. code-block:: python
 
-  ## By default, iterating over a dict iterates over its keys.
-  ## Note that the keys are in a random order.
-  for key in dict: print key
-  ## prints a g o
+    ## Por padrão, interagindo em um dict interage com suas chaves.
+    ## Veja que as chaves estão em ordem randômica.
+    for key in dict: print key
+    ## prints a g o
 
-  ## Exactly the same as above
-  for key in dict.keys(): print key
+    ## Exatamente o mesmo resultado de cima
+    for key in dict.keys(): print key
 
-  ## Get the .keys() list:
-  print dict.keys()  ## ['a', 'o', 'g']
+    ## Pegue a lista de chaves:
+    print dict.keys()  ## ['a', 'o', 'g']
 
-  ## Likewise, there's a .values() list of values
-  print dict.values()  ## ['alpha', 'omega', 'gamma']
+    ## Do mesmo jeito, um .values() lista os valores
+    print dict.values()  ## ['alpha', 'omega', 'gamma']
 
-  ## Common case -- loop over the keys in sorted order,
-  ## accessing each key/value
-  for key in sorted(dict.keys()):
+    ## Uso comum – laço sobre as chaves ordenadas,
+    ## acessando cada chave/valor
+    for key in sorted(dict.keys()):
     print key, dict[key]
 
-  ## .items() is the dict expressed as (key, value) tuples
-  print dict.items()  ##  [('a', 'alpha'), ('o', 'omega'), ('g', 'gamma')]
+    ## .items() é o dicionário expresso como tuplas (chave, valor)
+    print dict.items()  ##  [('a', 'alpha'), ('o', 'omega'), ('g', 'gamma')]
 
-  ## This loop syntax accesses the whole dict by looping
-  ## over the .items() tuple list, accessing one (key, value)
-  ## pair on each iteration.
-  for k, v in dict.items(): print k, '>', v
-  ## a > alpha    o > omega     g > gamma
+    ## Esta sintaxe de laço acessa toda a lista repetindo
+    ## pela lista de tuplas .items(), acessando um par (chave, valor)
+    ## em cada interação.
+    for k, v in dict.items(): print k, '>', v
+    ## a > alpha    o > omega     g > gamma
 
-There are "iter" variants of these methods called iterkeys(), itervalues()
-and iteritems() which avoid the cost of constructing the whole list -- a
-performance win if the data is huge. However, I generally prefer the plain
-keys() and values() methods with their sensible names. In Python 3000 revision,
-the need for the iterkeys() variants is going away.
+.. nextslide::
 
-Strategy note: from a performance point of view, the dictionary is one of your
-greatest tools, and you should use it where you can as an easy way to organize
-data. For example, you might read a log file where each line begins with an
-IP address, and store the data into a dict using the IP address as the key,
-and the list of lines where it appears as the value. Once you've read in the
-whole file, you can look up any IP address and instantly see its list of
-lines. The dictionary takes in scattered data and makes it into something
-coherent.
+Existem “iter” variações destes métodos chamados itereys(), intervalues() e
+iteritems() que evitam o custo de contrus a lista inteira – traz um ganho
+de velocidade se os dados forem muitos. No entando eu normalmente prefiro
+os métodos padrões keys() e values() com os nomes sensíveis. Na revisão
+Python 3 a necessidade de usar as variants iterkeys() foi descartada.
 
-Dict Formatting
----------------
+.. nextslide::
 
-The % operator works conveniently to substitute values from a dict into a string by name:
+Nota de Estratégia: de um ponto de vista de velocidade, o dicionário é uma das
+melhores ferramentas e você deve usá-la sempre que puder com um método simples
+de organizar dados. Por exemplo, você pode ler um arquivo de log onde cada
+linha começa com um endereço IP, e guardar os dados usando o endereço IP
+como chave, e a lista de linhas onde ele aparece como valor. Assim que você
+ler todo o arquivos, você pode buscar por qualquer endereço IP e
+instantaneamente ver a sua lista de linhas. O dicionário pega dados
+disperses e o torna em algo coerente.
+
+Formatando Dicionários
+----------------------
+
+
+O operador % funciona conveniente para substituir valores de um dicionar
+em uma string pelo nome:
 
 .. code-block:: python
 
-  hash = {}
-  hash['word'] = 'garfield'
-  hash['count'] = 42
-  s = 'I want %(count)d copies of %(word)s' % hash  # %d for int, %s for string
-  # 'I want 42 copies of garfield'
+    hash = {}
+    hash['word'] = 'garfield'
+    hash['count'] = 42
+    s = 'Eu quero %(count)d cópias de %(word)s' % hash  # %d for int, %s for string
+    # 'Eu quero 42 cópias de garfield'
 
 Del
----
-The "del" operator does deletions. In the simplest case, it can remove the
-definition of a variable, as if that variable had not been defined. Del can
-also be used on list elements or slices to delete that part of the list and
-to delete entries from a dictionary.
+----
+
+O operador "del" faz deleções. No caso mais simples, ele pode remover
+a definição de uma variável, como se a variável não tivesse sido definida.
+Del também pode ser usada em uma lista de elementos ou pedaços para
+deletar parte da lista e para deletar entradas de um dicionário.
 
 .. code-block:: python
 
-  var = 6
-  del var  # var no more!
+    var = 6
+    del var  # var nunca mais!
 
-  list = ['a', 'b', 'c', 'd']
-  del list[0]     ## Delete first element
-  del list[-2:]   ## Delete last two elements
-  print list      ## ['b']
+    list = ['a', 'b', 'c', 'd']
+    del list[0]     ## Deleta primeiro elemento
+    del list[-2:]   ## Deleta últimos dois elementos
+    print list      ## ['b']
 
-  dict = {'a':1, 'b':2, 'c':3}
-  del dict['b']   ## Delete 'b' entry
-  print dict      ## {'a':1, 'c':3}
+    dict = {'a':1, 'b':2, 'c':3}
+    del dict['b']   ## Deleta a entrada 'b'
+    print dict      ## {'a':1, 'c':3}
 
-Files
------
+Arquivos
+--------
 
-The open() function opens and returns a file handle that can be used to read
-or write a file in the usual way. The code f = open('name', 'r') opens the
-file into the variable f, ready for reading operations, and use f.close()
-when finished. Instead of 'r', use 'w' for writing, and 'a' for append. The
-special mode 'rU' is the "Universal" option for text files where it's smart
-about converting different line-endings so they always come through as a
-simple '\n'. The standard for-loop works for text files, iterating through
-the lines of the file (this works only for text files, not binary files).
-The for-loop technique is a simple and efficient way to look at all the
-lines in a text file:
+A função open() abre e retorna um identificador de arquivo que pode ser usado
+para ler ou escrever um arquivo da maneira usual. O código f = open(‘name’,
+‘r’) abre o arquivo na variável f, pronto para operações de leitura, e
+use o método f.close(), quando terminar. Ao invés de ‘r’, use ‘w’ para
+escrita, e ‘a’ para adicionar (append). O modo especial ‘rU’ é a opção
+universal para arquivos de texto onde o Python usa inteligência para
+converter diferentes tipos de fim-de-linha (line-endings) para que eles
+sempre venham como um simples ‘\n’. O laço de repetição padrão “for-loop”
+funciona para arquivos de texto, interagindo pelas linhas do arquivo
+(isso só funciona para arquivos texto, não para arquivos binários).
+
+A técnica do for-loop é um simples e eficiência método para olhar todas as
+linhas em um arquivo de texto:
+
 
 .. code-block:: python
 
-  # Echo the contents of a file
+  # Mostra o conteúdo de um arquivo
   f = open('foo.txt', 'rU')
-  for line in f:   ## iterates over the lines of the file
-    print line,    ## trailing , so print does not add an end-of-line char
-                   ## since 'line' already includes the end-of line.
+  for line in f:   ## interage pelas linhas do arquivo
+    print line,    ## print não adicionar um character de fim-de-linha
+                   ## já que ‘line’ já tem um no fim de cada linha.
   f.close()
 
-Reading one line at a time has the nice quality that not all the file needs to
-fit in memory at one time -- handy if you want to look at every line in a 10
-gigabyte file without using 10 gigabytes of memory. The f.readlines() method
-reads the whole file into memory and returns its contents as a list of its
-lines. The f.read() method reads the whole file into a single string, which
-can be a handy way to deal with the text all at once, such as with regular
-expressions we'll see later.
+Ler uma linha de cada vez tem a boa qualidade de não precisar carregar todo
+o arquivo na memória de uma única vez – vem a calhar se você precisa olhar
+em todas as linhas de um arquivo de 10 gigabytes sem usar 10 gigabytes de
+memória. O método f.readlines() carrega todo o arquivo para a memória e
+retorna seu conteúdo como uma lista de suas linhas. O método f.read()
+carrega todo o arquivo em uma única string, que é um método que vem a
+calhar se você precisa lidar com o texto todo de uma vez, como em uma
+expressão regular que veremos mais tarde.
 
-For writing, f.write(string) method is the easiest way to write data to an open
-output file. Or you can use "print" with an open file, but the syntax is
-nasty: "print >> f, string". In python 3000, the print syntax will be fixed
-to be a regular function call with a file= optional argument: "print(string, file=f)".
+Para escrever, usar o método f.write(sring) é a maneira mais fácil de gravar
+dados em um arquivo aberto. Ou você pode usar “print” com um arquivo aberto,
+mas a sintaxe é feia: “print >> f, string”. Em python 3000, a sintaxe do
+comando print será fixada como uma expressão regular com um arquivo como
+argumento:
 
-Files Unicode
--------------
+"print(string, file=f)".
 
-The "codecs" module provides support for reading a unicode file.
+Arquivos Unicode
+----------------
+
+Os módulos "codecs" provém suporte para le arquivos em formato Unicode.
 
 .. code-block:: python
 
@@ -194,27 +215,31 @@ The "codecs" module provides support for reading a unicode file.
 
     f = codecs.open('foo.txt', 'rU', 'utf-8')
     for line in f:
-      # here line is a *unicode* string
+      # esta linha é uma string *Unicode*
 
-For writing, use f.write() since print does not fully support unicode.
 
-Exercise Incremental Development
---------------------------------
+Para gravar, use f.write() já que print não suporta integralmente formatos unicode.
 
-Building a Python program, don't write the whole thing in one step. Instead
-identify just a first milestone, e.g. "well the first step is to extract the
-list of words." Write the code to get to that milestone, and just print your
-data structures at that point, and then you can do a sys.exit(0) so the program
-does not run ahead into its not-done parts. Once the milestone code is working,
-you can work on code for the next milestone. Being able to look at the printout
-of your variables at one state can help you think about how you need to
-transform those variables to get to the next state. Python is very quick
-with this pattern, allowing you to make a little change and run the program
-to see how it works. Take advantage of that quick turnaround to build your
-program in little steps.
+Exercicio de Desenvolvimento Incremental
+----------------------------------------
 
-Exercise: wordcount.py
-----------------------
 
-Combining all the basic Python material -- strings, lists, dicts, tuples, files
- -- try the summary wordcount.py exercise in the Basic Exercises.
+Criando um programa Python, não escreve tudo em um único passo. Ao invés disso
+identifique apenas a primeira parte, ex: “o primeiro passo é extrais a lista
+de palavras.”. Escreva o código para cumprir esta parte, e apenas imprima
+sua estrutura de dados neste ponto, então você pode fazer um sys.exit(0)
+para que o programa não rode mais nada que ainda não esteja pronto. Assim
+que a parte do código estiver funcionando, você pode continuar trabalhando
+no código para a próxima parte. Ser capaz de olhar o printout (resultado)
+de suas variáveis em um estado pode ajudá-lo a pensar sobre como você
+precisa transformar as variáveis para chegar ao próximo estado.
+Python é muito rápido com estes padrões, permitindo a você fazer
+pequenas alterações e rodar o programa para ver o resultado.
+Aproveite esta característica para criar seu programa em pequenos passos.
+
+
+Exercício: wordcount.py
+-----------------------
+
+Combinando todo o material do Python básico – strings, listas, dicionários,
+tuplas e arquivos. ---- Tente fazer o exercício wordcount.py dos exercícios básicos.

@@ -4,7 +4,9 @@ Sorting
 Python Sorting
 --------------
 
-A maneira mais fácil de classificar um resultado é com a função sorted(list), que recebe uma lista e retorna uma nova lista com os elementos na ordem de classificação. A lista original não é alterado.
+A maneira mais fácil de classificar um resultado é com a função sorted(list),
+que recebe uma lista e retorna uma nova lista com os elementos na ordem de
+classificação. A lista original não é alterado.
 
 .. code-block:: python
 
@@ -14,9 +16,15 @@ A maneira mais fácil de classificar um resultado é com a função sorted(list)
 
 .. nextslide::
 
-É mais comum passar uma lista para a função sorted(), mas na verdade ele pode tomar como entrada qualquer tipo de coleção iterável. O antigo método list.sort() é uma alternativa detalhado abaixo. A função sorted() parece mais fácil de usar em comparação com sort(), então eu recomendo o uso da função sorted().
+É mais comum passar uma lista para a função sorted(), mas na verdade ele pode
+tomar como entrada qualquer tipo de coleção iterável. O antigo método
+list.sort() é uma alternativa detalhado abaixo. A função sorted() parece
+mais fácil de usar em comparação com sort(), então eu recomendo o uso da
+função sorted().
 
-A função sorted() pode ser personalizada com argumentos opcionais. O argumento opcional reverse=True do sorted(), por exemplo, sorted(list, reverse=True), retorna os valores ao contrário.
+A função sorted() pode ser personalizada com argumentos opcionais. O argumento
+opcional reverse=True do sorted(), por exemplo, sorted(list, reverse=True),
+retorna os valores ao contrário.
 
 .. code-block:: python
 
@@ -27,9 +35,15 @@ A função sorted() pode ser personalizada com argumentos opcionais. O argumento
 Custom Sorting With key=
 ------------------------
 
-Para classificação personalizada mais complexa, a função sorted() recebe um "key=" opcional que especifica uma função "key" que transforma cada elemento antes de comparação. A função key leva em 1 valor e retorna 1 valor, e o valor "proxy" retornado é utilizado para as comparações com o sort. 
+Para classificação personalizada mais complexa, a função sorted() recebe um
+"key=" opcional que especifica uma função "key" que transforma cada elemento
+antes de comparação. A função key leva em 1 valor e retorna 1 valor, e o valor
+"proxy" retornado é utilizado para as comparações com o sort.
 
-Por exemplo, com uma lista de strings, especificando key=len (construído com a função len()) classifica as strings pelo comprimento, do mais curto para o mais longo. O sort chama len() para cada string para obter a lista de valores de comprimento proxy, e os tipos com esses valores de proxy.
+Por exemplo, com uma lista de strings, especificando key=len (construído com
+a função len()) classifica as strings pelo comprimento, do mais curto para o
+mais longo. O sort chama len() para cada string para obter a lista de valores
+de comprimento proxy, e os tipos com esses valores de proxy.
 
 .. code-block:: python
 
@@ -68,22 +82,38 @@ Você também pode passar em sua própria MyFn como a função chave, como:
 
 .. nextslide::
 
-Para usar key= custom sorting, lembre-se que você deve fornecer uma função que recebe um valor e retorna o valor proxy para orientar a classificação. Há também um argumento opcional "cmp=cmpFn" para o sorted() que especifica uma função de comparação de dois argumentos que leva dois valores da lista e retorna negativo/0/positiva para indicar a sua ordenação. A função de comparação default para strings, inits, ... é cmp(a, b), então, você pode chamar quantas vezes quiser a função cmp() no seu comparador personalizado. O mais recente um argumento key=sorting é geralmente preferível.
+Para usar key= custom sorting, lembre-se que você deve fornecer uma função que
+recebe um valor e retorna o valor proxy para orientar a classificação.
+Há também um argumento opcional "cmp=cmpFn" para o sorted() que especifica
+uma função de comparação de dois argumentos que leva dois valores da lista
+e retorna negativo/0/positiva para indicar a sua ordenação. A função de
+comparação default para strings, inits, ... é cmp(a, b), então, você pode
+chamar quantas vezes quiser a função cmp() no seu comparador personalizado.
+O mais recente um argumento key=sorting é geralmente preferível.
 
 sort() method
 -------------
-Como uma alternativa para, o método sorted(),o metódo sort() em uma lista calassificada que lista os dados em ordem crescente, por exemplo, list.sort(). O método sort () altera a lista subjacente e retorna None, para usá-lo como este:
+Como uma alternativa para, o método sorted(),o metódo sort() em uma lista
+calassificada que lista os dados em ordem crescente, por exemplo, list.sort().
+O método sort () altera a lista subjacente e retorna None, para usá-lo como este:
 
 .. code-block:: python
 
     alist.sort () ## correta
     alist = blist.sort () ## NO incorreto, sort () retorna None
 
-A descrição acima é um equívoco muito comum com sort() - que *não retorna* a lista ordenada. O método sort() deve ser chamado em uma lista; ele não funciona em qualquer coleção enumerada (mas a função sorted() acima funciona em qualquer condição). O método sort() antecede a função sorted(), então você provavelmente vai vê-lo em códigos antigos. O método sort() não precisa criar uma nova lista, por isso pode ser um pouco mais rápido no caso em que os elementos a serem classificados já estão em uma lista.
+A descrição acima é um equívoco muito comum com sort() - que *não retorna* a
+lista ordenada. O método sort() deve ser chamado em uma lista; ele não funciona
+em qualquer coleção enumerada (mas a função sorted() acima funciona em
+qualquer condição). O método sort() antecede a função sorted(), então
+você provavelmente vai vê-lo em códigos antigos. O método sort() não precisa
+criar uma nova lista, por isso pode ser um pouco mais rápido no caso em que
+os elementos a serem classificados já estão em uma lista.
 
 Tuples
 ------
-Uma tuple é um agrupamento de elementos de tamanho fixo, tais como um (x, y) de coordenadas. tuples são como listas, exceto que eles são imutáveis e não mudam de tamanho (tuples não são estritamente imutável desde que um dos elementos contidos poderá ser mutável). Tuples desempenham um tipo de papel "struct" em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanho fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.
+Uma tuple é um agrupamento de elementos de tamanho fixo, tais como um (x, y) de
+coordenadas. tuples são como listas, exceto que eles são imutáveis e não mudam de tamanho (tuples não são estritamente imutável desde que um dos elementos contidos poderá ser mutável). Tuples desempenham um tipo de papel "struct" em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanho fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.
 
 .. nextslide::
 
@@ -144,6 +174,7 @@ A sintaxe é [ expr for var in list ] - o "for var in list" parece um for-loop r
 Você pode adicionar um caso de teste para a direita do for-loop para estreitar o resultado. O caso de teste é calculado para cada elemento, incluindo apenas os elementos em que o teste é verdadeiro.
 
 .. code-block:: python
+
   ## Select values <= 2
   nums = [2, 8, 1, 6]
   small = [ n for n in nums if n <= 2 ]  ## [2, 1]

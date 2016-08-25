@@ -99,6 +99,7 @@ retorna a, a+1, ... b-1 -- até o ultimo número menos um. A combinação de um 
 metodo range() permite criarmos for numérico tradicional.
 
 .. code-block:: python
+
     ## print the numbers from 0 through 99
     for i in range(100):
         print i
@@ -166,11 +167,11 @@ Erro comum: Note que os metodos acima não retornam a lista modificada, eles ape
 
 .. code-block:: python
 
-  list = [1, 2, 3]
-  print list.append(4)   ## NO, does not work, append() returns None
-  ## Correct pattern:
-  list.append(4)
-  print list  ## [1, 2, 3, 4]
+    list = [1, 2, 3]
+    print list.append(4)   ## NO, does not work, append() returns None
+    ## Correct pattern:
+    list.append(4)
+    print list  ## [1, 2, 3, 4]
 
 Criação de listas
 -----------------

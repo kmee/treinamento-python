@@ -3,23 +3,75 @@ Python Strings
 
 Python Strings
 --------------
-Python tem uma classe string default chamada "str" com muitos recursos úteis (há um módulo mais antigo chamado "string" que você não deve usar). Declarações de Strings podem ser delimitadas por aspas duplas ou simples, embora aspas simples são mais comumente usadas. Barra invertida para quebras de linhas trabalham da forma habitual tanto com aspas simples e aspas duplas citadas anteriormente - por exemplo, n '". Uma string com aspas duplas pode conter aspas simples sem qualquer problema (por exemplo," I didn't do it ") e da mesma forma uma string com aspas simples pode conter aspas duplas. A delcaração da string pode ocupar várias linhas, mas deve haver um barra invertida no final de cada linha de escape da nova linha. Strings literais entre aspas triplas, """ ou ''', pode se estender por várias linhas de texto.
+Python tem uma classe string default chamada "str" com muitos recursos úteis
+(há um módulo mais antigo chamado "string" que você não deve usar).
+
+Declarações de Strings podem ser delimitadas por aspas duplas ou simples,
+embora aspas simples são mais comumente usadas. Barra invertida para quebras de linhas trabalham da forma habitual tanto
+com aspas simples e aspas duplas citadas anteriormente -  por exemplo:
+
+\\n
+\\'
+\\"
+
+Uma string com aspas duplas pode conter aspas simples sem qualquer problema. Por ex:
+
+.. code-block:: python
+
+    a = " I didn't do it "
+
+.. nextslide::
+
+Da mesma forma uma string com **aspas simples** pode **conter aspas duplas**.
+A declaração da string pode ocupar várias linhas, mas deve haver um **barra
+invertida** no final de cada linha de escape da nova linha.
+
+Strings literais entre aspas triplas, """ ou ''', pode se estender por várias linhas de texto.
+
+.. code-block:: python
+
+    a  = """Strings literais entre aspas triplas,
+        podem se estender por várias linhas de texto."""
+
+.. nextslide::
+
+Strings python são "imutáveis", o que significa que elas não podem ser
+alteradas depois de serem criadas (strings em Java também utilizam este
+estilo imutável).
+
+Sabendo que as strings não podem ser alteradas, podemos construir novas
+strings como  valores concatenados.
+
+Assim, por exemplo a expressão ('Hello' + 'There') concatena as strings "Hello" e "There"
+resultando em uma nova string "Hello There".
 
 
 .. nextslide::
 
-Strings python são "imutáveis", o que significa que elas não podem ser alteradas depois de serem criadas (strings em Java também utilizam este estilo imutável). Sabendo que as strings não podem ser alteradas, podemos construir novas strings como  valores concatenados. Assim, por exemplo a expressão ('Hello' + 'There') concatena as strings "Hello" e "There" resultando em uma nova string "Hello There".
+Os caracteres de uma string podem ser acessados usando a sintaxe padrão [] e,
+como em Java e C++, Python utiliza indexação baseada em zero, por isso,
+se str é 'Hello' str[1] é a letra 'e'.
 
+Se o índice estiver fora dos limites da string, o Python gerará um erro.
+
+O estilo Python (ao contrário do Perl) é parar se ele não pode dizer o que
+fazer, em vez de apenas retornar um valor padrão. A sintaxe útil "slice"
+(abaixo) também trabalha para extrair qualquer substring de uma string.
+
+A função len (string) devolve o comprimento de uma string.
+
+A sintaxe [] e a função len() trabalham em qualquer tipo de sequência - strings, lists, etc...
 
 .. nextslide::
 
-Caracteres em uma seqüência podem ser acessados usando a sintaxe padrão [] e, como em Java e C++, Python utiliza indexação baseada em zero, por isso, se str é 'Hello' str[1] é a letra 'e'. Se o índice estiver fora dos limites da string, o Python gerará um erro. O estilo Python (ao contrário do Perl) é parar se ele não pode dizer o que fazer, em vez de apenas retornar um valor padrão. A sintaxe útil "slice" (abaixo) também trabalha para extrair qualquer substring de uma string. A função len (string) devolve o comprimento de uma string. A sintaxe [] e a função len() trabalham em qualquer tipo de sequência - strings, lists, etc...
+O Python tenta fazer suas operações funcionarem de forma consistente em
+diferentes tipos.
 
+Pegadinha para o novato em Python: não use "len" como um nome
+de variável para evitar o bloqueio a função len().
 
-.. nextslide::
-
-O Python tenta fazer suas operações funcionarem de forma consistente em diferentes tipos.
-Pegadinha para o novato em Python: não use "len" como um nome de variável para evitar o bloqueio a função len(). O operador '+' pode concatenar duas strings. Observe no código abaixo que as variáveis não são pré-declarados - apenas para atribuir.
+O operador '+' pode concatenar duas strings. Observe no código abaixo que as
+variáveis não são pré-declarados - apenas para atribuir.
 
 .. code-block:: python
 
@@ -31,7 +83,9 @@ Pegadinha para o novato em Python: não use "len" como um nome de variável para
 
 .. nextslide::
 
-Ao contrário do Java, o '+' não converte automaticamente números ou outros tipos de forma de string. A função str() converte valores a uma forma de string para que possam ser combinados com outras strings.
+Ao contrário do Java, o '+' não converte automaticamente números ou outros tipos
+de forma de string. A função str() converte valores a uma forma de string para
+que possam ser combinados com outras strings.
 
 .. code-block:: python
 
@@ -40,11 +94,35 @@ Ao contrário do Java, o '+' não converte automaticamente números ou outros ti
 	text = 'The value of pi is '  + str(pi)  ## yes
 
 
-Para números, os operadores padrão, +,/,* trabalham da maneira usual. Não há operador ++, porém, +=, -=, e outros funcionarão. Se você quiser uma divisão inteira, o correto é utilizar 2 barras - por exemplo, 6 // 5 é 1 (anterior para python 3000, uma / simples faz uma divisão int única com ints de qualquer maneira, mas a utilizar // é a melhor forma para indicar que você deseja divisão int.)
+Para números, os operadores padrão, +,/,* trabalham da maneira usual.
+Não há operador ++, porém, +=, -=, e outros funcionarão. Se você quiser
+uma divisão inteira, o correto é utilizar 2 barras - por exemplo:
+
+.. code-block:: python
+
+    # python 2.7
+    >>> 6/5
+    1
+    >>> 6.0/5.0
+    1.2
+
+.. code-block:: python
+
+    # python 3.4
+    >>> 6/5
+    1.2
+    >>> 6//5
+    1
 
 .. nextslide::
-opposite of split(), joins the elements in the given list together using the string as the delimiter. 
-O operador "print" imprime um ou mais itens python seguido por uma nova linha (deixe uma vírgula à direita no final dos itens para inibir a nova linha). Uma string "raw" é prefixado por um 'r' e passa todos os caracteres sem tratamento especial de barras invertidas, então r'x\nx' avalia a string length-4 'x\nx'. O prefixo 'u' permite que você escreva uma string unicode (Python tem muitos outros recursos de suporte unicode - veja a documentação abaixo).
+
+O operador "print" imprime um ou mais itens python seguido por uma nova
+linha.
+
+Uma string "raw" é prefixado por um 'r' e passa todos os caracteres sem
+tratamento especial de barras invertidas, então r'x\nx' avalia a string
+length-4 'x\nx'. O prefixo 'u' permite que você escreva uma string unicode
+(Python tem muitos outros recursos de suporte unicode - veja a documentação abaixo).
 
 .. code-block:: python
 
@@ -57,7 +135,12 @@ O operador "print" imprime um ou mais itens python seguido por uma nova linha (d
 
 String Methods
 --------------
-Aqui estão alguns dos métodos mais comuns de strings. Um método é como uma função, mas é executada "em um objeto". Se a variável s é uma string, então o código s.lower() executa método lower() nesse objeto e retorna o resultado (esta ideia de um método de execução em um objeto é uma das ideias básicas que compõem a Programação Orientada a Objetos, POO). Aqui estão alguns dos métodos mais comuns:
+Aqui estão alguns dos métodos mais comuns de strings. Um método é como uma
+função, mas é executada "em um objeto". Se a variável s é uma string, então
+o código s.lower() executa método lower() nesse objeto e retorna o resultado
+(esta ideia de um método de execução em um objeto é uma das ideias básicas
+que compõem a Programação Orientada a Objetos, POO). Aqui estão alguns dos
+métodos mais comuns:
 
 * s.lower(), s.upper() -- retorna a string em minúscula ou maiúscula
 * s.strip() -- retorna a string sem espaços no início e no fim
@@ -77,11 +160,19 @@ Aqui estão alguns dos métodos mais comuns de strings. Um método é como uma f
 
 .. nextslide::
 
-Python não tem um tipo de caracter separado. Em vez disso uma expressão como s[8] retorna uma string-length-1 contendo o caracter. Com essa string-length-1, os operadores ==, <=, ... fará todo o trabalho como seria de se esperar, portanto, na maior parte você não precisa saber que o Python não tem uma escala do tipo "char" separado.
+Python não tem um tipo de caracter separado. Em vez disso uma expressão como
+s[8] retorna uma string-length-1 contendo o caracter.
+
+Com essa string-length-1, os operadores ==, <=, ... fará todo o trabalho
+como seria de se esperar, portanto, na maior parte você não precisa saber
+que o Python não um variavel do tipo "char" separado.
 
 String Slices
 -------------
-A sintaxe "slice" é uma maneira prática para se referir a sub-partes de sequências - tipicamente strings e lists. O slice s [start:end] são os elementos que começam no início e que se estende até, mas não incluindo o fim. Suponha que temos s = "Hello"
+A sintaxe "slice" é uma maneira prática para se referir a sub-partes
+de sequências - tipicamente strings e lists. O slice s [start:end] são
+os elementos que começam no início e que se estende até, mas não incluindo
+o fim. Suponha que temos s = "Hello"
 
 .. image:: img/hello.png
     :align: center
@@ -97,9 +188,15 @@ A string 'hello' com indice de letras 0 1 2 3 4
 
 .. nextslide::
 
-Os números de índice baseado em zero padrão dão acesso fácil a caracteres perto do início da string. Como alternativa, o Python usa números negativos para dar fácil acesso aos caracteres no final da string: s[-1] é o último caractere 'o', s[-2] é 'l' o próximo ao último caracter, e assim por diante. Números de índice negativos são contados para trás a partir do final da string:
+Os números de índice baseado em zero padrão dão acesso fácil a caracteres
+perto do início da string. Como alternativa, o Python usa números negativos
+para dar fácil acesso aos caracteres no final da string: s[-1] é o último
+caractere 'o', s[-2] é 'l' o próximo ao último caracter, e assim por diante.
+
 
 .. nextslide::
+
+Números de índice negativos são contados para trás a partir do final da string:
 
 * s[-1] is 'o' -- último caracter (1º a partir do fim)
 * s[-4] is 'e' -- 4º a partir do fim
@@ -108,11 +205,23 @@ Os números de índice baseado em zero padrão dão acesso fácil a caracteres p
 
 .. nextslide::
 
-É óbvio que slices que para qualquer índice n, s[:n] + s[n:] == s. Isso funciona mesmo para n negativos ou fora dos limites. Ou dito de outra forma s[:n] e s[n:] sempre dividirão a string em duas partes, conservando todos os caracteres. Como veremos na seção lists mais tarde, slices também trabalham com listas.
+É óbvio que slices que para qualquer índice n, s[:n] + s[n:] == s.
+
+Isso funciona mesmo para n negativos ou fora dos limites.
+
+Ou dito de outra forma s[:n] e s[n:] sempre dividirão a string em duas partes,
+conservando todos os caracteres.
+
+Como veremos na seção lists mais tarde, slices também trabalham com listas.
 
 String %
--------
-Python tem um printf() - como facilitador para montar um string. O operador % assume um formato de string printf-type do lado esquerdo (%d int, %s string, %f/%g floating point), e os valores correspondentes em uma tupla à direita (uma tupla é feita de valores separados por vírgulas, geralmente agrupadas dentro de parênteses):
+--------
+
+Python tem um "printf()" - como facilitador para montar um string.
+O operador % assume um formato de string printf-type do lado esquerdo
+(%d int, %s string, %f/%g floating point), e os valores correspondentes em
+uma tupla à direita (uma tupla é feita de valores separados por vírgulas,
+geralmente agrupadas dentro de parênteses):
 
 .. code-block:: python
 
@@ -121,7 +230,14 @@ Python tem um printf() - como facilitador para montar um string. O operador % as
 
 .. nextslide::
 
-A linha acima é um metódo comprido - suponha que você quer dividi-lo em linhas separadas. Você não pode simplesmente dividir a linha após o '%' como você pode em outras linguagens, já que por padrão o Python trata cada linha como uma declaração separada (no lado positivo, é por isso que não precisa digitar ponto e vírgula em cada linha). Para corrigir isso, coloque toda a expressão em um conjunto externo de parênteses - então a expressão é permitida a abranger várias linhas. Esta técnica de códigos através de linhas trabalha com vários construtores agrupados detalhados abaixo: (),[],{}.
+A linha acima é um metódo comprido - suponha que você quer dividi-lo em linhas
+separadas. Você não pode simplesmente dividir a linha após o '%' como você
+pode em outras linguagens, já que por padrão o Python trata cada linha como
+uma declaração separada (no lado positivo, é por isso que não precisa
+digitar ponto e vírgula em cada linha). Para corrigir isso, coloque toda
+a expressão em um conjunto externo de parênteses - então a expressão é
+permitida a abranger várias linhas. Esta técnica de códigos através de
+linhas trabalha com vários construtores agrupados detalhados abaixo: (),[],{}.
 
 .. code-block:: python
 
@@ -132,7 +248,8 @@ A linha acima é um metódo comprido - suponha que você quer dividi-lo em linha
 i18n Strings (Unicode)
 ----------------------
 
-Strings regulares do Python *não* são unicode, elas são simplesmente bytes. Para criar uma string unicode, use o prefixo 'u' na string:
+Strings regulares do Python *não* são unicode, elas são simplesmente bytes.
+Para criar uma string unicode, use o prefixo 'u' na string:
 
 .. code-block:: python
 
@@ -141,11 +258,18 @@ Strings regulares do Python *não* são unicode, elas são simplesmente bytes. P
 	u'A unicode \u018e string \xf1'
 
 
-A sequência de caracteres Unicode é um tipo diferente de objeto de string regular "str", mas a seqüência de caracteres Unicode é compatível (que compartilham a superclasse comum "basestring"), e as várias bibliotecas como expressões regulares funcionam corretamente se passarmos uma seqüência de caracteres Unicode em vez de uma sequência regular.
+A sequência de caracteres Unicode é um tipo diferente de objeto de string
+regular "str", mas a seqüência de caracteres Unicode é compatível
+(que compartilham a superclasse comum "basestring"), e as várias bibliotecas
+como expressões regulares funcionam corretamente se passarmos uma seqüência
+de caracteres Unicode em vez de uma sequência regular.
 
 .. nextslide::
 
-Para converter uma sequência de caracteres Unicode para bytes com uma codificação como 'utf-8', chame o método ('utf-8') na string Unicode. Indo na outra direção, a função unicode(s, encoding) converte bytes codificados para uma string unicode:
+Para converter uma sequência de caracteres Unicode para bytes com uma
+codificação como 'utf-8', chame o método ('utf-8') na string Unicode.
+Indo na outra direção, a função unicode(s, encoding) converte bytes
+codificados para uma string unicode:
 
 .. code-block:: python
 
@@ -159,16 +283,42 @@ Para converter uma sequência de caracteres Unicode para bytes com uma codifica�
 
 .. nextslide::
 
-O print default não funciona plenamente com strings unicode. Você pode utilizar encode() primeiro para imprimir em utf-8 ou qualquer outra. Na seção de leitura de arquivo, há um exemplo que mostra como abrir um arquivo de texto com alguns codificação e ler as strings unicode. Observe que o manuseio unicode é uma área onde Python 3000 é significativamente limpo vs. o comportamento do Python 2.x descrito aqui.
+O print default não funciona plenamente com strings unicode. Você pode utilizar
+encode() primeiro para imprimir em utf-8 ou qualquer outra. Na seção de leitura
+de arquivo, há um exemplo que mostra como abrir um arquivo de texto com
+alguns codificação e ler as strings unicode. Observe que o manuseio unicode é
+uma área onde Python 3.0 é significativamente limpo vs. o comportamento do
+Python 2.x descrito aqui.
 
 If Statement
 ------------
 
-Python não  utiliza {} para incluir blocos de código para if/strings/funções etc .. Em vez disso, Python usa dois pontos (:) e recuo/espaço em branco com declarações do grupo. O teste booleano para um if não precisa estar em parênteses (grande diferença do C++/Java), e pode ter as cláusulas *elif* e *else* (mnemonic: a palavra "elif" tem o mesmo comprimento que a palavra "else").
+Python não  utiliza {} para incluir blocos de código para if/strings/funções etc ..
+Em vez disso, Python usa dois pontos (:) e recuo/espaço em branco com declarações
+do grupo. O teste booleano para um if não precisa estar em parênteses (grande
+diferença do C++/Java), e pode ter as cláusulas *elif* e *else* (mnemonic:
+a palavra "elif" tem o mesmo comprimento que a palavra "else").
 
 .. nextslide::
 
-Qualquer valor pode ser usado como um if-test. Todos os valores "zero" contam como falso: None, 0, string vazia, lista vazia, dicionário vazio. Há também um tipo booleano com dois valores: verdadeiro e falso (convertido para um int, estes são 1 e 0). Python tem as operações de comparação habituais: ==, !=, <, <=,>,>=. Ao contrário de Java e C, == está preparado para funcionar corretamente com strings. Os operadores booleanos são identificados pelas palavras *and*, *or*, *not* (Python não usa o estilo C, && ||!). Observe como cada bloco declarado de then/else começa com um : e as demonstrações são agrupados por sua identação:
+Qualquer valor pode ser usado como um if-test.
+
+Todos os valores "zero" contam como falso: None, 0, string vazia, lista vazia, dicionário vazio.
+
+Há também um tipo booleano com dois valores: verdadeiro e falso (convertido
+para um int, estes são 1 e 0).
+
+Python tem as operações de comparação habituais: ==, !=, <, <=,>,>=.
+
+Ao contrário de Java e C, == está preparado para funcionar corretamente com
+strings.
+
+Os operadores booleanos são identificados pelas palavras *and*, *or*, *not*
+
+**(Python não usa o estilo C, && ||!)**.
+
+Observe como cada bloco declarado de then/else é seguido de um":"
+e as demonstrações são agrupados por sua identação:
 
 .. nextslide::
 
@@ -186,7 +336,15 @@ Qualquer valor pode ser usado como um if-test. Todos os valores "zero" contam co
 
 .. nextslide::
 
-Acho que omitindo o ":" é o meu erro de sintaxe mais comum quando se digita no tipo de código acima, provavelmente já que é uma coisa adicional para digitar vs. meus hábitos C ++ / Java. Além disso, não colocar o teste booleano em parênteses - que é um hábito C / Java. Se o código é curto, você pode colocar o código na mesma linha após ":", como este (isso se aplica a funções, loops, etc. também), embora algumas pessoas acham que é mais legível para o espaço as coisas em linhas separadas.
+Omitir o ":" é o um erro comum sintaxe mais comum quando se digita o tipo de código acima,
+provavelmente já que é uma coisa adicional para digitar vs. meus hábitos C ++ / Java.
+
+Além disso, não colocar o teste booleano em parênteses - que é um hábito C / Java.
+
+Se o código é curto, você pode colocar o código na mesma linha após ":",
+
+Como o exemplo abaixo (isso se aplica a funções, loops, etc. também), embora algumas pessoas
+acham que é mais legível para o espaço as coisas em linhas separadas.
 
 .. code-block:: python
 
@@ -195,4 +353,19 @@ Acho que omitindo o ":" é o meu erro de sintaxe mais comum quando se digita no 
 
 
 Exercício: string1.py
---------------------
+---------------------
+
+Acesse o endereço http://192.168.1.104:8888
+
+Baixe o arquivo string1.py
+
+Exercicio A:
+
+.. code-block:: python
+
+    # Dado um numero de donuts, retorne um string
+    # contendo 'Number of donuts: <count>', onde <count> é o numero recebido.
+    # Entretanto, se o numero for 10 ou mais, use a palavra 'many'
+    # ao invez do contador.
+    # Então donuts(5) returns 'Number of donuts: 5'
+    # e donuts(23) returns 'Number of donuts: many'
