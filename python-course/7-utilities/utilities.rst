@@ -13,20 +13,13 @@ com o sistema operacional.
 O modulo **shutil** pode copiar arquivos
 
 - `os module docs <http://docs.python.org/lib/module-os.html/>`_
-- filenames = os.listdir(dir) -- list of filenames in that directory path
-(not including . and ..). The filenames are just the names in the directory,
-not their absolute paths.
-- os.path.join(dir, filename) -- given a filename from the above list, use
-this to put the dir and filename together to make a path
-- os.path.abspath(path) -- given a path, return an absolute form, e.g.
-/home/nick/foo/bar.html
-- os.path.dirname(path), os.path.basename(path) -- given dir/foo/bar.html,
-return the dirname "dir/foo" and basename "bar.html"
+- filenames = os.listdir(dir) -- list of filenames in that directory path (not including . and ..). The filenames are just the names in the directory, not their absolute paths.
+- os.path.join(dir, filename) -- given a filename from the above list, use this to put the dir and filename together to make a path
+- os.path.abspath(path) -- given a path, return an absolute form, e.g. /home/nick/foo/bar.html
+- os.path.dirname(path), os.path.basename(path) -- given dir/foo/bar.html, return the dirname "dir/foo" and basename "bar.html"
 - os.path.exists(path) -- true if it exists
-- os.mkdir(dir_path) -- makes one dir, os.makedirs(dir_path) makes all the
- needed dirs in this path
-- shutil.copy(source-path, dest-path) -- copy a file (dest path directories
-should exist)
+- os.mkdir(dir_path) -- makes one dir, os.makedirs(dir_path) makes all the needed dirs in this path
+- shutil.copy(source-path, dest-path) -- copy a file (dest path directories should exist)
 
 .. code-block:: python
 
@@ -52,23 +45,12 @@ O modulo **commands** é uma forma simples de executar um comando externo e
 capturar sua saida.
 
 - commands module docs
-- (status, output) = commands.getstatusoutput(cmd) -- runs the command, waits
-for it to exit, and returns its status int and output text as a tuple.  The
-command is run with its standard output and standard error combined into   the
-one output text. The status will be non-zero if the command failed.  Since
-the standard-err of the command is captured, if it fails, we need to  print
-some indication of what happened.
-- output = commands.getoutput(cmd) -- as above, but without the status int.
-- There is a commands.getstatus() but it does something else, so don't use it
--- dumbest bit of method naming ever!
-- If you want more control over the running of the sub-process, see the
-"popen2" module (http://docs.python.org/lib/module-popen2.html)
-- There is also a simple os.system(cmd) which runs the command and dumps its
-output onto your output and returns its error code. This works if you want to
-run the command but do not need to capture its output into your python data
-structures.
+- (status, output) = commands.getstatusoutput(cmd) -- runs the command, waits for it to exit, and returns its status int and output text as a tuple.  The command is run with its standard output and standard error combined into   the one output text. The status will be non-zero if the command failed.  Since the standard-err of the command is captured, if it fails, we need to  print some indication of what happened. - output = commands.getoutput(cmd) -- as above, but without the status int.
+- There is a commands.getstatus() but it does something else, so don't use it -- dumbest bit of method naming ever!
+- If you want more control over the running of the sub-process, see the "popen2" module (http://docs.python.org/lib/module-popen2.html)
+- There is also a simple os.system(cmd) which runs the command and dumps its output onto your output and returns its error code. This works if you want to run the command but do not need to capture its output into your python data structures.
 
-.. code-block:: python::
+.. code-block:: python
 
     ## Given a dir path, run an external 'ls -l' on it --
     ## shows how to call an external program
@@ -125,17 +107,11 @@ you can read form. The *urlparse* module can take apart and put together urls.
 
 -urllib module docs
 -ufile = urllib.urlopen(url) -- returns a file like object for that url
--text = ufile.read() -- can read from it, like a file (readlines() etc. also
-work)
--info = ufile.info() -- the meta info for that request. info.gettype() is the
- mime time, e.g. 'text/html'
--baseurl = ufile.geturl() -- gets the "base" url for the request, which may
-be different from the original because of redirects
--urllib.urlretrieve(url, filename) -- downloads the url data to the given
-file path
--urlparse.urljoin(baseurl, url) -- given a url that may or may not be full,
-and the baseurl of the page it comes from, return a full url. Use geturl()
-above to provide the base url.
+-text = ufile.read() -- can read from it, like a file (readlines() etc. also work)
+-info = ufile.info() -- the meta info for that request. info.gettype() is the  mime time, e.g. 'text/html'
+-baseurl = ufile.geturl() -- gets the "base" url for the request, which may be different from the original because of redirects
+-urllib.urlretrieve(url, filename) -- downloads the url data to the given file path
+-urlparse.urljoin(baseurl, url) -- given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.
 
 .. code-block:: python
 
