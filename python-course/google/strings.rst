@@ -4,17 +4,17 @@ Python Strings
 Python Strings
 --------------
 Python tem uma classe string default chamada "str" com muitos recursos úteis
-(há um módulo mais antigo chamado "string" que você não deve usar).
+(há um módulo mais antigo chamado "string" que não deve ser usado).
 
 Declarações de Strings podem ser delimitadas por aspas duplas ou simples,
-embora aspas simples são mais comumente usadas. Barra invertida para quebras de linhas trabalham da forma habitual tanto
+embora aspas simples sejam mais comumente usadas. Barras invertidas para quebras de linhas trabalham da forma habitual tanto
 com aspas simples e aspas duplas citadas anteriormente -  por exemplo:
 
 \\n
 \\'
 \\"
 
-Uma string com aspas duplas pode conter aspas simples sem qualquer problema. Por ex:
+Uma string com aspas duplas pode conter aspas simples sem qualquer problema. Por exemplo:
 
 .. code-block:: python
 
@@ -26,7 +26,7 @@ Da mesma forma uma string com **aspas simples** pode **conter aspas duplas**.
 A declaração da string pode ocupar várias linhas, mas deve haver um **barra
 invertida** no final de cada linha de escape da nova linha.
 
-Strings literais entre aspas triplas, """ ou ''', pode se estender por várias linhas de texto.
+Strings literais entre aspas triplas, """ ou ''', podem se estender por várias linhas de texto.
 
 .. code-block:: python
 
@@ -42,7 +42,7 @@ estilo imutável).
 Sabendo que as strings não podem ser alteradas, podemos construir novas
 strings como  valores concatenados.
 
-Assim, por exemplo a expressão ('Hello' + 'There') concatena as strings "Hello" e "There"
+Assim, por exemplo, a expressão ('Hello' + 'There') concatena as strings "Hello" e "There"
 resultando em uma nova string "Hello There".
 
 
@@ -119,7 +119,7 @@ uma divisão inteira, o correto é utilizar 2 barras - por exemplo:
 O operador "print" imprime um ou mais itens python seguido por uma nova
 linha.
 
-Uma string "raw" é prefixado por um 'r' e passa todos os caracteres sem
+Uma string "raw" é prefixada por um 'r' e passa todos os caracteres sem
 tratamento especial de barras invertidas, então r'x\nx' avalia a string
 length-4 'x\nx'. O prefixo 'u' permite que você escreva uma string unicode
 (Python tem muitos outros recursos de suporte unicode - veja a documentação abaixo).
@@ -136,7 +136,7 @@ length-4 'x\nx'. O prefixo 'u' permite que você escreva uma string unicode
 String Methods
 --------------
 Aqui estão alguns dos métodos mais comuns de strings. Um método é como uma
-função, mas é executada "em um objeto". Se a variável s é uma string, então
+função, mas é executado "em um objeto". Se a variável s é uma string, então
 o código s.lower() executa método lower() nesse objeto e retorna o resultado
 (esta ideia de um método de execução em um objeto é uma das ideias básicas
 que compõem a Programação Orientada a Objetos, POO). Aqui estão alguns dos
@@ -149,29 +149,29 @@ métodos mais comuns:
 .. nextslide::
 
 * s.startswith('other'), s.endswith('other') -- testa se a string inicia ou termina com dados de outra string
-* s.find('other') -- procura dados em uma string (não procura expressão regular) e retorna o valor do primeiro caracter. Se retornar -1 o dado não foi encontrado
+* s.find('other') -- procura dados em uma string (não procura expressão regular) e retorna o valor do primeiro caractere. Se retornar -1 o dado não foi encontrado
 * s.replace('old', 'new') -- retorna uma string quando todas as ocorrências de 'old' forem subistituidas por 'new'
 
 .. nextslide::
 
 * s.split('delim') -- retorna uma lista de substrings separadas por um delimitador. O delimitador não é uma expressão regular, é texto puro. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. Caso não seja definido um delimitador, será utilizado por padrão os espaços entre os caracteres
-* s.join(list) -- oposto do split (), junta os elementos de uma lista de dado, utilizando a string como o delimitador. Exemplo '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
-* Uma busca no google por "python str" deverá levar você ao site oficial do Python, `python.org <http://docs.python.org/library/stdtypes.html#string-methods>`_ , que contém uma lista com todos os metódos que podem ser utilizados.
+* s.join(list) -- oposto do split (), junta os elementos de uma lista de dados, utilizando a string como o delimitador. Exemplo: '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
+* Uma busca no Google por "python str" deverá levar você ao site oficial do Python, `python.org <http://docs.python.org/library/stdtypes.html#string-methods>`_ , que contém uma lista com todos os metódos que podem ser utilizados.
 
 .. nextslide::
 
-Python não tem um tipo de caracter separado. Em vez disso uma expressão como
-s[8] retorna uma string-length-1 contendo o caracter.
+Python não tem um tipo de caractere separado. Em vez disso uma expressão como
+s[8] retorna uma string-length-1 contendo o caractere.
 
-Com essa string-length-1, os operadores ==, <=, ... fará todo o trabalho
+Com essa string-length-1, os operadores ==, <=, ... farão todo o trabalho
 como seria de se esperar, portanto, na maior parte você não precisa saber
-que o Python não um variavel do tipo "char" separado.
+que o Python não um variável do tipo "char" separado.
 
 String Slices
 -------------
 A sintaxe "slice" é uma maneira prática para se referir a sub-partes
-de sequências - tipicamente strings e lists. O slice s [start:end] são
-os elementos que começam no início e que se estende até, mas não incluindo
+de sequências - tipicamente strings e lists. Os slices s [start:end] são
+os elementos que começam no início e que se estendem até, mas não incluindo
 o fim. Suponha que temos s = "Hello"
 
 .. image:: img/hello.png
@@ -179,29 +179,29 @@ o fim. Suponha que temos s = "Hello"
 
 .. nextslide::
 
-A string 'hello' com indice de letras 0 1 2 3 4 
+A string 'hello' com índice de letras 0 1 2 3 4 
 
-* s[1:4] is 'ell' -- caracter começando com 1 e não exibindo o 4
+* s[1:4] is 'ell' -- caractere começando com 1 e não exibindo o 4
 * s[1:] is 'ello' -- omite o primeiro caracter (0)
 * s[:] is 'Hello' -- uma cópia da string (é o jeito pythonico de copiar uma sequência como uma string ou lista)
 * s[1:100] is 'ello' -- Um index que é muito grande e será truncado até o comprimento real da string
 
 .. nextslide::
 
-Os números de índice baseado em zero padrão dão acesso fácil a caracteres
+Os números de índice baseados em zero padrão dão acesso fácil a caracteres
 perto do início da string. Como alternativa, o Python usa números negativos
 para dar fácil acesso aos caracteres no final da string: s[-1] é o último
-caractere 'o', s[-2] é 'l' o próximo ao último caracter, e assim por diante.
+caractere 'o', s[-2] é 'l' o próximo ao último caractere, e assim por diante.
 
 
 .. nextslide::
 
 Números de índice negativos são contados para trás a partir do final da string:
 
-* s[-1] is 'o' -- último caracter (1º a partir do fim)
+* s[-1] is 'o' -- último caractere (1º a partir do fim)
 * s[-4] is 'e' -- 4º a partir do fim
 * s[:-3] is 'He' -- indo até o início mas não incluindo os últimos 3 caracteres.
-* s[-3:] is 'llo' -- iniciando com o 3º caracter a partir do final e extendendo até o fim da string.
+* s[-3:] is 'llo' -- iniciando com o 3º caractere a partir do final e extendendo até o fim da string.
 
 .. nextslide::
 
@@ -217,11 +217,11 @@ Como veremos na seção lists mais tarde, slices também trabalham com listas.
 String %
 --------
 
-Python tem um "printf()" - como facilitador para montar um string.
+Python tem um "printf()" - como facilitador para montar uma string.
 O operador % assume um formato de string printf-type do lado esquerdo
 (%d int, %s string, %f/%g floating point), e os valores correspondentes em
 uma tupla à direita (uma tupla é feita de valores separados por vírgulas,
-geralmente agrupadas dentro de parênteses):
+geralmente agrupados dentro de parênteses):
 
 .. code-block:: python
 
@@ -231,8 +231,8 @@ geralmente agrupadas dentro de parênteses):
 .. nextslide::
 
 A linha acima é um metódo comprido - suponha que você quer dividi-lo em linhas
-separadas. Você não pode simplesmente dividir a linha após o '%' como você
-pode em outras linguagens, já que por padrão o Python trata cada linha como
+separadas. Você não pode simplesmente dividir a linha após o '%' como é possível
+em outras linguagens, já que por padrão o Python trata cada linha como
 uma declaração separada (no lado positivo, é por isso que não precisa
 digitar ponto e vírgula em cada linha). Para corrigir isso, coloque toda
 a expressão em um conjunto externo de parênteses - então a expressão é
@@ -261,7 +261,7 @@ Para criar uma string unicode, use o prefixo 'u' na string:
 A sequência de caracteres Unicode é um tipo diferente de objeto de string
 regular "str", mas a seqüência de caracteres Unicode é compatível
 (que compartilham a superclasse comum "basestring"), e as várias bibliotecas
-como expressões regulares funcionam corretamente se passarmos uma seqüência
+como expressões regulares funcionam corretamente se passarmos uma sequência
 de caracteres Unicode em vez de uma sequência regular.
 
 .. nextslide::
@@ -286,7 +286,7 @@ codificados para uma string unicode:
 O print default não funciona plenamente com strings unicode. Você pode utilizar
 encode() primeiro para imprimir em utf-8 ou qualquer outra. Na seção de leitura
 de arquivo, há um exemplo que mostra como abrir um arquivo de texto com
-alguns codificação e ler as strings unicode. Observe que o manuseio unicode é
+alguma codificação e ler as strings unicode. Observe que o manuseio unicode é
 uma área onde Python 3.0 é significativamente limpo vs. o comportamento do
 Python 2.x descrito aqui.
 
@@ -318,7 +318,7 @@ Os operadores booleanos são identificados pelas palavras *and*, *or*, *not*
 **(Python não usa o estilo C, && ||!)**.
 
 Observe como cada bloco declarado de then/else é seguido de um":"
-e as demonstrações são agrupados por sua identação:
+e as demonstrações são agrupadas por sua identação:
 
 .. nextslide::
 
@@ -344,7 +344,7 @@ Além disso, não colocar o teste booleano em parênteses - que é um hábito C 
 Se o código é curto, você pode colocar o código na mesma linha após ":",
 
 Como o exemplo abaixo (isso se aplica a funções, loops, etc. também), embora algumas pessoas
-acham que é mais legível para o espaço as coisas em linhas separadas.
+achem que é mais legível para o espaço as coisas em linhas separadas.
 
 .. code-block:: python
 
@@ -359,13 +359,13 @@ Acesse o endereço http://192.168.1.104:8888
 
 Baixe o arquivo string1.py
 
-Exercicio A:
+Exercício A:
 
 .. code-block:: python
 
-    # Dado um numero de donuts, retorne um string
-    # contendo 'Number of donuts: <count>', onde <count> é o numero recebido.
-    # Entretanto, se o numero for 10 ou mais, use a palavra 'many'
-    # ao invez do contador.
+    # Dado um número de donuts, retorne um string
+    # contendo 'Number of donuts: <count>', onde <count> é o número recebido.
+    # Entretanto, se o número for 10 ou mais, use a palavra 'many'
+    # ao invés do contador.
     # Então donuts(5) returns 'Number of donuts: 5'
     # e donuts(23) returns 'Number of donuts: many'
