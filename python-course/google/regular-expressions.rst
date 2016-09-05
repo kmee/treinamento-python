@@ -4,11 +4,11 @@ Expressões Regulares
 Expressões Regulares
 --------------------
 
-As expressões regulares são uma linguagem poderosa para a buscas de padrões de texto. Esta página dá uma introdução básica à expressões regulares suficientes para os nossos exercícios Python e mostra como expressões regulares trabalham em Python. 
+As expressões regulares são uma linguagem poderosa para a busca de padrões de texto. Esta página dá uma introdução básica à expressões regulares suficientes para os nossos exercícios Python e mostra como expressões regulares trabalham em Python. 
 
 O módulo Python "re" oferece suporte a expressões regulares.
 
-Em Python uma pesquisa de expressões regulares são tipicamente escritas como:
+Em Python uma pesquisa de expressões regulares é tipicamente escrita como:
 
 .. code-block:: python
 
@@ -16,7 +16,7 @@ Em Python uma pesquisa de expressões regulares são tipicamente escritas como:
 
 .. nextslide::
 
-O método re.search() busca um padrão de expressões regulares e strings e realiza a busca dentro da string. Se a pesquisa for bem sucedida, search() retorna um objeto com dados ou None caso contrário. Portanto, a busca é geralmente seguida imediatamente por uma instrução if para testar se a busca bem-sucedida, como mostrado no exemplo a seguir que procura o padrão 'word:' seguido por 3 letras (detalhes abaixo):
+O método re.search() busca um padrão de expressões regulares e strings e realiza a busca dentro da string. Se a pesquisa for bem sucedida, search() retorna um objeto com dados ou None caso contrário. Portanto, a busca é geralmente seguida imediatamente por uma instrução if para testar se a busca foi bem-sucedida, como mostrado no exemplo a seguir que procura o padrão 'word:' seguido por 3 letras (detalhes abaixo):
 
 .. code-block:: python
 
@@ -32,16 +32,16 @@ O método re.search() busca um padrão de expressões regulares e strings e real
 
 O código match = re.search(pat, str) armazena o resultado da pesquisa em uma variável chamada "match". Em seguida, a instrução if testa o match -- Se for verdadeiro o resultado da busca e match.group() será o texto correspondente (por exemplo, 'word:cat'). Caso contrário, se a resultado é falso (Nada para ser mais específico), então não houve sucesso na busca, e não há nenhum texto correspondente.
 
-O 'r' no início da string padrão designa uma string python "row" que passa por barras invertidas sem mudança que é muito útil para expressões regulares (Java precisa deste recurso). 
+O 'r' no início da string padrão designa uma string python "row" que passa por barras invertidas sem mudança, o que é muito útil para expressões regulares (Java precisa deste recurso). 
 
 Eu recomendo que você sempre escrever strings com o 'r'.
 
 Padrões básicos
 ---------------
 
-O poder das expressões regulares é que eles podem especificar padrões, não apenas caracteres fixos. Aqui estão os padrões mais básicos que correspondem a caracteres individuais:
+O poder das expressões regulares é que elas podem especificar padrões, não apenas caracteres fixos. Aqui estão os padrões mais básicos que correspondem a caracteres individuais:
 
-* a,X,9, <- caracteres ordinários apenas correspondem a eles mesmos. Os meta-caracteres que não correspondem a sí próprio, porque eles têm significados especiais são eles: . ^ $ * +? {[] \\ | () (detalhes abaixo)
+* a,X,9, <- caracteres ordinários apenas correspondem a eles mesmos. Os meta-caracteres que não correspondem a si mesmos, porque eles têm significados especiais são eles: . ^ $ * +? {[] \\ | () (detalhes abaixo)
 * . . (a period) - corresponde a qualquer caractere único exceto nova linha '\\n'
 * \\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline ``[a-zA-Z0-9_]``. \\W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.
 
@@ -55,7 +55,7 @@ O poder das expressões regulares é que eles podem especificar padrões, não a
 .. nextslide::
 
 * ^ = Começar, $ = end - coincidir com o início ou o fim da string
-* \\ - Inibir a "excepcionalidade" de um caracter. Assim, por exemplo, usar \\. para coincidir com um período ou \\ para coincidir com uma barra. Se você não tem certeza se um caracter tem um significado especial, como '@', você pode colocar uma barra na frente dele, \\@, para ter certeza que é tratada apenas como um caracter.
+* \\ - Inibir a "excepcionalidade" de um caractere. Assim, por exemplo, usar \\. para coincidir com um período ou \\ para coincidir com uma barra. Se você não tem certeza se um caractere tem um significado especial, como '@', você pode colocar uma barra na frente dele, \\@, para ter certeza que é tratado apenas como um caractere.
 
 Exemplos Básicos
 ----------------
@@ -135,11 +135,11 @@ Suponha que você queira encontrar o endereço de e-mail dentro do string 'xyz a
     print match.group()  ## 'b@google'
 
 
-A pesquisa não obteu todo o endereço de e-mail, neste caso, porque o \\w não corresponde ao '-' ou '.' no endereço. Vamos corrigir isso usando a expressão regular apresenta abaixo.
+A pesquisa não obteve todo o endereço de e-mail, neste caso, porque o \\w não corresponde ao '-' ou '.' no endereço. Vamos corrigir isso usando a expressão regular apresentada abaixo.
 
 Square Brackets
 ---------------
-Square brackets (colchetes) pode ser usado para indicar um conjunto de caracteres, então [abc] combina 'a' ou 'b' ou 'c'. Os códigos \\w, \\s etc trabalham dentro de colchetes também com a única exceção que ponto (.) significa apenas um ponto literalmente. Para o problema de e-mails, os colchetes são uma maneira fácil de adicionar '.' e '-' para o conjunto de caracteres que podem aparecer ao redor do @ com a expressão r'[\\w.-]+@[\\w.-]+' para obter todo a e-mail:
+Square brackets (colchetes) pode ser usado para indicar um conjunto de caracteres, então [abc] combina 'a' ou 'b' ou 'c'. Os códigos \\w, \\s etc trabalham dentro de colchetes também com a única exceção que ponto (.) significa apenas um ponto literalmente. Para o problema de e-mails, os colchetes são uma maneira fácil de adicionar '.' e '-' para o conjunto de caracteres que podem aparecer ao redor do @ com a expressão r'[\\w.-]+@[\\w.-]+' para obter todo o e-mail:
 
 .. code-block:: python
 
@@ -156,7 +156,7 @@ Group Extraction
 
 O recurso de "grupo" de uma expressão regular permite escolher partes do texto correspondente. Suponha que para o problema de e-mails que queremos extrair o nome do usuário e o domínio separadamente. Para fazer isso, adicionar parênteses () em torno do nome de usuário e do domínio, como este: r'([\\w.-]+)@([\\w.-]+)'. 
 
-Neste caso, o parêntese não muda o que a busca irá buscar, em vez disso, estabelecerá "grupos" lógicos dentro do texto a ser buscado. Em uma busca com sucesso, match.group(1) é o texto de partida correspondente ao primeiro parêntese esquerdo, e match.group(2) é o texto correspondente ao segundo parêntese esquerdo. O match.group() puro retornará o texto completo.
+Neste caso, o parêntese não muda o que a busca irá pesquisar, em vez disso, estabelecerá "grupos" lógicos dentro do texto a ser buscado. Em uma busca com sucesso, match.group(1) é o texto de partida correspondente ao primeiro parêntese esquerdo, e match.group(2) é o texto correspondente ao segundo parêntese esquerdo. O match.group() puro retornará o texto completo.
 
 .. code-block:: python
 
@@ -190,7 +190,7 @@ findall() é provavelmente a função mais poderosa do módulo de re. Acima usam
 
 findall com arquivos
 --------------------
-Para arquivos, você deve ter o hábito de escrever um loop para iteragir sobre as linhas do arquivo, e você poderá chamar a função findall() em cada linha. Ao invéz disso, vamos deixar a função findall() fazer a iteração por você -- muito melhor! Apenas alimente todo o arquivo de texto em findall() e deixe-o retornar uma lista de todos os dados da busca em uma única etapa (lembre que f.read () retorna o texto inteiro de um arquivo em uma única string):
+Para arquivos, você deve ter o hábito de escrever um loop para iteragir sobre as linhas do arquivo, e você poderá chamar a função findall() em cada linha. Ao invés disso, vamos deixar a função findall() fazer a iteração por você -- muito melhor! Apenas alimente todo o arquivo de texto em findall() e deixe-o retornar uma lista de todos os dados da busca em uma única etapa (lembre que f.read () retorna o texto inteiro de um arquivo em uma única string):
 
 .. code-block:: python
 
@@ -201,7 +201,7 @@ Para arquivos, você deve ter o hábito de escrever um loop para iteragir sobre 
 
 findall e Groups
 ----------------
-O mecanismo grupo de parêntesis ( ) pode ser combinado com findall(). Se o padrão inclui 2 ou mais grupos de parênteses, em seguida, em vez de retornar uma lista de strings, findall() retorna uma lista de tuples. Cada tuple representa um busca padrão, e dentro das dados das tuples, group(1), o group(2) ... Então, se 2 grupos de parênteses são adicionados ao padrão de e-mail, em seguida, findall() retorna uma lista de tuples, cada length 2 contém o nome de usuário e do domínio, por exemplo, ('Alice', 'google.com').
+O mecanismo grupo de parênteses ( ) pode ser combinado com findall(). Se o padrão inclui 2 ou mais grupos de parênteses, em seguida, em vez de retornar uma lista de strings, findall() retorna uma lista de tuples. Cada tuple representa uma busca padrão, e dentro dos dados das tuples, group(1), o group(2) ... Então, se 2 grupos de parênteses são adicionados ao padrão de e-mail, em seguida, findall() retorna uma lista de tuples, cada length 2 contém o nome de usuário e do domínio, por exemplo, ('Alice', 'google.com').
 
 .. code-block:: python
 
@@ -214,52 +214,52 @@ O mecanismo grupo de parêntesis ( ) pode ser combinado com findall(). Se o padr
 
 .. nextslide::
 
-Depois de ter a lista de tuples, você pode executar um loop sobre ele para fazer alguma computação para cada tuple. Se o padrão não inclui parênteses, então findAll() retornará uma lista de strings encontrados como nos exemplos anteriores. Se o padrão inclui um único conjunto de parênteses, então findAll() retornará uma lista de strings correspondentes a esse grupo único. (Recurso opcional Obscuro: Às vezes você tem grupos de parênteses (), mas que você não deseja extrair. 
+Depois de ter a lista de tuples, você pode executar um loop sobre ela para fazer alguma computação para cada tuple. Se o padrão não inclui parênteses, então findAll() retornará uma lista de strings encontrados como nos exemplos anteriores. Se o padrão inclui um único conjunto de parênteses, então findAll() retornará uma lista de strings correspondentes a esse grupo único. (Recurso opcional Obscuro: Às vezes você tem grupos de parênteses (), mas que você não deseja extrair. 
 
 Nesse caso, escrever os parênteses com ?: no início, por exemplo, (?: ) e que o parêntese da esquerda não vai contar como resultado do grupo.
 
 RE Workflow and Debug
 ---------------------
 
-O Pacote de expressões regulares padrão contém um monte de significados em apenas alguns caracteres, mas eles são muito densos, você pode gastar um monte de tempo depurando seu código. Configure o tempo de execução para que você possa executar um padrão e imprimir o que corresponde facilmente, por exemplo, executando em um pequeno texto de teste e imprimir o resultado com findall(). Se o padrão corresponde a nada, tente desabilitar os padrões, remover partes dele para que você obtenha mais acertos. 
+O Pacote de expressões regulares padrão contém um monte de significados em apenas alguns caracteres, mas eles são muito densos, você pode gastar muito tempo depurando seu código. Configure o tempo de execução para que você possa executar um padrão e imprimir o que corresponde facilmente, por exemplo, executando em um pequeno texto de teste e imprimir o resultado com findall(). Se o padrão corresponde a nada, tente desabilitar os padrões, remover partes dele para que você obtenha mais acertos. 
 
-Quando não econtrar nada, você não poderá fazer qualquer progresso já que não há nada de concreto para olhar. Uma vez que ele está retornando resultados, você pode trabalhar em melhorar o código de forma incremental para atingir apenas o que você quer.
+Quando não encontrar nada, você não poderá fazer qualquer progresso já que não há nada de concreto para olhar. Uma vez que ele está retornando resultados, você pode trabalhar em melhorar o código de forma incremental para atingir apenas o que você quer.
 
 Opções
 ------
-As funções re tem opções para modificar o comportamento da busca. A opção é adicionada como um argumento extra para a search() ou findAll(), etc., por exemplo, re.search (pat, str, re.IGNORECASE).
+As funções re têm opções para modificar o comportamento da busca. A opção é adicionada como um argumento extra para a search() ou findAll(), etc., por exemplo, re.search (pat, str, re.IGNORECASE).
 
-* IgnoreCase - ignorar as diferenças maiúsculas/minúsculas, de modo 'a' corresponde tanto 'a' e 'A'.
-* Dotall - Permite ponto (.) para coincidir como uma nova linha - normalmente ele corresponde a qualquer coisa, mas uma nova linha. Isso pode te enganar - você pensa que .* corresponde a tudo, mas por padrão ele não vai além do fim de uma linha. Note que \\s (espaços em branco) inclui novas linhas, por isso, se você quer combinar uma série de espaços em branco que podem incluir uma nova linha, você pode apenas usar \\s*
+* IgnoreCase - ignorar as diferenças maiúsculas/minúsculas, de modo que 'a' corresponde tanto 'a' quanto 'A'.
+* Dotall - Permite ponto (.) para coincidir como uma nova linha - normalmente ele corresponde a qualquer coisa, mas uma nova linha. Isso pode te enganar - você pensa que .* corresponde a tudo, mas por padrão ele não vai além do fim de uma linha. Note que \\s (espaços em branco) incluem novas linhas, por isso, se você quer combinar uma série de espaços em branco que podem incluir uma nova linha, você pode apenas usar \\s*
 * MULTILINE - Dentro de uma string feita de muitas linhas, permitem ^ e $ para coincidir com o início e o fim de cada linha. Normalmente ^/$ seria apenas coincidir com o início e o fim de toda a string.
 
 Greedy vs. Non-Greedy (opcional)
 --------------------------------
 Esta é uma seção opcional que mostra uma técnica mais avançada de expressão regular.
 
-Supondo que você tem texto com tags: <b>foo</b> e <i>assim por diante</i>
+Supondo que você tem texto com as tags: <b>foo</b> e <i>assim por diante</i>
 
 Supondo que você está tentando encontrar cada tag com o padrão ``'(<*.>)'`` -- O que isso corresponde em primeiro lugar?
 
-O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* Faz com que a busca coincida todo '<b>foo</b> e <i>assim por diante</i>' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira > (por isso é chamado de ganancioso - Greedy).
+O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* faz com que a busca coincida todo '<b>foo</b> e <i>assim por diante</i>' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira > (por isso é chamado de ganancioso - Greedy).
 
 .. nextslide::
 
-Existe uma extensão para a expressão regular, onde você adicionar um ? no final, tais como .*? ou .+?, que irá alterá-lo para não ser tão ganancioso. Agora eles param assim que puder. Assim, o padrão '(<.*?>)' vai ficar apenas '<b>' como o primeiro resultado, e '</b>' como o segundo resultado, e assim por diante para cada par de tags <..>. O recomendado é que normalmente você use um .*?, e logo em seguida encontre o marcador correto (>, neste caso) que força o final da chamada .*?.
+Existe uma extensão para a expressão regular, onde se você adicionar um ? no final, tais como .*? ou .+?, irá alterá-lo para não ser tão ganancioso. Agora eles param assim que puder. Assim, o padrão '(<.*?>)' vai ficar apenas '<b>' como o primeiro resultado, e '</b>' como o segundo resultado, e assim por diante para cada par de tags <..>. O recomendado é que normalmente você use um .*?, e logo em seguida encontre o marcador correto (>, neste caso) que força o final da chamada .*?.
 
-O ``*?`` extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito Útil em linha de comando e tem uma flag onde se aceita utilizar padrões pcre.
+O ``*?`` extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito útil em linha de comando e tem uma flag onde se aceita utilizar padrões pcre.
 
 .. nextslide::
 
-Uma técnica mais velha, porém, amplamente usado para codificar esta ideia de "todos estes caracteres, exceto parando em X" usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de ``.*`` para obter todos os caracteres, use ``[^>]*``, que ignora todos os caracteres que não são > (o ^ "inverte" o conjunto de colchetes, de modo que corresponda qualquer caractere que não esteja presente nos colchetes).
+Uma técnica mais velha, porém, amplamente usada para codificar esta ideia de "todos estes caracteres, exceto parando em X" usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de ``.*`` para obter todos os caracteres, use ``[^>]*``, que ignora todos os caracteres que não são > (o ^ "inverte" o conjunto de colchetes, de modo que corresponda a qualquer caractere que não esteja presente nos colchetes).
 
 
 Substituição (Opcional)
 -----------------------
 
-A função re.sub(pat, replacement, str) pesquisa por todas os dados na string, e as substitui. O texto de substituição pode incluir '\\1', '\\2', que se referem ao texto do group(1), o group(2), e assim por diante a partir do texto encontrado original.
+A função re.sub(pat, replacement, str) pesquisa por todos os dados na string, e os substitui. O texto de substituição pode incluir '\\1', '\\2', que se referem ao texto do group(1), o group(2), e assim por diante a partir do texto encontrado originalmente.
 
-Aqui está um exemplo que procura todos os endereços de e-mail, e modifica-os para manter o usuário (\\1), mas tem yo-yo-dyne.com como o domínio.
+Aqui está um exemplo que procura todos os endereços de e-mail e modifica-os para manter o usuário (\\1), mas tem yo-yo-dyne.com como o domínio.
 
 .. code-block:: python
 
@@ -272,4 +272,4 @@ Aqui está um exemplo que procura todos os endereços de e-mail, e modifica-os p
 Exercícios
 ----------
 
-Execícios de Expressões Regulares
+Exercícios de Expressões Regulares
