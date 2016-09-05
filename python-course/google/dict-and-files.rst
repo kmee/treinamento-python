@@ -3,15 +3,15 @@ Dicionários e Arquivos Python
 
 Dicionários
 -----------
-Qualquer programa python em execução tem diversos dicionários ativos
-simultaneamente mesmo que o codigo do programa do usuário não utilize
+Qualquer programa python em execução tem diversos dicionários simultaneamente
+ativos, mesmo que o código do programa do usuário não utilize
 explicitamente um dicionário.
 
 - Beaultiful Code (O'Reilly 2007), Cap 18, Python's Dictonary Implementation
 
 O tipo dict não só é amplamente usado em nossos programas como também é parte
 fundamental da implementação Python. Namespaces de módulos, atributos de
-classes e de instancia e argumentos nomeados de funções são algumas das
+classes e de instância e argumentos nomeados de funções são algumas das
 construções básicas em que os dicionários estão implementados. As próprias
 funções embutidas ficam em um dicionário:
 
@@ -26,7 +26,7 @@ Um objeto é hashable se tiver um valor de hash que nunca muda durante seu
 tempo de vida e puder ser comparado com outros objetos.
 
 A estrutura de hash chave/valor (key/value) é chamada de “dict”. O conteúdo
-de um dict pode ser escrito como uma série de pares chave:valor (key:value)
+de um dict pode ser escrito como uma série de pares chave: valor (key:value)
 dentro de chave {}, ex: dict = {chave1:valor1, chave2:valor2, ... }. Um
 “dicionário vazio” é simplesmente um par de chaves {}.
 
@@ -36,7 +36,7 @@ Para usar ou definir um valor em um dicionário use o formato com colchete,
 ex: dict[‘foo’] busca pelo valor dentro da chave ‘foo’. Strings, números e
 até tuplas (tuples) funcionam como chaves, e qualquer tipo pode ser um valor.
 Outros tipos podem ou não funcionar corretamente com chaves (strings e tuplas
-funcionam lindamente desde que sejam imutáveis). Buscando por um valor que não
+funcionam lindamente desde que sejam imutáveis). Buscar por um valor que não
 está no dicionário retorna um KeyError – use “in” para checar se uma chave
 existe no dicionário, ou use dict.get(chave) que retorna o valor ou None se
 a chave não existe (ou get(chave, nao-encontrado) permite a você especificar
@@ -44,7 +44,7 @@ o valor do retorno se a chave não for encontrada).
 
 .. code-block:: python
 
-    ## Pode construer um dicionário iniciando um vazio {}
+    ## Pode construir um dicionário iniciando um vazio {}
     ## e guardando pares de chave/valor no dicionário neste formato:
     ## dict[chave] = valor-para-esta-chave
     dict = {}
@@ -71,12 +71,12 @@ Um laço “for” em um dicionário interage sobre suas chaves por padrão.
 As chaves aparecerão em uma ordem arbitrária. Os métodos dict.keys() e
 dict.values() retornam listas de chaves ou valores explicitamente.
 Também existe um método items() que retorna a lista de tuplas (chave, valor),
-que é o método mais eficiente de examinar todasos dados em um dicionário.
+que é o método mais eficiente de examinar todos os dados em um dicionário.
 Todas estas listas podem ser passadas pela função sorted().
 
 .. code-block:: python
 
-    ## Por padrão, interagindo em um dict interage com suas chaves.
+    ## Por padrão, interagindo em um dict interage-se com suas chaves.
     ## Veja que as chaves estão em ordem randômica.
     for key in dict: print key
     ## prints a g o
@@ -108,26 +108,26 @@ Todas estas listas podem ser passadas pela função sorted().
 
 Existem “iter” variações destes métodos chamados itereys(), intervalues() e
 iteritems() que evitam o custo de contrus a lista inteira – traz um ganho
-de velocidade se os dados forem muitos. No entando eu normalmente prefiro
+de velocidade se os dados forem muitos. No entanto eu normalmente prefiro
 os métodos padrões keys() e values() com os nomes sensíveis. Na revisão
 Python 3 a necessidade de usar as variants iterkeys() foi descartada.
 
 .. nextslide::
 
-Nota de Estratégia: de um ponto de vista de velocidade, o dicionário é uma das
+Nota de Estratégia: do ponto de vista de velocidade, o dicionário é uma das
 melhores ferramentas e você deve usá-la sempre que puder com um método simples
 de organizar dados. Por exemplo, você pode ler um arquivo de log onde cada
 linha começa com um endereço IP, e guardar os dados usando o endereço IP
 como chave, e a lista de linhas onde ele aparece como valor. Assim que você
 ler todo o arquivos, você pode buscar por qualquer endereço IP e
 instantaneamente ver a sua lista de linhas. O dicionário pega dados
-disperses e o torna em algo coerente.
+disperses e os torna algo coerente.
 
 Formatando Dicionários
 ----------------------
 
 
-O operador % funciona conveniente para substituir valores de um dicionar
+O operador % funciona convenientemente para substituir valores de um dicionário
 em uma string pelo nome:
 
 .. code-block:: python
@@ -174,7 +174,7 @@ sempre venham como um simples ‘\n’. O laço de repetição padrão “for-lo
 funciona para arquivos de texto, interagindo pelas linhas do arquivo
 (isso só funciona para arquivos texto, não para arquivos binários).
 
-A técnica do for-loop é um simples e eficiência método para olhar todas as
+A técnica do for-loop é um simples e eficiente método para olhar todas as
 linhas em um arquivo de texto:
 
 
@@ -211,7 +211,7 @@ argumento:
 Arquivos Unicode
 ----------------
 
-Os módulos "codecs" provém suporte para le arquivos em formato Unicode.
+Os módulos "codecs" proveem suporte para ler arquivos em formato Unicode.
 
 .. code-block:: python
 
@@ -224,12 +224,12 @@ Os módulos "codecs" provém suporte para le arquivos em formato Unicode.
 
 Para gravar, use f.write() já que print não suporta integralmente formatos unicode.
 
-Exercicio de Desenvolvimento Incremental
+Exercício de Desenvolvimento Incremental
 ----------------------------------------
 
 
-Criando um programa Python, não escreve tudo em um único passo. Ao invés disso
-identifique apenas a primeira parte, ex: “o primeiro passo é extrais a lista
+Criando um programa Python, não escreva tudo em um único passo. Ao invés disso
+identifique apenas a primeira parte, ex: “o primeiro passo é extrair a lista
 de palavras.”. Escreva o código para cumprir esta parte, e apenas imprima
 sua estrutura de dados neste ponto, então você pode fazer um sys.exit(0)
 para que o programa não rode mais nada que ainda não esteja pronto. Assim
