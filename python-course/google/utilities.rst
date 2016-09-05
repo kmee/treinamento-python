@@ -9,10 +9,10 @@ padrão do Python, visando resolver problemas comuns.
 File System -- os, os.path, shutil
 ----------------------------------
 
-Os modulos **os** e **os.path** contem muitas funcionalidades para interagir
+Os modulos **os** e **os.path** contêm muitas funcionalidades para interagir
 com o sistema operacional.
 
-O modulo **shutil** pode copiar arquivos
+O módulo **shutil** pode copiar arquivos
 
 - `os module docs <http://docs.python.org/lib/module-os.html/>`_
 
@@ -41,20 +41,20 @@ O modulo **shutil** pode copiar arquivos
         print os.path.abspath(os.path.join(dir, filename)) ## /home/nick/dir/foo.txt
 
 
-Explorar um modulo funciona muito bem com as funções da **biblioteca
+Explorar um módulo funciona muito bem com as funções da **biblioteca
 padrão**: help() e dir().
 
 No interpretador execute um import os e use os comandos para avaliar os
-modulos: dir(os), help(os.listdir), dir(os.path), help(os.path.dirname).
+módulos: dir(os), help(os.listdir), dir(os.path), help(os.path.dirname).
 
 Running External Processes -- commands
 --------------------------------------
 
 O modulo **commands** é uma forma simples de executar um comando externo e
-capturar sua saida.
+capturar sua saída.
 
 - commands module docs
-- (status, output) = commands.getstatusoutput(cmd) -- executa o comando, aguarda a execução para sair, e retorna status int e texto de saída como uma tupla. O comando é executado com sua saída padrão e erro padrão combinado em uma única saída de texto. O status será diferente de zero se o comando falhou. Desde que o standar-err do comando seja capturado, se ele falhar, é preciso imprimir alguma indicação sobre o que aconteceu.
+- (status, output) = commands.getstatusoutput(cmd) -- executa o comando, aguarda a execução para sair e retorna status int e texto de saída como uma tupla. O comando é executado com sua saída padrão e erro padrão combinado em uma única saída de texto. O status será diferente de zero se o comando falhou. Desde que o standar-err do comando seja capturado, se ele falhar, é preciso imprimir alguma indicação sobre o que aconteceu.
 - output = commands.getoutput(cmd) -- como o comando acima, mas sem o status int.
 - Há o commands.getstatus(), mas ele faz outra coisa, por isso não utilize.
 
@@ -81,7 +81,7 @@ Excessões
 
 Uma exceção representa um erro de tempo de execução que suspende a execução normal 
 em uma linha particular e transfere o controle para manipulação de erros de código. 
-Esta seção apenas introduz os usos mais básicos de exceções. Por exemplo, um erro 
+Esta seção apenas introduz os usos mais básicos de exceções. Por exemplo, num erro 
 de tempo de execução pode ser que uma variável utilizada no programa não tenha um 
 valor (ValueError... você provavelmente já viu este erro algumas vezes), ou um erro 
 de operação de abertura de arquivo por causa do arquivo não existir ( IOError). 
@@ -122,9 +122,9 @@ a sintaxe ``except IOError, e:`` (e aponta para o objeto de exceção).
 HTTP -- urllib and urlparse
 ---------------------------
 
-O modulo **urllib** permite acessar servidores HTTP por meios de requests GET
-e POST de maneira direta -- Tornando as urls acessiveis como um arquivo que
-possa ser lido. O **urlparse** permite você trabalhar com partes de url e unir urls.
+O módulo **urllib** permite acessar servidores HTTP por meios de requests GET
+e POST de maneira direta -- Tornando as urls acessíveis como um arquivo que
+possa ser lido. O **urlparse** permite a você trabalhar com partes de url e unir urls.
 
 -urllib module docs
 -ufile = urllib.urlopen(url) -- returns a file like object for that url
@@ -148,7 +148,7 @@ possa ser lido. O **urlparse** permite você trabalhar com partes de url e unir 
         text = ufile.read()  ## read all its text
         print text
 
-O codigo acima funciona bem, mas não inclue tratamento de erros caso a url
+O código acima funciona bem, mas não inclui tratamento de erros caso a url
 não exista. Segue uma versão de uma função que adiciona a lógica try/except
 exibindo uma mensagem em caso de erro.
 
