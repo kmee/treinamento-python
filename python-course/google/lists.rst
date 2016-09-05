@@ -4,7 +4,7 @@ Listas Python
 Listas Python
 -------------
 
-O Python tem um otimo tipo embutido de listas chamado **list**. As declarações de listas
+O Python tem um ótimo tipo embutido de listas chamado **list**. As declarações de listas
 são escritas entre colchetes []. Listas funcionam de maneira similar aos strings, podemos usar a função len()
 e acessar informações através de []. Com o primeiro elemento iniciado por 0. `(Veja a documentação oficial) <https://docs.python.org/2.7/tutorial/>`_
 
@@ -22,7 +22,7 @@ e acessar informações através de []. Com o primeiro elemento iniciado por 0. 
 
 .. nextslide::
 
-Atribuições com = em listas não criam cópias. Em ves disso são criadas duas váriáveis apontando para a mesma lista em memória.
+Atribuições com = em listas não criam cópias. Ao invés disso são criadas duas váriáveis apontando para a mesma lista em memória.
 
 .. code-block:: python
 
@@ -54,8 +54,8 @@ Atribuições com = em listas não criam cópias. Em ves disso são criadas duas
 FOR e IN
 --------
 
-As decalrações Python **for** e **in** são extremamente uteis. A palavra reservada **for**
- -- for var in list -- é a maneira mais facil de percorrer os elementos de uma lista
+As declarações Python **for** e **in** são extremamente úteis. A palavra reservada **for**
+ -- for var in list -- é a maneira mais fácil de percorrer os elementos de uma lista
  ( ou uma coleção ). **Não adicione ou remova itens de um iterável durante uma iteração.**
 
 .. code-block:: python
@@ -71,7 +71,7 @@ capturar a informação desejada, como um "num", um "nome" ou uma "url".
 
 .. nextslide::
 
-O termo 'in" é uma forma simples de testar se um elemento aparecer em uma lista, retornando True/False.
+O termo 'in" é uma forma simples de testar se um elemento aparece em uma lista, retornando True/False.
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ Os termos for/in são muito utilizados em Python ao trabalhar com dados que não
 então você deve memorizar sua sintaxe. Você pode ter o hábito vindo de outras linguagens
 de iniciar manualmente as iterações em uma coleção, em python você deve usar apenas for/in.
 
-Você pode tambem usar for/in para trabalhar com uma string. Um string atua como uma lista
+Você pode também usar for/in para trabalhar com uma string. Uma string atua como uma lista
 com chars, então:
 
 .. code-block:: python
@@ -95,8 +95,8 @@ Range
 -----
 
 A função range(n) produz uma lista de números 0, 1, ..., n-1 e range(a,b)
-retorna a, a+1, ... b-1 -- até o ultimo número menos um. A combinação de um for-loop e o
-metodo range() permite criarmos for numérico tradicional.
+retorna a, a+1, ... b-1 -- até o último número menos um. A combinação de um for-loop e o
+método range() permitem criarmos for numérico tradicional.
 
 .. code-block:: python
 
@@ -107,11 +107,11 @@ metodo range() permite criarmos for numérico tradicional.
 
 While Loop
 ----------
-O Python tambem tem um laço while, e declarações de *break* and *continue* como em C++ e Java,
+O Python também tem um laço while, e declarações de *break* and *continue* como em C++ e Java,
 que alteram o curso do laço mais próximo.
 
-Os laços anteriores com laços for/int resolvem os mais communs casos de iteração
-através de cada elemento de uma lista, já o loop while permite controle total dos indices.
+Os laços anteriores com laços for/int resolvem os casos mais comuns de iteração
+através de cada elemento de uma lista, já o loop while permite controle total dos índices.
 
 Segue um loop while que acessa cada 3º elemento de uma lista:
 
@@ -125,20 +125,20 @@ Segue um loop while que acessa cada 3º elemento de uma lista:
 
 List Methods
 ------------
-Alguns metodos comuns de listas:
+Alguns métodos comuns de listas:
 
 .. code-block:: python
 
-    list.append(elem) # adiciona um unico elemento no final de uma lista
-    # Erro comun: não retorna a nova lista, apenas modifica a original
+    list.append(elem) # adiciona um único elemento no final de uma lista
+    # Erro comum: não retorna a nova lista, apenas modifica a original
     list.insert(index, elem) # insere um elemento em um determinado index
     # movendo elementos para a direita.
-    list.extend(list2) # adiciona os elementos da lista2 no final ta lista
+    list.extend(list2) # adiciona os elementos da lista2 no final da lista
     # Usar + ou += em um lista temos um comportamento similiar ao extend().
-    list.index(elem) # Procura por um elemento a partir do inicio da lista
-    # retornando seu indice; Lança uma exceção do tipo ValueError se o
+    list.index(elem) # Procura por um elemento a partir do início da lista
+    # retornando seu índice; Lança uma exceção do tipo ValueError se o
     # elemento não existir (utilize "in" para realizar a verificação s/ um ValueError).
-    list.remove(elem) # Busta por o primeiro elemento dado e o remove
+    list.remove(elem) # Busta pelo primeiro elemento dado e o remove
     # (throws ValueError if not present)
     list.sort() # ordena uma lista in place (não retorna a mesma).
     # (A função sorted() é preferível;)
@@ -146,7 +146,7 @@ Alguns metodos comuns de listas:
     list.pop(index) # remove e retorna um elemento de um determinado index.
     # Se o index for omitido retorna o elemento mais a direita.
 
-Existem metodos que recebem uma lista como argumento, como por exemplo o len()
+Existem métodos que recebem uma lista como argumento, como por exemplo o len()
 
 .. nextslide::
 
@@ -163,7 +163,7 @@ Existem metodos que recebem uma lista como argumento, como por exemplo o len()
   list.pop(1)                  ## removes and returns 'larry'
   print list  ## ['xxx', 'moe', 'shemp', 'yyy', 'zzz']
 
-Erro comum: Note que os metodos acima não retornam a lista modificada, eles apenas modificam a lista original.
+Erro comum: Note que os métodos acima não retornam a lista modificada, eles apenas modificam a lista original.
 
 .. code-block:: python
 
@@ -176,7 +176,7 @@ Erro comum: Note que os metodos acima não retornam a lista modificada, eles ape
 Criação de listas
 -----------------
 
-Um padrão comum é iniciciar uma lista com um colchetes vazios [], então usar append() ou extend() para adicionar elementos:
+Um padrão comum é iniciar uma lista com um par de colchetes vazios [], então usar append() ou extend() para adicionar elementos:
 
 .. code-block:: python
 
@@ -187,7 +187,7 @@ Um padrão comum é iniciciar uma lista com um colchetes vazios [], então usar 
 Fatiamento de Listas
 --------------------
 
-Fatiamento funciona como listas da mesma forma que strings, e podem ser usados para modificar sub-partes de uma lista.
+Fatiamentos funcionam como listas da mesma forma que strings, e podem ser usados para modificar sub-partes de uma lista.
 
 .. code-block:: python
 
@@ -197,6 +197,6 @@ Fatiamento funciona como listas da mesma forma que strings, e podem ser usados p
   print list         ## ['z', 'c', 'd']
 
 
-Exercicio: list1.py
+Exercício: list1.py
 -------------------
-Para praticarmos os material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação ( nos exercicios básicos).
+Para praticarmos o material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação ( nos exercícios básicos).
