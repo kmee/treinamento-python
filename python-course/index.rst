@@ -15,7 +15,7 @@ Prefácio
 .. nextslide::
 
 "Um desenvolvedor experiente pode começar a escrever um programa Python útil em questões de horas.
-à medida que as primeiras horas produtivas se transformam em semanas e meses, muitos programadores continuam
+À medida que as primeiras horas produtivas se transformam em semanas e meses, muitos programadores continuam
 escrevendo código python com um sotaque bem marcado" Luciano Ramalho
 
 - Só sentimos falta daquilo que conhecemos...
