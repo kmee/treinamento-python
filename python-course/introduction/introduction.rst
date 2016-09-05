@@ -1,7 +1,7 @@
 Introdução
 ==========
 
-Introduçao
+Introdução
 ----------
 - Python 2.7
 - Não vamos usar Python 3 =(
@@ -436,5 +436,5 @@ Você pode invocar o help() de uma instância de um objeto ou mesmo do objeto.
     help(str.split)
     help(list) # help string para listas;
     dir(list) # exibe os atributos das listas, incluindo os seus métodos.
-    help(list.append) # help string para o metodo append() de uma lista.
+    help(list.append) # help string para o método append() de uma lista.
 
