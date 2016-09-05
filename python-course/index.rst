@@ -3,10 +3,10 @@ Curso de Python
 
 Luis Felipe Miléo <mileo@kmee.com.br>
 
-Prefacio
+Prefácio
 --------
 
-"Python é uma linguagem de programação poderosa e facil de aprender" Python Tutorial oficial
+"Python é uma linguagem de programação poderosa e fácil de aprender" Python Tutorial oficial
 
 - Curso para pessoas com **pouca experiência** em programação que querem aprender **Python**;
 - É voltado para pessoas que têm um pouco de experiência em qualquer linguagem de programação, **o suficiente para saber o que é uma variável ou "if"**.
@@ -15,8 +15,8 @@ Prefacio
 .. nextslide::
 
 "Um desenvolvedor experiente pode começar a escrever um programa Python útil em questões de horas.
-A medida que as primeiras horas produtivas se transformam em semanas e meses, muitos programadores continuam
-escrevendo codigo python com um sotaque bem marcado" Luciano Ramalho
+à medida que as primeiras horas produtivas se transformam em semanas e meses, muitos programadores continuam
+escrevendo código python com um sotaque bem marcado" Luciano Ramalho
 
 - Só sentimos falta daquilo que conhecemos...
 
@@ -55,18 +55,18 @@ Python Data Model
    data-model/python-data-model
 
 
-Exercicios
+Exercícios
 ==========
 
 
-Exericio 1
+Exercício 1
 ----------
 
 .. literalinclude:: code/basic/list1.py
    :language: python
    :linenos:
 
-Exericio 2
+Exercício 2
 ----------
 
 .. literalinclude:: code/basic/list2.py
@@ -74,14 +74,14 @@ Exericio 2
    :linenos:
 
 
-Exercicio 3
+Exercício 3
 -----------
 
 .. literalinclude:: code/basic/string1.py
    :language: python
    :linenos:
 
-Exercicio 4
+Exercício 4
 -----------
 
 .. literalinclude:: code/basic/string3.py
@@ -96,14 +96,14 @@ Exercicio 5
    :language: python
    :linenos:
 
-Exercicio 6
+Exercício 6
 -----------
 
 .. literalinclude:: code/logpuzzle/logpuzzle.py
    :language: python
    :linenos:
 
-Exercicio 7
+Exercício 7
 -----------
 
 .. literalinclude:: code/copyspecial/copyspecial.py
@@ -113,14 +113,14 @@ Exercicio 7
 Soluções
 ========
 
-Exericio 1
+Exercício 1
 ----------
 
 .. literalinclude:: code/basic/solution/list1.py
    :language: python
    :linenos:
 
-Exericio 2
+Exercício 2
 ----------
 
 .. literalinclude:: code/basic/solution/list2.py
@@ -128,14 +128,14 @@ Exericio 2
    :linenos:
 
 
-Exercicio 3
+Exercício 3
 -----------
 
 .. literalinclude:: code/basic/solution/string1.py
    :language: python
    :linenos:
 
-Exercicio 4
+Exercício 4
 -----------
 
 .. literalinclude:: code/basic/solution/string3.py
@@ -143,21 +143,21 @@ Exercicio 4
    :linenos:
 
 
-Exercicio 5
+Exercício 5
 -----------
 
 .. literalinclude:: code/basic/solution/wordcount.py
    :language: python
    :linenos:
 
-Exercicio 6
+Exercício 6
 -----------
 
 .. literalinclude:: code/logpuzzle/solution/logpuzzle.py
    :language: python
    :linenos:
 
-Exercicio 7
+Exercício 7
 -----------
 
 .. literalinclude:: code/copyspecial/solution/copyspecial.py
