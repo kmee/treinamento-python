@@ -1,5 +1,7 @@
 Requirements:
-pip install Sphinx hieroglyph sphinx_rtd_theme
+pip install Sphinx hieroglyph sphinx_rtd_theme 
+sudo apt-get install texlive-lang-portuguese
+
 
 
 No Diretótio raiz executar:

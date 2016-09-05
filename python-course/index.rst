@@ -3,8 +3,8 @@ Curso de Python
 
 Luis Felipe Miléo <mileo@kmee.com.br>
 
-Curso de python
----------------
+Prefacio
+--------
 
 "Python é uma linguagem de programação poderosa e facil de aprender" Python Tutorial oficial
 
@@ -23,19 +23,143 @@ escrevendo codigo python com um sotaque bem marcado" Luciano Ramalho
 - "Pythonico"
 
 
-Ementa
-------
+Introdução
+----------
+
 .. toctree::
    :maxdepth: 1
 
-   1-introduction/introduction
-   2-strings/strings
-   3-lists/lists
-   4-sorting/sorting
-   5-dict-and-files/dict-and-files
-   6-regular-expressions/regular-expressions
-   7-utilities/utilities
-   8-references/references
+   introduction/introduction
 
-Obrigado
+
+Google's Python Class
+---------------------
+.. toctree::
+   :maxdepth: 1
+
+   google/strings
+   google/lists
+   google/sorting
+   google/dict-and-files
+   google/regular-expressions
+   google/utilities
+   references/references
+
+
+Python Data Model
+-----------------
+
+.. toctree::
+   :maxdepth: 1
+
+   data-model/python-data-model
+
+
+Exercicios
+==========
+
+
+Exericio 1
+----------
+
+.. literalinclude:: code/basic/list1.py
+   :language: python
+   :linenos:
+
+Exericio 2
+----------
+
+.. literalinclude:: code/basic/list2.py
+   :language: python
+   :linenos:
+
+
+Exercicio 3
+-----------
+
+.. literalinclude:: code/basic/string1.py
+   :language: python
+   :linenos:
+
+Exercicio 4
+-----------
+
+.. literalinclude:: code/basic/string3.py
+   :language: python
+   :linenos:
+
+
+Exercicio 5
+-----------
+
+.. literalinclude:: code/basic/wordcount.py
+   :language: python
+   :linenos:
+
+Exercicio 6
+-----------
+
+.. literalinclude:: code/logpuzzle/logpuzzle.py
+   :language: python
+   :linenos:
+
+Exercicio 7
+-----------
+
+.. literalinclude:: code/copyspecial/copyspecial.py
+   :language: python
+   :linenos:
+
+Soluções
 ========
+
+Exericio 1
+----------
+
+.. literalinclude:: code/basic/solution/list1.py
+   :language: python
+   :linenos:
+
+Exericio 2
+----------
+
+.. literalinclude:: code/basic/solution/list2.py
+   :language: python
+   :linenos:
+
+
+Exercicio 3
+-----------
+
+.. literalinclude:: code/basic/solution/string1.py
+   :language: python
+   :linenos:
+
+Exercicio 4
+-----------
+
+.. literalinclude:: code/basic/solution/string3.py
+   :language: python
+   :linenos:
+
+
+Exercicio 5
+-----------
+
+.. literalinclude:: code/basic/solution/wordcount.py
+   :language: python
+   :linenos:
+
+Exercicio 6
+-----------
+
+.. literalinclude:: code/logpuzzle/solution/logpuzzle.py
+   :language: python
+   :linenos:
+
+Exercicio 7
+-----------
+
+.. literalinclude:: code/copyspecial/solution/copyspecial.py
+   :language: python
+   :linenos:
