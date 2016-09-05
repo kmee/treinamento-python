@@ -6,7 +6,7 @@ Python Sorting
 
 A maneira mais fácil de classificar um resultado é com a função sorted(list),
 que recebe uma lista e retorna uma nova lista com os elementos na ordem de
-classificação. A lista original não é alterado.
+classificação. A lista original não é alterada.
 
 .. code-block:: python
 
@@ -18,7 +18,7 @@ classificação. A lista original não é alterado.
 
 É mais comum passar uma lista para a função sorted(), mas na verdade ele pode
 tomar como entrada qualquer tipo de coleção iterável. O antigo método
-list.sort() é uma alternativa detalhado abaixo. A função sorted() parece
+list.sort() é uma alternativa detalhada abaixo. A função sorted() parece
 mais fácil de usar em comparação com sort(), então eu recomendo o uso da
 função sorted().
 
@@ -58,7 +58,7 @@ de comprimento proxy, e os tipos com esses valores de proxy.
 
 .. nextslide::
 
-Outro exemplo, especificar "str.lower" como a função chave é uma maneira de forçar a triagem para o tratamento de letras maiúsculas e minúsculas o mesmo:
+Outro exemplo, especificar "str.lower" como a função chave é uma maneira de forçar a triagem para o mesmo tratamento de letras maiúsculas e minúsculas:
 
 .. code-block:: python
 
@@ -82,8 +82,8 @@ Você também pode passar em sua própria MyFn como a função chave, como:
 
 .. nextslide::
 
-Para usar key= custom sorting, lembre-se que você deve fornecer uma função que
-recebe um valor e retorna o valor proxy para orientar a classificação.
+Para usar key= custom sorting, lembre-se de que você deve fornecer uma função que
+receba um valor e retorne o valor proxy para orientar a classificação.
 Há também um argumento opcional "cmp=cmpFn" para o sorted() que especifica
 uma função de comparação de dois argumentos que leva dois valores da lista
 e retorna negativo/0/positiva para indicar a sua ordenação. A função de
@@ -94,7 +94,7 @@ O mais recente um argumento key=sorting é geralmente preferível.
 sort() method
 -------------
 Como uma alternativa para, o método sorted(),o metódo sort() em uma lista
-calassificada que lista os dados em ordem crescente, por exemplo, list.sort().
+classificada que lista os dados em ordem crescente, por exemplo, list.sort().
 O método sort () altera a lista subjacente e retorna None, para usá-lo como este:
 
 .. code-block:: python
@@ -113,11 +113,11 @@ os elementos a serem classificados já estão em uma lista.
 Tuples
 ------
 Uma tuple é um agrupamento de elementos de tamanho fixo, tais como um (x, y) de
-coordenadas. tuples são como listas, exceto que eles são imutáveis e não mudam de tamanho (tuples não são estritamente imutável desde que um dos elementos contidos poderá ser mutável). Tuples desempenham um tipo de papel "struct" em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanho fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.
+coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mudam de tamanho (tuples não são estritamente imutáveis desde que um dos elementos contidos possa ser mutável). Tuples desempenham um tipo de papel "struct" em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanhos fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.
 
 .. nextslide::
 
-Para criar uma tuple, basta listar os valores entre parênteses separados por vírgulas. Uma tuple "vazio" é apenas um par vazio de parênteses. Acessando os elementos de uma tuple é como uma lista - len(),[], for, in, etc. todos funcionam da mesma forma.
+Para criar uma tuple, basta listar os valores entre parênteses separados por vírgulas. Uma tuple "vazio" é apenas um par vazio de parênteses. Acessar os elementos de uma tuple é como uma lista - len(),[], for, in, etc. Todos funcionam da mesma forma.
 
 .. code-block:: python
 
@@ -136,7 +136,7 @@ Para criar um tamanho tuple size-1, o elemento solitário deve ser seguido por u
 
 .. nextslide::
 
-É um caso engraçado na sintaxe, mas a vírgula é necessário para distinguir a tuple do caso de colocar uma expressão entre parênteses. Em alguns casos, você pode omitir o parêntese e o Python vai ver a partir das vírgulas que você pretende uma tuple.
+É um caso engraçado na sintaxe, mas a vírgula é necessária para distinguir a tuple do caso de colocar uma expressão entre parênteses. Em alguns casos, você pode omitir o parêntese e o Python vai ver a partir das vírgulas que você pretende uma tuple.
 
 Atribuindo uma tuple a uma tuple de tamanho idêntico de nomes de variáveis atribui todos os valores correspondentes. Se as tuples não são do mesmo tamanho, ele lança um erro. Este recurso funciona para listas também.
 
