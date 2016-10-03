@@ -1,0 +1,11 @@
+image: higebu/sphinx-latexpdf
+stages:
+  - build
+sphinx-build:
+  stage: build
+  script:
+    - cd doc
+    - make latexpdf
+  artifacts:
+    paths:
+      - doc/_build/latex/*.pdf
