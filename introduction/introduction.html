@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introdução &mdash; Treinamento de Python 2016.08.0001</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
+        <link rel="next" title="Python Strings" href="../google/strings.html"/>
+        <link rel="prev" title="Curso de Python" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Treinamento de Python
+          
+
+          
+            
+            <img src="../_static/kmee_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.08
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introdução</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#como-vai-ser-o-curso">Como vai ser o curso:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#material">Material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#origem">Origem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-e-tao-especial">Python é tão especial?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zen-python">Zen python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#se-seu-codigo-e-inspirado-nessas-regras-e-pythonico">Se seu código é inspirado nessas regras é pythonico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ponto-de-vista">Ponto de vista</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#introducao-a-linguagem">Introdução à linguagem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Introdução à linguagem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#o-interpretador-python">O interpretador Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#codigo-fonte-python">Código fonte python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hello-py">hello.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imports-len-e-argumentos-de-linha-de-comando">Imports, len() e argumentos de linha de comando</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#argumentos">Argumentos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#len">len()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funcoes-definidas-pelo-usuario">Funções definidas pelo usuário</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indentacao">Indentação</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#peps">PEPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#o-codigo-e-checado-em-tempo-de-execucao">O Código é checado em tempo de execução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nomes-de-variaveis">Nomes de Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mais-um-pouco-de-modulos-e-seus-namespaces">Mais um pouco de módulos e seus Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ajuda-online-help-and-dir">Ajuda Online, help(), and dir()</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../google/strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/regular-expressions.html">Expressões Regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/utilities.html">Python Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Introdução</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/introduction/introduction.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introducao">
+<h1>Introdução<a class="headerlink" href="#introducao" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Introdução<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python 2.7</li>
+<li>Não vamos usar Python 3 =(</li>
+</ul>
+</div>
+<div class="section" id="como-vai-ser-o-curso">
+<h2>Como vai ser o curso:<a class="headerlink" href="#como-vai-ser-o-curso" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Mix: Teoria + Exercícios</li>
+<li>Qualquer coisa, curiosidade ligada ao curso;</li>
+<li>Se possível tragam algum problema do trabalho de vocês para que possamos resolver com Python.</li>
+<li>Não se sintam obrigados a anotar tudo!</li>
+</ol>
+</div>
+<div class="section" id="material">
+<h2>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Como baixar</li>
+<li>Como compilar o material</li>
+</ol>
+</div>
+<div class="section" id="origem">
+<h2>Origem<a class="headerlink" href="#origem" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Criada por Guido Van Rossum, Holandez;</li>
+<li>Em 1991 o autor publicou o código fonte na internet;</li>
+<li>Construído colaborativamente por pessoas;</li>
+<li>Sem nenhuma empresa por trás, sem restrições econômicas;</li>
+</ul>
+</div>
+<div class="section" id="python-e-tao-especial">
+<h2>Python é tão especial?<a class="headerlink" href="#python-e-tao-especial" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://brochure.getpython.info/media/releases/psf-python-brochure-vol.-i-final-download.pdf/">Brochura</a>.</li>
+<li>&#8216;Pq o Python cabe na sua mente&#8217; Bruce Eckel;</li>
+<li>Os programadores que usam linguagens dinâmicas são mais felizes;</li>
+<li>Excelente biblioteca padrão +230 módulos: <a class="reference external" href="https://docs.python.org/2.7/library/">EN</a></li>
+<li>Documentação em <a class="reference external" href="http://turing.com.br/pydoc/2.7/tutorial/index.html">Português</a></li>
+<li>Python package index: <a class="reference external" href="https://pypi.python.org/pypi">pypi</a></li>
+<li>Resolver os problemas e compartilhar esta na essência do Python;</li>
+</ul>
+</div>
+<div class="section" id="zen-python">
+<h2>Zen python<a class="headerlink" href="#zen-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Tim peters</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="se-seu-codigo-e-inspirado-nessas-regras-e-pythonico">
+<h2>Se seu código é inspirado nessas regras é pythonico<a class="headerlink" href="#se-seu-codigo-e-inspirado-nessas-regras-e-pythonico" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Bonito é melhor que feio.</li>
+<li>Explícito é melhor que implícito.</li>
+<li>Simples é melhor que complexo.</li>
+<li>Complexo é melhor que complicado.</li>
+<li>Plano é melhor que aninhado.</li>
+<li>Dispersa é melhor que denso.</li>
+<li>Legibilidade conta.</li>
+<li>Casos especiais não são especiais o suficiente para quebrar as regras.</li>
+<li>Embora praticidade vença pureza.</li>
+</ul>
+<ul class="simple">
+<li>Erros nunca devem passar silenciosamente.</li>
+<li>A menos que explicitamente silenciados.</li>
+<li>Em face da ambiguidade, recuse a tentação de adivinhar.</li>
+<li>Deve haver um&#8211; e de preferência apenas uma maneira &#8211;obvious para fazê-lo.</li>
+<li>Apesar dessa maneira poder não ser óbvia à primeira vista, a menos que você seja holandês.</li>
+<li>Agora é melhor do que nunca.</li>
+<li>Embora nunca tenha sido muitas vezes é melhor do que agora mesmo.</li>
+</ul>
+<ul class="simple">
+<li>Se a implementação é difícil de explicar, é uma má idéia.</li>
+<li>Se a implementação é fácil de explicar, pode ser uma boa idéia.</li>
+<li>Namespaces são uma grande ideia - vamos fazer mais desses!</li>
+</ul>
+</div>
+<div class="section" id="ponto-de-vista">
+<h2>Ponto de vista<a class="headerlink" href="#ponto-de-vista" title="Permalink to this headline">¶</a></h2>
+<p>Ano 2000, nos EUA, em um treinamento nos EUA, Guido apareceu na sala de aula ( ele não era professor ).
+Na sessão de perguntas e respostas, alguém perguntou quais recursos de Python foram emprestados de outras linguagens.¹</p>
+<p>Sua resposta: <strong>&#8220;TUDO que há de bom em Python foi roubado de outras linguagens&#8221;.</strong></p>
+<p>O Artigo &#8220;Ensinando linguagens de programação em uma era pós-Lineu&#8221;:</p>
+<p>Os &#8220;paradigmas&#8221; das linguagens de programação são um legado moribundo e tedioso de uma era que já se foi. Os designers das linguagens modernas não têm respeito por esses paradigmas, [...] eles emprestam recursos como querem.</p>
+<p>1 - Python Fluente: Luciano Ramalho pg. 201
+2 - <a class="reference external" href="http://cs.brown.edu/~sk/Publications/Papers/Published/sk-teach-pl-post-linnaean/">http://cs.brown.edu/~sk/Publications/Papers/Published/sk-teach-pl-post-linnaean/</a></p>
+</div>
+</div>
+<div class="section" id="introducao-a-linguagem">
+<h1>Introdução à linguagem<a class="headerlink" href="#introducao-a-linguagem" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Introdução à linguagem<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python é uma linguagem dinâmica e interpretada (bytecode-compiled).</li>
+<li>Não existem declarações de tipos de variáveis, parâmetros, funções ou métodos no código fonte.</li>
+<li>Isto mantém o código compacto e flexível;</li>
+<li>Você não precisa perder tempo esperando o código compilar;</li>
+</ul>
+</div>
+<div class="section" id="o-interpretador-python">
+<h2>O interpretador Python<a class="headerlink" href="#o-interpretador-python" title="Permalink to this headline">¶</a></h2>
+<p>Melhor forma de se ver como um código funciona é utilizando o interpertador do python</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>       <span class="c1">## set a variable in this interpreter session</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>           <span class="c1">## entering an expression prints its value</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="go">8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hi&#39;</span>    <span class="c1">## &#39;a&#39; can hold a string just as well</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">&#39;hi&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>      <span class="c1">## call the len() function on a string</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1">## try something that doesn&#39;t work</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">  File &quot;&quot;, line 1, in</span>
+<span class="gr">TypeError</span>: <span class="n">cannot concatenate &#39;str&#39; and &#39;int&#39; objects</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1">## probably what you really wanted</span>
+<span class="go">&#39;hi2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span>         <span class="c1">## try something else that doesn&#39;t work</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">  File &quot;&quot;, line 1, in</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;foo&#39; is not defined</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">^</span><span class="n">D</span>          <span class="c1">## type CTRL-d to exit (CTRL-z in Windows/DOS terminal)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Fácil de experimentar variáveis e operadores;</li>
+<li>O interpretador também exibe as exceções;</li>
+<li>Python é case sensitive;</li>
+<li>O fim da linha marca o fim da declaração;</li>
+<li>Não é preciso colocar ponto e virgula no fim de cada declaração;</li>
+<li>Comentários começam com &#8216;#&#8217; e se estendem até o fim da linha.</li>
+</ul>
+</div>
+<div class="section" id="codigo-fonte-python">
+<h2>Código fonte python<a class="headerlink" href="#codigo-fonte-python" title="Permalink to this headline">¶</a></h2>
+<p>O código fonte python utiliza a extensão &#8221;.py&#8221; e as extensões são chamadas de &#8220;módulos&#8221;.
+Por exemplo para executar o módulo python hello.py, a maneira mais fácil de executá-lo é ir no sheel e digitar.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python hello.py Kmee
+</pre></div>
+</div>
+<p>O comando chama o interpretador Python para executar o código na hello.py,
+passando o argumento de linha de comando &#8220;Kmee&#8221;. Veja a página da <a class="reference external" href="http://docs.python.org/using/cmdline/">Documentação oficial</a>
+sobre todas as diferentes opções que você tem ao executar Python a
+partir da linha de comando.</p>
+</div>
+<div class="section" id="hello-py">
+<h2>hello.py<a class="headerlink" href="#hello-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1"># import modules used here -- sys is a very standard one</span>
+import sys
+
+<span class="c1"># Gather our code in a main() function</span>
+def main<span class="o">()</span>:
+    print <span class="s1">&#39;Hello there&#39;</span>, sys.argv<span class="o">[</span>1<span class="o">]</span>
+    <span class="c1"># Command line args are in sys.argv[1], sys.argv[2] ...</span>
+    <span class="c1"># sys.argv[0] is the script name itself and can be ignored</span>
+
+<span class="c1"># Standard boilerplate to call the main() function to begin</span>
+<span class="c1"># the program.</span>
+<span class="k">if</span> <span class="nv">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span>:
+    main<span class="o">()</span>
+</pre></div>
+</div>
+<p>Executando o programa através da linha de comando:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python hello.py Guido
+Hello there Guido
+$ ./hello.py Kmee  ## without needing &#39;python&#39; first (Unix)
+Hello there Kmee
+</pre></div>
+</div>
+</div>
+<div class="section" id="imports-len-e-argumentos-de-linha-de-comando">
+<h2>Imports, len() e argumentos de linha de comando<a class="headerlink" href="#imports-len-e-argumentos-de-linha-de-comando" title="Permalink to this headline">¶</a></h2>
+<p>As declarações em um arquivo ou módulo python são processadas uma única vez
+durante a primeira importação do módulo em algum lugar, iniciando suas variáveis e funções.</p>
+<p>Um módulo python pode ser executado diretamente - como fizemos acima &#8220;python hello.py Mileo&#8221; - ou pode ser
+importado e utilizado em outro módulo. Quando um arquivo python é executado diretamente, uma variável especial &#8220;__name__&#8221; é atribuída ao &#8220;__main__&#8221;.</p>
+<p>É muito comum vermos o trecho de código:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==...</span>
+</pre></div>
+</div>
+<p>Para chamar a função main(), mas não quando este módulo é importado por outro módulo.</p>
+</div>
+<div class="section" id="argumentos">
+<h2>Argumentos<a class="headerlink" href="#argumentos" title="Permalink to this headline">¶</a></h2>
+<p>Em em um programa Python padrão, a lista <em>sys.argv</em> contém os argumentos da linha de comando na forma padrão:</p>
+<ul class="simple">
+<li>sys.argv[0] sendo o próprio programa;</li>
+<li>sys.argv[1] o primeiro argumento,</li>
+<li>e assim vai.</li>
+</ul>
+</div>
+<div class="section" id="len">
+<h2>len()<a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h2>
+<p>Se você estiver na dúvida com o número de argumentos de um programa, você pode simplesmente consultá-los através da função len(sys.argv)
+como fizemos ao verificar o tamanho da string.</p>
+<p>Em geral, <strong>len()</strong> pode te dizer:</p>
+<ul class="simple">
+<li>Tamanho de uma string;</li>
+<li>Número de elementos em uma lista, dicionário, tupla ou qualquer estrutura de dados;</li>
+</ul>
+</div>
+<div class="section" id="funcoes-definidas-pelo-usuario">
+<h2>Funções definidas pelo usuário<a class="headerlink" href="#funcoes-definidas-pelo-usuario" title="Permalink to this headline">¶</a></h2>
+<p>Funções em Python são definidas desta forma:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Defines a &quot;repeat&quot; function that takes 2 arguments.</span>
+<span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">exclaim</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the string &#39;s&#39; repeated 3 times.</span>
+<span class="sd">    If exclaim is true, add exclamation marks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="n">s</span> <span class="c1"># can also use &quot;s * 3&quot; which is faster (Why?)</span>
+    <span class="k">if</span> <span class="n">exclaim</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="s1">&#39;!!!&#39;</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Note que todas as linhas que compõem a função ou instrução if, são agrupadas
+pelo mesmo nível de identação.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Também apresentamos duas maneira diferentes de se repetir strings:</dt>
+<dd><ul class="first last simple">
+<li>utilizando o operador &#8220;+&#8221;</li>
+<li>utilizando o operador &#8220;*&#8221; (De forma que &#8220;-&#8221; * 10 = &#8220;&#8212;&#8212;&#8212;-&#8221;);</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>OBS: Utilizar o &#8220;</em>&#8221; é mais rápido &#8220;+&#8221;, porque * calcula o tamanho da string somente uma vez, enquanto &#8220;+&#8221; calcula a cada operação de &#8220;+&#8221;</p>
+<ul class="simple">
+<li>Ambos + e * são chamados de operadores sobrecarregados pois têm significados diferentes para números, strings e outros tipos de dados.</li>
+</ul>
+<ul class="simple">
+<li>A palavra reservada <em>def</em> define a função com seus parâmetros entre parênteses e seu código identado. A primeria linha de uma função pode ser sua documentação string (&#8220;docstring&#8221;) que deve descrever o que a função faz.</li>
+<li>O docstring pode ser uma única linha, ou múltiplas linhas como no exemplo anterior. (Com aspas triplas).</li>
+<li>Váriáveis definidas dentro de uma função são locais para esta função, então o result da função anterior é separado de uma mesma váriavel result em outra função.</li>
+<li>Se a declaração de retorno receber um argumento, este será retornado a quem chamou a função.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;Yay&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>      <span class="c1">## YayYayYay</span>
+    <span class="nb">print</span> <span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;Woo Hoo&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>   <span class="c1">## Woo HooWoo HooWoo Hoo!!!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentacao">
+<h2>Indentação<a class="headerlink" href="#indentacao" title="Permalink to this headline">¶</a></h2>
+<p>Uma caractéristica do Python é que um espaço em branco pode alterar o significado
+de um trecho de código. Um bloco lógico de declarações que compõem uma função devem
+ter todos a mesma indentação, em relaçao à indentação da função ou do bloco if ou
+qualquer outro tipo de bloco. Se uma das linhas em um grupo tem uma indentação
+diferente, temos um erro de sintaxe.</p>
+<p>O uso de espaços em branco parece ser bem estranho de início, mas é lógico e você
+acaba se acostumando muito rápido.</p>
+<p>Evite usar TABs pois eles detonam o esquema de recuo. (Tabs significam coisas diferentes em diferentes plataformas).
+Configure o seu editor para inserir espaços em vez de tabs.</p>
+<p>Uma questão comum: &#8220;Com quantos espaços eu devo indentar meu código?&#8221;</p>
+<p><strong>De acordo com o a PEP8, deve-se indentar com 4 espaços.</strong></p>
+</div>
+<div class="section" id="peps">
+<h2>PEPs<a class="headerlink" href="#peps" title="Permalink to this headline">¶</a></h2>
+<p>O desenvolvimento de Python é conduzido amplamente através do processo <strong>Python Enhancement Proposal (&#8220;PEP&#8221;)</strong>, em português Proposta de Melhoria do Python.</p>
+<p>Os PEPs são documentos de projeto padronizados que fornecem informações gerais relacionadas ao Python, incluindo propostas, descrições, justificativas de projeto (design rationales) e explicações para características da linguagem.</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/">https://www.python.org/dev/peps/</a></p>
+</div>
+<div class="section" id="o-codigo-e-checado-em-tempo-de-execucao">
+<h2>O Código é checado em tempo de execução<a class="headerlink" href="#o-codigo-e-checado-em-tempo-de-execucao" title="Permalink to this headline">¶</a></h2>
+<p>O Python realiza pouca checagem ao compilar, adiando as checagens de nomes, tipos e etc. para quando a linha for executada.</p>
+<p>Exemplo:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Guido&#39;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">repeeeet</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;!!!&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">repeat</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Este código compila e funciona muito bem desde que o nome não seja &#8216;Guido&#8217;. Somente
+quando a aplicação tenta executar o método com o nome errado que um erro será exibido.</p>
+<p>Esta é uma área em que linguagens como Java podem ter vantagens... Pois podem detectar erros deste tipo durante a compilação. Por isso é muito importante
+que os testes percorram todo o trecho do código.</p>
+</div>
+<div class="section" id="nomes-de-variaveis">
+<h2>Nomes de Variáveis<a class="headerlink" href="#nomes-de-variaveis" title="Permalink to this headline">¶</a></h2>
+<p>Como as variáveis em Python não têm seus tipos especificados no código-fonte,
+é importante nomearmos as variáveis com significados que nos auxiliem a lembrar
+do que se trata. Muitos erros básicos ocorrem ao esquecermos o tipo de uma variável.</p>
+<p>Para nomes de variáveis a PEP8 recomenda o uso de variáveis de <strong>&#8220;mais_de_uma_palavra&#8221;</strong>
+com underscore mas recomenda aos desenvolvedores a adiar alterar códigos que
+utilizem a notação <strong>camelCase.</strong></p>
+<p>Como toda linguagem palavras como &#8216;print&#8217; e &#8216;while&#8217; não podem ser usadas como nomes de variáveis. Enquanto &#8216;str&#8217; e &#8216;lista&#8217; pode parecer bons nomes, você estaria substituindo essas variáveis ​​do sistema. Built-ins não são palavras-chave e, portanto, são suscetíveis ao uso inadvertido por novos desenvolvedores Python.</p>
+</div>
+<div class="section" id="mais-um-pouco-de-modulos-e-seus-namespaces">
+<h2>Mais um pouco de módulos e seus Namespaces<a class="headerlink" href="#mais-um-pouco-de-modulos-e-seus-namespaces" title="Permalink to this headline">¶</a></h2>
+<p>Suponha que você criou um módulo chamado &#8220;blink.py&#8221; que contem um método &#8220;def foo()&#8221;.
+O nome completo desta função é &#8220;blink.foo&#8221;. Desta forma, vários módulos podem ter
+suas funções e variáveis da maneira que eles quiserem, e suas variáveis não
+entrarão em conflito.</p>
+<ul class="simple">
+<li>module1.foo é diferente de module2.foo.</li>
+</ul>
+<p>No vocabulário Python dizemos que cada módulo tem seu próprio namespace.</p>
+<p>Que são vínculos entre nome de objetos e variáveis.</p>
+<p>Por exemplo, se o modulo padrão &#8220;sys&#8221;. Que contem algumas ferramentas como argv, exit().
+Com o trecho &#8220;import sys&#8221; você então pode acessar as definições do modulo sys no seu namespace.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Now can refer to sys.xxx facilities</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Outra forma de realizarmos importações:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">exit</span>
+</pre></div>
+</div>
+<p>Isto torna o argv e exit() disponíveis através dos seus nomes curtos.
+Mas é recomendada a forma original com nomes completos (fully-qualified) pois é
+muito mais simples determinar à que função pertence certo atributo.</p>
+<p>Existem vários módulos e pacotes que são empacotados em conjunto com a instalação
+do interpretador padrão do Python, de forma que você não precisa fazer mais nada
+para usá-los.</p>
+<p>Eles são conhecidos como a Biblioteca Padrão do Python (&#8220;Python Standard Library.&#8221;). Módulos e pacotes inclusos:</p>
+<ul class="simple">
+<li>sys — exit(), argv, stdin, stdout, ...</li>
+<li>re — regular expressions</li>
+<li>os — interface com o sistema operacional, sistema de arquivos.</li>
+</ul>
+<p>Standard Library Link: <a class="reference external" href="http://docs.python.org/library">http://docs.python.org/library</a>.</p>
+</div>
+<div class="section" id="ajuda-online-help-and-dir">
+<h2>Ajuda Online, help(), and dir()<a class="headerlink" href="#ajuda-online-help-and-dir" title="Permalink to this headline">¶</a></h2>
+<p>Existe uma grande variedade de opções para se obter ajuda em Python!</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Pesquisa no google inciando com python;</dt>
+<dd><p class="first last">1.1 Geralmente o primeiro resultado da pesquisa será a documentação oficial — docs.python.org</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">StackOverflow and Quora;</p>
+</li>
+<li><p class="first">help()</p>
+</li>
+<li><p class="first">dir()</p>
+</li>
+</ol>
+<p>Quando você estiver dentro do interpretador python, a função help() imprime o docstring
+do objeto enviado com o parâmetro.</p>
+<p>Já a função dir() imprime quais são os atributos do objeto.</p>
+<p>Abaixo alguns exemplos:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span> <span class="c1"># Ajuda para a função embutida len() function</span>
+<span class="c1"># Note que é &quot;len&quot;, não &quot;len()&quot;. que é uma chamada da função, algo que não queremos.</span>
+<span class="n">help</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span> <span class="c1"># help string do modulo sys (você deve antes importar o sys)</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span> <span class="c1"># dir() é como um help() mas retorna uma pequna lista dos atributos do objeto.</span>
+<span class="n">help</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">)</span> <span class="c1"># help string para o exit(), função do modulo sys.</span>
+<span class="n">help</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">)</span> <span class="c1"># help string do metodo split() de um objeto string &#39;xyz&#39;;</span>
+</pre></div>
+</div>
+<p>Você pode invocar o help() de uma instância de um objeto ou mesmo do objeto.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="s1">&#39;kmee&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
+<span class="n">help</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="c1"># help string para listas;</span>
+<span class="nb">dir</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="c1"># exibe os atributos das listas, incluindo os seus métodos.</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">)</span> <span class="c1"># help string para o método append() de uma lista.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../google/strings.html" class="btn btn-neutral float-right" title="Python Strings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Curso de Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright KMEE INFORMATICA LTDA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2016.08.0001',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

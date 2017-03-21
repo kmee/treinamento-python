@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Expressões Regulares &mdash; Treinamento de Python 2016.08.0001</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
+        <link rel="next" title="Python Utilities" href="utilities.html"/>
+        <link rel="prev" title="Dicionários e Arquivos Python" href="dict-and-files.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Treinamento de Python
+          
+
+          
+            
+            <img src="../_static/kmee_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.08
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Expressões Regulares</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Expressões Regulares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#padroes-basicos">Padrões básicos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemplos-basicos">Exemplos Básicos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#repeticao">Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#leftmost-largest">Leftmost &amp; Largest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemplos-de-emails">Exemplos de emails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#square-brackets">Square Brackets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#group-extraction">Group Extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#findall">findall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#findall-com-arquivos">findall com arquivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#findall-e-groups">findall e Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#re-workflow-and-debug">RE Workflow and Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opcoes">Opções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#greedy-vs-non-greedy-opcional">Greedy vs. Non-Greedy (opcional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#substituicao-opcional">Substituição (Opcional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercicios">Exercícios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Python Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Expressões Regulares</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/google/regular-expressions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="expressoes-regulares">
+<h1>Expressões Regulares<a class="headerlink" href="#expressoes-regulares" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Expressões Regulares<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>As expressões regulares são uma linguagem poderosa para a busca de padrões de texto. Esta página dá uma introdução básica à expressões regulares suficientes para os nossos exercícios Python e mostra como expressões regulares trabalham em Python.</p>
+<p>O módulo Python &#8220;re&#8221; oferece suporte a expressões regulares.</p>
+<p>Em Python uma pesquisa de expressões regulares é tipicamente escrita como:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O método re.search() busca um padrão de expressões regulares e strings e realiza a busca dentro da string. Se a pesquisa for bem sucedida, search() retorna um objeto com dados ou None caso contrário. Portanto, a busca é geralmente seguida imediatamente por uma instrução if para testar se a busca foi bem-sucedida, como mostrado no exemplo a seguir que procura o padrão &#8216;word:&#8217; seguido por 3 letras (detalhes abaixo):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;an example word:cat!!&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;word:</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="c1"># If-statement after search() tests if it succeeded</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="c1">## &#39;found word:cat&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;did not find&#39;</span>
+</pre></div>
+</div>
+<p>O código match = re.search(pat, str) armazena o resultado da pesquisa em uma variável chamada &#8220;match&#8221;. Em seguida, a instrução if testa o match &#8211; Se for verdadeiro o resultado da busca e match.group() será o texto correspondente (por exemplo, &#8216;word:cat&#8217;). Caso contrário, se a resultado é falso (Nada para ser mais específico), então não houve sucesso na busca, e não há nenhum texto correspondente.</p>
+<p>O &#8216;r&#8217; no início da string padrão designa uma string python &#8220;row&#8221; que passa por barras invertidas sem mudança, o que é muito útil para expressões regulares (Java precisa deste recurso).</p>
+<p>Eu recomendo que você sempre escrever strings com o &#8216;r&#8217;.</p>
+</div>
+<div class="section" id="padroes-basicos">
+<h2>Padrões básicos<a class="headerlink" href="#padroes-basicos" title="Permalink to this headline">¶</a></h2>
+<p>O poder das expressões regulares é que elas podem especificar padrões, não apenas caracteres fixos. Aqui estão os padrões mais básicos que correspondem a caracteres individuais:</p>
+<ul class="simple">
+<li>a,X,9, &lt;- caracteres ordinários apenas correspondem a eles mesmos. Os meta-caracteres que não correspondem a si mesmos, porque eles têm significados especiais são eles: . ^ $ * +? {[] \ | () (detalhes abaixo)</li>
+<li>. . (a period) - corresponde a qualquer caractere único exceto nova linha &#8216;\n&#8217;</li>
+<li>\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline <code class="docutils literal"><span class="pre">[a-zA-Z0-9_]</span></code>. \W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.</li>
+</ul>
+<ul class="simple">
+<li>\b - limite entre palavra e não-palavra</li>
+<li>\s - (s minúsculo) corresponde a um único espaço em branco - espaço, nova linha, retorno/return, tab, form [\n\r\t\f]. \S (S maíusculo) corresponde a qualquer caractere sem espaço em branco.</li>
+<li>\t,\n,\r - tab, nova linha, retorno/return</li>
+<li>\d - dígitos decimais [0-9] (alguns utilitários regex mais velhos não suportam mais \d, mas todos suportam \w e \s)</li>
+</ul>
+<ul class="simple">
+<li>^ = Começar, $ = end - coincidir com o início ou o fim da string</li>
+<li>\ - Inibir a &#8220;excepcionalidade&#8221; de um caractere. Assim, por exemplo, usar \. para coincidir com um período ou \ para coincidir com uma barra. Se você não tem certeza se um caractere tem um significado especial, como &#8216;&#64;&#8217;, você pode colocar uma barra na frente dele, \&#64;, para ter certeza que é tratado apenas como um caractere.</li>
+</ul>
+</div>
+<div class="section" id="exemplos-basicos">
+<h2>Exemplos Básicos<a class="headerlink" href="#exemplos-basicos" title="Permalink to this headline">¶</a></h2>
+<p>Piada: what do you call a pig with three eyes? piiig!</p>
+<p>As regras básicas de pesquisa de expressão regular dentro de uma string são:</p>
+<ul class="simple">
+<li>A busca prossegue através da string do início ao fim, parando na primeira correspondência encontrada</li>
+<li>Todo o padrão deve ser correspondido, mas não toda a string</li>
+<li>Se <code class="docutils literal"><span class="pre">match</span> <span class="pre">=</span> <span class="pre">re.search(pat,</span> <span class="pre">str)</span></code> for bem sucedida, o resultado é Nenhum e em particular match.group() é o texto correspondente</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Search for pattern &#39;iii&#39; in string &#39;piiig&#39;.</span>
+<span class="c1">## All of the pattern must match, but it may appear anywhere.</span>
+<span class="c1">## On success, match.group() is matched text.</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;iii&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;iii&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;igs&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">match</span> <span class="o">==</span> <span class="bp">None</span>
+
+<span class="c1">## . = any char but \\n</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;..g&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;iig&quot;</span>
+
+<span class="c1">## \\d = digit char, \\w = word char</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;p123g&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w&#39;</span><span class="p">,</span> <span class="s1">&#39;@@abcd!!&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;abc&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="repeticao">
+<h2>Repetição<a class="headerlink" href="#repeticao" title="Permalink to this headline">¶</a></h2>
+<p>As coisas ficam mais interessantes quando você usa + e * para especificar a repetição do padrão</p>
+<ul class="simple">
+<li>\+ : 1 ou mais ocorrências do padrão à sua esquerda, por exemplo, &#8216;i+&#8217; = um ou mais &#8216;i&#8217;</li>
+<li>\* : 0 ou mais ocorrências do padrão à sua esquerda</li>
+<li>\? : jogo 0 ou 1 ocorrências do padrão à sua esquerda</li>
+</ul>
+</div>
+<div class="section" id="leftmost-largest">
+<h2>Leftmost &amp; Largest<a class="headerlink" href="#leftmost-largest" title="Permalink to this headline">¶</a></h2>
+<p>Em primeiro lugar a procura encontra regra leftmost por padrão e, segundo ele tenta usar o máximo da cadeia possível - Exemplo: + e * vão tão longe quanto possível (a + e * são conhecidos como &#8220;gananciosos&#8221;).</p>
+<p>Exemplos de repetições</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## i+ = one or more i&#39;s, as many as possible.</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;pi+&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;piii&quot;</span>
+
+<span class="c1">## Finds the first/leftmost solution, and within it drives the +</span>
+<span class="c1">## as far as possible (aka &#39;leftmost and largest&#39;).</span>
+<span class="c1">## In this example, note that it does not get to the second set of i&#39;s.</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;i+&#39;</span><span class="p">,</span> <span class="s1">&#39;piigiiii&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ii&quot;</span>
+
+<span class="c1">## \\s* = zero or more whitespace chars</span>
+<span class="c1">## Here look for 3 digits, possibly separated by whitespace.</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx1 2   3xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;1 2   3&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx12  3xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;12  3&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx123xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
+
+<span class="c1">## ^ = matches the start of string, so this fails:</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;^b</span><span class="se">\\</span><span class="s1">w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">match</span> <span class="o">==</span> <span class="bp">None</span>
+<span class="c1">## but without the ^ it succeeds:</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;b</span><span class="se">\\</span><span class="s1">w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;bar&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemplos-de-emails">
+<h2>Exemplos de emails<a class="headerlink" href="#exemplos-de-emails" title="Permalink to this headline">¶</a></h2>
+<p>Suponha que você queira encontrar o endereço de e-mail dentro do string &#8216;xyz <a class="reference external" href="mailto:alice-b&#37;&#52;&#48;google&#46;com">alice-b<span>&#64;</span>google<span>&#46;</span>com</a> purple monkey&#8217; . Iremos utilizar essa string como um exemplo de execução para demonstrar mais recursos de expressões regulares. Aqui está uma tentativa usando o padrão de r&#8217;\w+&#64;\w+&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice-b@google.com monkey dishwasher&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">w+@</span><span class="se">\\</span><span class="s1">w+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>  <span class="c1">## &#39;b@google&#39;</span>
+</pre></div>
+</div>
+<p>A pesquisa não obteve todo o endereço de e-mail, neste caso, porque o \w não corresponde ao &#8216;-&#8216; ou &#8216;.&#8217; no endereço. Vamos corrigir isso usando a expressão regular apresentada abaixo.</p>
+</div>
+<div class="section" id="square-brackets">
+<h2>Square Brackets<a class="headerlink" href="#square-brackets" title="Permalink to this headline">¶</a></h2>
+<p>Square brackets (colchetes) pode ser usado para indicar um conjunto de caracteres, então [abc] combina &#8216;a&#8217; ou &#8216;b&#8217; ou &#8216;c&#8217;. Os códigos \w, \s etc trabalham dentro de colchetes também com a única exceção que ponto (.) significa apenas um ponto literalmente. Para o problema de e-mails, os colchetes são uma maneira fácil de adicionar &#8216;.&#8217; e &#8216;-&#8216; para o conjunto de caracteres que podem aparecer ao redor do &#64; com a expressão r&#8217;[\w.-]+&#64;[\w.-]+&#8217; para obter todo o e-mail:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;[</span><span class="se">\\</span><span class="s1">w.-]+@[</span><span class="se">\\</span><span class="s1">w.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>  <span class="c1">## &#39;alice-b@google.com&#39;</span>
+</pre></div>
+</div>
+<p>(Mais recursos de colchetes) - Você também pode usar um traço para indicar um intervalo, para isso [a-z] corresponde a todas as letras minúsculas. Para usar um hífen sem indicar um intervalo, basta colocar um hífen no final da string, por exemplo, [abc-]. Um chapéu (^) no início de um conjunto de colchetes inverte a operação, então [^ab] significa qualquer caractere exceto &#8216;a&#8217; ou &#8216;b&#8217;.</p>
+</div>
+<div class="section" id="group-extraction">
+<h2>Group Extraction<a class="headerlink" href="#group-extraction" title="Permalink to this headline">¶</a></h2>
+<p>O recurso de &#8220;grupo&#8221; de uma expressão regular permite escolher partes do texto correspondente. Suponha que para o problema de e-mails que queremos extrair o nome do usuário e o domínio separadamente. Para fazer isso, adicionar parênteses () em torno do nome de usuário e do domínio, como este: r&#8217;([\w.-]+)&#64;([\w.-]+)&#8217;.</p>
+<p>Neste caso, o parêntese não muda o que a busca irá pesquisar, em vez disso, estabelecerá &#8220;grupos&#8221; lógicos dentro do texto a ser buscado. Em uma busca com sucesso, match.group(1) é o texto de partida correspondente ao primeiro parêntese esquerdo, e match.group(2) é o texto correspondente ao segundo parêntese esquerdo. O match.group() puro retornará o texto completo.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice-b@google.com monkey dishwasher&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;([</span><span class="se">\\</span><span class="s1">w.-]+)@([</span><span class="se">\\</span><span class="s1">w.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>   <span class="c1">## &#39;alice-b@google.com&#39; (the whole match)</span>
+  <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## &#39;alice-b&#39; (the username, group 1)</span>
+  <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">## &#39;google.com&#39; (the host, group 2)</span>
+</pre></div>
+</div>
+<p>Um fluxo de trabalho comum com expressões regulares é que você escreve um padrão para as coisas que você está procurando, adicionando grupos de parênteses para extrair as partes que deseja.</p>
+</div>
+<div class="section" id="findall">
+<h2>findall<a class="headerlink" href="#findall" title="Permalink to this headline">¶</a></h2>
+<p>findall() é provavelmente a função mais poderosa do módulo de re. Acima usamos re.search() para encontrar o primeiro dado de uma busca. findall() localiza <em>todos</em> os dados e retorna como uma lista de strings, com cada string representando um dado.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Suppose we have a text with many email addresses</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
+
+<span class="c1">## Here re.findall() returns a list of all the found email strings</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">r&#39;[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+@[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="c1">## [&#39;alice@google.com&#39;, &#39;bob@abc.com&#39;]</span>
+<span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+  <span class="c1"># do something with each found email string</span>
+  <span class="k">print</span> <span class="n">email</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="findall-com-arquivos">
+<h2>findall com arquivos<a class="headerlink" href="#findall-com-arquivos" title="Permalink to this headline">¶</a></h2>
+<p>Para arquivos, você deve ter o hábito de escrever um loop para iteragir sobre as linhas do arquivo, e você poderá chamar a função findall() em cada linha. Ao invés disso, vamos deixar a função findall() fazer a iteração por você &#8211; muito melhor! Apenas alimente todo o arquivo de texto em findall() e deixe-o retornar uma lista de todos os dados da busca em uma única etapa (lembre que f.read () retorna o texto inteiro de um arquivo em uma única string):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Open file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># Feed the file text into findall(); it returns a list of all the found strings</span>
+<span class="n">strings</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">r&#39;some pattern&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="findall-e-groups">
+<h2>findall e Groups<a class="headerlink" href="#findall-e-groups" title="Permalink to this headline">¶</a></h2>
+<p>O mecanismo grupo de parênteses ( ) pode ser combinado com findall(). Se o padrão inclui 2 ou mais grupos de parênteses, em seguida, em vez de retornar uma lista de strings, findall() retorna uma lista de tuples. Cada tuple representa uma busca padrão, e dentro dos dados das tuples, group(1), o group(2) ... Então, se 2 grupos de parênteses são adicionados ao padrão de e-mail, em seguida, findall() retorna uma lista de tuples, cada length 2 contém o nome de usuário e do domínio, por exemplo, (&#8216;Alice&#8217;, &#8216;google.com&#8217;).</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
+<span class="n">tuples</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">r&#39;([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)@([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">tuples</span>  <span class="c1">## [(&#39;alice&#39;, &#39;google.com&#39;), (&#39;bob&#39;, &#39;abc.com&#39;)]</span>
+<span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="n">tuples</span><span class="p">:</span>
+  <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">## username</span>
+  <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1">## host</span>
+</pre></div>
+</div>
+<p>Depois de ter a lista de tuples, você pode executar um loop sobre ela para fazer alguma computação para cada tuple. Se o padrão não inclui parênteses, então findAll() retornará uma lista de strings encontrados como nos exemplos anteriores. Se o padrão inclui um único conjunto de parênteses, então findAll() retornará uma lista de strings correspondentes a esse grupo único. (Recurso opcional Obscuro: Às vezes você tem grupos de parênteses (), mas que você não deseja extrair.</p>
+<p>Nesse caso, escrever os parênteses com ?: no início, por exemplo, (?: ) e que o parêntese da esquerda não vai contar como resultado do grupo.</p>
+</div>
+<div class="section" id="re-workflow-and-debug">
+<h2>RE Workflow and Debug<a class="headerlink" href="#re-workflow-and-debug" title="Permalink to this headline">¶</a></h2>
+<p>O Pacote de expressões regulares padrão contém um monte de significados em apenas alguns caracteres, mas eles são muito densos, você pode gastar muito tempo depurando seu código. Configure o tempo de execução para que você possa executar um padrão e imprimir o que corresponde facilmente, por exemplo, executando em um pequeno texto de teste e imprimir o resultado com findall(). Se o padrão corresponde a nada, tente desabilitar os padrões, remover partes dele para que você obtenha mais acertos.</p>
+<p>Quando não encontrar nada, você não poderá fazer qualquer progresso já que não há nada de concreto para olhar. Uma vez que ele está retornando resultados, você pode trabalhar em melhorar o código de forma incremental para atingir apenas o que você quer.</p>
+</div>
+<div class="section" id="opcoes">
+<h2>Opções<a class="headerlink" href="#opcoes" title="Permalink to this headline">¶</a></h2>
+<p>As funções re têm opções para modificar o comportamento da busca. A opção é adicionada como um argumento extra para a search() ou findAll(), etc., por exemplo, re.search (pat, str, re.IGNORECASE).</p>
+<ul class="simple">
+<li>IgnoreCase - ignorar as diferenças maiúsculas/minúsculas, de modo que &#8216;a&#8217; corresponde tanto &#8216;a&#8217; quanto &#8216;A&#8217;.</li>
+<li>Dotall - Permite ponto (.) para coincidir como uma nova linha - normalmente ele corresponde a qualquer coisa, mas uma nova linha. Isso pode te enganar - você pensa que .* corresponde a tudo, mas por padrão ele não vai além do fim de uma linha. Note que \s (espaços em branco) incluem novas linhas, por isso, se você quer combinar uma série de espaços em branco que podem incluir uma nova linha, você pode apenas usar \s*</li>
+<li>MULTILINE - Dentro de uma string feita de muitas linhas, permitem ^ e $ para coincidir com o início e o fim de cada linha. Normalmente ^/$ seria apenas coincidir com o início e o fim de toda a string.</li>
+</ul>
+</div>
+<div class="section" id="greedy-vs-non-greedy-opcional">
+<h2>Greedy vs. Non-Greedy (opcional)<a class="headerlink" href="#greedy-vs-non-greedy-opcional" title="Permalink to this headline">¶</a></h2>
+<p>Esta é uma seção opcional que mostra uma técnica mais avançada de expressão regular.</p>
+<p>Supondo que você tem texto com as tags: &lt;b&gt;foo&lt;/b&gt; e &lt;i&gt;assim por diante&lt;/i&gt;</p>
+<p>Supondo que você está tentando encontrar cada tag com o padrão <code class="docutils literal"><span class="pre">'(&lt;*.&gt;)'</span></code> &#8211; O que isso corresponde em primeiro lugar?</p>
+<p>O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* faz com que a busca coincida todo &#8216;&lt;b&gt;foo&lt;/b&gt; e &lt;i&gt;assim por diante&lt;/i&gt;&#8217; como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira &gt; (por isso é chamado de ganancioso - Greedy).</p>
+<p>Existe uma extensão para a expressão regular, onde se você adicionar um ? no final, tais como .*? ou .+?, irá alterá-lo para não ser tão ganancioso. Agora eles param assim que puder. Assim, o padrão &#8216;(&lt;.*?&gt;)&#8217; vai ficar apenas &#8216;&lt;b&gt;&#8217; como o primeiro resultado, e &#8216;&lt;/b&gt;&#8217; como o segundo resultado, e assim por diante para cada par de tags &lt;..&gt;. O recomendado é que normalmente você use um .*?, e logo em seguida encontre o marcador correto (&gt;, neste caso) que força o final da chamada .*?.</p>
+<p>O <code class="docutils literal"><span class="pre">*?</span></code> extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito útil em linha de comando e tem uma flag onde se aceita utilizar padrões pcre.</p>
+<p>Uma técnica mais velha, porém, amplamente usada para codificar esta ideia de &#8220;todos estes caracteres, exceto parando em X&#8221; usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de <code class="docutils literal"><span class="pre">.*</span></code> para obter todos os caracteres, use <code class="docutils literal"><span class="pre">[^&gt;]*</span></code>, que ignora todos os caracteres que não são &gt; (o ^ &#8220;inverte&#8221; o conjunto de colchetes, de modo que corresponda a qualquer caractere que não esteja presente nos colchetes).</p>
+</div>
+<div class="section" id="substituicao-opcional">
+<h2>Substituição (Opcional)<a class="headerlink" href="#substituicao-opcional" title="Permalink to this headline">¶</a></h2>
+<p>A função re.sub(pat, replacement, str) pesquisa por todos os dados na string, e os substitui. O texto de substituição pode incluir &#8216;\1&#8217;, &#8216;\2&#8217;, que se referem ao texto do group(1), o group(2), e assim por diante a partir do texto encontrado originalmente.</p>
+<p>Aqui está um exemplo que procura todos os endereços de e-mail e modifica-os para manter o usuário (\1), mas tem yo-yo-dyne.com como o domínio.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
+<span class="c1">## re.sub(pat, replacement, str) -- returns new string with all replacements,</span>
+<span class="c1">## \\1 is group(1), \\2 group(2) in the replacement</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">r&#39;([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)@([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)&#39;</span><span class="p">,</span> <span class="s1">r&#39;</span><span class="se">\\</span><span class="s1">1@yo-yo-dyne.com&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="c1">## purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this headline">¶</a></h2>
+<p>Exercícios de Expressões Regulares</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utilities.html" class="btn btn-neutral float-right" title="Python Utilities" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dict-and-files.html" class="btn btn-neutral" title="Dicionários e Arquivos Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright KMEE INFORMATICA LTDA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2016.08.0001',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
