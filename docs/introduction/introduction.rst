@@ -32,13 +32,13 @@ Python é tão especial?
 ----------------------
 
 - `Brochura <http://brochure.getpython.info/media/releases/psf-python-brochure-vol.-i-final-download.pdf/>`_.
-- 'Pq o Python cabe na sua mente' Bruce Eckel;
+- 'Porque o Python cabe na sua mente' Bruce Eckel;
 - Os programadores que usam linguagens dinâmicas são mais felizes;
 - Excelente biblioteca padrão +230 módulos: `EN <https://docs.python.org/2.7/library/>`_
 - Documentação em `Português <http://turing.com.br/pydoc/2.7/tutorial/index.html>`_
 - Python package index: `pypi <https://pypi.python.org/pypi>`_
 - Resolver os problemas e compartilhar esta na essência do Python;
-
+d
 Zen python
 ----------
 - Tim peters
@@ -66,7 +66,7 @@ Se seu código é inspirado nessas regras é pythonico
 - Erros nunca devem passar silenciosamente.
 - A menos que explicitamente silenciados.
 - Em face da ambiguidade, recuse a tentação de adivinhar.
-- Deve haver um-- e de preferência apenas uma maneira --obvious para fazê-lo.
+- Deve haver uma -- e de preferência apenas uma -- maneira óbvia para fazê-lo.
 - Apesar dessa maneira poder não ser óbvia à primeira vista, a menos que você seja holandês.
 - Agora é melhor do que nunca.
 - Embora nunca tenha sido muitas vezes é melhor do que agora mesmo.
@@ -148,7 +148,7 @@ Melhor forma de se ver como um código funciona é utilizando o interpertador do
 Código fonte python
 -------------------
 O código fonte python utiliza a extensão ".py" e as extensões são chamadas de "módulos".
-Por exemplo para executar o módulo python hello.py, a maneira mais fácil de executá-lo é ir no sheel e digitar.
+Por exemplo para executar o módulo python hello.py, a maneira mais fácil de executá-lo é ir no shell e digitar.
 
 ::
 
@@ -206,7 +206,7 @@ importado e utilizado em outro módulo. Quando um arquivo python é executado di
 
     if __name__ ==...
 
-Para chamar a função main(), mas não quando este módulo é importado por outro módulo.
+para chamar a função main(), mas não quando este módulo é importado por outro módulo.
 
 Argumentos
 ----------
@@ -262,7 +262,7 @@ pelo mesmo nível de identação.
 
 .. nextslide::
 
-- A palavra reservada *def* define a função com seus parâmetros entre parênteses e seu código identado. A primeria linha de uma função pode ser sua documentação string ("docstring") que deve descrever o que a função faz.
+- A palavra reservada *def* define a função com seus parâmetros entre parênteses e seu código identado. A primeira linha de uma função pode ser sua documentação string ("docstring") que deve descrever o que a função faz.
 - O docstring pode ser uma única linha, ou múltiplas linhas como no exemplo anterior. (Com aspas triplas).
 - Váriáveis definidas dentro de uma função são locais para esta função, então o result da função anterior é separado de uma mesma váriavel result em outra função.
 - Se a declaração de retorno receber um argumento, este será retornado a quem chamou a função.
@@ -313,7 +313,7 @@ O Código é checado em tempo de execução
 
 O Python realiza pouca checagem ao compilar, adiando as checagens de nomes, tipos e etc. para quando a linha for executada.
 
-Exemplo:
+Exemplo:'
 
 .. code-block:: python
 
@@ -343,7 +343,7 @@ Para nomes de variáveis a PEP8 recomenda o uso de variáveis de **"mais_de_uma_
 com underscore mas recomenda aos desenvolvedores a adiar alterar códigos que
 utilizem a notação **camelCase.**
 
-Como toda linguagem palavras como 'print' e 'while' não podem ser usadas como nomes de variáveis. Enquanto 'str' e 'lista' pode parecer bons nomes, você estaria substituindo essas variáveis ​​do sistema. Built-ins não são palavras-chave e, portanto, são suscetíveis ao uso inadvertido por novos desenvolvedores Python.
+Como toda linguagem palavras como 'print' e 'while' não podem ser usadas como nomes de variáveis. Enquanto 'str' e 'list' podem parecer bons nomes, você estaria substituindo essas variáveis ​​do sistema. Built-ins não são palavras-chave e, portanto, são suscetíveis ao uso inadvertido por novos desenvolvedores Python.
 
 
 Mais um pouco de módulos e seus Namespaces
