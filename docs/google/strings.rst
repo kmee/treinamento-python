@@ -71,7 +71,7 @@ Pegadinha para o novato em Python: não use "len" como um nome
 de variável para evitar o bloqueio a função len().
 
 O operador '+' pode concatenar duas strings. Observe no código abaixo que as
-variáveis não são pré-declarados - apenas para atribuir.
+variáveis não são pré-declaradas - apenas para atribuir.
 
 .. code-block:: python
 
@@ -359,7 +359,7 @@ Acesse o endereço http://192.168.1.104:8888
 
 Baixe o arquivo string1.py
 
-Exercício A:
+Exercício A: Donuts
 
 .. code-block:: python
 
@@ -369,3 +369,36 @@ Exercício A:
     # ao invés do contador.
     # Então donuts(5) returns 'Number of donuts: 5'
     # e donuts(23) returns 'Number of donuts: many'
+
+Exercício B: both-ends
+
+.. code-block:: python
+
+    # Dada uma string s, retorne uma string constituída pelos 2 primeiros
+    # e pelos dois últimos caracteres da string original,
+    # então 'sprint' resulta 'spng'. Entretando, se a string tem
+    # comprimento menor que 2, retorna uma string vazia.
+
+Exercicio C: fix-start
+
+.. code-block:: python
+
+    # Dada uma string s, retorne uma string
+    # onde todas as ocorrências do seu primeiro caracter tenha
+    # sido mudada para '*', exceto o primeiro caracter propriamente.
+    # Por exemplo: 'babble' resulta 'ba**le'
+    # Assuma que a string tem comprimento 1 ou maior.
+    # Dica: s.replace(stra, strb) retorna uma versão da string s
+    # onde todas instâncias de 'stra' foram mudadas para 'strb'
+
+Exercício D: MixUp
+
+.. code-block:: python
+
+    # Dadas as strings 'a' e 'b', retorne uma única string com 'a' e 'b' separados
+    # por um espaço '<a> <b>', substituindo os 2 primeiros caracteres de cada string.
+    # Exemplo:
+    #    'mix', 'pod' -> 'pox mid'
+    #    'dog', 'dinner' -> 'dig donner'
+    # Assuma que 'a' e 'b' tenham comprimento 2 ou mais. 
+
