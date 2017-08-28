@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -32,9 +30,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
         <link rel="next" title="Referências" href="../references/references.html"/>
         <link rel="prev" title="Expressões Regulares" href="regular-expressions.html"/> 
@@ -46,7 +41,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -90,10 +84,7 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
 </ul>
@@ -103,12 +94,12 @@
 <li class="toctree-l1"><a class="reference internal" href="sorting.html">Sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dict-and-files.html">Dicionários e Arquivos Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regular-expressions.html">Expressões Regulares</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Utilities</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python Utilities</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Python Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#file-system-os-os-path-shutil">File System – os, os.path, shutil</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-external-processes-commands">Running External Processes – commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-system-os-os-path-shutil">File System &#8211; os, os.path, shutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-external-processes-commands">Running External Processes &#8211; commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#excessoes">Excessões</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#http-urllib-and-urlparse">HTTP – urllib and urlparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#http-urllib-and-urlparse">HTTP &#8211; urllib and urlparse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercise">Exercise</a></li>
 </ul>
 </li>
@@ -128,10 +119,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Treinamento de Python</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
       </nav>
 
 
@@ -144,36 +133,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>Python Utilities</li>
-    
-    
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Python Utilities</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="../_sources/google/utilities.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/google/utilities.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -187,7 +159,7 @@
 padrão do Python, visando resolver problemas comuns.</p>
 </div>
 <div class="section" id="file-system-os-os-path-shutil">
-<h2>File System – os, os.path, shutil<a class="headerlink" href="#file-system-os-os-path-shutil" title="Permalink to this headline">¶</a></h2>
+<h2>File System &#8211; os, os.path, shutil<a class="headerlink" href="#file-system-os-os-path-shutil" title="Permalink to this headline">¶</a></h2>
 <p>Os modulos <strong>os</strong> e <strong>os.path</strong> contêm muitas funcionalidades para interagir
 com o sistema operacional.</p>
 <p>O módulo <strong>shutil</strong> pode copiar arquivos</p>
@@ -196,12 +168,12 @@ com o sistema operacional.</p>
 <li>filenames = os.listdir(dir) - lista o nome dos arquivos no diretório (não incluindo path atual . e path pai ..). Os nomes dos arquivos são apenas os nomes dos arquivos e não os seus caminhos absolutos.</li>
 <li>os.path.join(dir, filename) - recupera o nome de arquivo da lista acima, usar isso para colocar o diretório (path) e nome do arquivo em conjunto para fazer um caminho completo</li>
 <li>os.path.abspath(path) - recupera um caminho, retorna a forma absoluta, por exemplo, /home/nick/foo/bar.html</li>
-<li>os.path.dirname(caminho), os.path.basename (path) - recupera o caminho completo dir/foo/bar.html, retorna o diretório “dir/foo” e nome do arquivo “bar.html”</li>
+<li>os.path.dirname(caminho), os.path.basename (path) - recupera o caminho completo dir/foo/bar.html, retorna o diretório &#8220;dir/foo&#8221; e nome do arquivo &#8220;bar.html&#8221;</li>
 </ul>
 <ul class="simple">
-<li>os.path.exists(path) – true if it exists</li>
-<li>os.mkdir(dir_path) – makes one dir, os.makedirs(dir_path) makes all the needed dirs in this path</li>
-<li>shutil.copy(source-path, dest-path) – copy a file (dest path directories should exist)</li>
+<li>os.path.exists(path) &#8211; true if it exists</li>
+<li>os.mkdir(dir_path) &#8211; makes one dir, os.makedirs(dir_path) makes all the needed dirs in this path</li>
+<li>shutil.copy(source-path, dest-path) &#8211; copy a file (dest path directories should exist)</li>
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Example pulls filenames from a dir, prints their relative and absolute paths</span>
 <span class="k">def</span> <span class="nf">printdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
@@ -218,17 +190,17 @@ padrão</strong>: help() e dir().</p>
 módulos: dir(os), help(os.listdir), dir(os.path), help(os.path.dirname).</p>
 </div>
 <div class="section" id="running-external-processes-commands">
-<h2>Running External Processes – commands<a class="headerlink" href="#running-external-processes-commands" title="Permalink to this headline">¶</a></h2>
+<h2>Running External Processes &#8211; commands<a class="headerlink" href="#running-external-processes-commands" title="Permalink to this headline">¶</a></h2>
 <p>O modulo <strong>commands</strong> é uma forma simples de executar um comando externo e
 capturar sua saída.</p>
 <ul class="simple">
 <li>commands module docs</li>
-<li>(status, output) = commands.getstatusoutput(cmd) – executa o comando, aguarda a execução para sair e retorna status int e texto de saída como uma tupla. O comando é executado com sua saída padrão e erro padrão combinado em uma única saída de texto. O status será diferente de zero se o comando falhou. Desde que o standar-err do comando seja capturado, se ele falhar, é preciso imprimir alguma indicação sobre o que aconteceu.</li>
-<li>output = commands.getoutput(cmd) – como o comando acima, mas sem o status int.</li>
+<li>(status, output) = commands.getstatusoutput(cmd) &#8211; executa o comando, aguarda a execução para sair e retorna status int e texto de saída como uma tupla. O comando é executado com sua saída padrão e erro padrão combinado em uma única saída de texto. O status será diferente de zero se o comando falhou. Desde que o standar-err do comando seja capturado, se ele falhar, é preciso imprimir alguma indicação sobre o que aconteceu.</li>
+<li>output = commands.getoutput(cmd) &#8211; como o comando acima, mas sem o status int.</li>
 <li>Há o commands.getstatus(), mas ele faz outra coisa, por isso não utilize.</li>
 </ul>
 <ul class="simple">
-<li>Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo “popen2” (<a class="reference external" href="http://docs.python.org/lib/module-popen2.html">http://docs.python.org/lib/module-popen2.html</a>)</li>
+<li>Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo &#8220;popen2&#8221; (<a class="reference external" href="http://docs.python.org/lib/module-popen2.html">http://docs.python.org/lib/module-popen2.html</a>)</li>
 <li>Há também o simples os.system(cmd), que executa o comando e retorna sua saída e retorna seu código de erro. Isso funciona se você deseja executar o comando, mas não precisa capturar a sua saída em suas estruturas de dados python.</li>
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Given a dir path, run an external &#39;ls -l&#39; on it --</span>
@@ -250,13 +222,13 @@ capturar sua saída.</p>
 em uma linha particular e transfere o controle para manipulação de erros de código.
 Esta seção apenas introduz os usos mais básicos de exceções. Por exemplo, num erro
 de tempo de execução pode ser que uma variável utilizada no programa não tenha um
-valor (ValueError… você provavelmente já viu este erro algumas vezes), ou um erro
+valor (ValueError... você provavelmente já viu este erro algumas vezes), ou um erro
 de operação de abertura de arquivo por causa do arquivo não existir ( IOError).
 (Veja docs <a class="reference external" href="http://docs.python.org/tut/node10.html][exception~~number=plural">http://docs.python.org/tut/node10.html][exception~~number=plural</a>)</p>
 <p>Sem qualquer código de manipulação de erro (como temos feito até agora), uma
 exceção de tempo de execução apenas interrompe o programa com uma mensagem de erro.
 Isso é um bom comportamento padrão, e você já viu isso muitas vezes. Você pode adicionar
-uma estrutura “try/except” no seu código para lidar com exceções, como esta:</p>
+uma estrutura &#8220;try/except&#8221; no seu código para lidar com exceções, como esta:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
   <span class="c1">## Either of these two lines could throw an IOError, say</span>
   <span class="c1">## if the file does not exist or the read() encounters a low level error.</span>
@@ -272,23 +244,23 @@ uma estrutura “try/except” no seu código para lidar com exceções, como es
 <p>A tentativa: seção inclui o código que pode lançar uma exceção.
 A exceção: seção contém o código para ser executado se houver uma exceção.
 Se não houver nenhuma exceção, a exceção: a seção é ignorada (isto é, que
-o código é para a manipulação de erro somente, não é o caso “normal” para
+o código é para a manipulação de erro somente, não é o caso &#8220;normal&#8221; para
 o código).</p>
 <p>Você pode obter um ponteiro para a exceção do próprio objeto com
 a sintaxe <code class="docutils literal"><span class="pre">except</span> <span class="pre">IOError,</span> <span class="pre">e:</span></code> (e aponta para o objeto de exceção).</p>
 </div>
 <div class="section" id="http-urllib-and-urlparse">
-<h2>HTTP – urllib and urlparse<a class="headerlink" href="#http-urllib-and-urlparse" title="Permalink to this headline">¶</a></h2>
+<h2>HTTP &#8211; urllib and urlparse<a class="headerlink" href="#http-urllib-and-urlparse" title="Permalink to this headline">¶</a></h2>
 <p>O módulo <strong>urllib</strong> permite acessar servidores HTTP por meios de requests GET
-e POST de maneira direta – Tornando as urls acessíveis como um arquivo que
+e POST de maneira direta &#8211; Tornando as urls acessíveis como um arquivo que
 possa ser lido. O <strong>urlparse</strong> permite a você trabalhar com partes de url e unir urls.</p>
 <p>-urllib module docs
--ufile = urllib.urlopen(url) – returns a file like object for that url
--text = ufile.read() – can read from it, like a file (readlines() etc. also work)
--info = ufile.info() – the meta info for that request. info.gettype() is the  mime time, e.g. ‘text/html’
--baseurl = ufile.geturl() – gets the “base” url for the request, which may be different from the original because of redirects
--urllib.urlretrieve(url, filename) – downloads the url data to the given file path
--urlparse.urljoin(baseurl, url) – given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.</p>
+-ufile = urllib.urlopen(url) &#8211; returns a file like object for that url
+-text = ufile.read() &#8211; can read from it, like a file (readlines() etc. also work)
+-info = ufile.info() &#8211; the meta info for that request. info.gettype() is the  mime time, e.g. &#8216;text/html&#8217;
+-baseurl = ufile.geturl() &#8211; gets the &#8220;base&#8221; url for the request, which may be different from the original because of redirects
+-urllib.urlretrieve(url, filename) &#8211; downloads the url data to the given file path
+-urlparse.urljoin(baseurl, url) &#8211; given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Given a url, try to retrieve it. If it&#39;s text/html,</span>
 <span class="c1">## print its base url and its text.</span>
 <span class="k">def</span> <span class="nf">wget</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
@@ -323,18 +295,15 @@ exibindo uma mensagem em caso de erro.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../references/references.html" class="btn btn-neutral float-right" title="Referências" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../references/references.html" class="btn btn-neutral float-right" title="Referências" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="regular-expressions.html" class="btn btn-neutral" title="Expressões Regulares" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="regular-expressions.html" class="btn btn-neutral" title="Expressões Regulares" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -368,8 +337,7 @@ exibindo uma mensagem em caso de erro.</p>
             VERSION:'2016.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

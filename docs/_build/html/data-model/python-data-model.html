@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -32,9 +30,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
         <link rel="prev" title="Referências" href="../references/references.html"/> 
 
@@ -45,7 +40,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
 </ul>
@@ -106,9 +97,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Data Model</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python Data Model</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#o-modelo-de-dados-python">O modelo de dados python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-ponta-do-iceberg">A ponta do iceberg…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-ponta-do-iceberg">A ponta do iceberg...</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#metodos-especiais">Metodos especiais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exemplo-um-baralho-pythonico">Exemplo Um Baralho Pythonico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#como-os-metodos-especiais-sao-usados">Como os metodos especiais sao usados</a></li>
@@ -133,10 +124,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Treinamento de Python</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
       </nav>
 
 
@@ -149,36 +138,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>Python Data Model</li>
-    
-    
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Python Data Model</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="../_sources/data-model/python-data-model.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/data-model/python-data-model.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -193,13 +165,13 @@
 <li>Nesses ultimo dias vc pode ter achado estranho escrever len(collection)</li>
 </ul>
 </div></blockquote>
-<p><strong>em vez de collection.len()…</strong></p>
+<p><strong>em vez de collection.len()...</strong></p>
 </div>
 <div class="section" id="a-ponta-do-iceberg">
-<h2>A ponta do iceberg…<a class="headerlink" href="#a-ponta-do-iceberg" title="Permalink to this headline">¶</a></h2>
+<h2>A ponta do iceberg...<a class="headerlink" href="#a-ponta-do-iceberg" title="Permalink to this headline">¶</a></h2>
 <p>O iceberg é chamado de python data model e descreve a API que você pode usar
 para fazer com que seus próprios objetos interajam bem com os recursos mais
-“malukos” da linguagem.</p>
+&#8220;malukos&#8221; da linguagem.</p>
 <ul class="simple">
 <li>É como se fosse um framework, formalizando a contrução da propria linguagem</li>
 <li>O interpretador python chama metodos especiais para realizar operações básicas.</li>
@@ -335,8 +307,8 @@ objeto embutido de tamanho váriavel na memoria. Isto é muito mais rapido que c
 <h2>Mecanismo flexivel de parametros<a class="headerlink" href="#mecanismo-flexivel-de-parametros" title="Permalink to this headline">¶</a></h2>
 <p>Um dos melhores recursos das funções python. Usamos os * e ** para explodir:</p>
 <ul class="simple">
-<li>“*” faz com que o vetor seja utilizado como argumentos ordenados.</li>
-<li>“**” faz com que o dicionario seja usado como argumentos nomeados.</li>
+<li>&#8220;*&#8221; faz com que o vetor seja utilizado como argumentos ordenados.</li>
+<li>&#8220;**&#8221; faz com que o dicionario seja usado como argumentos nomeados.</li>
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tag</span><span class="p">(</span><span class="s1">&#39;br&#39;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
 <span class="go">&#39;&lt;br /&gt;&#39;</span>
@@ -591,16 +563,13 @@ itens comprados.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../references/references.html" class="btn btn-neutral" title="Referências" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../references/references.html" class="btn btn-neutral" title="Referências" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -634,8 +603,7 @@ itens comprados.</p>
             VERSION:'2016.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

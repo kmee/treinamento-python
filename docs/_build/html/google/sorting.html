@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -32,9 +30,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
         <link rel="next" title="Dicionários e Arquivos Python" href="dict-and-files.html"/>
         <link rel="prev" title="Listas Python" href="lists.html"/> 
@@ -46,7 +41,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -90,17 +84,14 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lists.html">Listas Python</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sorting</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Sorting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#python-sorting">Python Sorting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#custom-sorting-with-key">Custom Sorting With key=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sort-method">sort() method</a></li>
@@ -128,10 +119,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Treinamento de Python</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
       </nav>
 
 
@@ -144,36 +133,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>Sorting</li>
-    
-    
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Sorting</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="../_sources/google/sorting.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/google/sorting.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -208,8 +180,8 @@ retorna os valores ao contrário.</p>
 <div class="section" id="custom-sorting-with-key">
 <h2>Custom Sorting With key=<a class="headerlink" href="#custom-sorting-with-key" title="Permalink to this headline">¶</a></h2>
 <p>Para classificação personalizada mais complexa, a função sorted() recebe um
-“key=” opcional que especifica uma função “key” que transforma cada elemento
-antes de comparação. A função key recebe 1 valor por parâmetro e retorna 1 outro valor valor, sendo este o “proxy”, utilizado para as comparações com o sorted.</p>
+&#8220;key=&#8221; opcional que especifica uma função &#8220;key&#8221; que transforma cada elemento
+antes de comparação. A função key recebe 1 valor por parâmetro e retorna 1 outro valor valor, sendo este o &#8220;proxy&#8221;, utilizado para as comparações com o sorted.</p>
 <p>Por exemplo, com uma lista de strings, especificando key=len (construído com
 a função len()) classifica as strings pelo comprimento, do mais curto para o
 mais longo. O sorted chama len() para cada string para obter a lista de valores
@@ -220,7 +192,7 @@ de comprimento proxy, e os tipos com esses valores de proxy.</p>
 </pre></div>
 </div>
 <img alt="../_images/sorted-key.png" class="align-center" src="../_images/sorted-key.png" />
-<p>Outro exemplo, especificar “str.lower” como a função chave é uma maneira de forçar a triagem para o mesmo tratamento de letras maiúsculas e minúsculas:</p>
+<p>Outro exemplo, especificar &#8220;str.lower&#8221; como a função chave é uma maneira de forçar a triagem para o mesmo tratamento de letras maiúsculas e minúsculas:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## &quot;key&quot; argument specifying str.lower function to use for sorting</span>
 <span class="k">print</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">strs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>  <span class="c1">## [&#39;aa&#39;, &#39;BB&#39;, &#39;CC&#39;, &#39;zz&#39;]</span>
 </pre></div>
@@ -240,10 +212,10 @@ de comprimento proxy, e os tipos com esses valores de proxy.</p>
 </div>
 <p>Para usar key= custom sorting, lembre-se de que você deve fornecer uma função que
 receba um valor e retorne o valor proxy para orientar a classificação.
-Há também um argumento opcional “cmp=cmpFn” para o sorted() que especifica
+Há também um argumento opcional &#8220;cmp=cmpFn&#8221; para o sorted() que especifica
 uma função de comparação de dois argumentos que leva dois valores da lista
 e retorna negativo/0/positiva para indicar a sua ordenação. A função de
-comparação default para strings, inits, … é cmp(a, b), então, você pode
+comparação default para strings, inits, ... é cmp(a, b), então, você pode
 chamar quantas vezes quiser a função cmp() no seu comparador personalizado.
 O mais recente um argumento key= é geralmente preferível.</p>
 </div>
@@ -267,8 +239,8 @@ os elementos a serem classificados já estão em uma lista.</p>
 <div class="section" id="tuples">
 <h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
 <p>Uma tuple é um agrupamento de elementos de tamanho fixo, tais como um (x, y) de
-coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mudam de tamanho (tuples não são estritamente imutáveis desde que um dos elementos contidos possa ser mutável). Tuples desempenham um tipo de papel “struct” em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanhos fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.</p>
-<p>Para criar uma tuple, basta listar os valores entre parênteses separados por vírgulas. Uma tuple “vazio” é apenas um par vazio de parênteses. Acessar os elementos de uma tuple é como uma lista - len(),[], for, in, etc. Todos funcionam da mesma forma.</p>
+coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mudam de tamanho (tuples não são estritamente imutáveis desde que um dos elementos contidos possa ser mutável). Tuples desempenham um tipo de papel &#8220;struct&#8221; em Python - uma maneira conveniente para passar em torno de uma pequena lógica, tamanhos fixos de valores. Uma função que precisa retornar vários valores pode simplesmente retornar uma tuple dos valores. Por exemplo, se eu quisesse ter uma lista de coordenadas 3-D, a representação python natural seria uma lista de tuples, onde cada tuple é tamanho 3 segurando um (x,y,z) do grupo.</p>
+<p>Para criar uma tuple, basta listar os valores entre parênteses separados por vírgulas. Uma tuple &#8220;vazio&#8221; é apenas um par vazio de parênteses. Acessar os elementos de uma tuple é como uma lista - len(),[], for, in, etc. Todos funcionam da mesma forma.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">)</span>
 <span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span>  <span class="c1">## 3</span>
 <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>    <span class="c1">## hi</span>
@@ -296,7 +268,7 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
 <span class="n">squares</span> <span class="o">=</span> <span class="p">[</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span> <span class="p">]</span>   <span class="c1">## [1, 4, 9, 16]</span>
 </pre></div>
 </div>
-<p>A sintaxe é [ expr for var in list ] - o “for var in list” parece um for-loop regular, mas sem os dois pontos (:). O expr à sua esquerda é avaliada uma vez para cada elemento para dar os valores para a nova lista. Aqui está um exemplo com strings, em que cada string é alterada para maiúsculas com ‘!!!’:</p>
+<p>A sintaxe é [ expr for var in list ] - o &#8220;for var in list&#8221; parece um for-loop regular, mas sem os dois pontos (:). O expr à sua esquerda é avaliada uma vez para cada elemento para dar os valores para a nova lista. Aqui está um exemplo com strings, em que cada string é alterada para maiúsculas com &#8216;!!!&#8217;:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">strs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;goodbye&#39;</span><span class="p">]</span>
 
 <span class="n">shouting</span> <span class="o">=</span> <span class="p">[</span> <span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;!!!&#39;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strs</span> <span class="p">]</span>
@@ -340,18 +312,15 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dict-and-files.html" class="btn btn-neutral float-right" title="Dicionários e Arquivos Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dict-and-files.html" class="btn btn-neutral float-right" title="Dicionários e Arquivos Python" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lists.html" class="btn btn-neutral" title="Listas Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lists.html" class="btn btn-neutral" title="Listas Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -385,8 +354,7 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
             VERSION:'2016.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

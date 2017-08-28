@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -32,9 +30,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
         <link rel="next" title="Sorting" href="sorting.html"/>
         <link rel="prev" title="Python Strings" href="strings.html"/> 
@@ -46,7 +41,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -90,16 +84,13 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Listas Python</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Listas Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Listas Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#for-e-in">FOR e IN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#range">Range</a></li>
@@ -130,10 +121,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Treinamento de Python</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
       </nav>
 
 
@@ -146,36 +135,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>Listas Python</li>
-    
-    
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Listas Python</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="../_sources/google/lists.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/google/lists.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -206,7 +178,7 @@ e acessar informações através de []. Com o primeiro elemento iniciado por 0. 
 <img alt="../_images/list2.png" class="align-center" src="../_images/list2.png" />
 <ul class="simple">
 <li>Uma lista vazia é apenas uma par de colchetes [].</li>
-<li>O ‘+’ funciona ao adicionar duas listas:</li>
+<li>O &#8216;+&#8217; funciona ao adicionar duas listas:</li>
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
@@ -222,7 +194,7 @@ e acessar informações através de []. Com o primeiro elemento iniciado por 0. 
 <h2>FOR e IN<a class="headerlink" href="#for-e-in" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>As declarações Python <strong>for</strong> e <strong>in</strong> são extremamente úteis. A palavra reservada <strong>for</strong></dt>
-<dd>– for var in list – é a maneira mais fácil de percorrer os elementos de uma lista
+<dd>&#8211; for var in list &#8211; é a maneira mais fácil de percorrer os elementos de uma lista
 ( ou uma coleção ). <strong>Não adicione ou remova itens de um iterável durante uma iteração.</strong></dd>
 </dl>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
@@ -233,8 +205,8 @@ e acessar informações através de []. Com o primeiro elemento iniciado por 0. 
 </pre></div>
 </div>
 <p>Se você sabe o que procurar em uma lista, use o nome da variável no loop para
-capturar a informação desejada, como um “num”, um “nome” ou uma “url”.</p>
-<p>O termo ‘in” é uma forma simples de testar se um elemento aparece em uma lista, retornando True/False.</p>
+capturar a informação desejada, como um &#8220;num&#8221;, um &#8220;nome&#8221; ou uma &#8220;url&#8221;.</p>
+<p>O termo &#8216;in&#8221; é uma forma simples de testar se um elemento aparece em uma lista, retornando True/False.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;larry&#39;</span><span class="p">,</span> <span class="s1">&#39;curly&#39;</span><span class="p">,</span> <span class="s1">&#39;moe&#39;</span><span class="p">]</span>
 <span class="k">if</span> <span class="s1">&#39;curly&#39;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
     <span class="k">print</span> <span class="s1">&#39;yay&#39;</span>
@@ -252,8 +224,8 @@ com chars, então:</p>
 </div>
 <div class="section" id="range">
 <h2>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h2>
-<p>A função range(n) produz uma lista de números 0, 1, …, n-1 e range(a,b)
-retorna a, a+1, … b-1 – até o último número menos um. A combinação de um for-loop e o
+<p>A função range(n) produz uma lista de números 0, 1, ..., n-1 e range(a,b)
+retorna a, a+1, ... b-1 &#8211; até o último número menos um. A combinação de um for-loop e o
 método range() permitem criarmos o for numérico tradicional.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## print the numbers from 0 through 99</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
@@ -353,18 +325,15 @@ através de cada elemento de uma lista, já o loop while permite controle total 
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sorting.html" class="btn btn-neutral float-right" title="Sorting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sorting.html" class="btn btn-neutral float-right" title="Sorting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="strings.html" class="btn btn-neutral" title="Python Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="strings.html" class="btn btn-neutral" title="Python Strings" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -398,8 +367,7 @@ através de cada elemento de uma lista, já o loop while permite controle total 
             VERSION:'2016.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

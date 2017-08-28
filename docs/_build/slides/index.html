@@ -717,6 +717,167 @@ escrevendo código python com um sotaque bem marcado&quot; Luciano Ramalho</p>
 
 <h2>Exercício 4</h2>
 
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.4 -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Additional basic string exercises</span>
+
+<span class="c1"># D. verbing</span>
+<span class="c1"># Given a string, if its length is at least 3,</span>
+<span class="c1"># add &#39;ing&#39; to its end.</span>
+<span class="c1"># Unless it already ends in &#39;ing&#39;, in which case</span>
+<span class="c1"># add &#39;ly&#39; instead.</span>
+<span class="c1"># If the string length is less than 3, leave it unchanged.</span>
+<span class="c1"># Return the resulting string.</span>
+<span class="k">def</span> <span class="nf">verbing</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># E. not_bad</span>
+<span class="c1"># Given a string, find the first appearance of the</span>
+<span class="c1"># substring &#39;not&#39; and &#39;bad&#39;. If the &#39;bad&#39; follows</span>
+<span class="c1"># the &#39;not&#39;, replace the whole &#39;not&#39;...&#39;bad&#39; substring</span>
+<span class="c1"># with &#39;good&#39;.</span>
+<span class="c1"># Return the resulting string.</span>
+<span class="c1"># So &#39;This dinner is not that bad!&#39; yields:</span>
+<span class="c1"># This dinner is good!</span>
+<span class="k">def</span> <span class="nf">not_bad</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># F. front_back</span>
+<span class="c1"># Consider dividing a string into two halves.</span>
+<span class="c1"># If the length is even, the front and back halves are the same length.</span>
+<span class="c1"># If the length is odd, we&#39;ll say that the extra char goes in the front half.</span>
+<span class="c1"># e.g. &#39;abcde&#39;, the front half is &#39;abc&#39;, the back half &#39;de&#39;.</span>
+<span class="c1"># Given 2 strings, a and b, return a string of the form</span>
+<span class="c1">#  a-front + b-front + a-back + b-back</span>
+<span class="k">def</span> <span class="nf">front_back</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># Simple provided test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># main() calls the above functions with interesting inputs,</span>
+<span class="c1"># using the above test() to check if the result is correct or not.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;verbing&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">verbing</span><span class="p">(</span><span class="s1">&#39;hail&#39;</span><span class="p">),</span> <span class="s1">&#39;hailing&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">verbing</span><span class="p">(</span><span class="s1">&#39;swiming&#39;</span><span class="p">),</span> <span class="s1">&#39;swimingly&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">verbing</span><span class="p">(</span><span class="s1">&#39;do&#39;</span><span class="p">),</span> <span class="s1">&#39;do&#39;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;not_bad&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s1">&#39;This movie is not so bad&#39;</span><span class="p">),</span> <span class="s1">&#39;This movie is good&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s1">&#39;This dinner is not that bad!&#39;</span><span class="p">),</span> <span class="s1">&#39;This dinner is good!&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s1">&#39;This tea is not hot&#39;</span><span class="p">),</span> <span class="s1">&#39;This tea is not hot&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s2">&quot;It&#39;s bad yet not&quot;</span><span class="p">),</span> <span class="s2">&quot;It&#39;s bad yet not&quot;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;front_back&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_back</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">),</span> <span class="s1">&#39;abxcdy&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_back</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">),</span> <span class="s1">&#39;abcxydez&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_back</span><span class="p">(</span><span class="s1">&#39;Kitten&#39;</span><span class="p">,</span> <span class="s1">&#39;Donut&#39;</span><span class="p">),</span> <span class="s1">&#39;KitDontenut&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 
 
 
@@ -1859,6 +2020,219 @@ escrevendo código python com um sotaque bem marcado&quot; Luciano Ramalho</p>
 
 <h2>Exercício 4</h2>
 
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.4 -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Additional basic string exercises</span>
+
+<span class="c1"># D. verbing</span>
+<span class="c1"># Given a string, if its length is at least 3,</span>
+<span class="c1"># add &#39;ing&#39; to its end.</span>
+<span class="c1"># Unless it already ends in &#39;ing&#39;, in which case</span>
+<span class="c1"># add &#39;ly&#39; instead.</span>
+<span class="c1"># If the string length is less than 3, leave it unchanged.</span>
+<span class="c1"># Return the resulting string.</span>
+<span class="k">def</span> <span class="nf">verbing</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;ing&#39;</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;ing&#39;</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;ly&#39;</span>
+  <span class="k">return</span> <span class="n">s</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># E. not_bad</span>
+<span class="c1"># Given a string, find the first appearance of the</span>
+<span class="c1"># substring &#39;not&#39; and &#39;bad&#39;. If the &#39;bad&#39; follows</span>
+<span class="c1"># the &#39;not&#39;, replace the whole &#39;not&#39;...&#39;bad&#39; substring</span>
+<span class="c1"># with &#39;good&#39;.</span>
+<span class="c1"># Return the resulting string.</span>
+<span class="c1"># So &#39;This dinner is not that bad!&#39; yields:</span>
+<span class="c1"># This dinner is good!</span>
+<span class="k">def</span> <span class="nf">not_bad</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;not&#39;</span><span class="p">)</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;bad&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;good&#39;</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">b</span><span class="o">+</span><span class="mi">3</span><span class="p">:]</span>
+  <span class="k">return</span> <span class="n">s</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># F. front_back</span>
+<span class="c1"># Consider dividing a string into two halves.</span>
+<span class="c1"># If the length is even, the front and back halves are the same length.</span>
+<span class="c1"># If the length is odd, we&#39;ll say that the extra char goes in the front half.</span>
+<span class="c1"># e.g. &#39;abcde&#39;, the front half is &#39;abc&#39;, the back half &#39;de&#39;.</span>
+<span class="c1"># Given 2 strings, a and b, return a string of the form</span>
+<span class="c1">#  a-front + b-front + a-back + b-back</span>
+<span class="k">def</span> <span class="nf">front_back</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="c1"># Figure out the middle position of each string.</span>
+  <span class="n">a_middle</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+  <span class="n">b_middle</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># add 1 if length is odd</span>
+    <span class="n">a_middle</span> <span class="o">=</span> <span class="n">a_middle</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">b_middle</span> <span class="o">=</span> <span class="n">b_middle</span> <span class="o">+</span> <span class="mi">1</span> 
+  <span class="k">return</span> <span class="n">a</span><span class="p">[:</span><span class="n">a_middle</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[:</span><span class="n">b_middle</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">a_middle</span><span class="p">:]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">b_middle</span><span class="p">:]</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># Simple provided test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># main() calls the above functions with interesting inputs,</span>
+<span class="c1"># using the above test() to check if the result is correct or not.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;verbing&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">verbing</span><span class="p">(</span><span class="s1">&#39;hail&#39;</span><span class="p">),</span> <span class="s1">&#39;hailing&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">verbing</span><span class="p">(</span><span class="s1">&#39;swiming&#39;</span><span class="p">),</span> <span class="s1">&#39;swimingly&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">verbing</span><span class="p">(</span><span class="s1">&#39;do&#39;</span><span class="p">),</span> <span class="s1">&#39;do&#39;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;not_bad&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s1">&#39;This movie is not so bad&#39;</span><span class="p">),</span> <span class="s1">&#39;This movie is good&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s1">&#39;This dinner is not that bad!&#39;</span><span class="p">),</span> <span class="s1">&#39;This dinner is good!&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s1">&#39;This tea is not hot&#39;</span><span class="p">),</span> <span class="s1">&#39;This tea is not hot&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">not_bad</span><span class="p">(</span><span class="s2">&quot;It&#39;s bad yet not&quot;</span><span class="p">),</span> <span class="s2">&quot;It&#39;s bad yet not&quot;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;front_back&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_back</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">),</span> <span class="s1">&#39;abxcdy&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_back</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">),</span> <span class="s1">&#39;abcxydez&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_back</span><span class="p">(</span><span class="s1">&#39;Kitten&#39;</span><span class="p">,</span> <span class="s1">&#39;Donut&#39;</span><span class="p">),</span> <span class="s1">&#39;KitDontenut&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 
 
 

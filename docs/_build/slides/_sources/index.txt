@@ -84,7 +84,7 @@ Exercício 3
 Exercício 4
 -----------
 
-.. literalinclude:: code/basic/string3.py
+.. literalinclude:: code/basic/string2.py
    :language: python
    :linenos:
 
@@ -138,7 +138,7 @@ Exercício 3
 Exercício 4
 -----------
 
-.. literalinclude:: code/basic/solution/string3.py
+.. literalinclude:: code/basic/solution/string2.py
    :language: python
    :linenos:
 

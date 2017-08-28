@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -32,9 +30,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
         <link rel="next" title="Expressões Regulares" href="regular-expressions.html"/>
         <link rel="prev" title="Sorting" href="sorting.html"/> 
@@ -46,7 +41,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -90,10 +84,7 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
 </ul>
@@ -101,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lists.html">Listas Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sorting.html">Sorting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dicionários e Arquivos Python</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Dicionários e Arquivos Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dicionarios">Dicionários</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hashable">Hashable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#formatando-dicionarios">Formatando Dicionários</a></li>
@@ -130,10 +121,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Treinamento de Python</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
       </nav>
 
 
@@ -146,36 +135,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>Dicionários e Arquivos Python</li>
-    
-    
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Dicionários e Arquivos Python</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="../_sources/google/dict-and-files.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/google/dict-and-files.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -189,7 +161,7 @@
 ativos, mesmo que o código do programa do usuário não utilize
 explicitamente um dicionário.</p>
 <ul class="simple">
-<li>Beaultiful Code (O’Reilly 2007), Cap 18, Python’s Dictonary Implementation</li>
+<li>Beaultiful Code (O&#8217;Reilly 2007), Cap 18, Python&#8217;s Dictonary Implementation</li>
 </ul>
 <p>O tipo dict não só é amplamente usado em nossos programas como também é parte
 fundamental da implementação Python. Namespaces de módulos, atributos de
@@ -206,7 +178,7 @@ As tabelas hash são o mecanismo responsável pelo seu auto desempenho.</p>
 tempo de vida e puder ser comparado com outros objetos.</p>
 <p>A estrutura de hash chave/valor (key/value) é chamada de “dict”. O conteúdo
 de um dict pode ser escrito como uma série de pares chave: valor (key:value)
-dentro de chave {}, ex: dict = {chave1:valor1, chave2:valor2, … }. Um
+dentro de chave {}, ex: dict = {chave1:valor1, chave2:valor2, ... }. Um
 “dicionário vazio” é simplesmente um par de chaves {}.</p>
 <p>Para usar ou definir um valor em um dicionário use o formato com colchete,
 ex: dict[‘foo’] busca pelo valor dentro da chave ‘foo’. Strings, números e
@@ -299,7 +271,7 @@ em uma string pelo nome:</p>
 </div>
 <div class="section" id="del">
 <h2>Del<a class="headerlink" href="#del" title="Permalink to this headline">¶</a></h2>
-<p>O operador “del” faz deleções. No caso mais simples, ele pode remover
+<p>O operador &#8220;del&#8221; faz deleções. No caso mais simples, ele pode remover
 a definição de uma variável, como se a variável não tivesse sido definida.
 Del também pode ser usada em uma lista de elementos ou pedaços para
 deletar parte da lista e para deletar entradas de um dicionário.</p>
@@ -352,11 +324,11 @@ dados em um arquivo aberto. Ou você pode usar “print” com um arquivo aberto
 mas a sintaxe é feia: “print &gt;&gt; f, string”. Em python 3000, a sintaxe do
 comando print será fixada como uma expressão regular com um arquivo como
 argumento:</p>
-<p>“print(string, file=f)”.</p>
+<p>&#8220;print(string, file=f)&#8221;.</p>
 </div>
 <div class="section" id="arquivos-unicode">
 <h2>Arquivos Unicode<a class="headerlink" href="#arquivos-unicode" title="Permalink to this headline">¶</a></h2>
-<p>Os módulos “codecs” proveem suporte para ler arquivos em formato Unicode.</p>
+<p>Os módulos &#8220;codecs&#8221; proveem suporte para ler arquivos em formato Unicode.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codecs</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rU&#39;</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
@@ -384,24 +356,21 @@ Aproveite esta característica para criar seu programa em pequenos passos.</p>
 <div class="section" id="exercicio-wordcount-py">
 <h2>Exercício: wordcount.py<a class="headerlink" href="#exercicio-wordcount-py" title="Permalink to this headline">¶</a></h2>
 <p>Combinando todo o material do Python básico – strings, listas, dicionários,
-tuplas e arquivos. —- Tente fazer o exercício wordcount.py dos exercícios básicos.</p>
+tuplas e arquivos. &#8212;- Tente fazer o exercício wordcount.py dos exercícios básicos.</p>
 </div>
 </div>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="regular-expressions.html" class="btn btn-neutral float-right" title="Expressões Regulares" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="regular-expressions.html" class="btn btn-neutral float-right" title="Expressões Regulares" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sorting.html" class="btn btn-neutral" title="Sorting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sorting.html" class="btn btn-neutral" title="Sorting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -435,8 +404,7 @@ tuplas e arquivos. —- Tente fazer o exercício wordcount.py dos exercícios b�
             VERSION:'2016.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

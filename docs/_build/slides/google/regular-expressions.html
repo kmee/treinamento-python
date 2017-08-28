@@ -114,7 +114,7 @@
 <ul class="simple">
 <li>a,X,9, &lt;- caracteres ordinários apenas correspondem a eles mesmos. Os meta-caracteres que não correspondem a si mesmos, porque eles têm significados especiais são eles: . ^ $ * +? {[] \ | () (detalhes abaixo)</li>
 <li>. . (a period) - corresponde a qualquer caractere único exceto nova linha '\n'</li>
-<li>\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline <tt class="docutils literal"><span class="pre">[a-zA-Z0-9_]</span></tt>. \W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.</li>
+<li>\w - (w minúsculo) corresponde a um único caractere de texto: uma letra ou dígito ou underline <code class="docutils literal"><span class="pre">[a-zA-Z0-9_]</span></code>. \W (W maiúsculo) corresponde a qualquer caractere sem letras, dígitos ou underline.</li>
 </ul>
 
 
@@ -158,7 +158,7 @@
 <ul class="simple">
 <li>A busca prossegue através da string do início ao fim, parando na primeira correspondência encontrada</li>
 <li>Todo o padrão deve ser correspondido, mas não toda a string</li>
-<li>Se <tt class="docutils literal"><span class="pre">match</span> <span class="pre">=</span> <span class="pre">re.search(pat,</span> <span class="pre">str)</span></tt> for bem sucedida, o resultado é Nenhum e em particular match.group() é o texto correspondente</li>
+<li>Se <code class="docutils literal"><span class="pre">match</span> <span class="pre">=</span> <span class="pre">re.search(pat,</span> <span class="pre">str)</span></code> for bem sucedida, o resultado é Nenhum e em particular match.group() é o texto correspondente</li>
 </ul>
 
 
@@ -402,7 +402,7 @@
 
 <p>Esta é uma seção opcional que mostra uma técnica mais avançada de expressão regular.</p>
 <p>Supondo que você tem texto com as tags: &lt;b&gt;foo&lt;/b&gt; e &lt;i&gt;assim por diante&lt;/i&gt;</p>
-<p>Supondo que você está tentando encontrar cada tag com o padrão <tt class="docutils literal"><span class="pre">'(&lt;*.&gt;)'</span></tt> -- O que isso corresponde em primeiro lugar?</p>
+<p>Supondo que você está tentando encontrar cada tag com o padrão <code class="docutils literal"><span class="pre">'(&lt;*.&gt;)'</span></code> -- O que isso corresponde em primeiro lugar?</p>
 <p>O resultado é um pouco surpreendente, mas o aspecto ganancioso do .* faz com que a busca coincida todo '&lt;b&gt;foo&lt;/b&gt; e &lt;i&gt;assim por diante&lt;/i&gt;' como um grande resultado. O problema é que o .* vai tão longe quanto puder, em vez de parar na primeira &gt; (por isso é chamado de ganancioso - Greedy).</p>
 
 
@@ -414,7 +414,7 @@
 <h2>Greedy vs. Non-Greedy (opcional)</h2>
 
 <p>Existe uma extensão para a expressão regular, onde se você adicionar um ? no final, tais como .*? ou .+?, irá alterá-lo para não ser tão ganancioso. Agora eles param assim que puder. Assim, o padrão '(&lt;.*?&gt;)' vai ficar apenas '&lt;b&gt;' como o primeiro resultado, e '&lt;/b&gt;' como o segundo resultado, e assim por diante para cada par de tags &lt;..&gt;. O recomendado é que normalmente você use um .*?, e logo em seguida encontre o marcador correto (&gt;, neste caso) que força o final da chamada .*?.</p>
-<p>O <tt class="docutils literal"><span class="pre">*?</span></tt> extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito útil em linha de comando e tem uma flag onde se aceita utilizar padrões pcre.</p>
+<p>O <code class="docutils literal"><span class="pre">*?</span></code> extensão originada do Perl, e expressões regulares que incluem extensões do Perl são conhecidos como Perl Compatible Regular Expressions - pcre. O Python inclui suporte a pcre. Muito útil em linha de comando e tem uma flag onde se aceita utilizar padrões pcre.</p>
 
 
 
@@ -424,7 +424,7 @@
 
 <h2>Greedy vs. Non-Greedy (opcional)</h2>
 
-<p>Uma técnica mais velha, porém, amplamente usada para codificar esta ideia de &quot;todos estes caracteres, exceto parando em X&quot; usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de <tt class="docutils literal"><span class="pre">.*</span></tt> para obter todos os caracteres, use <tt class="docutils literal"><span class="pre">[^&gt;]*</span></tt>, que ignora todos os caracteres que não são &gt; (o ^ &quot;inverte&quot; o conjunto de colchetes, de modo que corresponda a qualquer caractere que não esteja presente nos colchetes).</p>
+<p>Uma técnica mais velha, porém, amplamente usada para codificar esta ideia de &quot;todos estes caracteres, exceto parando em X&quot; usa o estilo de colchetes. Pelo exposto, você pode escrever da forma padrão, mas em vez de <code class="docutils literal"><span class="pre">.*</span></code> para obter todos os caracteres, use <code class="docutils literal"><span class="pre">[^&gt;]*</span></code>, que ignora todos os caracteres que não são &gt; (o ^ &quot;inverte&quot; o conjunto de colchetes, de modo que corresponda a qualquer caractere que não esteja presente nos colchetes).</p>
 
 
 
