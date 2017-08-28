@@ -1,0 +1,2615 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Curso de Python &mdash; Treinamento de Python 2016.08.0001</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Treinamento de Python 2016.08.0001" href="#"/>
+        <link rel="next" title="Introdução" href="introduction/introduction.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> Treinamento de Python
+          
+
+          
+            
+            <img src="_static/kmee_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.08
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="google/strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/regular-expressions.html">Expressões Regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/utilities.html">Python Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/references.html">Referências</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Treinamento de Python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Curso de Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="curso-de-python">
+<h1>Curso de Python<a class="headerlink" href="#curso-de-python" title="Permalink to this headline">¶</a></h1>
+<p>Luis Felipe Miléo &lt;<a class="reference external" href="mailto:mileo&#37;&#52;&#48;kmee&#46;com&#46;br">mileo<span>&#64;</span>kmee<span>&#46;</span>com<span>&#46;</span>br</a>&gt;</p>
+<div class="section" id="prefacio">
+<h2>Prefácio<a class="headerlink" href="#prefacio" title="Permalink to this headline">¶</a></h2>
+<p>“Python é uma linguagem de programação poderosa e fácil de aprender” Python Tutorial oficial</p>
+<ul class="simple">
+<li>Curso para pessoas com <strong>pouca experiência</strong> em programação que querem aprender <strong>Python</strong>;</li>
+<li>É voltado para pessoas que têm um pouco de experiência em qualquer linguagem de programação, <strong>o suficiente para saber o que é uma variável ou “if”</strong>.</li>
+<li>2 dias de python básico;</li>
+</ul>
+<p>“Um desenvolvedor experiente pode começar a escrever um programa Python útil em questões de horas.
+À medida que as primeiras horas produtivas se transformam em semanas e meses, muitos programadores continuam
+escrevendo código python com um sotaque bem marcado” Luciano Ramalho</p>
+<ul class="simple">
+<li>Só sentimos falta daquilo que conhecemos…</li>
+<li>“Pythonico”</li>
+</ul>
+</div>
+<div class="section" id="introducao">
+<h2>Introdução<a class="headerlink" href="#introducao" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="google-s-python-class">
+<h2>Google’s Python Class<a class="headerlink" href="#google-s-python-class" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="google/strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/regular-expressions.html">Expressões Regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google/utilities.html">Python Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/references.html">Referências</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="python-data-model">
+<h2>Python Data Model<a class="headerlink" href="#python-data-model" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercicio-1">
+<h2>Exercício 1<a class="headerlink" href="#exercicio-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Basic list exercises</span>
+<span class="c1"># Fill in the code for the functions below. main() is already set up</span>
+<span class="c1"># to call the functions with a few different inputs,</span>
+<span class="c1"># printing &#39;OK&#39; when each function is correct.</span>
+<span class="c1"># The starter code for each function includes a &#39;return&#39;</span>
+<span class="c1"># which is just a placeholder for your code.</span>
+<span class="c1"># It&#39;s ok if you do not complete all the functions, and there</span>
+<span class="c1"># are some additional functions to try in list2.py.</span>
+
+<span class="c1"># A. match_ends</span>
+<span class="c1"># Given a list of strings, return the count of the number of</span>
+<span class="c1"># strings where the string length is 2 or more and the first</span>
+<span class="c1"># and last chars of the string are the same.</span>
+<span class="c1"># Note: python does not have a ++ operator, but += works.</span>
+<span class="k">def</span> <span class="nf">match_ends</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># B. front_x</span>
+<span class="c1"># Given a list of strings, return a list with the strings</span>
+<span class="c1"># in sorted order, except group all the strings that begin with &#39;x&#39; first.</span>
+<span class="c1"># e.g. [&#39;mix&#39;, &#39;xyz&#39;, &#39;apple&#39;, &#39;xanadu&#39;, &#39;aardvark&#39;] yields</span>
+<span class="c1"># [&#39;xanadu&#39;, &#39;xyz&#39;, &#39;aardvark&#39;, &#39;apple&#39;, &#39;mix&#39;]</span>
+<span class="c1"># Hint: this can be done by making 2 lists and sorting each of them</span>
+<span class="c1"># before combining them.</span>
+<span class="k">def</span> <span class="nf">front_x</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+
+<span class="c1"># C. sort_last</span>
+<span class="c1"># Given a list of non-empty tuples, return a list sorted in increasing</span>
+<span class="c1"># order by the last element in each tuple.</span>
+<span class="c1"># e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields</span>
+<span class="c1"># [(2, 2), (1, 3), (3, 4, 5), (1, 7)]</span>
+<span class="c1"># Hint: use a custom key= function to extract the last element form each tuple.</span>
+<span class="k">def</span> <span class="nf">sort_last</span><span class="p">(</span><span class="n">tuples</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># Simple provided test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># Calls the above functions with interesting inputs.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;match_ends&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">match_ends</span><span class="p">([</span><span class="s1">&#39;aba&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">match_ends</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="s1">&#39;xyx&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">match_ends</span><span class="p">([</span><span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;be&#39;</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;front_x&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_x</span><span class="p">([</span><span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">,</span> <span class="s1">&#39;axx&#39;</span><span class="p">,</span> <span class="s1">&#39;xzz&#39;</span><span class="p">,</span> <span class="s1">&#39;xaa&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;xaa&#39;</span><span class="p">,</span> <span class="s1">&#39;xzz&#39;</span><span class="p">,</span> <span class="s1">&#39;axx&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_x</span><span class="p">([</span><span class="s1">&#39;ccc&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;xcc&#39;</span><span class="p">,</span> <span class="s1">&#39;xaa&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;xaa&#39;</span><span class="p">,</span> <span class="s1">&#39;xcc&#39;</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_x</span><span class="p">([</span><span class="s1">&#39;mix&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;xanadu&#39;</span><span class="p">,</span> <span class="s1">&#39;aardvark&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;xanadu&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;aardvark&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;mix&#39;</span><span class="p">])</span>
+
+       
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;sort_last&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">sort_last</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
+       <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">sort_last</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
+       <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">sort_last</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]),</span>
+       <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="exercicio-2">
+<h2>Exercício 2<a class="headerlink" href="#exercicio-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Additional basic list exercises</span>
+
+<span class="c1"># D. Given a list of numbers, return a list where</span>
+<span class="c1"># all adjacent == elements have been reduced to a single element,</span>
+<span class="c1"># so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or</span>
+<span class="c1"># modify the passed in list.</span>
+<span class="k">def</span> <span class="nf">remove_adjacent</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># E. Given two lists sorted in increasing order, create and return a merged</span>
+<span class="c1"># list of all the elements in sorted order. You may modify the passed in lists.</span>
+<span class="c1"># Ideally, the solution should work in &quot;linear&quot; time, making a single</span>
+<span class="c1"># pass of both lists.</span>
+<span class="k">def</span> <span class="nf">linear_merge</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+<span class="c1"># Note: the solution above is kind of cute, but unforunately list.pop(0)</span>
+<span class="c1"># is not constant time with the standard python list implementation, so</span>
+<span class="c1"># the above is not strictly linear time.</span>
+<span class="c1"># An alternate approach uses pop(-1) to remove the endmost elements</span>
+<span class="c1"># from each list, building a solution list which is backwards.</span>
+<span class="c1"># Then use reversed() to put the result back in the correct order. That</span>
+<span class="c1"># solution works in linear time, but is more ugly.</span>
+
+
+<span class="c1"># Simple provided test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># Calls the above functions with interesting inputs.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;remove_adjacent&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">remove_adjacent</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">remove_adjacent</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">remove_adjacent</span><span class="p">([]),</span> <span class="p">[])</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;linear_merge&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">linear_merge</span><span class="p">([</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">linear_merge</span><span class="p">([</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">linear_merge</span><span class="p">([</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="exercicio-3">
+<h2>Exercício 3<a class="headerlink" href="#exercicio-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Basic string exercises</span>
+<span class="c1"># Fill in the code for the functions below. main() is already set up</span>
+<span class="c1"># to call the functions with a few different inputs,</span>
+<span class="c1"># printing &#39;OK&#39; when each function is correct.</span>
+<span class="c1"># The starter code for each function includes a &#39;return&#39;</span>
+<span class="c1"># which is just a placeholder for your code.</span>
+<span class="c1"># It&#39;s ok if you do not complete all the functions, and there</span>
+<span class="c1"># are some additional functions to try in string2.py.</span>
+
+
+<span class="c1"># A. donuts</span>
+<span class="c1"># Given an int count of a number of donuts, return a string</span>
+<span class="c1"># of the form &#39;Number of donuts: &lt;count&gt;&#39;, where &lt;count&gt; is the number</span>
+<span class="c1"># passed in. However, if the count is 10 or more, then use the word &#39;many&#39;</span>
+<span class="c1"># instead of the actual count.</span>
+<span class="c1"># So donuts(5) returns &#39;Number of donuts: 5&#39;</span>
+<span class="c1"># and donuts(23) returns &#39;Number of donuts: many&#39;</span>
+<span class="k">def</span> <span class="nf">donuts</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># B. both_ends</span>
+<span class="c1"># Given a string s, return a string made of the first 2</span>
+<span class="c1"># and the last 2 chars of the original string,</span>
+<span class="c1"># so &#39;spring&#39; yields &#39;spng&#39;. However, if the string length</span>
+<span class="c1"># is less than 2, return instead the empty string.</span>
+<span class="k">def</span> <span class="nf">both_ends</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># C. fix_start</span>
+<span class="c1"># Given a string s, return a string</span>
+<span class="c1"># where all occurences of its first char have</span>
+<span class="c1"># been changed to &#39;*&#39;, except do not change</span>
+<span class="c1"># the first char itself.</span>
+<span class="c1"># e.g. &#39;babble&#39; yields &#39;ba**le&#39;</span>
+<span class="c1"># Assume that the string is length 1 or more.</span>
+<span class="c1"># Hint: s.replace(stra, strb) returns a version of string s</span>
+<span class="c1"># where all instances of stra have been replaced by strb.</span>
+<span class="k">def</span> <span class="nf">fix_start</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># D. MixUp</span>
+<span class="c1"># Given strings a and b, return a single string with a and b separated</span>
+<span class="c1"># by a space &#39;&lt;a&gt; &lt;b&gt;&#39;, except swap the first 2 chars of each string.</span>
+<span class="c1"># e.g.</span>
+<span class="c1">#   &#39;mix&#39;, &#39;pod&#39; -&gt; &#39;pox mid&#39;</span>
+<span class="c1">#   &#39;dog&#39;, &#39;dinner&#39; -&gt; &#39;dig donner&#39;</span>
+<span class="c1"># Assume a and b are length 2 or more.</span>
+<span class="k">def</span> <span class="nf">mix_up</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="k">return</span>
+
+
+<span class="c1"># Provided simple test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># Provided main() calls the above functions with interesting inputs,</span>
+<span class="c1"># using test() to check if each result is correct or not.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;donuts&#39;</span>
+  <span class="c1"># Each line calls donuts, compares its result to the expected for that call.</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: 4&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: 9&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: many&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">99</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: many&#39;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;both_ends&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;spring&#39;</span><span class="p">),</span> <span class="s1">&#39;spng&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">),</span> <span class="s1">&#39;Helo&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="p">),</span> <span class="s1">&#39;xyyz&#39;</span><span class="p">)</span>
+
+  
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;fix_start&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;babble&#39;</span><span class="p">),</span> <span class="s1">&#39;ba**le&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;aardvark&#39;</span><span class="p">),</span> <span class="s1">&#39;a*rdv*rk&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;google&#39;</span><span class="p">),</span> <span class="s1">&#39;goo*le&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;donut&#39;</span><span class="p">),</span> <span class="s1">&#39;donut&#39;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;mix_up&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;mix&#39;</span><span class="p">,</span> <span class="s1">&#39;pod&#39;</span><span class="p">),</span> <span class="s1">&#39;pox mid&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;dinner&#39;</span><span class="p">),</span> <span class="s1">&#39;dig donner&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;gnash&#39;</span><span class="p">,</span> <span class="s1">&#39;sport&#39;</span><span class="p">),</span> <span class="s1">&#39;spash gnort&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;pezzy&#39;</span><span class="p">,</span> <span class="s1">&#39;firm&#39;</span><span class="p">),</span> <span class="s1">&#39;fizzy perm&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Standard boilerplate to call the main() function.</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="exercicio-4">
+<h2>Exercício 4<a class="headerlink" href="#exercicio-4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercicio-5">
+<h2>Exercicio 5<a class="headerlink" href="#exercicio-5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="sd">&quot;&quot;&quot;Wordcount exercise</span>
+<span class="sd">Google&#39;s Python class</span>
+
+<span class="sd">The main() below is already defined and complete. It calls print_words()</span>
+<span class="sd">and print_top() functions which you write.</span>
+
+<span class="sd">1. For the --count flag, implement a print_words(filename) function that counts</span>
+<span class="sd">how often each word appears in the text and prints:</span>
+<span class="sd">word1 count1</span>
+<span class="sd">word2 count2</span>
+<span class="sd">...</span>
+
+<span class="sd">Print the above list in order sorted by word (python will sort punctuation to</span>
+<span class="sd">come before letters -- that&#39;s fine). Store all the words as lowercase,</span>
+<span class="sd">so &#39;The&#39; and &#39;the&#39; count as the same word.</span>
+
+<span class="sd">2. For the --topcount flag, implement a print_top(filename) which is similar</span>
+<span class="sd">to print_words() but which prints just the top 20 most common words sorted</span>
+<span class="sd">so the most common word is first, then the next most common, and so on.</span>
+
+<span class="sd">Use str.split() (no arguments) to split on all whitespace.</span>
+
+<span class="sd">Workflow: don&#39;t build the whole program at once. Get it to an intermediate</span>
+<span class="sd">milestone and print your data structure and sys.exit(0).</span>
+<span class="sd">When that&#39;s working, try for the next milestone.</span>
+
+<span class="sd">Optional: define a helper function to avoid code duplication inside</span>
+<span class="sd">print_words() and print_top().</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># +++your code here+++</span>
+<span class="c1"># Define print_words(filename) and print_top(filename) functions.</span>
+<span class="c1"># You could write a helper utility function that reads a file</span>
+<span class="c1"># and builds and returns a word/count dict for it.</span>
+<span class="c1"># Then print_words() and print_top() can just call the utility function.</span>
+
+<span class="c1">###</span>
+
+<span class="c1"># This basic command line argument parsing code is provided and</span>
+<span class="c1"># calls the print_words() and print_top() functions which you must define.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;usage: ./wordcount.py {--count | --topcount} file&#39;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">option</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">filename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;--count&#39;</span><span class="p">:</span>
+    <span class="n">print_words</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;--topcount&#39;</span><span class="p">:</span>
+    <span class="n">print_top</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;unknown option: &#39;</span> <span class="o">+</span> <span class="n">option</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="exercicio-6">
+<h2>Exercício 6<a class="headerlink" href="#exercicio-6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="sd">&quot;&quot;&quot;Logpuzzle exercise</span>
+<span class="sd">Given an apache logfile, find the puzzle urls and download the images.</span>
+
+<span class="sd">Here&#39;s what a puzzle url looks like:</span>
+<span class="sd">10.254.254.28 - - [06/Aug/2007:00:13:48 -0700] &quot;GET /~foo/puzzle-bar-aaab.jpg HTTP/1.0&quot; 302 528 &quot;-&quot; &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">read_urls</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Returns a list of the puzzle urls from the given log file,</span>
+<span class="sd">  extracting the hostname from the filename itself.</span>
+<span class="sd">  Screens out duplicate urls and returns the urls sorted into</span>
+<span class="sd">  increasing order.&quot;&quot;&quot;</span>
+  <span class="c1"># +++your code here+++</span>
+  
+
+<span class="k">def</span> <span class="nf">download_images</span><span class="p">(</span><span class="n">img_urls</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Given the urls already in the correct order, downloads</span>
+<span class="sd">  each image into the given directory.</span>
+<span class="sd">  Gives the images local filenames img0, img1, and so on.</span>
+<span class="sd">  Creates an index.html in the directory</span>
+<span class="sd">  with an img tag to show each local image file.</span>
+<span class="sd">  Creates the directory if necessary.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="c1"># +++your code here+++</span>
+  
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;usage: [--todir dir] logfile &#39;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">todir</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;--todir&#39;</span><span class="p">:</span>
+    <span class="n">todir</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+  <span class="n">img_urls</span> <span class="o">=</span> <span class="n">read_urls</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+  <span class="k">if</span> <span class="n">todir</span><span class="p">:</span>
+    <span class="n">download_images</span><span class="p">(</span><span class="n">img_urls</span><span class="p">,</span> <span class="n">todir</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">img_urls</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="exercicio-7">
+<h2>Exercício 7<a class="headerlink" href="#exercicio-7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">commands</span>
+
+<span class="sd">&quot;&quot;&quot;Copy Special exercise</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># +++your code here+++</span>
+<span class="c1"># Write functions and modify main() to call them</span>
+
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="c1"># This basic command line argument parsing code is provided.</span>
+  <span class="c1"># Add code to call your functions below.</span>
+
+  <span class="c1"># Make a list of command line arguments, omitting the [0] element</span>
+  <span class="c1"># which is the script itself.</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;usage: [--todir dir][--tozip zipfile] dir [dir ...]&quot;</span><span class="p">;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="c1"># todir and tozip are either set from command line</span>
+  <span class="c1"># or left as the empty string.</span>
+  <span class="c1"># The args array is left just containing the dirs.</span>
+  <span class="n">todir</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;--todir&#39;</span><span class="p">:</span>
+    <span class="n">todir</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+  <span class="n">tozip</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;--tozip&#39;</span><span class="p">:</span>
+    <span class="n">tozip</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;error: must specify one or more dirs&quot;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># Call your functions</span>
+  
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="solucoes">
+<h1>Soluções<a class="headerlink" href="#solucoes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Exercício 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Basic list exercises</span>
+<span class="c1"># Fill in the code for the functions below. main() is already set up</span>
+<span class="c1"># to call the functions with a few different inputs,</span>
+<span class="c1"># printing &#39;OK&#39; when each function is correct.</span>
+<span class="c1"># The starter code for each function includes a &#39;return&#39;</span>
+<span class="c1"># which is just a placeholder for your code.</span>
+<span class="c1"># It&#39;s ok if you do not complete all the functions, and there</span>
+<span class="c1"># are some additional functions to try in list2.py.</span>
+
+<span class="c1"># A. match_ends</span>
+<span class="c1"># Given a list of strings, return the count of the number of</span>
+<span class="c1"># strings where the string length is 2 or more and the first</span>
+<span class="c1"># and last chars of the string are the same.</span>
+<span class="c1"># Note: python does not have a ++ operator, but += works.</span>
+<span class="k">def</span> <span class="nf">match_ends</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+      <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">count</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># B. front_x</span>
+<span class="c1"># Given a list of strings, return a list with the strings</span>
+<span class="c1"># in sorted order, except group all the strings that begin with &#39;x&#39; first.</span>
+<span class="c1"># e.g. [&#39;mix&#39;, &#39;xyz&#39;, &#39;apple&#39;, &#39;xanadu&#39;, &#39;aardvark&#39;] yields</span>
+<span class="c1"># [&#39;xanadu&#39;, &#39;xyz&#39;, &#39;aardvark&#39;, &#39;apple&#39;, &#39;mix&#39;]</span>
+<span class="c1"># Hint: this can be done by making 2 lists and sorting each of them</span>
+<span class="c1"># before combining them.</span>
+<span class="k">def</span> <span class="nf">front_x</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="c1"># Put each word into the x_list or the other_list.</span>
+  <span class="n">x_list</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">other_list</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>
+      <span class="n">x_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">other_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">other_list</span><span class="p">)</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># LAB(begin solution)</span>
+<span class="c1"># Extract the last element from a tuple -- used for custom sorting below.</span>
+<span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># LAB(end solution)</span>
+
+<span class="c1"># C. sort_last</span>
+<span class="c1"># Given a list of non-empty tuples, return a list sorted in increasing</span>
+<span class="c1"># order by the last element in each tuple.</span>
+<span class="c1"># e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields</span>
+<span class="c1"># [(2, 2), (1, 3), (3, 4, 5), (1, 7)]</span>
+<span class="c1"># Hint: use a custom key= function to extract the last element form each tuple.</span>
+<span class="k">def</span> <span class="nf">sort_last</span><span class="p">(</span><span class="n">tuples</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tuples</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">last</span><span class="p">)</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># Simple provided test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># Calls the above functions with interesting inputs.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;match_ends&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">match_ends</span><span class="p">([</span><span class="s1">&#39;aba&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">match_ends</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="s1">&#39;xyx&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">match_ends</span><span class="p">([</span><span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;be&#39;</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;front_x&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_x</span><span class="p">([</span><span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">,</span> <span class="s1">&#39;axx&#39;</span><span class="p">,</span> <span class="s1">&#39;xzz&#39;</span><span class="p">,</span> <span class="s1">&#39;xaa&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;xaa&#39;</span><span class="p">,</span> <span class="s1">&#39;xzz&#39;</span><span class="p">,</span> <span class="s1">&#39;axx&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_x</span><span class="p">([</span><span class="s1">&#39;ccc&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;xcc&#39;</span><span class="p">,</span> <span class="s1">&#39;xaa&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;xaa&#39;</span><span class="p">,</span> <span class="s1">&#39;xcc&#39;</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">front_x</span><span class="p">([</span><span class="s1">&#39;mix&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;xanadu&#39;</span><span class="p">,</span> <span class="s1">&#39;aardvark&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;xanadu&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;aardvark&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;mix&#39;</span><span class="p">])</span>
+
+       
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;sort_last&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">sort_last</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
+       <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">sort_last</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
+       <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">sort_last</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]),</span>
+       <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id2">
+<h2>Exercício 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Additional basic list exercises</span>
+
+<span class="c1"># D. Given a list of numbers, return a list where</span>
+<span class="c1"># all adjacent == elements have been reduced to a single element,</span>
+<span class="c1"># so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or</span>
+<span class="c1"># modify the passed in list.</span>
+<span class="k">def</span> <span class="nf">remove_adjacent</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">num</span> <span class="o">!=</span> <span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+      <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">result</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># E. Given two lists sorted in increasing order, create and return a merged</span>
+<span class="c1"># list of all the elements in sorted order. You may modify the passed in lists.</span>
+<span class="c1"># Ideally, the solution should work in &quot;linear&quot; time, making a single</span>
+<span class="c1"># pass of both lists.</span>
+<span class="k">def</span> <span class="nf">linear_merge</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="c1"># Look at the two lists so long as both are non-empty.</span>
+  <span class="c1"># Take whichever element [0] is smaller.</span>
+  <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">list2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">list2</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+      <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list2</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+  <span class="c1"># Now tack on what&#39;s left</span>
+  <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+  <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">result</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+<span class="c1"># Note: the solution above is kind of cute, but unforunately list.pop(0)</span>
+<span class="c1"># is not constant time with the standard python list implementation, so</span>
+<span class="c1"># the above is not strictly linear time.</span>
+<span class="c1"># An alternate approach uses pop(-1) to remove the endmost elements</span>
+<span class="c1"># from each list, building a solution list which is backwards.</span>
+<span class="c1"># Then use reversed() to put the result back in the correct order. That</span>
+<span class="c1"># solution works in linear time, but is more ugly.</span>
+
+
+<span class="c1"># Simple provided test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># Calls the above functions with interesting inputs.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;remove_adjacent&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">remove_adjacent</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">remove_adjacent</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">remove_adjacent</span><span class="p">([]),</span> <span class="p">[])</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;linear_merge&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">linear_merge</span><span class="p">([</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">linear_merge</span><span class="p">([</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;xx&#39;</span><span class="p">,</span> <span class="s1">&#39;zz&#39;</span><span class="p">])</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">linear_merge</span><span class="p">([</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">]),</span>
+       <span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id3">
+<h2>Exercício 3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="c1"># Basic string exercises</span>
+<span class="c1"># Fill in the code for the functions below. main() is already set up</span>
+<span class="c1"># to call the functions with a few different inputs,</span>
+<span class="c1"># printing &#39;OK&#39; when each function is correct.</span>
+<span class="c1"># The starter code for each function includes a &#39;return&#39;</span>
+<span class="c1"># which is just a placeholder for your code.</span>
+<span class="c1"># It&#39;s ok if you do not complete all the functions, and there</span>
+<span class="c1"># are some additional functions to try in string2.py.</span>
+
+
+<span class="c1"># A. donuts</span>
+<span class="c1"># Given an int count of a number of donuts, return a string</span>
+<span class="c1"># of the form &#39;Number of donuts: &lt;count&gt;&#39;, where &lt;count&gt; is the number</span>
+<span class="c1"># passed in. However, if the count is 10 or more, then use the word &#39;many&#39;</span>
+<span class="c1"># instead of the actual count.</span>
+<span class="c1"># So donuts(5) returns &#39;Number of donuts: 5&#39;</span>
+<span class="c1"># and donuts(23) returns &#39;Number of donuts: many&#39;</span>
+<span class="k">def</span> <span class="nf">donuts</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="k">if</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">&#39;Number of donuts: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">&#39;Number of donuts: many&#39;</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># B. both_ends</span>
+<span class="c1"># Given a string s, return a string made of the first 2</span>
+<span class="c1"># and the last 2 chars of the original string,</span>
+<span class="c1"># so &#39;spring&#39; yields &#39;spng&#39;. However, if the string length</span>
+<span class="c1"># is less than 2, return instead the empty string.</span>
+<span class="k">def</span> <span class="nf">both_ends</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+  <span class="n">first2</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+  <span class="n">last2</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+  <span class="k">return</span> <span class="n">first2</span> <span class="o">+</span> <span class="n">last2</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># C. fix_start</span>
+<span class="c1"># Given a string s, return a string</span>
+<span class="c1"># where all occurences of its first char have</span>
+<span class="c1"># been changed to &#39;*&#39;, except do not change</span>
+<span class="c1"># the first char itself.</span>
+<span class="c1"># e.g. &#39;babble&#39; yields &#39;ba**le&#39;</span>
+<span class="c1"># Assume that the string is length 1 or more.</span>
+<span class="c1"># Hint: s.replace(stra, strb) returns a version of string s</span>
+<span class="c1"># where all instances of stra have been replaced by strb.</span>
+<span class="k">def</span> <span class="nf">fix_start</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="n">front</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">back</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+  <span class="n">fixed_back</span> <span class="o">=</span> <span class="n">back</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">front</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">front</span> <span class="o">+</span> <span class="n">fixed_back</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># D. MixUp</span>
+<span class="c1"># Given strings a and b, return a single string with a and b separated</span>
+<span class="c1"># by a space &#39;&lt;a&gt; &lt;b&gt;&#39;, except swap the first 2 chars of each string.</span>
+<span class="c1"># e.g.</span>
+<span class="c1">#   &#39;mix&#39;, pod&#39; -&gt; &#39;pox mid&#39;</span>
+<span class="c1">#   &#39;dog&#39;, &#39;dinner&#39; -&gt; &#39;dig donner&#39;</span>
+<span class="c1"># Assume a and b are length 2 or more.</span>
+<span class="k">def</span> <span class="nf">mix_up</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="n">a_swapped</span> <span class="o">=</span> <span class="n">b</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+  <span class="n">b_swapped</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+  <span class="k">return</span> <span class="n">a_swapped</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">b_swapped</span>
+  <span class="c1"># LAB(replace solution)</span>
+  <span class="c1"># return</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="c1"># Provided simple test() function used in main() to print</span>
+<span class="c1"># what each function returns vs. what it&#39;s supposed to return.</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">got</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39; OK &#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;  X &#39;</span>
+  <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> got: </span><span class="si">%s</span><span class="s1"> expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">got</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expected</span><span class="p">))</span>
+
+
+<span class="c1"># Provided main() calls the above functions with interesting inputs,</span>
+<span class="c1"># using test() to check if each result is correct or not.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s1">&#39;donuts&#39;</span>
+  <span class="c1"># Each line calls donuts, compares its result to the expected for that call.</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: 4&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: 9&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: many&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">donuts</span><span class="p">(</span><span class="mi">99</span><span class="p">),</span> <span class="s1">&#39;Number of donuts: many&#39;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;both_ends&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;spring&#39;</span><span class="p">),</span> <span class="s1">&#39;spng&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">),</span> <span class="s1">&#39;Helo&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">both_ends</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="p">),</span> <span class="s1">&#39;xyyz&#39;</span><span class="p">)</span>
+
+  
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;fix_start&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;babble&#39;</span><span class="p">),</span> <span class="s1">&#39;ba**le&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;aardvark&#39;</span><span class="p">),</span> <span class="s1">&#39;a*rdv*rk&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;google&#39;</span><span class="p">),</span> <span class="s1">&#39;goo*le&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">fix_start</span><span class="p">(</span><span class="s1">&#39;donut&#39;</span><span class="p">),</span> <span class="s1">&#39;donut&#39;</span><span class="p">)</span>
+
+  <span class="k">print</span>
+  <span class="k">print</span> <span class="s1">&#39;mix_up&#39;</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;mix&#39;</span><span class="p">,</span> <span class="s1">&#39;pod&#39;</span><span class="p">),</span> <span class="s1">&#39;pox mid&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;dinner&#39;</span><span class="p">),</span> <span class="s1">&#39;dig donner&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;gnash&#39;</span><span class="p">,</span> <span class="s1">&#39;sport&#39;</span><span class="p">),</span> <span class="s1">&#39;spash gnort&#39;</span><span class="p">)</span>
+  <span class="n">test</span><span class="p">(</span><span class="n">mix_up</span><span class="p">(</span><span class="s1">&#39;pezzy&#39;</span><span class="p">,</span> <span class="s1">&#39;firm&#39;</span><span class="p">),</span> <span class="s1">&#39;fizzy perm&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Standard boilerplate to call the main() function.</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id4">
+<h2>Exercício 4<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>Exercício 5<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python -tt</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="sd">&quot;&quot;&quot;Wordcount exercise</span>
+<span class="sd">Google&#39;s Python class</span>
+
+<span class="sd">The main() below is already defined and complete. It calls print_words()</span>
+<span class="sd">and print_top() functions which you write.</span>
+
+<span class="sd">1. For the --count flag, implement a print_words(filename) function that counts</span>
+<span class="sd">how often each word appears in the text and prints:</span>
+<span class="sd">word1 count1</span>
+<span class="sd">word2 count2</span>
+<span class="sd">...</span>
+
+<span class="sd">Print the above list in order sorted by word (python will sort punctuation to</span>
+<span class="sd">come before letters -- that&#39;s fine). Store all the words as lowercase,</span>
+<span class="sd">so &#39;The&#39; and &#39;the&#39; count as the same word.</span>
+
+<span class="sd">2. For the --topcount flag, implement a print_top(filename) which is similar</span>
+<span class="sd">to print_words() but which prints just the top 20 most common words sorted</span>
+<span class="sd">so the most common word is first, then the next most common, and so on.</span>
+
+<span class="sd">Use str.split() (no arguments) to split on all whitespace.</span>
+
+<span class="sd">Workflow: don&#39;t build the whole program at once. Get it to an intermediate</span>
+<span class="sd">milestone and print your data structure and sys.exit(0).</span>
+<span class="sd">When that&#39;s working, try for the next milestone.</span>
+
+<span class="sd">Optional: define a helper function to avoid code duplication inside</span>
+<span class="sd">print_words() and print_top().</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># +++your code here+++</span>
+<span class="c1"># Define print_words(filename) and print_top(filename) functions.</span>
+<span class="c1"># You could write a helper utility function that reads a file</span>
+<span class="c1"># and builds and returns a word/count dict for it.</span>
+<span class="c1"># Then print_words() and print_top() can just call the utility function.</span>
+
+<span class="c1">#### LAB(begin solution)</span>
+
+<span class="k">def</span> <span class="nf">word_count_dict</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Returns a word/count dict for this filename.&quot;&quot;&quot;</span>
+  <span class="c1"># Utility used by count() and Topcount().</span>
+  <span class="n">word_count</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Map each word to its count</span>
+  <span class="n">input_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="p">:</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+      <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+      <span class="c1"># Special case if we&#39;re seeing this word for the first time.</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_count</span><span class="p">:</span>
+        <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="n">input_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Not strictly required, but good form.</span>
+  <span class="k">return</span> <span class="n">word_count</span>
+
+
+<span class="k">def</span> <span class="nf">print_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Prints one per line &#39;&lt;word&gt; &lt;count&gt;&#39; sorted by word for the given file.&quot;&quot;&quot;</span>
+  <span class="n">word_count</span> <span class="o">=</span> <span class="n">word_count_dict</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="n">words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_count</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+  <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">word</span><span class="p">,</span> <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">get_count</span><span class="p">(</span><span class="n">word_count_tuple</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Returns the count from a dict word/count tuple  -- used for custom sort.&quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">word_count_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">print_top</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Prints the top count listing for the given file.&quot;&quot;&quot;</span>
+  <span class="n">word_count</span> <span class="o">=</span> <span class="n">word_count_dict</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+  <span class="c1"># Each item is a (word, count) tuple.</span>
+  <span class="c1"># Sort them so the big counts are first using key=get_count() to extract count.</span>
+  <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_count</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_count</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+  <span class="c1"># Print the first 20</span>
+  <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">[:</span><span class="mi">20</span><span class="p">]:</span>
+    <span class="k">print</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">##### LAB(end solution)</span>
+
+
+<span class="c1"># This basic command line argument parsing code is provided and</span>
+<span class="c1"># calls the print_words() and print_top() functions which you must define.</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;usage: ./wordcount.py {--count | --topcount} file&#39;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">option</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">filename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;--count&#39;</span><span class="p">:</span>
+    <span class="n">print_words</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;--topcount&#39;</span><span class="p">:</span>
+    <span class="n">print_top</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;unknown option: &#39;</span> <span class="o">+</span> <span class="n">option</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id6">
+<h2>Exercício 6<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="sd">&quot;&quot;&quot;Logpuzzle exercise</span>
+<span class="sd">Given an apache logfile, find the puzzle urls and download the images.</span>
+
+<span class="sd">Here&#39;s what a puzzle url looks like:</span>
+<span class="sd">10.254.254.28 - - [06/Aug/2007:00:13:48 -0700] &quot;GET /~foo/puzzle-bar-aaab.jpg HTTP/1.0&quot; 302 528 &quot;-&quot; &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># LAB(begin solution)</span>
+<span class="k">def</span> <span class="nf">url_sort_key</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Used to order the urls in increasing order by 2nd word if present.&quot;&quot;&quot;</span>
+  <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;-(\w+)-(\w+)\.\w+&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">url</span>
+<span class="c1"># LAB(end solution)</span>
+
+<span class="k">def</span> <span class="nf">read_urls</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Returns a list of the puzzle urls from the given log file,</span>
+<span class="sd">  extracting the hostname from the filename itself.</span>
+<span class="sd">  Screens out duplicate urls and returns the urls sorted into</span>
+<span class="sd">  increasing order.&quot;&quot;&quot;</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="c1"># Extract the hostname from the filename</span>
+  <span class="n">underbar</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+  <span class="n">host</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="n">underbar</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+
+  <span class="c1"># Store the ulrs into a dict to screen out the duplicates</span>
+  <span class="n">url_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+  <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># Find the path which is after the GET and surrounded by spaces.</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&quot;GET (\S+)&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+    <span class="c1"># Above uses \S (upper case S) which is any non-space char</span>
+    <span class="c1"># Alternately could use square brackets: &quot;GET ([^ ]+)&quot;</span>
+    <span class="c1"># or the ? form: &quot;GET (.+?) &quot;</span>
+
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+      <span class="n">path</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="c1"># Add to dict if it&#39;s a special &quot;puzzle&quot; url</span>
+      <span class="c1"># (could combine this &#39;puzzle&#39; check with the above GET extraction)</span>
+      <span class="k">if</span> <span class="s1">&#39;puzzle&#39;</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+        <span class="n">url_dict</span><span class="p">[</span><span class="s1">&#39;http://&#39;</span> <span class="o">+</span> <span class="n">host</span> <span class="o">+</span> <span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">url_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">url_sort_key</span><span class="p">)</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="k">def</span> <span class="nf">download_images</span><span class="p">(</span><span class="n">img_urls</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Given the urls already in the correct order, downloads</span>
+<span class="sd">  each image into the given directory.</span>
+<span class="sd">  Gives the images local filenames img0, img1, and so on.</span>
+<span class="sd">  Creates an index.html in the directory</span>
+<span class="sd">  with an img tag to show each local image file.</span>
+<span class="sd">  Creates the directory if necessary.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># LAB(begin solution)</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">)</span>
+
+  <span class="n">index</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+  <span class="n">index</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&lt;html&gt;&lt;body&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">img_url</span> <span class="ow">in</span> <span class="n">img_urls</span><span class="p">:</span>
+    <span class="n">local_name</span> <span class="o">=</span> <span class="s1">&#39;img</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+    <span class="k">print</span> <span class="s1">&#39;Retrieving...&#39;</span><span class="p">,</span> <span class="n">img_url</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">img_url</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">,</span> <span class="n">local_name</span><span class="p">))</span>
+
+    <span class="n">index</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;</span><span class="si">%s</span><span class="s1">&quot;&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_name</span><span class="p">,))</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+  <span class="n">index</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&lt;/body&gt;&lt;/html&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="n">index</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+  <span class="c1"># LAB(end solution)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;usage: [--todir dir] logfile &#39;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">todir</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;--todir&#39;</span><span class="p">:</span>
+    <span class="n">todir</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+  <span class="n">img_urls</span> <span class="o">=</span> <span class="n">read_urls</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+  <span class="k">if</span> <span class="n">todir</span><span class="p">:</span>
+    <span class="n">download_images</span><span class="p">(</span><span class="n">img_urls</span><span class="p">,</span> <span class="n">todir</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">img_urls</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id7">
+<h2>Exercício 7<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># Copyright 2010 Google Inc.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0</span>
+<span class="c1"># http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="c1"># Google&#39;s Python Class</span>
+<span class="c1"># http://code.google.com/edu/languages/google-python-class/</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">commands</span>
+
+<span class="sd">&quot;&quot;&quot;Copy Special exercise</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># +++your code here+++</span>
+<span class="c1"># Write functions and modify main() to call them</span>
+
+<span class="c1"># LAB(begin solution)</span>
+<span class="k">def</span> <span class="nf">get_special_paths</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Given a dirname, returns a list of all its special files.&quot;&quot;&quot;</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">paths</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>  <span class="c1"># list of paths in that dir</span>
+  <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;__(\w+)__&#39;</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+      <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">fname</span><span class="p">)))</span>
+  <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">copy_to</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">to_dir</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Copy all of the given files to the given dir, creating it if necessary.&quot;&quot;&quot;</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">to_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">to_dir</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">))</span>
+    <span class="c1"># could error out if already exists os.path.exists():</span>
+
+
+<span class="k">def</span> <span class="nf">zip_to</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">zipfile</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Zip up all of the given files into a new zip file with the given name.&quot;&quot;&quot;</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;zip -j &#39;</span> <span class="o">+</span> <span class="n">zipfile</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+  <span class="k">print</span> <span class="s2">&quot;Command I&#39;m going to do:&quot;</span> <span class="o">+</span> <span class="n">cmd</span>
+  <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="o">=</span> <span class="n">commands</span><span class="o">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+  <span class="c1"># If command had a problem (status is non-zero),</span>
+  <span class="c1"># print its output to stderr and exit.</span>
+  <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># LAB(end solution)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="c1"># This basic command line argument parsing code is provided.</span>
+  <span class="c1"># Add code to call your functions below.</span>
+
+  <span class="c1"># Make a list of command line arguments, omitting the [0] element</span>
+  <span class="c1"># which is the script itself.</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;usage: [--todir dir][--tozip zipfile] dir [dir ...]&quot;</span><span class="p">;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="c1"># todir and tozip are either set from command line</span>
+  <span class="c1"># or left as the empty string.</span>
+  <span class="c1"># The args array is left just containing the dirs.</span>
+  <span class="n">todir</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;--todir&#39;</span><span class="p">:</span>
+    <span class="n">todir</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+  <span class="n">tozip</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;--tozip&#39;</span><span class="p">:</span>
+    <span class="n">tozip</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;error: must specify one or more dirs&quot;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="c1"># +++your code here+++</span>
+  <span class="c1"># Call your functions</span>
+  <span class="c1"># LAB(begin solution)</span>
+
+  <span class="c1"># Gather all the special files</span>
+  <span class="n">paths</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">dirname</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+    <span class="n">paths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">get_special_paths</span><span class="p">(</span><span class="n">dirname</span><span class="p">))</span>
+
+  <span class="k">if</span> <span class="n">todir</span><span class="p">:</span>
+    <span class="n">copy_to</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">todir</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">tozip</span><span class="p">:</span>
+    <span class="n">zip_to</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">tozip</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+  <span class="c1"># LAB(end solution)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="introduction/introduction.html" class="btn btn-neutral float-right" title="Introdução" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright KMEE INFORMATICA LTDA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2016.08.0001',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

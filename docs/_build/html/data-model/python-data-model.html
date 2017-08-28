@@ -1,0 +1,662 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Data Model &mdash; Treinamento de Python 2016.08.0001</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
+        <link rel="prev" title="Referências" href="../references/references.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Treinamento de Python
+          
+
+          
+            
+            <img src="../_static/kmee_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.08
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../google/strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/regular-expressions.html">Expressões Regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google/utilities.html">Python Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Data Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#o-modelo-de-dados-python">O modelo de dados python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-ponta-do-iceberg">A ponta do iceberg…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metodos-especiais">Metodos especiais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemplo-um-baralho-pythonico">Exemplo Um Baralho Pythonico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#como-os-metodos-especiais-sao-usados">Como os metodos especiais sao usados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emulando-tipos-numericos">Emulando tipos numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismo-flexivel-de-parametros">Mecanismo flexivel de parametros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estudo-de-caso-refatorando-strategy">Estudo de caso: Refatorando Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#com-funcoes">Com funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decorators">Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#closure">Closure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heranca">Herança</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Treinamento de Python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Python Data Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/data-model/python-data-model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-data-model">
+<h1>Python Data Model<a class="headerlink" href="#python-data-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="o-modelo-de-dados-python">
+<h2>O modelo de dados python<a class="headerlink" href="#o-modelo-de-dados-python" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Nesses ultimo dias vc pode ter achado estranho escrever len(collection)</li>
+</ul>
+</div></blockquote>
+<p><strong>em vez de collection.len()…</strong></p>
+</div>
+<div class="section" id="a-ponta-do-iceberg">
+<h2>A ponta do iceberg…<a class="headerlink" href="#a-ponta-do-iceberg" title="Permalink to this headline">¶</a></h2>
+<p>O iceberg é chamado de python data model e descreve a API que você pode usar
+para fazer com que seus próprios objetos interajam bem com os recursos mais
+“malukos” da linguagem.</p>
+<ul class="simple">
+<li>É como se fosse um framework, formalizando a contrução da propria linguagem</li>
+<li>O interpretador python chama metodos especiais para realizar operações básicas.</li>
+<li>Os metodos especiais são sempre descritos com underscores duplos</li>
+</ul>
+</div>
+<div class="section" id="metodos-especiais">
+<h2>Metodos especiais<a class="headerlink" href="#metodos-especiais" title="Permalink to this headline">¶</a></h2>
+<p>obj[key]</p>
+<p>obj.__getitem__(key)</p>
+</div>
+<div class="section" id="exemplo-um-baralho-pythonico">
+<h2>Exemplo Um Baralho Pythonico<a class="headerlink" href="#exemplo-um-baralho-pythonico" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
+
+<span class="n">Card</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Card&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">,</span> <span class="s1">&#39;suit&#39;</span><span class="p">])</span>
+
+<span class="k">class</span> <span class="nc">FrenchDeck</span><span class="p">:</span>
+    <span class="n">ranks</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;JQKA&#39;</span><span class="p">)</span>
+    <span class="n">suits</span> <span class="o">=</span> <span class="s1">&#39;spades diamonds clubs hearts&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cards</span> <span class="o">=</span> <span class="p">[</span><span class="n">Card</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span> <span class="n">suit</span><span class="p">)</span> <span class="k">for</span> <span class="n">suit</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">suits</span>
+                                        <span class="k">for</span> <span class="n">rank</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ranks</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">frenchdeck</span> <span class="kn">import</span> <span class="n">FrenchDeck</span><span class="p">,</span> <span class="n">Card</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beer_card</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;diamonds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beer_card</span>
+<span class="go">Card(rank=&#39;7&#39;, suit=&#39;diamonds&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deck</span> <span class="o">=</span> <span class="n">FrenchDeck</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+<span class="go">52</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deck</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[Card(rank=&#39;2&#39;, suit=&#39;spades&#39;), Card(rank=&#39;3&#39;, suit=&#39;spades&#39;), Card(rank=&#39;4&#39;, suit=&#39;spades&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deck</span><span class="p">[</span><span class="mi">12</span><span class="p">::</span><span class="mi">13</span><span class="p">]</span>
+<span class="go">[Card(rank=&#39;A&#39;, suit=&#39;spades&#39;), Card(rank=&#39;A&#39;, suit=&#39;diamonds&#39;), Card(rank=&#39;A&#39;, suit=&#39;clubs&#39;), Card(rank=&#39;A&#39;, suit=&#39;hearts&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Card</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;hearts&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">deck</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Card</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;clubs&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">deck</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">deck</span><span class="p">:</span>  
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+<span class="go">Card(rank=&#39;2&#39;, suit=&#39;spades&#39;)</span>
+<span class="go">Card(rank=&#39;3&#39;, suit=&#39;spades&#39;)</span>
+<span class="go">Card(rank=&#39;4&#39;, suit=&#39;spades&#39;)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">deck</span><span class="p">):</span>  
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+<span class="go">Card(rank=&#39;A&#39;, suit=&#39;hearts&#39;)</span>
+<span class="go">Card(rank=&#39;K&#39;, suit=&#39;hearts&#39;)</span>
+<span class="go">Card(rank=&#39;Q&#39;, suit=&#39;hearts&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">card</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">deck</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>  
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">card</span><span class="p">)</span>
+<span class="go">1 Card(rank=&#39;2&#39;, suit=&#39;spades&#39;)</span>
+<span class="go">2 Card(rank=&#39;3&#39;, suit=&#39;spades&#39;)</span>
+<span class="go">3 Card(rank=&#39;4&#39;, suit=&#39;spades&#39;)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">suit_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">spades</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hearts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">diamonds</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">clubs</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">spades_high</span><span class="p">(</span><span class="n">card</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">rank_value</span> <span class="o">=</span> <span class="n">FrenchDeck</span><span class="o">.</span><span class="n">ranks</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">rank</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">rank_value</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">suit_values</span><span class="p">)</span> <span class="o">+</span> <span class="n">suit_values</span><span class="p">[</span><span class="n">card</span><span class="o">.</span><span class="n">suit</span><span class="p">]</span>
+
+<span class="go">Rank test:</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spades_high</span><span class="p">(</span><span class="n">Card</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;clubs&#39;</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spades_high</span><span class="p">(</span><span class="n">Card</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;spades&#39;</span><span class="p">))</span>
+<span class="go">51</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deck</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">spades_high</span><span class="p">):</span>  
+<span class="gp">... </span>     <span class="k">print</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+<span class="go">Card(rank=&#39;2&#39;, suit=&#39;clubs&#39;)</span>
+<span class="go">Card(rank=&#39;2&#39;, suit=&#39;diamonds&#39;)</span>
+<span class="go">Card(rank=&#39;2&#39;, suit=&#39;hearts&#39;)</span>
+<span class="gp">...</span>
+<span class="go">Card(rank=&#39;A&#39;, suit=&#39;diamonds&#39;)</span>
+<span class="go">Card(rank=&#39;A&#39;, suit=&#39;hearts&#39;)</span>
+<span class="go">Card(rank=&#39;A&#39;, suit=&#39;spades&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="como-os-metodos-especiais-sao-usados">
+<h2>Como os metodos especiais sao usados<a class="headerlink" href="#como-os-metodos-especiais-sao-usados" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Eles foram criados para serem chamados pelo interpretador e não por você.</li>
+<li>Não escrevemos my_object.__len__(), escrevemos len(my_object)</li>
+</ul>
+<p>Se my_object for uma instancia de uma classe definida por você, o python chamara
+o metodo __len__ que voce implementou.</p>
+<p>Para muitos tipos embutidos os interpretador usará um atalho: a implementação de len()
+do CPython, retorna o valor do ob_size da Scruct C PyVarObject que representa qualquer
+objeto embutido de tamanho váriavel na memoria. Isto é muito mais rapido que chamar um metodo.</p>
+</div>
+<div class="section" id="emulando-tipos-numericos">
+<h2>Emulando tipos numéricos<a class="headerlink" href="#emulando-tipos-numericos" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">hypot</span>
+
+<span class="k">class</span> <span class="nc">Vector</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Vector(</span><span class="si">%r</span><span class="s1">, </span><span class="si">%r</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__abs__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">hypot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">scalar</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">scalar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mecanismo-flexivel-de-parametros">
+<h2>Mecanismo flexivel de parametros<a class="headerlink" href="#mecanismo-flexivel-de-parametros" title="Permalink to this headline">¶</a></h2>
+<p>Um dos melhores recursos das funções python. Usamos os * e ** para explodir:</p>
+<ul class="simple">
+<li>“*” faz com que o vetor seja utilizado como argumentos ordenados.</li>
+<li>“**” faz com que o dicionario seja usado como argumentos nomeados.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tag</span><span class="p">(</span><span class="s1">&#39;br&#39;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="go">&#39;&lt;br /&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tag</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="go">&#39;&lt;p&gt;hello&lt;/p&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tag</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">))</span>
+<span class="go">&lt;p&gt;hello&lt;/p&gt;</span>
+<span class="go">&lt;p&gt;world&lt;/p&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tag</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="go">&#39;&lt;p id=&quot;33&quot;&gt;hello&lt;/p&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tag</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="s1">&#39;sidebar&#39;</span><span class="p">))</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="go">&lt;p class=&quot;sidebar&quot;&gt;hello&lt;/p&gt;</span>
+<span class="go">&lt;p class=&quot;sidebar&quot;&gt;world&lt;/p&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tag</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;img&quot;</span><span class="p">)</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="go">&#39;&lt;img content=&quot;testing&quot; /&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_tag</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Sunset Boulevard&#39;</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="s1">&#39;src&#39;</span><span class="p">:</span> <span class="s1">&#39;sunset.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">:</span> <span class="s1">&#39;framed&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tag</span><span class="p">(</span><span class="o">**</span><span class="n">my_tag</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tag</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">content</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate one or more HTML tags&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+    <span class="k">if</span> <span class="n">attrs</span><span class="p">:</span>
+        <span class="n">attr_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; </span><span class="si">%s</span><span class="s1">=&quot;</span><span class="si">%s</span><span class="s1">&quot;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span>
+                           <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">attr_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="si">%s%s</span><span class="s1">&gt;</span><span class="si">%s</span><span class="s1">&lt;/</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attr_str</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">content</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s%s</span><span class="s1"> /&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attr_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="estudo-de-caso-refatorando-strategy">
+<h2>Estudo de caso: Refatorando Strategy<a class="headerlink" href="#estudo-de-caso-refatorando-strategy" title="Permalink to this headline">¶</a></h2>
+<p>O Padrão Strategy: Define uma familia de algoritimos, encapsula cada um e torna-os
+intercambiábeis.</p>
+<p>Exemplo:</p>
+<p>Aplicação de descontos em pedidos com atributos diferentes ou da inpeção dos
+itens comprados.</p>
+<p>Considere:</p>
+<ul class="simple">
+<li>Clientes com mil ou mais pontos no program de fidelidade obtêm um desconto global de 5% sobre o pedido.</li>
+<li>Um desconto de 10% é aplicado a cada item com 20 ou mais unidades no mesmo pedido.</li>
+<li>Pedidos com pelo menos dez itens diferentes recebem um desconto global de 7%.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Customer</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Customer&#39;</span><span class="p">,</span> <span class="s1">&#39;name fidelity&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">LineItem</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">product</span> <span class="o">=</span> <span class="n">product</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="n">quantity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+
+    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span>
+
+<span class="k">class</span> <span class="nc">Order</span><span class="p">:</span>  <span class="c1"># the Context</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">promotion</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">customer</span> <span class="o">=</span> <span class="n">customer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span> <span class="o">=</span> <span class="n">promotion</span>
+
+    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;__total&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__total</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">due</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">discount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">discount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span><span class="o">.</span><span class="n">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">-</span> <span class="n">discount</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;&lt;Order total: {:.2f} due: {:.2f}&gt;&#39;</span>
+        <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">due</span><span class="p">())</span>
+
+<span class="k">class</span> <span class="nc">Promotion</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>  <span class="c1"># the Strategy: an Abstract Base Class</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return discount as a positive dollar amount&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">FidelityPromo</span><span class="p">(</span><span class="n">Promotion</span><span class="p">):</span>  <span class="c1"># first Concrete Strategy</span>
+    <span class="sd">&quot;&quot;&quot;5% discount for customers with 1000 or more fidelity points&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mo">05</span> <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">fidelity</span> <span class="o">&gt;=</span> <span class="mi">1000</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="k">class</span> <span class="nc">BulkItemPromo</span><span class="p">(</span><span class="n">Promotion</span><span class="p">):</span>  <span class="c1"># second Concrete Strategy</span>
+    <span class="sd">&quot;&quot;&quot;10% discount for each LineItem with 20 or more units&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="n">discount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">quantity</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+                <span class="n">discount</span> <span class="o">+=</span> <span class="n">item</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">discount</span>
+
+<span class="k">class</span> <span class="nc">LargeOrderPromo</span><span class="p">(</span><span class="n">Promotion</span><span class="p">):</span>  <span class="c1"># third Concrete Strategy</span>
+    <span class="sd">&quot;&quot;&quot;7% discount for orders with 10 or more distinct items&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="n">distinct_items</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">product</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_items</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mo">07</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">joe</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ann</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s1">&#39;Ann Smith&#39;</span><span class="p">,</span> <span class="mi">1100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cart</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">),</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="gp">... </span>        <span class="n">LineItem</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">LineItem</span><span class="p">(</span><span class="s1">&#39;watermellon&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">FidelityPromo</span><span class="p">())</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="go">&lt;Order total: 42.00 due: 42.00&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">FidelityPromo</span><span class="p">())</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="go">&lt;Order total: 42.00 due: 39.90&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">banana_cart</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">),</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="gp">... </span>               <span class="n">LineItem</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">banana_cart</span><span class="p">,</span> <span class="n">BulkItemPromo</span><span class="p">())</span>  <span class="c1"># &lt;6&gt;</span>
+<span class="go">&lt;Order total: 30.00 due: 28.50&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">long_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item_code</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1"># &lt;7&gt;</span>
+<span class="gp">... </span>              <span class="k">for</span> <span class="n">item_code</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">long_order</span><span class="p">,</span> <span class="n">LargeOrderPromo</span><span class="p">())</span>  <span class="c1"># &lt;8&gt;</span>
+<span class="go">&lt;Order total: 10.00 due: 9.30&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">LargeOrderPromo</span><span class="p">())</span>
+<span class="go">&lt;Order total: 42.00 due: 42.00&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="com-funcoes">
+<h2>Com funções<a class="headerlink" href="#com-funcoes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LineItem</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">class</span> <span class="nc">Order</span><span class="p">:</span>  <span class="c1"># the Context</span>
+    <span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">fidelity_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;5% discount for customers with 1000 or more fidelity points&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mo">05</span> <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">fidelity</span> <span class="o">&gt;=</span> <span class="mi">1000</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">bulk_item_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;10% discount for each LineItem with 20 or more units&quot;&quot;&quot;</span>
+    <span class="n">discount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">quantity</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">discount</span> <span class="o">+=</span> <span class="n">item</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">discount</span>
+
+<span class="k">def</span> <span class="nf">large_order_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;7% discount for orders with 10 or more distinct items&quot;&quot;&quot;</span>
+    <span class="n">distinct_items</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">product</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_items</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mo">07</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="n">promos</span> <span class="o">=</span> <span class="p">[</span><span class="n">fidelity_promo</span><span class="p">,</span> <span class="n">bulk_item_promo</span><span class="p">,</span> <span class="n">large_order_promo</span><span class="p">]</span>  <span class="c1"># &lt;1&gt;</span>
+
+<span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="sd">&quot;&quot;&quot;Select best discount available        &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">promo</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">promo</span> <span class="ow">in</span> <span class="n">promos</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="decorators">
+<h2>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">promos</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">def</span> <span class="nf">promotion</span><span class="p">(</span><span class="n">promo_func</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">promos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promo_func</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">promo_func</span>
+
+<span class="nd">@promotion</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="k">def</span> <span class="nf">fidelity</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;5% discount for customers with 1000 or more fidelity points&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mo">05</span> <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">fidelity</span> <span class="o">&gt;=</span> <span class="mi">1000</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="nd">@promotion</span>
+<span class="k">def</span> <span class="nf">bulk_item</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;10% discount for each LineItem with 20 or more units&quot;&quot;&quot;</span>
+    <span class="n">discount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">quantity</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">discount</span> <span class="o">+=</span> <span class="n">item</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">discount</span>
+
+<span class="nd">@promotion</span>
+<span class="k">def</span> <span class="nf">large_order</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;7% discount for orders with 10 or more distinct items&quot;&quot;&quot;</span>
+    <span class="n">distinct_items</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">product</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_items</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="o">.</span><span class="mo">07</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">promo</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">promo</span> <span class="ow">in</span> <span class="n">promos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="closure">
+<h2>Closure<a class="headerlink" href="#closure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_averager</span><span class="p">():</span>
+<span class="n">series</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">averager</span><span class="p">(</span><span class="n">new_value</span><span class="p">):</span>
+        <span class="n">series</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_value</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">total</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">averager</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">avg</span> <span class="o">=</span> <span class="n">make_averager</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">avg</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mf">10.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">avg</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="mf">10.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">avg</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="mf">11.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="heranca">
+<h2>Herança<a class="headerlink" href="#heranca" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">override</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;PARENT override()&quot;</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">override</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&quot;CHILD override()&quot;</span>
+
+<span class="n">dad</span> <span class="o">=</span> <span class="n">Parent</span><span class="p">()</span>
+<span class="n">son</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+
+<span class="n">dad</span><span class="o">.</span><span class="n">override</span><span class="p">()</span>
+<span class="n">son</span><span class="o">.</span><span class="n">override</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">PARENT</span> <span class="n">override</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CHILD</span> <span class="n">override</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../references/references.html" class="btn btn-neutral" title="Referências" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright KMEE INFORMATICA LTDA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2016.08.0001',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

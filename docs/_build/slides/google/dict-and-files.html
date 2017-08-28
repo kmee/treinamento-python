@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dicionários e Arquivos Python &mdash; Treinamento de Python 2016.08.0001</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="../_static/odoo.css" type="text/css" />
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2016.08.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/common.js"></script>
+    
+    <script type="text/javascript" src="../_static/slides.js"></script>
+    <script type="text/javascript" src="../_static/sync.js"></script>
+    <script type="text/javascript" src="../_static/controller.js"></script>
+    <script type="text/javascript" src="../_static/init.js"></script>
+    
+    
+    <script type="text/javascript" src="../_static/odoo.js"></script
+    
+    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html" />
+    <link rel="next" title="Expressões Regulares" href="regular-expressions.html" />
+    <link rel="prev" title="Sorting" href="sorting.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="dicionarios-e-arquivos-python">
+
+<h1>Dicionários e Arquivos Python</h1>
+
+
+
+
+
+</article>
+<article class="slide level-2" id="dicionarios">
+
+<h2>Dicionários</h2>
+
+<p>Qualquer programa python em execução tem diversos dicionários simultaneamente
+ativos, mesmo que o código do programa do usuário não utilize
+explicitamente um dicionário.</p>
+<ul class="simple">
+<li>Beaultiful Code (O'Reilly 2007), Cap 18, Python's Dictonary Implementation</li>
+</ul>
+<p>O tipo dict não só é amplamente usado em nossos programas como também é parte
+fundamental da implementação Python. Namespaces de módulos, atributos de
+classes e de instância e argumentos nomeados de funções são algumas das
+construções básicas em que os dicionários estão implementados. As próprias
+funções embutidas ficam em um dicionário:</p>
+<p>__builtins__.__dict__.</p>
+<p>Por causa desse papel essencial, os dicts são extremamente otimizados.
+As tabelas hash são o mecanismo responsável pelo seu auto desempenho.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="hashable">
+
+<h2>Hashable?</h2>
+
+<p>Um objeto é hashable se tiver um valor de hash que nunca muda durante seu
+tempo de vida e puder ser comparado com outros objetos.</p>
+<p>A estrutura de hash chave/valor (key/value) é chamada de “dict”. O conteúdo
+de um dict pode ser escrito como uma série de pares chave: valor (key:value)
+dentro de chave {}, ex: dict = {chave1:valor1, chave2:valor2, ... }. Um
+“dicionário vazio” é simplesmente um par de chaves {}.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="id1">
+
+<h2>Hashable?</h2>
+
+<p>Para usar ou definir um valor em um dicionário use o formato com colchete,
+ex: dict[‘foo’] busca pelo valor dentro da chave ‘foo’. Strings, números e
+até tuplas (tuples) funcionam como chaves, e qualquer tipo pode ser um valor.
+Outros tipos podem ou não funcionar corretamente com chaves (strings e tuplas
+funcionam lindamente desde que sejam imutáveis). Buscar por um valor que não
+está no dicionário retorna um KeyError – use “in” para checar se uma chave
+existe no dicionário, ou use dict.get(chave) que retorna o valor ou None se
+a chave não existe (ou get(chave, nao-encontrado) permite a você especificar
+o valor do retorno se a chave não for encontrada).</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Pode construir um dicionário iniciando um vazio {}</span>
+<span class="c1">## e guardando pares de chave/valor no dicionário neste formato:</span>
+<span class="c1">## dict[chave] = valor-para-esta-chave</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;alpha&#39;</span>
+<span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma&#39;</span>
+<span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;omega&#39;</span>
+
+<span class="k">print</span> <span class="nb">dict</span>  <span class="c1">## {&#39;a&#39;: &#39;alpha&#39;, &#39;o&#39;: &#39;omega&#39;, &#39;g&#39;: &#39;gamma&#39;}</span>
+
+<span class="k">print</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>     <span class="c1">## Busca simples, retorna &#39;alpha&#39;</span>
+<span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>       <span class="c1">## Altera chave/valor no dicionário</span>
+<span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="nb">dict</span>         <span class="c1">## True</span>
+<span class="c1">## print dict[&#39;z&#39;]                  ## Retorna KeyError</span>
+<span class="k">if</span> <span class="s1">&#39;z&#39;</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span> <span class="k">print</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span>     <span class="c1">## Evita KeyError</span>
+<span class="k">print</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>  <span class="c1">## None (ao invés de KeyError)</span>
+</pre></div>
+</div>
+<img alt="../_images/dict.png" class="align-center" src="../_images/dict.png" />
+
+
+
+
+</article>
+<article class="slide level-2" id="id2">
+
+<h2>Hashable?</h2>
+
+<p>Um laço “for” em um dicionário interage sobre suas chaves por padrão.
+As chaves aparecerão em uma ordem arbitrária. Os métodos dict.keys() e
+dict.values() retornam listas de chaves ou valores explicitamente.
+Também existe um método items() que retorna a lista de tuplas (chave, valor),
+que é o método mais eficiente de examinar todos os dados em um dicionário.
+Todas estas listas podem ser passadas pela função sorted().</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Por padrão, interagindo em um dict interage-se com suas chaves.</span>
+<span class="c1">## Veja que as chaves estão em ordem randômica.</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span> <span class="k">print</span> <span class="n">key</span>
+<span class="c1">## prints a g o</span>
+
+<span class="c1">## Exatamente o mesmo resultado de cima</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="k">print</span> <span class="n">key</span>
+
+<span class="c1">## Pegue a lista de chaves:</span>
+<span class="k">print</span> <span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>  <span class="c1">## [&#39;a&#39;, &#39;o&#39;, &#39;g&#39;]</span>
+
+<span class="c1">## Do mesmo jeito, um .values() lista os valores</span>
+<span class="k">print</span> <span class="nb">dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1">## [&#39;alpha&#39;, &#39;omega&#39;, &#39;gamma&#39;]</span>
+
+<span class="c1">## Uso comum – laço sobre as chaves ordenadas,</span>
+<span class="c1">## acessando cada chave/valor</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+<span class="k">print</span> <span class="n">key</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<span class="c1">## .items() é o dicionário expresso como tuplas (chave, valor)</span>
+<span class="k">print</span> <span class="nb">dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>  <span class="c1">##  [(&#39;a&#39;, &#39;alpha&#39;), (&#39;o&#39;, &#39;omega&#39;), (&#39;g&#39;, &#39;gamma&#39;)]</span>
+
+<span class="c1">## Esta sintaxe de laço acessa toda a lista repetindo</span>
+<span class="c1">## pela lista de tuplas .items(), acessando um par (chave, valor)</span>
+<span class="c1">## em cada interação.</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">v</span>
+<span class="c1">## a &gt; alpha    o &gt; omega     g &gt; gamma</span>
+</pre></div>
+</div>
+
+
+
+
+</article>
+<article class="slide level-2" id="id3">
+
+<h2>Hashable?</h2>
+
+<p>Existem “iter” variações destes métodos chamados itereys(), intervalues() e
+iteritems() que evitam o custo de contrus a lista inteira – traz um ganho
+de velocidade se os dados forem muitos. No entanto eu normalmente prefiro
+os métodos padrões keys() e values() com os nomes sensíveis. Na revisão
+Python 3 a necessidade de usar as variants iterkeys() foi descartada.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="id4">
+
+<h2>Hashable?</h2>
+
+<p>Nota de Estratégia: do ponto de vista de velocidade, o dicionário é uma das
+melhores ferramentas e você deve usá-la sempre que puder com um método simples
+de organizar dados. Por exemplo, você pode ler um arquivo de log onde cada
+linha começa com um endereço IP, e guardar os dados usando o endereço IP
+como chave, e a lista de linhas onde ele aparece como valor. Assim que você
+ler todo o arquivos, você pode buscar por qualquer endereço IP e
+instantaneamente ver a sua lista de linhas. O dicionário pega dados
+disperses e os torna algo coerente.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="formatando-dicionarios">
+
+<h2>Formatando Dicionários</h2>
+
+<p>O operador % funciona convenientemente para substituir valores de um dicionário
+em uma string pelo nome:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">hash</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">hash</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;garfield&#39;</span>
+<span class="nb">hash</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Eu quero </span><span class="si">%(count)d</span><span class="s1"> cópias de </span><span class="si">%(word)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">hash</span>  <span class="c1"># %d for int, %s for string</span>
+<span class="c1"># &#39;Eu quero 42 cópias de garfield&#39;</span>
+</pre></div>
+</div>
+
+
+
+
+</article>
+<article class="slide level-2" id="del">
+
+<h2>Del</h2>
+
+<p>O operador &quot;del&quot; faz deleções. No caso mais simples, ele pode remover
+a definição de uma variável, como se a variável não tivesse sido definida.
+Del também pode ser usada em uma lista de elementos ou pedaços para
+deletar parte da lista e para deletar entradas de um dicionário.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">del</span> <span class="n">var</span>  <span class="c1"># var nunca mais!</span>
+
+<span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="nb">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="c1">## Deleta primeiro elemento</span>
+<span class="k">del</span> <span class="nb">list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>   <span class="c1">## Deleta últimos dois elementos</span>
+<span class="k">print</span> <span class="nb">list</span>      <span class="c1">## [&#39;b&#39;]</span>
+
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="k">del</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>   <span class="c1">## Deleta a entrada &#39;b&#39;</span>
+<span class="k">print</span> <span class="nb">dict</span>      <span class="c1">## {&#39;a&#39;:1, &#39;c&#39;:3}</span>
+</pre></div>
+</div>
+
+
+
+
+</article>
+<article class="slide level-2" id="arquivos">
+
+<h2>Arquivos</h2>
+
+<p>A função open() abre e retorna um identificador de arquivo que pode ser usado
+para ler ou escrever um arquivo da maneira usual. O código f = open(‘name’,
+‘r’) abre o arquivo na variável f, pronto para operações de leitura, e
+use o método f.close(), quando terminar. Ao invés de ‘r’, use ‘w’ para
+escrita, e ‘a’ para adicionar (append). O modo especial ‘rU’ é a opção
+universal para arquivos de texto onde o Python usa inteligência para
+converter diferentes tipos de fim-de-linha (line-endings) para que eles
+sempre venham como um simples ‘n’. O laço de repetição padrão “for-loop”
+funciona para arquivos de texto, interagindo pelas linhas do arquivo
+(isso só funciona para arquivos texto, não para arquivos binários).</p>
+<p>A técnica do for-loop é um simples e eficiente método para olhar todas as
+linhas em um arquivo de texto:</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="id5">
+
+<h2>Arquivos</h2>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Mostra o conteúdo de um arquivo</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rU&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>   <span class="c1">## interage pelas linhas do arquivo</span>
+  <span class="k">print</span> <span class="n">line</span><span class="p">,</span>    <span class="c1">## print não adicionar um character de fim-de-linha</span>
+                 <span class="c1">## já que ‘line’ já tem um no fim de cada linha.</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+
+</article>
+<article class="slide level-2" id="id6">
+
+<h2>Arquivos</h2>
+
+<p>Ler uma linha de cada vez tem a boa qualidade de não precisar carregar todo
+o arquivo na memória de uma única vez – vem a calhar se você precisa olhar
+em todas as linhas de um arquivo de 10 gigabytes sem usar 10 gigabytes de
+memória. O método f.readlines() carrega todo o arquivo para a memória e
+retorna seu conteúdo como uma lista de suas linhas. O método f.read()
+carrega todo o arquivo em uma única string, que é um método que vem a
+calhar se você precisa lidar com o texto todo de uma vez, como em uma
+expressão regular que veremos mais tarde.</p>
+<p>Para escrever, usar o método f.write(sring) é a maneira mais fácil de gravar
+dados em um arquivo aberto. Ou você pode usar “print” com um arquivo aberto,
+mas a sintaxe é feia: “print &gt;&gt; f, string”. Em python 3000, a sintaxe do
+comando print será fixada como uma expressão regular com um arquivo como
+argumento:</p>
+<p>&quot;print(string, file=f)&quot;.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="arquivos-unicode">
+
+<h2>Arquivos Unicode</h2>
+
+<p>Os módulos &quot;codecs&quot; proveem suporte para ler arquivos em formato Unicode.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codecs</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rU&#39;</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+  <span class="c1"># esta linha é uma string *Unicode*</span>
+</pre></div>
+</div>
+<p>Para gravar, use f.write() já que print não suporta integralmente formatos unicode.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="exercicio-de-desenvolvimento-incremental">
+
+<h2>Exercício de Desenvolvimento Incremental</h2>
+
+<p>Criando um programa Python, não escreva tudo em um único passo. Ao invés disso
+identifique apenas a primeira parte, ex: “o primeiro passo é extrair a lista
+de palavras.”. Escreva o código para cumprir esta parte, e apenas imprima
+sua estrutura de dados neste ponto, então você pode fazer um sys.exit(0)
+para que o programa não rode mais nada que ainda não esteja pronto. Assim
+que a parte do código estiver funcionando, você pode continuar trabalhando
+no código para a próxima parte. Ser capaz de olhar o printout (resultado)
+de suas variáveis em um estado pode ajudá-lo a pensar sobre como você
+precisa transformar as variáveis para chegar ao próximo estado.
+Python é muito rápido com estes padrões, permitindo a você fazer
+pequenas alterações e rodar o programa para ver o resultado.
+Aproveite esta característica para criar seu programa em pequenos passos.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="exercicio-wordcount-py">
+
+<h2>Exercício: wordcount.py</h2>
+
+<p>Combinando todo o material do Python básico – strings, listas, dicionários,
+tuplas e arquivos. ---- Tente fazer o exercício wordcount.py dos exercícios básicos.</p>
+
+
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

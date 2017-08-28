@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Utilities &mdash; Treinamento de Python 2016.08.0001</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
+        <link rel="next" title="Referências" href="../references/references.html"/>
+        <link rel="prev" title="Expressões Regulares" href="regular-expressions.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Treinamento de Python
+          
+
+          
+            
+            <img src="../_static/kmee_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.08
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regular-expressions.html">Expressões Regulares</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Python Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-system-os-os-path-shutil">File System – os, os.path, shutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-external-processes-commands">Running External Processes – commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#excessoes">Excessões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#http-urllib-and-urlparse">HTTP – urllib and urlparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Treinamento de Python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Python Utilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/google/utilities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-utilities">
+<h1>Python Utilities<a class="headerlink" href="#python-utilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Python Utilities<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Nesta sessão, vamos dar uma olhada em algumas das muitas funções da biblioteca
+padrão do Python, visando resolver problemas comuns.</p>
+</div>
+<div class="section" id="file-system-os-os-path-shutil">
+<h2>File System – os, os.path, shutil<a class="headerlink" href="#file-system-os-os-path-shutil" title="Permalink to this headline">¶</a></h2>
+<p>Os modulos <strong>os</strong> e <strong>os.path</strong> contêm muitas funcionalidades para interagir
+com o sistema operacional.</p>
+<p>O módulo <strong>shutil</strong> pode copiar arquivos</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.python.org/lib/module-os.html/">os module docs</a></li>
+<li>filenames = os.listdir(dir) - lista o nome dos arquivos no diretório (não incluindo path atual . e path pai ..). Os nomes dos arquivos são apenas os nomes dos arquivos e não os seus caminhos absolutos.</li>
+<li>os.path.join(dir, filename) - recupera o nome de arquivo da lista acima, usar isso para colocar o diretório (path) e nome do arquivo em conjunto para fazer um caminho completo</li>
+<li>os.path.abspath(path) - recupera um caminho, retorna a forma absoluta, por exemplo, /home/nick/foo/bar.html</li>
+<li>os.path.dirname(caminho), os.path.basename (path) - recupera o caminho completo dir/foo/bar.html, retorna o diretório “dir/foo” e nome do arquivo “bar.html”</li>
+</ul>
+<ul class="simple">
+<li>os.path.exists(path) – true if it exists</li>
+<li>os.mkdir(dir_path) – makes one dir, os.makedirs(dir_path) makes all the needed dirs in this path</li>
+<li>shutil.copy(source-path, dest-path) – copy a file (dest path directories should exist)</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Example pulls filenames from a dir, prints their relative and absolute paths</span>
+<span class="k">def</span> <span class="nf">printdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
+  <span class="n">filenames</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">filename</span>  <span class="c1">## foo.txt</span>
+    <span class="k">print</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span> <span class="c1">## dir/foo.txt (relative to current dir)</span>
+    <span class="k">print</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span> <span class="c1">## /home/nick/dir/foo.txt</span>
+</pre></div>
+</div>
+<p>Explorar um módulo funciona muito bem com as funções da <strong>biblioteca
+padrão</strong>: help() e dir().</p>
+<p>No interpretador execute um import os e use os comandos para avaliar os
+módulos: dir(os), help(os.listdir), dir(os.path), help(os.path.dirname).</p>
+</div>
+<div class="section" id="running-external-processes-commands">
+<h2>Running External Processes – commands<a class="headerlink" href="#running-external-processes-commands" title="Permalink to this headline">¶</a></h2>
+<p>O modulo <strong>commands</strong> é uma forma simples de executar um comando externo e
+capturar sua saída.</p>
+<ul class="simple">
+<li>commands module docs</li>
+<li>(status, output) = commands.getstatusoutput(cmd) – executa o comando, aguarda a execução para sair e retorna status int e texto de saída como uma tupla. O comando é executado com sua saída padrão e erro padrão combinado em uma única saída de texto. O status será diferente de zero se o comando falhou. Desde que o standar-err do comando seja capturado, se ele falhar, é preciso imprimir alguma indicação sobre o que aconteceu.</li>
+<li>output = commands.getoutput(cmd) – como o comando acima, mas sem o status int.</li>
+<li>Há o commands.getstatus(), mas ele faz outra coisa, por isso não utilize.</li>
+</ul>
+<ul class="simple">
+<li>Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo “popen2” (<a class="reference external" href="http://docs.python.org/lib/module-popen2.html">http://docs.python.org/lib/module-popen2.html</a>)</li>
+<li>Há também o simples os.system(cmd), que executa o comando e retorna sua saída e retorna seu código de erro. Isso funciona se você deseja executar o comando, mas não precisa capturar a sua saída em suas estruturas de dados python.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Given a dir path, run an external &#39;ls -l&#39; on it --</span>
+<span class="c1">## shows how to call an external program</span>
+<span class="k">def</span> <span class="nf">listdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;ls -l &#39;</span> <span class="o">+</span> <span class="nb">dir</span>
+  <span class="k">print</span> <span class="s2">&quot;Command to run:&quot;</span><span class="p">,</span> <span class="n">cmd</span>   <span class="c1">## good to debug cmd before actually running it</span>
+  <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="o">=</span> <span class="n">commands</span><span class="o">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">status</span><span class="p">:</span>    <span class="c1">## Error case, print the command&#39;s output to stderr and exit</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">print</span> <span class="n">output</span>  <span class="c1">## Otherwise do something with the command&#39;s output</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="excessoes">
+<h2>Excessões<a class="headerlink" href="#excessoes" title="Permalink to this headline">¶</a></h2>
+<p>Uma exceção representa um erro de tempo de execução que suspende a execução normal
+em uma linha particular e transfere o controle para manipulação de erros de código.
+Esta seção apenas introduz os usos mais básicos de exceções. Por exemplo, num erro
+de tempo de execução pode ser que uma variável utilizada no programa não tenha um
+valor (ValueError… você provavelmente já viu este erro algumas vezes), ou um erro
+de operação de abertura de arquivo por causa do arquivo não existir ( IOError).
+(Veja docs <a class="reference external" href="http://docs.python.org/tut/node10.html][exception~~number=plural">http://docs.python.org/tut/node10.html][exception~~number=plural</a>)</p>
+<p>Sem qualquer código de manipulação de erro (como temos feito até agora), uma
+exceção de tempo de execução apenas interrompe o programa com uma mensagem de erro.
+Isso é um bom comportamento padrão, e você já viu isso muitas vezes. Você pode adicionar
+uma estrutura “try/except” no seu código para lidar com exceções, como esta:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+  <span class="c1">## Either of these two lines could throw an IOError, say</span>
+  <span class="c1">## if the file does not exist or the read() encounters a low level error.</span>
+  <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rU&#39;</span><span class="p">)</span>
+  <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+  <span class="c1">## Control jumps directly to here if any of the above lines throws IOError.</span>
+  <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;problem reading:&#39;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+<span class="c1">## In any case, the code then continues with the line after the try/except</span>
+</pre></div>
+</div>
+<p>A tentativa: seção inclui o código que pode lançar uma exceção.
+A exceção: seção contém o código para ser executado se houver uma exceção.
+Se não houver nenhuma exceção, a exceção: a seção é ignorada (isto é, que
+o código é para a manipulação de erro somente, não é o caso “normal” para
+o código).</p>
+<p>Você pode obter um ponteiro para a exceção do próprio objeto com
+a sintaxe <code class="docutils literal"><span class="pre">except</span> <span class="pre">IOError,</span> <span class="pre">e:</span></code> (e aponta para o objeto de exceção).</p>
+</div>
+<div class="section" id="http-urllib-and-urlparse">
+<h2>HTTP – urllib and urlparse<a class="headerlink" href="#http-urllib-and-urlparse" title="Permalink to this headline">¶</a></h2>
+<p>O módulo <strong>urllib</strong> permite acessar servidores HTTP por meios de requests GET
+e POST de maneira direta – Tornando as urls acessíveis como um arquivo que
+possa ser lido. O <strong>urlparse</strong> permite a você trabalhar com partes de url e unir urls.</p>
+<p>-urllib module docs
+-ufile = urllib.urlopen(url) – returns a file like object for that url
+-text = ufile.read() – can read from it, like a file (readlines() etc. also work)
+-info = ufile.info() – the meta info for that request. info.gettype() is the  mime time, e.g. ‘text/html’
+-baseurl = ufile.geturl() – gets the “base” url for the request, which may be different from the original because of redirects
+-urllib.urlretrieve(url, filename) – downloads the url data to the given file path
+-urlparse.urljoin(baseurl, url) – given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Given a url, try to retrieve it. If it&#39;s text/html,</span>
+<span class="c1">## print its base url and its text.</span>
+<span class="k">def</span> <span class="nf">wget</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="n">ufile</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1">## get file-like object for url</span>
+  <span class="n">info</span> <span class="o">=</span> <span class="n">ufile</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>   <span class="c1">## meta-info about the url content</span>
+  <span class="k">if</span> <span class="n">info</span><span class="o">.</span><span class="n">gettype</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;text/html&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;base url:&#39;</span> <span class="o">+</span> <span class="n">ufile</span><span class="o">.</span><span class="n">geturl</span><span class="p">()</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">ufile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1">## read all its text</span>
+    <span class="k">print</span> <span class="n">text</span>
+</pre></div>
+</div>
+<p>O código acima funciona bem, mas não inclui tratamento de erros caso a url
+não exista. Segue uma versão de uma função que adiciona a lógica try/except
+exibindo uma mensagem em caso de erro.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Version that uses try/except to print an error message if the</span>
+<span class="c1">## urlopen() fails.</span>
+<span class="k">def</span> <span class="nf">wget2</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">ufile</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ufile</span><span class="o">.</span><span class="n">info</span><span class="p">()</span><span class="o">.</span><span class="n">gettype</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;text/html&#39;</span><span class="p">:</span>
+      <span class="k">print</span> <span class="n">ufile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s1">&#39;problem reading url:&#39;</span><span class="p">,</span> <span class="n">url</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Log Puzzle Exercise.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../references/references.html" class="btn btn-neutral float-right" title="Referências" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="regular-expressions.html" class="btn btn-neutral" title="Expressões Regulares" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright KMEE INFORMATICA LTDA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2016.08.0001',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
