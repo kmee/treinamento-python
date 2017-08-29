@@ -22,7 +22,6 @@ escrevendo código python com um sotaque bem marcado" Luciano Ramalho
 
 - "Pythonico"
 
-
 Introdução
 ----------
 
@@ -59,14 +58,14 @@ Exercícios
 ==========
 
 
-Exercício 1
+Exercício 1 - list1.py
 ----------
 
 .. literalinclude:: code/basic/list1.py
    :language: python
    :linenos:
 
-Exercício 2
+Exercício 2 - list2.py
 ----------
 
 .. literalinclude:: code/basic/list2.py
@@ -74,14 +73,14 @@ Exercício 2
    :linenos:
 
 
-Exercício 3
+Exercício 3 - string1.py
 -----------
 
 .. literalinclude:: code/basic/string1.py
    :language: python
    :linenos:
 
-Exercício 4
+Exercício 4 - string2.py
 -----------
 
 .. literalinclude:: code/basic/string2.py
@@ -89,21 +88,21 @@ Exercício 4
    :linenos:
 
 
-Exercicio 5
+Exercicio 5 - wordcount.py
 -----------
 
 .. literalinclude:: code/basic/wordcount.py
    :language: python
    :linenos:
 
-Exercício 6
+Exercício 6 - logpuzzle.py
 -----------
 
 .. literalinclude:: code/logpuzzle/logpuzzle.py
    :language: python
    :linenos:
 
-Exercício 7
+Exercício 7 - copyspecial.py
 -----------
 
 .. literalinclude:: code/copyspecial/copyspecial.py
@@ -113,14 +112,14 @@ Exercício 7
 Soluções
 ========
 
-Exercício 1
+Exercício 1 - list1.py
 ----------
 
 .. literalinclude:: code/basic/solution/list1.py
    :language: python
    :linenos:
 
-Exercício 2
+Exercício 2 - list2.py
 ----------
 
 .. literalinclude:: code/basic/solution/list2.py
@@ -128,14 +127,14 @@ Exercício 2
    :linenos:
 
 
-Exercício 3
+Exercício 3 - string1.py
 -----------
 
 .. literalinclude:: code/basic/solution/string1.py
    :language: python
    :linenos:
 
-Exercício 4
+Exercício 4 - string2.py
 -----------
 
 .. literalinclude:: code/basic/solution/string2.py
@@ -143,21 +142,21 @@ Exercício 4
    :linenos:
 
 
-Exercício 5
+Exercício 5 - wordcount.py
 -----------
 
 .. literalinclude:: code/basic/solution/wordcount.py
    :language: python
    :linenos:
 
-Exercício 6
+Exercício 6 - logpuzzle.py
 -----------
 
 .. literalinclude:: code/logpuzzle/solution/logpuzzle.py
    :language: python
    :linenos:
 
-Exercício 7
+Exercício 7 - copyspecial.py
 -----------
 
 .. literalinclude:: code/copyspecial/solution/copyspecial.py

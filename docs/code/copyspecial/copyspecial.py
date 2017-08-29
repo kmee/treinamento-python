@@ -15,9 +15,26 @@ import commands
 """Copy Special exercise
 """
 
+#The copyspecial.py program takes one or more directories as its arguments. We'll say that a #"special" file is one where the name contains the pattern __w__ somewhere, where the w is one or #more word chars. The provided main() includes code to parse the command line arguments, but the #rest is up to you. Write functions to implement the features below and modify main() to call your #functions.
+
 # +++your code here+++
 # Write functions and modify main() to call them
 
+def get_special_paths(dir):  
+"""
+returns a list of the absolute paths of the special files in the given directory
+"""
+
+def copy_to(paths, dir): 
+"""
+given a list of paths, copies those files into the given director
+"""
+
+def zip_to(paths, zippath): 
+"""
+given a list of paths, zip those files up into the given zipfile 
+Command to zip files:  zip -j zipfilename.zip file1 file2 file3...
+"""
 
 
 def main():

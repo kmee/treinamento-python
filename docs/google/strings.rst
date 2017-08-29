@@ -355,10 +355,6 @@ achem que é mais legível para o espaço as coisas em linhas separadas.
 Exercício: string1.py
 ---------------------
 
-Acesse o endereço http://192.168.1.104:8888
-
-Baixe o arquivo string1.py
-
 Exercício A: Donuts
 
 .. code-block:: python
@@ -378,6 +374,8 @@ Exercício B: both-ends
     # e pelos dois últimos caracteres da string original,
     # então 'sprint' resulta 'spng'. Entretando, se a string tem
     # comprimento menor que 2, retorna uma string vazia.
+
+.. nextslide::
 
 Exercicio C: fix-start
 

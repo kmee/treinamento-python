@@ -4,7 +4,7 @@ Expressões Regulares
 Expressões Regulares
 --------------------
 
-As expressões regulares são uma linguagem poderosa para a busca de padrões de texto. Esta página dá uma introdução básica à expressões regulares suficientes para os nossos exercícios Python e mostra como expressões regulares trabalham em Python. 
+As expressões regulares são uma linguagem poderosa para a busca de padrões de texto. Esta página dá uma introdução básica às expressões regulares suficientes para os nossos exercícios Python e mostra como expressões regulares trabalham em Python. 
 
 O módulo Python "re" oferece suporte a expressões regulares.
 
@@ -97,7 +97,7 @@ As coisas ficam mais interessantes quando você usa + e * para especificar a rep
 Leftmost & Largest
 ------------------
 
-Em primeiro lugar a procura encontra regra leftmost por padrão e, segundo ele tenta usar o máximo da cadeia possível - Exemplo: + e * vão tão longe quanto possível (a + e * são conhecidos como "gananciosos").
+Em primeiro lugar a procura encontra a regra leftmost por padrão e, em seguida ele tenta usar o máximo da cadeia possível - Exemplo: + e * vão tão longe quanto possível (a + e * são conhecidos como "gananciosos").
 
 Exemplos de repetições
 
@@ -273,3 +273,5 @@ Exercícios
 ----------
 
 Exercícios de Expressões Regulares
+
+Extra - Tente resolver o exercício mimic.py nos exercícios básicos

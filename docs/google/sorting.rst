@@ -170,6 +170,8 @@ A sintaxe é [ expr for var in list ] - o "for var in list" parece um for-loop r
   ## ['HELLO!!!', 'AND!!!', 'GOODBYE!!!']
 
 
+.. nextslide::
+
 Você pode adicionar um caso de teste para a direita do for-loop para estreitar o resultado. O caso de teste é calculado para cada elemento, incluindo apenas os elementos em que o teste é verdadeiro.
 
 .. code-block:: python

@@ -23,7 +23,7 @@ def read_urls(filename):
   """Returns a list of the puzzle urls from the given log file,
   extracting the hostname from the filename itself.
   Screens out duplicate urls and returns the urls sorted into
-  increasing order."""
+  increasing order by its last 4 digits before '.jpg' ."""
   # +++your code here+++
   
 

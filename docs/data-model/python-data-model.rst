@@ -163,7 +163,7 @@ Emulando tipos numéricos
 
 Mecanismo flexivel de parametros
 --------------------------------
-Um dos melhores recursos das funções python. Usamos os * e ** para explodir:
+Um dos melhores recursos das funções python:
 
 - "*" faz com que o vetor seja utilizado como argumentos ordenados.
 - "**" faz com que o dicionario seja usado como argumentos nomeados.
@@ -280,6 +280,10 @@ Considere:
         """5% discount for customers with 1000 or more fidelity points"""
         def discount(self, order):
             return order.total() * .05 if order.customer.fidelity >= 1000 else 0
+
+.. nextslide::
+
+.. code-block:: python
 
     class BulkItemPromo(Promotion):  # second Concrete Strategy
         """10% discount for each LineItem with 20 or more units"""

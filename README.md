@@ -20,7 +20,7 @@ In case you do not wanting to use Powerpoint (and its templates)
 
 * install sphinx >= 1.3 (you can check with ``sphinx-build --version``, you
   may need to use ``easy_install`` or ``pip``
-  (e.g. ``pip install sphinx==1.2``) if your distribution only provides an
+  (e.g. ``pip install sphinx==1.3``) if your distribution only provides an
   old version of Sphinx.
 * install hieroglyph >= 0.6.5 (http://hieroglyph.io not ``ttf-ancient-fonts``,
   you will probably have to use ``easy_install`` or ``pip``)

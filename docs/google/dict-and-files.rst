@@ -18,7 +18,7 @@ funções embutidas ficam em um dicionário:
 __builtins__.__dict__.
 
 Por causa desse papel essencial, os dicts são extremamente otimizados.
-As tabelas hash são o mecanismo responsável pelo seu auto desempenho.
+As tabelas hash são o mecanismo responsável pelo seu alto desempenho.
 
 Hashable?
 ---------
@@ -39,8 +39,11 @@ Outros tipos podem ou não funcionar corretamente com chaves (strings e tuplas
 funcionam lindamente desde que sejam imutáveis). Buscar por um valor que não
 está no dicionário retorna um KeyError – use “in” para checar se uma chave
 existe no dicionário, ou use dict.get(chave) que retorna o valor ou None se
-a chave não existe (ou get(chave, nao-encontrado) permite a você especificar
-o valor do retorno se a chave não for encontrada).
+a chave não existe. A expressão get(key, returnvalue) permite a você especificar
+um valor do retorno se a chave não for encontrada.
+
+
+.. nextslide::
 
 .. code-block:: python
 
@@ -73,6 +76,8 @@ dict.values() retornam listas de chaves ou valores explicitamente.
 Também existe um método items() que retorna a lista de tuplas (chave, valor),
 que é o método mais eficiente de examinar todos os dados em um dicionário.
 Todas estas listas podem ser passadas pela função sorted().
+
+.. nextslide::
 
 .. code-block:: python
 
@@ -107,8 +112,8 @@ Todas estas listas podem ser passadas pela função sorted().
 .. nextslide::
 
 Existem “iter” variações destes métodos chamados itereys(), intervalues() e
-iteritems() que evitam o custo de contrus a lista inteira – traz um ganho
-de velocidade se os dados forem muitos. No entanto eu normalmente prefiro
+iteritems() que evitam o custo de construir a lista inteira – trazendo um ganho
+de velocidade se os dados forem muitos. No entanto, eu normalmente prefiro
 os métodos padrões keys() e values() com os nomes sensíveis. Na revisão
 Python 3 a necessidade de usar as variants iterkeys() foi descartada.
 
@@ -121,7 +126,7 @@ linha começa com um endereço IP, e guardar os dados usando o endereço IP
 como chave, e a lista de linhas onde ele aparece como valor. Assim que você
 ler todo o arquivos, você pode buscar por qualquer endereço IP e
 instantaneamente ver a sua lista de linhas. O dicionário pega dados
-disperses e os torna algo coerente.
+dispersos e os torna algo coerente.
 
 Formatando Dicionários
 ----------------------
