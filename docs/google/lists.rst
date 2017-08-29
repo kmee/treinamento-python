@@ -199,7 +199,9 @@ Fatiamentos funcionam com listas da mesma forma que strings, e podem ser usados 
 
 Exercício: list1.py
 -------------------
-Para praticarmos o material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação ( nos exercícios básicos).
+Para praticarmos o material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação (nos exercícios básicos).
+
+Download do Arquivo: :download:`list1.py <../code/basic/list1.py>`
 
 Exercício A: match-ends
 

@@ -8,5 +8,4 @@ python-course/_build
 /.idea/treinamento-python.iml
 /.idea/vcs.xml
 /.idea/workspace.xml
-*.txt
-
+/docs/_build

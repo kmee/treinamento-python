@@ -252,3 +252,5 @@ Exercício: wordcount.py
 
 Combinando todo o material do Python básico – strings, listas, dicionários,
 tuplas e arquivos. ---- Tente fazer o exercício wordcount.py dos exercícios básicos.
+
+Download do Arquivo: :download:`wordcount.py <../code/basic/wordcount.py>`

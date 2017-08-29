@@ -189,6 +189,8 @@ Exercício: list1.py
 ------------------
 Para praticarmos o material desta sessão, tente agora os problemas do arquivo list1.py que utilizam ordenação.
 
+Download do Arquivo: :download:`list1.py <../code/basic/list1.py>`
+
 Exercício B: front-x
 
 .. code-block:: python

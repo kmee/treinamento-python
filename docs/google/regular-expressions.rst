@@ -275,3 +275,5 @@ Exercícios
 Exercícios de Expressões Regulares
 
 Extra - Tente resolver o exercício mimic.py nos exercícios básicos
+
+Download do Arquivo: :download:`mimic.py <../code/basic/mimic.py>`

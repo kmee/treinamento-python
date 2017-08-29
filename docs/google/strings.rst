@@ -355,6 +355,8 @@ achem que é mais legível para o espaço as coisas em linhas separadas.
 Exercício: string1.py
 ---------------------
 
+Download do Arquivo: :download:`string1.py <../code/basic/string1.py>`
+
 Exercício A: Donuts
 
 .. code-block:: python
