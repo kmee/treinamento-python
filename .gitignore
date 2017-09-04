@@ -9,3 +9,5 @@ python-course/_build
 /.idea/vcs.xml
 /.idea/workspace.xml
 /docs/_build
+/lib
+/bin
