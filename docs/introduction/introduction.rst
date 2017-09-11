@@ -1,19 +1,17 @@
+.. -*- coding: utf-8 -*-
+
 Introdução
 ==========
 
 Introdução
 ----------
-- Python 2.7
+- Python  2.7
 - Não vamos usar Python 3 =(
 
 Como vai ser o curso:
 ---------------------
-
 1. Mix: Teoria + Exercícios
-2. Qualquer coisa, curiosidade ligada ao curso;
-3. Se possível tragam algum problema do trabalho de vocês para que possamos resolver com Python.
-4. Não se sintam obrigados a anotar tudo!
-
+2. Não se sintam obrigados a anotar tudo!
 
 Material
 --------
@@ -31,25 +29,39 @@ Origem
 Python é tão especial?
 ----------------------
 
-- `Brochura <http://brochure.getpython.info/media/releases/psf-python-brochure-vol.-i-final-download.pdf/>`_.
-- 'Porque o Python cabe na sua mente' Bruce Eckel;
-- Os programadores que usam linguagens dinâmicas são mais felizes;
-- Excelente biblioteca padrão +230 módulos: `EN <https://docs.python.org/2.7/library/>`_
+- `Case Studies & Success Stories <http://brochure.getpython.info/media/releases/psf-python-brochure-vol.-i-final-download.pdf/>`_.
+- "Porque o Python cabe na sua mente" `Bruce Eckel <https://en.wikipedia.org/wiki/Bruce_Eckel>`_,
+    - Autor de livros especializados em Java e C++, `que estava apaixonado pelo Python; <https://pt.slideshare.net/didip/why-i-love-python>`_
+- Excelente biblioteca padrão +230 `módulos <https://docs.python.org/2.7/library/>`_ (EN)
 - Documentação em `Português <http://turing.com.br/pydoc/2.7/tutorial/index.html>`_
-- Python package index: `pypi <https://pypi.python.org/pypi>`_
-- Resolver os problemas e compartilhar esta na essência do Python;
-d
-Zen python
-----------
-- Tim peters
+- Resolver problemas e compartilhar esta na essência do Python!
+    Python package index: `pypi <https://pypi.python.org/pypi>`_ (repositório de softwares)
 
-::
+.. code-block:: bash
 
-    import this
+    $ pip install nomedomodulo
+
+Zen python - Tim Peters
+-----------------------
+
+Nada mais é do que uma série de filosofias escritas pelo criador da linguagem Python.
+
+**Se seu código é inspirado nessas regras é pythonico.**
+
+`Zen Python <https://en.wikipedia.org/wiki/Zen_of_Python>`_.
+
+`Zen Python pt-BR <https://zenorocha.com/licoes-aprendidas-com-o-mundo-python>`_.
+
+Easter Egg ;)
+
+.. code-block:: python
+
+    >>> import this
 
 
-Se seu código é inspirado nessas regras é pythonico
----------------------------------------------------
+
+
+.. nextslide::
 
 - Bonito é melhor que feio.
 - Explícito é melhor que implícito.
@@ -58,39 +70,25 @@ Se seu código é inspirado nessas regras é pythonico
 - Plano é melhor que aninhado.
 - Dispersa é melhor que denso.
 - Legibilidade conta.
-- Casos especiais não são especiais o suficiente para quebrar as regras.
-- Embora praticidade vença pureza.
 
 .. nextslide::
 
+- Casos especiais não são especiais o suficiente para quebrar as regras.
+- Embora praticidade vença pureza.
 - Erros nunca devem passar silenciosamente.
 - A menos que explicitamente silenciados.
 - Em face da ambiguidade, recuse a tentação de adivinhar.
 - Deve haver uma -- e de preferência apenas uma -- maneira óbvia para fazê-lo.
-- Apesar dessa maneira poder não ser óbvia à primeira vista, a menos que você seja holandês.
-- Agora é melhor do que nunca.
-- Embora nunca tenha sido muitas vezes é melhor do que agora mesmo.
 
 .. nextslide::
 
+- Apesar dessa maneira poder não ser óbvia à primeira vista, a menos que você seja holandês.
+- Agora é melhor do que nunca.
+- Embora nunca tenha sido muitas vezes é melhor do que agora mesmo.
 - Se a implementação é difícil de explicar, é uma má idéia.
 - Se a implementação é fácil de explicar, pode ser uma boa idéia.
 - Namespaces são uma grande ideia - vamos fazer mais desses!
 
-Ponto de vista
---------------
-
-Ano 2000, nos EUA, em um treinamento nos EUA, Guido apareceu na sala de aula ( ele não era professor ).
-Na sessão de perguntas e respostas, alguém perguntou quais recursos de Python foram emprestados de outras linguagens.¹
-
-Sua resposta: **"TUDO que há de bom em Python foi roubado de outras linguagens".**
-
-O Artigo "Ensinando linguagens de programação em uma era pós-Lineu":
-
-Os "paradigmas" das linguagens de programação são um legado moribundo e tedioso de uma era que já se foi. Os designers das linguagens modernas não têm respeito por esses paradigmas, [...] eles emprestam recursos como querem.
-
-1 - Python Fluente: Luciano Ramalho pg. 201
-2 - http://cs.brown.edu/~sk/Publications/Papers/Published/sk-teach-pl-post-linnaean/
 
 Introdução à linguagem
 ======================
@@ -98,10 +96,11 @@ Introdução à linguagem
 Introdução à linguagem
 ----------------------
 
-- Python é uma linguagem dinâmica e interpretada (bytecode-compiled).
-- Não existem declarações de tipos de variáveis, parâmetros, funções ou métodos no código fonte.
-- Isto mantém o código compacto e flexível;
-- Você não precisa perder tempo esperando o código compilar;
+- Python é uma linguagem **interpretada** (bytecode-compiled).
+- Tipagem **dinâmica** (não existem declarações de tipos de variáveis, parâmetros, funções)
+- Reduzida utilização de **caracteres** especiais (vírgula, dois pontos, ponto e vírgula)
+- **Modular** (vasta coleção de módulos que podem ser utilizados como base para sua aplicação, Alguns desses módulos implementam manipulação de arquivos, chamadas do sistema, sockets, e até mesmo acesso a bibliotecas de construção de interfaces gráficas, como Tk)
+- **Código compacto, legível e flexível**;
 
 O interpretador Python
 ----------------------
@@ -114,27 +113,29 @@ Melhor forma de se ver como um código funciona é utilizando o interpertador do
 
 .. code-block:: python
 
-    >>> a = 6       ## set a variable in this interpreter session
-    >>> a           ## entering an expression prints its value
+    >>> a = 6       ## Seta uma variável na sessão do interpretador
+    >>> a           ## Entrando com uma expressão o interpretador imprime o resultado
     6
     >>> a + 2
     8
-    >>> a = 'hi'    ## 'a' can hold a string just as well
+    >>> a = 'hi'    ## 'a' pode ser uma string em seguida
     >>> a
     'hi'
-    >>> len(a)      ## call the len() function on a string
+    >>> len(a)      ## chamando a função len() da string
     2
-    >>> a + len(a)  ## try something that doesn't work
+    >>> a + len(a)  ## Tente algo que não funcione
     Traceback (most recent call last):
       File "", line 1, in
     TypeError: cannot concatenate 'str' and 'int' objects
-    >>> a + str(len(a))  ## probably what you really wanted
+    >>> a + str(len(a))  ## provavelmente o que você queria
     'hi2'
-    >>> foo         ## try something else that doesn't work
+    >>> foo         ## Tente algo que nao esteja definido
     Traceback (most recent call last):
       File "", line 1, in
     NameError: name 'foo' is not defined
-    >>> ^D          ## type CTRL-d to exit (CTRL-z in Windows/DOS terminal)
+    >>> ^D          ## Pressione CTRL-d para sair (CTRL-z em Windows/DOS terminal)
+
+
 
 .. nextslide::
 
@@ -145,19 +146,27 @@ Melhor forma de se ver como um código funciona é utilizando o interpertador do
 - Não é preciso colocar ponto e virgula no fim de cada declaração;
 - Comentários começam com '#' e se estendem até o fim da linha.
 
-Código fonte python
--------------------
-O código fonte python utiliza a extensão ".py" e as extensões são chamadas de "módulos".
-Por exemplo para executar o módulo python hello.py, a maneira mais fácil de executá-lo é ir no shell e digitar.
+O IPython
+---------
 
-::
+Interpretador com recursos embutidos que facilitam o dia-a-dia.
 
-     $ python hello.py Kmee
+.. code-block:: bash
 
-O comando chama o interpretador Python para executar o código na hello.py,
-passando o argumento de linha de comando "Kmee". Veja a página da `Documentação oficial <http://docs.python.org/using/cmdline/>`_
-sobre todas as diferentes opções que você tem ao executar Python a
-partir da linha de comando.
+    $ sudo pip install ipython
+    $ ipython
+    $ In [1]:
+
+- Auto-Complete
+- Execução de comandos de sistema (ls -l)
+- Autoindentação
+- Interface Web:  (notebook)
+- Histórico
+- Ex.: '_' (underline) resultado do último comando.
+- Execução de programas Python: com apenas um comando, é possível executar um arquivo Python dentro do iPython.
+- Ex.: %run arquivo.py
+
+
 
 hello.py
 -----------------
@@ -166,23 +175,48 @@ hello.py
 
     #!/usr/bin/env python
 
-    # import modules used here -- sys is a very standard one
+    # import dos modulos são feitos aqui -- sys é um modulo muito comum
     import sys
 
-    # Gather our code in a main() function
+    # Reúna o nosso código em uma função main()
     def main():
         print 'Hello there', sys.argv[1]
-        # Command line args are in sys.argv[1], sys.argv[2] ...
-        # sys.argv[0] is the script name itself and can be ignored
+        # Os argumentos da linha de comando estão em sys.argv[1], sys.argv[2] ...
+        # sys.argv[0] é o próprio nome do script
 
-    # Standard boilerplate to call the main() function to begin
-    # the program.
+    # Definindo uma variavel simples
+    nome = 'Ana Beatriz'
+
+    # Forma padrão para chamar a função main para iniciar o programa
     if __name__ == '__main__':
         main()
 
+
+Código fonte python
+-------------------
+O código fonte python utiliza a extensão ".py" e as extensões são chamadas de "módulos".
+
+Por exemplo para executar o módulo python hello.py, a maneira mais fácil de executá-lo é ir no shell e digitar.
+
+::
+
+     $ python hello.py Kmee
+
+O comando citado, inicializa o interpretador Python para executar o módulo/arquivo hello.py,
+
+A string "Kmee" funciona como argumento de linha de comando.
+
+Veja a página da `Documentação oficial <http://docs.python.org/using/cmdline/>`_
+sobre todas as diferentes opções que você tem ao executar Python a partir da linha de comando.
+
+
 .. nextslide::
 
+|
+
 Executando o programa através da linha de comando:
+
+|
 
 ::
 
@@ -191,20 +225,22 @@ Executando o programa através da linha de comando:
     $ ./hello.py Kmee  ## without needing 'python' first (Unix)
     Hello there Kmee
 
-Imports, len() e argumentos de linha de comando
+
+Argumentos de linha de comando
 -----------------------------------------------
 
 As declarações em um arquivo ou módulo python são processadas uma única vez
 durante a primeira importação do módulo em algum lugar, iniciando suas variáveis e funções.
 
-Um módulo python pode ser executado diretamente - como fizemos acima "python hello.py Mileo" - ou pode ser
+Um módulo python pode ser executado diretamente - como fizemos acima "python hello.py Carol" - ou pode ser
 importado e utilizado em outro módulo. Quando um arquivo python é executado diretamente, uma variável especial "__name__" é atribuída ao "__main__".
 
 É muito comum vermos o trecho de código:
 
 .. code-block:: python
 
-    if __name__ ==...
+    if __name__ == '__main__':
+        pass
 
 para chamar a função main(), mas não quando este módulo é importado por outro módulo.
 
@@ -212,9 +248,10 @@ Argumentos
 ----------
 Em em um programa Python padrão, a lista *sys.argv* contém os argumentos da linha de comando na forma padrão:
 
-- sys.argv[0] sendo o próprio programa;
+- sys.argv[0] sendo o próprio nome do arquivo programa;
 - sys.argv[1] o primeiro argumento,
-- e assim vai.
+- sys.argv[2] o segundo argumento,
+- e assim por diante.
 
 
 len()
@@ -228,6 +265,26 @@ Em geral, **len()** pode te dizer:
 - Número de elementos em uma lista, dicionário, tupla ou qualquer estrutura de dados;
 
 
+Interpretador Python Interativo
+--------------------------------
+
+Chama o interpretador python processando o modulo do parâmetro, e continua com
+a sessão do interpretador aberta.
+
+.. code-block:: shell
+
+    $ ipython -i hello.py
+    $ python -i hello.py
+
+- Variáveis que foram definidas no arquivo hello.py continuam disponíveis na sessão
+- É possível interagir com a sessão
+
+.. code-block:: python
+
+    >>> nome
+    'Ana Beatriz'
+
+
 Funções definidas pelo usuário
 ------------------------------
 
@@ -235,14 +292,14 @@ Funções em Python são definidas desta forma:
 
 ::
 
-    # Defines a "repeat" function that takes 2 arguments.
-    def repeat(s, exclaim):
+    # Define a função 'repetidor' que espera 2 argumentos.
+    def repetidor(s, exclamacao):
         """
-        Returns the string 's' repeated 3 times.
-        If exclaim is true, add exclamation marks.
+        Retorna a string 's' repetida 3 vezes.
+        Se 'exclamacao' for true, adiciona o marcador de exclamacao.
         """
 
-        result = s + s + s # can also use "s * 3" which is faster (Why?)
+        result = s + s + s # você pode também usar a notação "s * 3"
         if exclaim:
             result = result + '!!!'
         return result
@@ -256,7 +313,7 @@ pelo mesmo nível de identação.
     - utilizando o operador "+"
     - utilizando o operador "*" (De forma que "-" * 10 = "----------");
 
-*OBS: Utilizar o "*" é mais rápido "+", porque * calcula o tamanho da string somente uma vez, enquanto "+" calcula a cada operação de "+"
+\*OBS: Utilizar o "\*" é mais rápido do que o "+", porque * calcula o tamanho da string somente uma vez, enquanto "+" calcula a cada operação de "+"
 
 - Ambos + e * são chamados de operadores sobrecarregados pois têm significados diferentes para números, strings e outros tipos de dados.
 
@@ -409,7 +466,7 @@ Existe uma grande variedade de opções para se obter ajuda em Python!
 4. dir()
 
 Quando você estiver dentro do interpretador python, a função help() imprime o docstring
-do objeto enviado com o parâmetro.
+do objeto enviado como parâmetro.
 
 Já a função dir() imprime quais são os atributos do objeto.
 

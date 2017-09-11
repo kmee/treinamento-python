@@ -165,7 +165,7 @@ exibindo uma mensagem em caso de erro.
         print 'problem reading url:', url
 
 Exercício
---------
+---------
 
 Tente resolver os exercícios 'logpuzzle.py' e 'babynames.py'.
 

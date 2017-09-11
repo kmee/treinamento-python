@@ -79,16 +79,6 @@ Você também pode passar em sua própria MyFn como a função chave, como:
   ## Now pass key=MyFn to sorted() to sort by the last letter:
   print sorted(strs, key=MyFn)  ## ['wa', 'zb', 'xc', 'yd']
 
-.. nextslide::
-
-Para usar key= custom sorting, lembre-se de que você deve fornecer uma função que
-receba um valor e retorne o valor proxy para orientar a classificação.
-Há também um argumento opcional "cmp=cmpFn" para o sorted() que especifica
-uma função de comparação de dois argumentos que leva dois valores da lista
-e retorna negativo/0/positiva para indicar a sua ordenação. A função de
-comparação default para strings, inits, ... é cmp(a, b), então, você pode
-chamar quantas vezes quiser a função cmp() no seu comparador personalizado.
-O mais recente um argumento key= é geralmente preferível.
 
 sort() method
 -------------
@@ -186,7 +176,7 @@ Você pode adicionar um caso de teste para a direita do for-loop para estreitar 
   ## ['APPLE', 'BANNANA']
 
 Exercício: list1.py
-------------------
+-------------------
 Para praticarmos o material desta sessão, tente agora os problemas do arquivo list1.py que utilizam ordenação.
 
 Download do Arquivo: :download:`list1.py <../code/basic/list1.py>`

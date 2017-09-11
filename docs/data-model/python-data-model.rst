@@ -92,28 +92,7 @@ Exemplo Um Baralho Pythonico
     1 Card(rank='2', suit='spades')
     2 Card(rank='3', suit='spades')
     3 Card(rank='4', suit='spades')
-    ...
-    >>> suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
-    >>> def spades_high(card):
-    ...     rank_value = FrenchDeck.ranks.index(card.rank)
-    ...     return rank_value * len(suit_values) + suit_values[card.suit]
 
-    Rank test:
-
-    >>> spades_high(Card('2', 'clubs'))
-    0
-    >>> spades_high(Card('A', 'spades'))
-    51
-
-    >>> for card in sorted(deck, key=spades_high):  # doctest: +ELLIPSIS
-    ...      print(card)
-    Card(rank='2', suit='clubs')
-    Card(rank='2', suit='diamonds')
-    Card(rank='2', suit='hearts')
-    ...
-    Card(rank='A', suit='diamonds')
-    Card(rank='A', suit='hearts')
-    Card(rank='A', suit='spades')
 
 
 Como os metodos especiais sao usados
@@ -126,7 +105,7 @@ Como os metodos especiais sao usados
 Se my_object for uma instancia de uma classe definida por você, o python chamara
 o metodo __len__ que voce implementou.
 
-Para muitos tipos embutidos os interpretador usará um atalho: a implementação de len()
+Para muitos tipos embutidos o interpretador usará um atalho: a implementação de len()
 do CPython, retorna o valor do ob_size da Scruct C PyVarObject que representa qualquer
 objeto embutido de tamanho váriavel na memoria. Isto é muito mais rapido que chamar um metodo.
 
