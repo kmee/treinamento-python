@@ -59,7 +59,7 @@ strings como **valores concatenados**.
 
 .. code-block:: python
 
-    nome = '!' nome + '!'
+    nome = '!' + nome + '!'
     print (nome)            # '!Ana Beatriz!'
 
 

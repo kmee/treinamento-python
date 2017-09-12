@@ -46,6 +46,7 @@ Google's Python Class
    google/dict-and-files
    google/regular-expressions
    google/utilities
+   google/objetos
 
 Python Data Model
 -----------------

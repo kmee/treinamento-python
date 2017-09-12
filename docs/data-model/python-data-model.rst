@@ -42,6 +42,10 @@ Exemplo Um Baralho Pythonico
         suits = 'spades diamonds clubs hearts'.split()
 
         def __init__(self):
+        """
+        O método __init__ é o construtor da classe, ou seja
+        é o método que será executado quando a classe for instanciada.
+        """
             self._cards = [Card(rank, suit) for suit in self.suits
                                             for rank in self.ranks]
 
@@ -142,10 +146,52 @@ Emulando tipos numéricos
 
 Mecanismo flexivel de parametros
 --------------------------------
+
+
 Um dos melhores recursos das funções python:
 
 - "*" faz com que o vetor seja utilizado como argumentos ordenados.
 - "**" faz com que o dicionario seja usado como argumentos nomeados.
+
+.. code-block:: python
+
+    def func_var_args(*args):
+        print(args)
+
+    func_var_args(1, 2, '3')
+    # (1, 2, '3')
+
+
+Isto é usado quando não sabemos a quantidade de parâmetros.
+
+
+.. code-block:: python
+
+    def func_keyword_arg(**kwargs):
+        print(kwargs)
+
+    func_keyword_arg(keyword1=10, keyword2='foo')
+    # {'keyword2': 'foo', 'keyword1': 10}
+
+
+.. nextslide::
+
+.. code-block:: python
+
+    def tag(name, cls=None, *content, **attrs):
+        """Generate one or more HTML tags"""
+        if cls is not None:
+            attrs['class'] = cls
+        if attrs:
+            attr_str = ''.join(' %s="%s"' % (attr, value) for attr, value in sorted(attrs.items()))
+        else:
+            attr_str = ''
+        if content:
+            return '\n'.join('<%s%s>%s</%s>' % (name, attr_str, c, name) for c in content)
+        else:
+            return '<%s%s />' % (name, attr_str)
+
+
 
 .. code-block:: python
 
@@ -168,25 +214,6 @@ Um dos melhores recursos das funções python:
     >>> tag(**my_tag)
 
 
-.. nextslide::
-
-.. code-block:: python
-
-    def tag(name, *content, cls=None, **attrs):
-        """Generate one or more HTML tags"""
-        if cls is not None:
-            attrs['class'] = cls
-        if attrs:
-            attr_str = ''.join(' %s="%s"' % (attr, value)
-                               for attr, value
-                               in sorted(attrs.items()))
-        else:
-            attr_str = ''
-        if content:
-            return '\n'.join('<%s%s>%s</%s>' %
-                             (name, attr_str, c, name) for c in content)
-        else:
-            return '<%s%s />' % (name, attr_str)
 
 
 
@@ -410,6 +437,17 @@ Herança
         print "PARENT override()"
 
     class Child(Parent):
+
+        def __init__(self, *args, **kwargs):
+        """
+        O super é realmente estranho pra quem o vê da primeira vez, mas
+        ele é 'super' tranquilo de entender ;)
+        Quando você herda de uma classe e sobrescreve um determinado método
+        (nesse caso o nosso construtor), é interessante que você mantenha
+        o comportamento original da classe pai (Parent)
+        """
+
+            super(Child).__init__(*args, **kwargs)
 
         def override(self):
             print "CHILD override()"

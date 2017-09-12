@@ -24,8 +24,10 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  # +++your code here+++
-  return
+
+
+
+  return 'Number of donuts: ' + str(count)
 
 
 # B. both_ends
@@ -102,6 +104,7 @@ def main():
   print
   print 'mix_up'
   test(mix_up('mix', 'pod'), 'pox mid')
+  # test(mix_up('Felipe', 'Eder'), 'Edlipe Feer')
   test(mix_up('dog', 'dinner'), 'dig donner')
   test(mix_up('gnash', 'sport'), 'spash gnort')
   test(mix_up('pezzy', 'firm'), 'fizzy perm')
