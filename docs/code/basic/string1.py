@@ -24,8 +24,10 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  # +++your code here+++
-  return
+
+
+
+  return 'Number of donuts: ' + str(count)
 
 
 # B. both_ends
@@ -56,7 +58,7 @@ def fix_start(s):
 # Given strings a and b, return a single string with a and b separated
 # by a space '<a> <b>', except swap the first 2 chars of each string.
 # e.g.
-#   'mix', pod' -> 'pox mid'
+#   'mix', 'pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
@@ -102,6 +104,7 @@ def main():
   print
   print 'mix_up'
   test(mix_up('mix', 'pod'), 'pox mid')
+  # test(mix_up('Felipe', 'Eder'), 'Edlipe Feer')
   test(mix_up('dog', 'dinner'), 'dig donner')
   test(mix_up('gnash', 'sport'), 'spash gnort')
   test(mix_up('pezzy', 'firm'), 'fizzy perm')
