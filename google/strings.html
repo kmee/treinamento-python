@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Strings &mdash; Treinamento de Python 2016.08.0001</title>
+  <title>Python Strings &mdash; Treinamento de Python 2017.08.0001</title>
   
 
   
@@ -30,10 +30,7 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
+    <link rel="top" title="Treinamento de Python 2017.08.0001" href="../index.html"/>
         <link rel="next" title="Listas Python" href="lists.html"/>
         <link rel="prev" title="Introdução" href="../introduction/introduction.html"/> 
 
@@ -66,7 +63,7 @@
             
             
               <div class="version">
-                2016.08
+                2017.01
               </div>
             
           
@@ -92,12 +89,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Strings</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python Strings</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Python Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#string-methods">String Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#string-slices">String Slices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#string">String %</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#i18n-strings-unicode">i18n Strings (Unicode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#composicao-de-strings">Composição de Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#if-statement">If Statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercicio-string1-py">Exercício: string1.py</a></li>
 </ul>
@@ -107,10 +103,13 @@
 <li class="toctree-l1"><a class="reference internal" href="dict-and-files.html">Dicionários e Arquivos Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regular-expressions.html">Expressões Regulares</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utilities.html">Python Utilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objetos.html">Nomes e referências</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contatos/contatos.html">Contatos</a></li>
 </ul>
 
             
@@ -133,7 +132,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -159,65 +158,101 @@
 <h1>Python Strings<a class="headerlink" href="#python-strings" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>Python Strings<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Python tem uma classe string default chamada &#8220;str&#8221; com muitos recursos úteis
-(há um módulo mais antigo chamado &#8220;string&#8221; que não deve ser usado).</p>
-<p>Declarações de Strings podem ser delimitadas por aspas duplas ou simples,
-embora aspas simples sejam mais comumente usadas. Barras invertidas para quebras de linhas trabalham da forma habitual tanto
-com aspas simples e aspas duplas citadas anteriormente -  por exemplo:</p>
-<p>\n
-\&#8217;
-\&#8221;</p>
-<p>Uma string com aspas duplas pode conter aspas simples sem qualquer problema. Por exemplo:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot; I didn&#39;t do it &quot;</span>
+<p>Python tem uma classe string default chamada &#8220;str&#8221; com muitos recursos úteis</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Ana Beatriz&#39;</span>
 </pre></div>
 </div>
-<p>Da mesma forma uma string com <strong>aspas simples</strong> pode <strong>conter aspas duplas</strong>.
-A declaração da string pode ocupar várias linhas, mas deve haver um <strong>barra
-invertida</strong> no final de cada linha de escape da nova linha.</p>
+<p>Uma string com <strong>aspas duplas</strong> pode conter <strong>aspas simples</strong> sem qualquer problema
+e o inverso também é verdade.
+Por exemplo:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot; Foi por uma gota d&#39;agua. &quot;</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39; Ele disse: &quot;Foi por pouco!&quot;  .&#39;</span>
+</pre></div>
+</div>
+<p>A declaração da string pode ocupar várias linhas, mas deve haver uma <strong>barra
+invertida</strong> no final de cada linha para indicar a continuidade da nova linha.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;Ele disse: &quot;Foi por pouco,&#39;</span> \
+    <span class="s1">&#39;quase deu ruim.&#39;</span>
+</pre></div>
+</div>
 <p>Strings literais entre aspas triplas, &#8220;&#8221;&#8221; ou &#8216;&#8217;&#8216;, podem se estender por várias linhas de texto.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span>  <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Strings literais entre aspas triplas,</span>
-<span class="s2">    podem se estender por várias linhas de texto.&quot;&quot;&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">d</span>  <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Strings literais entre aspas triplas,</span>
+<span class="s2">    podem se estender por várias linhas de texto.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
 </pre></div>
 </div>
-<p>Strings python são &#8220;imutáveis&#8221;, o que significa que elas não podem ser
+<p>Strings python são <strong>&#8220;imutáveis&#8221;</strong>, o que significa que elas não podem ser
 alteradas depois de serem criadas (strings em Java também utilizam este
 estilo imutável).</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Ana Beatriz&#39;</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">)</span>            <span class="c1"># &#39;Ana Beatriz&#39;</span>
+<span class="n">nome</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;!!&#39;</span><span class="p">)</span>         <span class="c1"># &#39;!Ana Beatriz!&#39;</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">)</span>            <span class="c1"># &#39;Ana Beatriz&#39;</span>
+</pre></div>
+</div>
 <p>Sabendo que as strings não podem ser alteradas, podemos construir novas
-strings como  valores concatenados.</p>
-<p>Assim, por exemplo, a expressão (&#8216;Hello&#8217; + &#8216;There&#8217;) concatena as strings &#8220;Hello&#8221; e &#8220;There&#8221;
-resultando em uma nova string &#8220;Hello There&#8221;.</p>
-<p>Os caracteres de uma string podem ser acessados usando a sintaxe padrão [] e,
-como em Java e C++, Python utiliza indexação baseada em zero, por isso,
-se str é &#8216;Hello&#8217; str[1] é a letra &#8216;e&#8217;.</p>
-<p>Se o índice estiver fora dos limites da string, o Python gerará um erro.</p>
-<p>O estilo Python (ao contrário do Perl) é parar se ele não pode dizer o que
-fazer, em vez de apenas retornar um valor padrão. A sintaxe útil &#8220;slice&#8221;
-(abaixo) também trabalha para extrair qualquer substring de uma string.</p>
-<p>A função len (string) devolve o comprimento de uma string.</p>
-<p>A sintaxe [] e a função len() trabalham em qualquer tipo de sequência - strings, lists, etc...</p>
+strings como <strong>valores concatenados</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;!&#39;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">)</span>            <span class="c1"># &#39;!Ana Beatriz!&#39;</span>
+</pre></div>
+</div>
+<p>Os caracteres de uma string são acessados pela sintaxe padrão <strong>[ ]</strong>
+Como em Java e C++, Python utiliza indexação baseada em zero.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>         <span class="c1"># A</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>         <span class="c1"># n</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>         <span class="c1"># a</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>         <span class="c1">#</span>
+</pre></div>
+</div>
+<p>Se o índice estiver <strong>fora</strong> dos limites da string, o Python <strong>gerará um erro</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="p">(</span><span class="n">nome</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="n">string</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+</pre></div>
+</div>
+<p>O estilo Python (ao contrário do Perl) <strong>interrompe</strong> se não pode dizer o que
+fazer, <strong>em vez de</strong> apenas retornar um valor padrão.</p>
+<p>O <strong>&#8220;slice&#8221;</strong> é uma sintaxe útil que trabalha para extrair qualquer substring de uma string.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>               <span class="c1"># &#39;Ana&#39;</span>
+</pre></div>
+</div>
+<p>A função <strong>len</strong> (string) devolve o comprimento de uma string.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>               <span class="c1"># 11</span>
+</pre></div>
+</div>
+<p>A sintaxe <strong>[ ]</strong> e a função <strong>len()</strong> trabalham em qualquer tipo de sequência - strings, lists, etc...</p>
 <p>O Python tenta fazer suas operações funcionarem de forma consistente em
 diferentes tipos.</p>
-<p>Pegadinha para o novato em Python: não use &#8220;len&#8221; como um nome
-de variável para evitar o bloqueio a função len().</p>
-<p>O operador &#8216;+&#8217; pode concatenar duas strings. Observe no código abaixo que as
-variáveis não são pré-declarados - apenas para atribuir.</p>
+<p>Pegadinha para o novato em Python: não use <strong>&#8220;len&#8221;</strong> como um nome
+de variável para evitar o bloqueio a função <strong>len()</strong>.</p>
+<p>O operador <strong>&#8216;+&#8217;</strong> pode concatenar duas strings.</p>
+<p>Observe no código abaixo que diferente de outras LP&#8217;s as
+variáveis não são pré-declaradas - apenas para atribuir.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hi&#39;</span>
 <span class="k">print</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>          <span class="c1">## i</span>
 <span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>        <span class="c1">## 2</span>
 <span class="k">print</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39; there&#39;</span>  <span class="c1">## hi there</span>
 </pre></div>
 </div>
-<p>Ao contrário do Java, o &#8216;+&#8217; não converte automaticamente números ou outros tipos
-de forma de string. A função str() converte valores a uma forma de string para
+<p>Ao contrário do Java, o &#8216;+&#8217; não converte automaticamente números ou outros tipos em string.</p>
+<p>A função str() converte valores a uma forma de string para
 que possam ser combinados com outras strings.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="c1">##text = &#39;The value of pi is &#39; + pi      ## NO, does not work</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;The value of pi is &#39;</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>  <span class="c1">## yes</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>    <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+    <span class="c1">##text = &#39;Valor de pi: &#39; + pi               ## Erro, não funciona</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Valor de pi: &#39;</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>           <span class="c1">## concatenando duas strings</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">text</span><span class="p">)</span>                                <span class="c1">## Valor de pi: 3.14</span>
 </pre></div>
 </div>
-<p>Para números, os operadores padrão, +,/,* trabalham da maneira usual.
-Não há operador ++, porém, +=, -=, e outros funcionarão. Se você quiser
-uma divisão inteira, o correto é utilizar 2 barras - por exemplo:</p>
+<p>Para números, os operadores <strong>+</strong>,  <strong>-</strong>,  <strong>/</strong>,  <strong>*</strong> trabalham da maneira usual.</p>
+<p>Em python não há operador <strong>++</strong>, porém, <strong>+=</strong>, <strong>-=</strong>, e outros funcionarão.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>                                   <span class="c1">## 13</span>
+</pre></div>
+</div>
+<p>Se você quiser uma divisão inteira, o correto é utilizar 2 barras - por exemplo:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># python 2.7</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span><span class="o">/</span><span class="mi">5</span>
 <span class="mi">1</span>
@@ -232,48 +267,35 @@ uma divisão inteira, o correto é utilizar 2 barras - por exemplo:</p>
 <span class="mi">1</span>
 </pre></div>
 </div>
-<p>O operador &#8220;print&#8221; imprime um ou mais itens python seguido por uma nova
-linha.</p>
-<p>Uma string &#8220;raw&#8221; é prefixada por um &#8216;r&#8217; e passa todos os caracteres sem
-tratamento especial de barras invertidas, então r&#8217;xnx&#8217; avalia a string
-length-4 &#8216;xnx&#8217;. O prefixo &#8216;u&#8217; permite que você escreva uma string unicode
-(Python tem muitos outros recursos de suporte unicode - veja a documentação abaixo).</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="s1">r&#39;this\t\n and that&#39;</span>
-<span class="k">print</span> <span class="n">raw</span>     <span class="c1">## this\t\n and that</span>
-
-<span class="n">multi</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;It was the best of times.</span>
-<span class="s2">It was the worst of times.&quot;&quot;&quot;</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="string-methods">
 <h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h2>
-<p>Aqui estão alguns dos métodos mais comuns de strings. Um método é como uma
-função, mas é executado &#8220;em um objeto&#8221;. Se a variável s é uma string, então
-o código s.lower() executa método lower() nesse objeto e retorna o resultado
+<p>Um <strong>método</strong> é como uma função, mas é executado &#8220;em um objeto&#8221;.</p>
+<p>Se a variável <strong>s</strong> é uma string (objeto da classe String), então o código <strong>s.lower()</strong>
+executa método lower() no objeto <strong>&#8216;s&#8217;</strong> e retorna o resultado
 (esta ideia de um método de execução em um objeto é uma das ideias básicas
 que compõem a Programação Orientada a Objetos, POO). Aqui estão alguns dos
 métodos mais comuns:</p>
 <ul class="simple">
-<li>s.lower(), s.upper() &#8211; retorna a string em minúscula ou maiúscula</li>
-<li>s.strip() &#8211; retorna a string sem espaços no início e no fim</li>
-<li>s.isalpha()/s.isdigit()/s.isspace()... &#8211; verifica se todas os caracteres da string correspondem ao teste</li>
+<li><strong>s.lower()</strong>, <strong>s.upper()</strong> &#8211; retorna a string em minúscula ou maiúscula</li>
+<li><strong>s.strip()</strong> &#8211; retorna a string sem espaços no início e no fim</li>
+<li><strong>s.isalpha() s.isdigit() s.isspace()</strong>... &#8211; verifica se todas os caracteres da string correspondem ao teste</li>
 </ul>
 <ul class="simple">
-<li>s.startswith(&#8216;other&#8217;), s.endswith(&#8216;other&#8217;) &#8211; testa se a string inicia ou termina com dados de outra string</li>
-<li>s.find(&#8216;other&#8217;) &#8211; procura dados em uma string (não procura expressão regular) e retorna o valor do primeiro caractere. Se retornar -1 o dado não foi encontrado</li>
-<li>s.replace(&#8216;old&#8217;, &#8216;new&#8217;) &#8211; retorna uma string quando todas as ocorrências de &#8216;old&#8217; forem subistituidas por &#8216;new&#8217;</li>
+<li><strong>s.startswith(&#8216;other&#8217;), s.endswith(&#8216;other&#8217;)</strong> &#8211; testa se a string inicia ou termina com dados de outra string</li>
+<li><strong>s.find(&#8216;other&#8217;)</strong> &#8211; procura dados em uma string (não procura expressão regular) e retorna o valor do primeiro caractere. Se retornar -1 o dado não foi encontrado</li>
+<li><strong>s.replace(&#8216;old&#8217;, &#8216;new&#8217;)</strong> &#8211; retorna uma string quando todas as ocorrências de &#8216;old&#8217; forem subistituidas por &#8216;new&#8217;</li>
 </ul>
 <ul class="simple">
-<li>s.split(&#8216;delim&#8217;) &#8211; retorna uma lista de substrings separadas por um delimitador. O delimitador não é uma expressão regular, é texto puro. &#8216;aaa,bbb,ccc&#8217;.split(&#8216;,&#8217;) -&gt; [&#8216;aaa&#8217;, &#8216;bbb&#8217;, &#8216;ccc&#8217;]. Caso não seja definido um delimitador, será utilizado por padrão os espaços entre os caracteres</li>
-<li>s.join(list) &#8211; oposto do split (), junta os elementos de uma lista de dados, utilizando a string como o delimitador. Exemplo: &#8216;&#8212;&#8217;.join([&#8216;aaa&#8217;, &#8216;bbb&#8217;, &#8216;ccc&#8217;]) -&gt; aaa&#8212;bbb&#8212;ccc</li>
+<li><strong>s.split(&#8216;delim&#8217;)</strong> &#8211; retorna uma lista de substrings separadas por um delimitador. O delimitador não é uma expressão regular, é texto puro. Exemplo: &#8216;aaa,bbb,ccc&#8217;.split(&#8216;,&#8217;) -&gt; [&#8216;aaa&#8217;, &#8216;bbb&#8217;, &#8216;ccc&#8217;]. Caso não seja definido um delimitador, será utilizado por padrão os espaços entre os caracteres</li>
+<li><strong>s.join(list)</strong> &#8211; oposto do split (), junta os elementos de uma lista de dados, utilizando a string como o delimitador. Exemplo.: &#8216;&#8212;&#8217;.join([&#8216;aaa&#8217;, &#8216;bbb&#8217;, &#8216;ccc&#8217;]) -&gt; aaa&#8212;bbb&#8212;ccc</li>
 <li>Uma busca no Google por &#8220;python str&#8221; deverá levar você ao site oficial do Python, <a class="reference external" href="http://docs.python.org/library/stdtypes.html#string-methods">python.org</a> , que contém uma lista com todos os metódos que podem ser utilizados.</li>
 </ul>
 <p>Python não tem um tipo de caractere separado. Em vez disso uma expressão como
-s[8] retorna uma string-length-1 contendo o caractere.</p>
-<p>Com essa string-length-1, os operadores ==, &lt;=, ... farão todo o trabalho
-como seria de se esperar, portanto, na maior parte você não precisa saber
-que o Python não um variável do tipo &#8220;char&#8221; separado.</p>
+s[8] retorna uma string de tamanho 1 contendo o caractere.</p>
+<p>Com essa string de tamanho 1, os operadores ==, &lt;=, ... farão todo o trabalho
+como seria de se esperar, portanto, na maior parte das vezes, você não precisa saber
+que o Python não tem uma variável do tipo &#8220;char&#8221; separado.</p>
 </div>
 <div class="section" id="string-slices">
 <h2>String Slices<a class="headerlink" href="#string-slices" title="Permalink to this headline">¶</a></h2>
@@ -289,16 +311,12 @@ o fim. Suponha que temos s = &#8220;Hello&#8221;</p>
 <li>s[:] is &#8216;Hello&#8217; &#8211; uma cópia da string (é o jeito pythonico de copiar uma sequência como uma string ou lista)</li>
 <li>s[1:100] is &#8216;ello&#8217; &#8211; Um index que é muito grande e será truncado até o comprimento real da string</li>
 </ul>
-<p>Os números de índice baseados em zero padrão dão acesso fácil a caracteres
-perto do início da string. Como alternativa, o Python usa números negativos
-para dar fácil acesso aos caracteres no final da string: s[-1] é o último
-caractere &#8216;o&#8217;, s[-2] é &#8216;l&#8217; o próximo ao último caractere, e assim por diante.</p>
 <p>Números de índice negativos são contados para trás a partir do final da string:</p>
 <ul class="simple">
-<li>s[-1] is &#8216;o&#8217; &#8211; último caractere (1º a partir do fim)</li>
-<li>s[-4] is &#8216;e&#8217; &#8211; 4º a partir do fim</li>
-<li>s[:-3] is &#8216;He&#8217; &#8211; indo até o início mas não incluindo os últimos 3 caracteres.</li>
-<li>s[-3:] is &#8216;llo&#8217; &#8211; iniciando com o 3º caractere a partir do final e extendendo até o fim da string.</li>
+<li>s[-1] == &#8216;o&#8217; -&gt; último caractere (1º a partir do fim)</li>
+<li>s[-4] == &#8216;e&#8217; -&gt; 4º a partir do fim</li>
+<li>s[:-3] == &#8216;He&#8217; -&gt; indo até o início mas não incluindo os últimos 3 caracteres.</li>
+<li>s[-3:] == &#8216;llo&#8217; -&gt; iniciando com o 3º caractere a partir do final e extendendo até o fim da string.</li>
 </ul>
 <p>É óbvio que slices que para qualquer índice n, s[:n] + s[n:] == s.</p>
 <p>Isso funciona mesmo para n negativos ou fora dos limites.</p>
@@ -306,15 +324,37 @@ caractere &#8216;o&#8217;, s[-2] é &#8216;l&#8217; o próximo ao último caract
 conservando todos os caracteres.</p>
 <p>Como veremos na seção lists mais tarde, slices também trabalham com listas.</p>
 </div>
-<div class="section" id="string">
-<h2>String %<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
-<p>Python tem um &#8220;printf()&#8221; - como facilitador para montar uma string.
-O operador % assume um formato de string printf-type do lado esquerdo
-(%d int, %s string, %f/%g floating point), e os valores correspondentes em
-uma tupla à direita (uma tupla é feita de valores separados por vírgulas,
-geralmente agrupados dentro de parênteses):</p>
+<div class="section" id="composicao-de-strings">
+<h2>Composição de Strings<a class="headerlink" href="#composicao-de-strings" title="Permalink to this headline">¶</a></h2>
+<p>O símbolo % é usado para indicar composição de strings com variáveis.
+O &#8216;%&#8217; é chamado de marcador de posição, e indica que na posição em que foi colocado,
+conterá um valor. Veja os principais tipos de marcadores suportador pelo Python:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Marcador</th>
+<th class="head">Tipo</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>%d</td>
+<td>Números inteiros</td>
+</tr>
+<tr class="row-odd"><td>%s</td>
+<td>Strings</td>
+</tr>
+<tr class="row-even"><td>%f</td>
+<td>Números decimais</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># % operator</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> little pigs come out or I&#39;ll </span><span class="si">%s</span><span class="s2"> and </span><span class="si">%s</span><span class="s2"> and </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;huff&#39;</span><span class="p">,</span> <span class="s1">&#39;puff&#39;</span><span class="p">,</span> <span class="s1">&#39;blow down&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="s2">&quot;3 little pigs come out or I&#39;ll huff and puff and blow down&quot;</span>
 </pre></div>
 </div>
 <p>A linha acima é um metódo comprido - suponha que você quer dividi-lo em linhas
@@ -330,40 +370,6 @@ linhas trabalha com vários construtores agrupados detalhados abaixo: (),[],{}.<
 <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;huff&#39;</span><span class="p">,</span> <span class="s1">&#39;puff&#39;</span><span class="p">,</span> <span class="s1">&#39;blow down&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="i18n-strings-unicode">
-<h2>i18n Strings (Unicode)<a class="headerlink" href="#i18n-strings-unicode" title="Permalink to this headline">¶</a></h2>
-<p>Strings regulares do Python <em>não</em> são unicode, elas são simplesmente bytes.
-Para criar uma string unicode, use o prefixo &#8216;u&#8217; na string:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">ustring</span> <span class="o">=</span> <span class="s1">u&#39;A unicode </span><span class="se">\u018e</span><span class="s1"> string </span><span class="se">\xf1</span><span class="s1">&#39;</span>
-<span class="o">&gt;</span> <span class="n">ustring</span>
-<span class="s1">u&#39;A unicode </span><span class="se">\u018e</span><span class="s1"> string </span><span class="se">\xf1</span><span class="s1">&#39;</span>
-</pre></div>
-</div>
-<p>A sequência de caracteres Unicode é um tipo diferente de objeto de string
-regular &#8220;str&#8221;, mas a seqüência de caracteres Unicode é compatível
-(que compartilham a superclasse comum &#8220;basestring&#8221;), e as várias bibliotecas
-como expressões regulares funcionam corretamente se passarmos uma sequência
-de caracteres Unicode em vez de uma sequência regular.</p>
-<p>Para converter uma sequência de caracteres Unicode para bytes com uma
-codificação como &#8216;utf-8&#8217;, chame o método (&#8216;utf-8&#8217;) na string Unicode.
-Indo na outra direção, a função unicode(s, encoding) converte bytes
-codificados para uma string unicode:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## (ustring from above contains a unicode string)</span>
-<span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">ustring</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="n">s</span>
-<span class="s1">&#39;A unicode </span><span class="se">\xc6\x8e</span><span class="s1"> string </span><span class="se">\xc3\xb1</span><span class="s1">&#39;</span>  <span class="c1">## bytes of utf-8 encoding</span>
-<span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>             <span class="c1">## Convert bytes back to a unicode string</span>
-<span class="o">&gt;</span> <span class="n">t</span> <span class="o">==</span> <span class="n">ustring</span>                      <span class="c1">## It&#39;s the same as the original, yay!</span>
-<span class="bp">True</span>
-</pre></div>
-</div>
-<p>O print default não funciona plenamente com strings unicode. Você pode utilizar
-encode() primeiro para imprimir em utf-8 ou qualquer outra. Na seção de leitura
-de arquivo, há um exemplo que mostra como abrir um arquivo de texto com
-alguma codificação e ler as strings unicode. Observe que o manuseio unicode é
-uma área onde Python 3.0 é significativamente limpo vs. o comportamento do
-Python 2.x descrito aqui.</p>
 </div>
 <div class="section" id="if-statement">
 <h2>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">¶</a></h2>
@@ -407,15 +413,40 @@ achem que é mais legível para o espaço as coisas em linhas separadas.</p>
 </div>
 <div class="section" id="exercicio-string1-py">
 <h2>Exercício: string1.py<a class="headerlink" href="#exercicio-string1-py" title="Permalink to this headline">¶</a></h2>
-<p>Acesse o endereço <a class="reference external" href="http://192.168.1.104:8888">http://192.168.1.104:8888</a></p>
-<p>Baixe o arquivo string1.py</p>
-<p>Exercício A:</p>
+<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/string1.py"><code class="xref download docutils literal"><span class="pre">string1.py</span></code></a></p>
+<p>Exercício A: Donuts</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Dado um número de donuts, retorne um string</span>
 <span class="c1"># contendo &#39;Number of donuts: &lt;count&gt;&#39;, onde &lt;count&gt; é o número recebido.</span>
 <span class="c1"># Entretanto, se o número for 10 ou mais, use a palavra &#39;many&#39;</span>
 <span class="c1"># ao invés do contador.</span>
 <span class="c1"># Então donuts(5) returns &#39;Number of donuts: 5&#39;</span>
 <span class="c1"># e donuts(23) returns &#39;Number of donuts: many&#39;</span>
+</pre></div>
+</div>
+<p>Exercício B: both-ends</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Dada uma string s, retorne uma string constituída pelos 2 primeiros</span>
+<span class="c1"># e pelos dois últimos caracteres da string original,</span>
+<span class="c1"># então &#39;sprint&#39; resulta &#39;spng&#39;. Entretando, se a string tem</span>
+<span class="c1"># comprimento menor que 2, retorna uma string vazia.</span>
+</pre></div>
+</div>
+<p>Exercicio C: fix-start</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Dada uma string s, retorne uma string</span>
+<span class="c1"># onde todas as ocorrências do seu primeiro caracter tenha</span>
+<span class="c1"># sido mudada para &#39;*&#39;, exceto o primeiro caracter propriamente.</span>
+<span class="c1"># Por exemplo: &#39;babble&#39; resulta &#39;ba**le&#39;</span>
+<span class="c1"># Assuma que a string tem comprimento 1 ou maior.</span>
+<span class="c1"># Dica: s.replace(stra, strb) retorna uma versão da string s</span>
+<span class="c1"># onde todas instâncias de &#39;stra&#39; foram mudadas para &#39;strb&#39;</span>
+</pre></div>
+</div>
+<p>Exercício D: MixUp</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Dadas as strings &#39;a&#39; e &#39;b&#39;, retorne uma única string com &#39;a&#39; e &#39;b&#39; separados</span>
+<span class="c1"># por um espaço &#39;&lt;a&gt; &lt;b&gt;&#39;, substituindo os 2 primeiros caracteres de cada string.</span>
+<span class="c1"># Exemplo:</span>
+<span class="c1">#    &#39;mix&#39;, &#39;pod&#39; -&gt; &#39;pox mid&#39;</span>
+<span class="c1">#    &#39;dog&#39;, &#39;dinner&#39; -&gt; &#39;dig donner&#39;</span>
+<span class="c1"># Assuma que &#39;a&#39; e &#39;b&#39; tenham comprimento 2 ou mais.</span>
 </pre></div>
 </div>
 </div>
@@ -462,7 +493,7 @@ achem que é mais legível para o espaço as coisas em linhas separadas.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2016.08.0001',
+            VERSION:'2017.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

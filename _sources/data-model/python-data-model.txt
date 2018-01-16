@@ -42,6 +42,10 @@ Exemplo Um Baralho Pythonico
         suits = 'spades diamonds clubs hearts'.split()
 
         def __init__(self):
+        """
+        O método __init__ é o construtor da classe, ou seja
+        é o método que será executado quando a classe for instanciada.
+        """
             self._cards = [Card(rank, suit) for suit in self.suits
                                             for rank in self.ranks]
 
@@ -92,28 +96,7 @@ Exemplo Um Baralho Pythonico
     1 Card(rank='2', suit='spades')
     2 Card(rank='3', suit='spades')
     3 Card(rank='4', suit='spades')
-    ...
-    >>> suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
-    >>> def spades_high(card):
-    ...     rank_value = FrenchDeck.ranks.index(card.rank)
-    ...     return rank_value * len(suit_values) + suit_values[card.suit]
 
-    Rank test:
-
-    >>> spades_high(Card('2', 'clubs'))
-    0
-    >>> spades_high(Card('A', 'spades'))
-    51
-
-    >>> for card in sorted(deck, key=spades_high):  # doctest: +ELLIPSIS
-    ...      print(card)
-    Card(rank='2', suit='clubs')
-    Card(rank='2', suit='diamonds')
-    Card(rank='2', suit='hearts')
-    ...
-    Card(rank='A', suit='diamonds')
-    Card(rank='A', suit='hearts')
-    Card(rank='A', suit='spades')
 
 
 Como os metodos especiais sao usados
@@ -126,7 +109,7 @@ Como os metodos especiais sao usados
 Se my_object for uma instancia de uma classe definida por você, o python chamara
 o metodo __len__ que voce implementou.
 
-Para muitos tipos embutidos os interpretador usará um atalho: a implementação de len()
+Para muitos tipos embutidos o interpretador usará um atalho: a implementação de len()
 do CPython, retorna o valor do ob_size da Scruct C PyVarObject que representa qualquer
 objeto embutido de tamanho váriavel na memoria. Isto é muito mais rapido que chamar um metodo.
 
@@ -163,10 +146,52 @@ Emulando tipos numéricos
 
 Mecanismo flexivel de parametros
 --------------------------------
-Um dos melhores recursos das funções python. Usamos os * e ** para explodir:
+
+
+Um dos melhores recursos das funções python:
 
 - "*" faz com que o vetor seja utilizado como argumentos ordenados.
 - "**" faz com que o dicionario seja usado como argumentos nomeados.
+
+.. code-block:: python
+
+    def func_var_args(*args):
+        print(args)
+
+    func_var_args(1, 2, '3')
+    # (1, 2, '3')
+
+
+Isto é usado quando não sabemos a quantidade de parâmetros.
+
+
+.. code-block:: python
+
+    def func_keyword_arg(**kwargs):
+        print(kwargs)
+
+    func_keyword_arg(keyword1=10, keyword2='foo')
+    # {'keyword2': 'foo', 'keyword1': 10}
+
+
+.. nextslide::
+
+.. code-block:: python
+
+    def tag(name, cls=None, *content, **attrs):
+        """Generate one or more HTML tags"""
+        if cls is not None:
+            attrs['class'] = cls
+        if attrs:
+            attr_str = ''.join(' %s="%s"' % (attr, value) for attr, value in sorted(attrs.items()))
+        else:
+            attr_str = ''
+        if content:
+            return '\n'.join('<%s%s>%s</%s>' % (name, attr_str, c, name) for c in content)
+        else:
+            return '<%s%s />' % (name, attr_str)
+
+
 
 .. code-block:: python
 
@@ -189,25 +214,6 @@ Um dos melhores recursos das funções python. Usamos os * e ** para explodir:
     >>> tag(**my_tag)
 
 
-.. nextslide::
-
-.. code-block:: python
-
-    def tag(name, *content, cls=None, **attrs):
-        """Generate one or more HTML tags"""
-        if cls is not None:
-            attrs['class'] = cls
-        if attrs:
-            attr_str = ''.join(' %s="%s"' % (attr, value)
-                               for attr, value
-                               in sorted(attrs.items()))
-        else:
-            attr_str = ''
-        if content:
-            return '\n'.join('<%s%s>%s</%s>' %
-                             (name, attr_str, c, name) for c in content)
-        else:
-            return '<%s%s />' % (name, attr_str)
 
 
 
@@ -280,6 +286,10 @@ Considere:
         """5% discount for customers with 1000 or more fidelity points"""
         def discount(self, order):
             return order.total() * .05 if order.customer.fidelity >= 1000 else 0
+
+.. nextslide::
+
+.. code-block:: python
 
     class BulkItemPromo(Promotion):  # second Concrete Strategy
         """10% discount for each LineItem with 20 or more units"""
@@ -427,6 +437,17 @@ Herança
         print "PARENT override()"
 
     class Child(Parent):
+
+        def __init__(self, *args, **kwargs):
+        """
+        O super é realmente estranho pra quem o vê da primeira vez, mas
+        ele é 'super' tranquilo de entender ;)
+        Quando você herda de uma classe e sobrescreve um determinado método
+        (nesse caso o nosso construtor), é interessante que você mantenha
+        o comportamento original da classe pai (Parent)
+        """
+
+            super(Child).__init__(*args, **kwargs)
 
         def override(self):
             print "CHILD override()"

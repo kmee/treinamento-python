@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sorting &mdash; Treinamento de Python 2016.08.0001</title>
+  <title>Sorting &mdash; Treinamento de Python 2017.08.0001</title>
   
 
   
@@ -30,10 +30,7 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Treinamento de Python 2016.08.0001" href="../index.html"/>
+    <link rel="top" title="Treinamento de Python 2017.08.0001" href="../index.html"/>
         <link rel="next" title="Dicionários e Arquivos Python" href="dict-and-files.html"/>
         <link rel="prev" title="Listas Python" href="lists.html"/> 
 
@@ -66,7 +63,7 @@
             
             
               <div class="version">
-                2016.08
+                2017.01
               </div>
             
           
@@ -94,22 +91,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lists.html">Listas Python</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sorting</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Sorting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#python-sorting">Python Sorting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#custom-sorting-with-key">Custom Sorting With key=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sort-method">sort() method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tuples">Tuples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#list-comprehensions-optional">List Comprehensions (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exercise-list1-py">Exercise: list1.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercicio-list1-py">Exercício: list1.py</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dict-and-files.html">Dicionários e Arquivos Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regular-expressions.html">Expressões Regulares</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utilities.html">Python Utilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objetos.html">Nomes e referências</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contatos/contatos.html">Contatos</a></li>
 </ul>
 
             
@@ -132,7 +132,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -184,15 +184,14 @@ retorna os valores ao contrário.</p>
 <h2>Custom Sorting With key=<a class="headerlink" href="#custom-sorting-with-key" title="Permalink to this headline">¶</a></h2>
 <p>Para classificação personalizada mais complexa, a função sorted() recebe um
 &#8220;key=&#8221; opcional que especifica uma função &#8220;key&#8221; que transforma cada elemento
-antes de comparação. A função key leva em 1 valor e retorna 1 valor, e o valor
-&#8220;proxy&#8221; retornado é utilizado para as comparações com o sort.</p>
+antes de comparação. A função key recebe 1 valor por parâmetro e retorna 1 outro valor valor, sendo este o &#8220;proxy&#8221;, utilizado para as comparações com o sorted.</p>
 <p>Por exemplo, com uma lista de strings, especificando key=len (construído com
 a função len()) classifica as strings pelo comprimento, do mais curto para o
-mais longo. O sort chama len() para cada string para obter a lista de valores
+mais longo. O sorted chama len() para cada string para obter a lista de valores
 de comprimento proxy, e os tipos com esses valores de proxy.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">strs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ccc&#39;</span><span class="p">,</span> <span class="s1">&#39;aaaa&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">]</span>
+<span class="c1">#calling sorted with key=len</span>
 <span class="k">print</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">strs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>  <span class="c1">## [&#39;d&#39;, &#39;bb&#39;, &#39;ccc&#39;, &#39;aaaa&#39;]</span>
-<span class="n">calling</span> <span class="nb">sorted</span> <span class="k">with</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span>
 </pre></div>
 </div>
 <img alt="../_images/sorted-key.png" class="align-center" src="../_images/sorted-key.png" />
@@ -214,20 +213,12 @@ de comprimento proxy, e os tipos com esses valores de proxy.</p>
 <span class="k">print</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">strs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">MyFn</span><span class="p">)</span>  <span class="c1">## [&#39;wa&#39;, &#39;zb&#39;, &#39;xc&#39;, &#39;yd&#39;]</span>
 </pre></div>
 </div>
-<p>Para usar key= custom sorting, lembre-se de que você deve fornecer uma função que
-receba um valor e retorne o valor proxy para orientar a classificação.
-Há também um argumento opcional &#8220;cmp=cmpFn&#8221; para o sorted() que especifica
-uma função de comparação de dois argumentos que leva dois valores da lista
-e retorna negativo/0/positiva para indicar a sua ordenação. A função de
-comparação default para strings, inits, ... é cmp(a, b), então, você pode
-chamar quantas vezes quiser a função cmp() no seu comparador personalizado.
-O mais recente um argumento key=sorting é geralmente preferível.</p>
 </div>
 <div class="section" id="sort-method">
 <h2>sort() method<a class="headerlink" href="#sort-method" title="Permalink to this headline">¶</a></h2>
-<p>Como uma alternativa para, o método sorted(),o metódo sort() em uma lista
-classificada que lista os dados em ordem crescente, por exemplo, list.sort().
-O método sort () altera a lista subjacente e retorna None, para usá-lo como este:</p>
+<p>Como uma alternativa para o método sorted(), o metódo sort() em uma lista
+classifica seus dados em ordem crescente, por exemplo, list.sort().
+O método sort() altera a lista subjacente e retorna None, use-o desta maneira:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">alist</span><span class="o">.</span><span class="n">sort</span> <span class="p">()</span> <span class="c1">## correta</span>
 <span class="n">alist</span> <span class="o">=</span> <span class="n">blist</span><span class="o">.</span><span class="n">sort</span> <span class="p">()</span> <span class="c1">## NO incorreto, sort () retorna None</span>
 </pre></div>
@@ -252,11 +243,11 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
 <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bye&#39;</span><span class="p">)</span>  <span class="c1">## this works</span>
 </pre></div>
 </div>
-<p>Para criar um tamanho tuple size-1, o elemento solitário deve ser seguido por uma vírgula.</p>
+<p>Para criar um tamanho tuple size-1, o único elemento da tuple deve ser seguido por uma vírgula.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,)</span>   <span class="c1">## size-1 tuple</span>
 </pre></div>
 </div>
-<p>É um caso engraçado na sintaxe, mas a vírgula é necessária para distinguir a tuple do caso de colocar uma expressão entre parênteses. Em alguns casos, você pode omitir o parêntese e o Python vai ver a partir das vírgulas que você pretende uma tuple.</p>
+<p>É um caso engraçado na sintaxe, mas a vírgula é necessária para distinguir a tuple do caso de colocar uma expressão entre parênteses. Em alguns casos, você pode omitir o parêntese e o Python vai ver a partir das vírgulas que você pretende criar uma tuple.</p>
 <p>Atribuindo uma tuple a uma tuple de tamanho idêntico de nomes de variáveis atribui todos os valores correspondentes. Se as tuples não são do mesmo tamanho, ele lança um erro. Este recurso funciona para listas também.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;hike&quot;</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">z</span>  <span class="c1">## hike</span>
@@ -266,7 +257,7 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
 </div>
 <div class="section" id="list-comprehensions-optional">
 <h2>List Comprehensions (optional)<a class="headerlink" href="#list-comprehensions-optional" title="Permalink to this headline">¶</a></h2>
-<p>List comprehensions (Compreensão de listas) é um recurso mais avançado que é bom para alguns casos, mas não é necessário para os exercícios e não é algo que você precisa saber em primeiro lugar. A compreensão de lista é uma forma compacta de escrever uma expressão que se expande para uma lista inteira. Suponha que temos uma lista nums [1, 2, 3], aqui é a compreensão de lista para computar uma lista de seus quadrados [1, 4, 9]:</p>
+<p>List comprehensions (Compreensão de listas) é um recurso mais avançado que é bom para alguns casos, mas não é necessário para os exercícios e não é algo que você precisa saber em primeiro lugar. A compreensão de lista é uma forma compacta de escrever uma expressão que se expande para uma lista inteira. Suponha que temos uma lista nums [1, 2, 3], aqui é mostrada como a compreensão de listas para computar uma lista de seus quadrados [1, 4, 9]:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
 <span class="n">squares</span> <span class="o">=</span> <span class="p">[</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span> <span class="p">]</span>   <span class="c1">## [1, 4, 9, 16]</span>
@@ -291,8 +282,27 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercise-list1-py">
-<h2>Exercise: list1.py<a class="headerlink" href="#exercise-list1-py" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercicio-list1-py">
+<h2>Exercício: list1.py<a class="headerlink" href="#exercicio-list1-py" title="Permalink to this headline">¶</a></h2>
+<p>Para praticarmos o material desta sessão, tente agora os problemas do arquivo list1.py que utilizam ordenação.</p>
+<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/list1.py"><code class="xref download docutils literal"><span class="pre">list1.py</span></code></a></p>
+<p>Exercício B: front-x</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Dada uma lista de strings, retorne uma lista com as strings</span>
+<span class="c1"># ordenadas, agrupando todas as strings que começam com &#39;x&#39; primeiro.</span>
+<span class="c1"># Exemplo: [&#39;mix&#39;, &#39;xyz&#39;, &#39;apple&#39;, &#39;xanadu&#39;, &#39;aardvark&#39;] resulta em</span>
+<span class="c1"># [&#39;xanadu&#39;, &#39;xyz&#39;, &#39;aardvark&#39;, &#39;apple&#39;, &#39;mix&#39;].</span>
+<span class="c1"># Dica: isso pode ser feito criando-se 2 listas e ordenando-as antes</span>
+<span class="c1"># de combiná-las</span>
+</pre></div>
+</div>
+<p>Exercício C: sort-last</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Dada uma lista de tuples não-vazias, retorne uma lista ordenada crescente</span>
+<span class="c1"># pelo último elemento da tuple.</span>
+<span class="c1"># Exemplo: [(1, 7), (1, 3), (3, 4, 5), (2, 2)] resulta em</span>
+<span class="c1"># [(2, 2), (1, 3), (3, 4, 5), (1, 7)]</span>
+<span class="c1"># Dica: use um método key= para extrair o último elemento de cada tupla.</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -337,7 +347,7 @@ coordenadas. Tuples são como listas, exceto que elas são imutáveis e não mud
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2016.08.0001',
+            VERSION:'2017.08.0001',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

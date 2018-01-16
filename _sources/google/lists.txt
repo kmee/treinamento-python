@@ -63,7 +63,7 @@ As declarações Python **for** e **in** são extremamente úteis. A palavra res
     squares = [1, 4, 9, 16]
     sum = 0
     for num in squares:
-    sum += num
+        sum += num
     print sum  ## 30
 
 Se você sabe o que procurar em uma lista, use o nome da variável no loop para
@@ -96,7 +96,7 @@ Range
 
 A função range(n) produz uma lista de números 0, 1, ..., n-1 e range(a,b)
 retorna a, a+1, ... b-1 -- até o último número menos um. A combinação de um for-loop e o
-método range() permitem criarmos for numérico tradicional.
+método range() permitem criarmos o for numérico tradicional.
 
 .. code-block:: python
 
@@ -187,7 +187,7 @@ Um padrão comum é iniciar uma lista com um par de colchetes vazios [], então 
 Fatiamento de Listas
 --------------------
 
-Fatiamentos funcionam como listas da mesma forma que strings, e podem ser usados para modificar sub-partes de uma lista.
+Fatiamentos funcionam com listas da mesma forma que strings, e podem ser usados para modificar sub-partes de uma lista.
 
 .. code-block:: python
 
@@ -199,4 +199,15 @@ Fatiamentos funcionam como listas da mesma forma que strings, e podem ser usados
 
 Exercício: list1.py
 -------------------
-Para praticarmos o material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação ( nos exercícios básicos).
+Para praticarmos o material desta sessão, tente os problemas do arquivo list1.py que não usam ordenação (nos exercícios básicos).
+
+Download do Arquivo: :download:`list1.py <../code/basic/list1.py>`
+
+Exercício A: match-ends
+
+.. code-block:: python
+
+    # Dada uma lista de strings, retorne a quantidade de strings
+    # cujo tamanho seja 2 ou maior e seu primeiro e último
+    # caracter sejam iguais.
+    # Obs: Python não possui o operador ++,  mas  += funciona

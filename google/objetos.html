@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Nomes e referências &mdash; Treinamento de Python 2017.08.0001</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Treinamento de Python 2017.08.0001" href="../index.html"/>
+        <link rel="next" title="Python Data Model" href="../data-model/python-data-model.html"/>
+        <link rel="prev" title="Python Utilities" href="utilities.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Treinamento de Python
+          
+
+          
+            
+            <img src="../_static/kmee_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html#introducao-a-linguagem">Introdução à linguagem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Python Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Listas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dict-and-files.html">Dicionários e Arquivos Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regular-expressions.html">Expressões Regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Python Utilities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Nomes e referências</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#entendendo-o-conceito">Entendendo o conceito</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/python-data-model.html">Python Data Model</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contatos/contatos.html">Contatos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Treinamento de Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Nomes e referências</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/google/objetos.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nomes-e-referencias">
+<h1>Nomes e referências<a class="headerlink" href="#nomes-e-referencias" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="entendendo-o-conceito">
+<h2>Entendendo o conceito<a class="headerlink" href="#entendendo-o-conceito" title="Permalink to this headline">¶</a></h2>
+<p>Em Python, uma variável é apenas um NOME que REFERENCIA a um OBJETO.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Atribuição simples</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>X recebe 42. Certo?</p>
+<p>O que o python faz é criar um objeto com valor igual a 42 e criar um nome que
+referencie esse objeto.
+Toda vez que o nome aparecer no código, o objeto do tipo int seja substituido no código.</p>
+<img alt="../_images/var1.png" class="align-center" src="../_images/var1.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Incrementando</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># ou x = x + 1</span>
+</pre></div>
+</div>
+<p>X recebe 43. Certo?</p>
+<p>O nome 42 passa a fazer referência a um novo objeto int de valor 43.</p>
+<img alt="../_images/var2.png" class="align-center" src="../_images/var2.png" />
+<p><strong>Objetos do tipo int são imutáveis.</strong></p>
+<p>&#8220;x = x + 1&#8221; cria um novo objeto do tipo int e faz com que x passe a referenciar esse novo objeto.
+Se você observar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Incrementando</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">id1</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">id2</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">id1</span> <span class="o">==</span> <span class="n">id2</span>
+</pre></div>
+</div>
+<p>São objetos diferentes.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Copiando referência</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>O interpretador cria um novo nome y e faz referência ao objeto int de valor 43.</p>
+<img alt="../_images/var3.png" class="align-center" src="../_images/var3.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Alterando o valor de x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Como objetos do tipo int são imutáveis, ao executar a expressão acima estamos
+fazendo uma nova referencia ao nome &#8220;x&#8221;.
+Isto é, o interpretador cria um novo objeto int de valor 10 e atualiza
+a referência do nome &#8220;x&#8221;.</p>
+<img alt="../_images/var4.png" class="align-center" src="../_images/var4.png" />
+<p><strong>Objetos do tipo lista são Mutáveis.</strong></p>
+<p>Significa que ao criar um nome referenciando um objeto lista,
+conseguimos editar o objeto. Vejamos:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Criando uma nova lista</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="c1"># copiando referencia</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="c1"># Editando a lista</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Visualizando a lista atualizada</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="c1"># y faz referência a mesma lista</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>As referências de nome (x e y) são para o mesmo objeto do tipo lista.</p>
+<img alt="../_images/var5.png" class="align-center" src="../_images/var5.png" />
+<p>O método append() modifica a lista de modo in-place, isto é, as modificações são feitas no
+próprio objeto, sem a necessidade de criação de uma nova lista, como
+ocorreria com objetos imutáveis, como strings ou ints, por exemplo.</p>
+<p>Referência: <a class="reference external" href="https://pythonhelp.wordpress.com/2013/02/20/variaveis-valores-e-referencias/">Python Help</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../data-model/python-data-model.html" class="btn btn-neutral float-right" title="Python Data Model" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="utilities.html" class="btn btn-neutral" title="Python Utilities" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright KMEE INFORMATICA LTDA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.08.0001',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

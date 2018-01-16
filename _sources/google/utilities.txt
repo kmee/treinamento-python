@@ -164,7 +164,11 @@ exibindo uma mensagem em caso de erro.
       except IOError:
         print 'problem reading url:', url
 
-Exercise
---------
+Exercício
+---------
 
-Log Puzzle Exercise.
+Tente resolver os exercícios 'logpuzzle.py' e 'babynames.py'.
+
+Download do Arquivo: :download:`logpuzzle.py <../code/logpuzzle/logpuzzle.py>`
+
+Download do Arquivo: :download:`babynames.py <../code/babynames/babynames.py>`
