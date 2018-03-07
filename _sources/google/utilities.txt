@@ -15,13 +15,9 @@ com o sistema operacional.
 O módulo **shutil** pode copiar arquivos
 
 - `os module docs <http://docs.python.org/lib/module-os.html/>`_
-
 - filenames = os.listdir(dir) - lista o nome dos arquivos no diretório (não incluindo path atual . e path pai ..). Os nomes dos arquivos são apenas os nomes dos arquivos e não os seus caminhos absolutos.
-
 - os.path.join(dir, filename) - recupera o nome de arquivo da lista acima, usar isso para colocar o diretório (path) e nome do arquivo em conjunto para fazer um caminho completo
-
 - os.path.abspath(path) - recupera um caminho, retorna a forma absoluta, por exemplo, /home/nick/foo/bar.html
-
 - os.path.dirname(caminho), os.path.basename (path) - recupera o caminho completo dir/foo/bar.html, retorna o diretório "dir/foo" e nome do arquivo "bar.html"
 
 .. nextslide::
@@ -60,7 +56,7 @@ capturar sua saída.
 
 .. nextslide::
 
-- Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo "popen2" (http://docs.python.org/lib/module-popen2.html)
+- Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo "popen2" http://docs.python.org/lib/module-popen2.html
 - Há também o simples os.system(cmd), que executa o comando e retorna sua saída e retorna seu código de erro. Isso funciona se você deseja executar o comando, mas não precisa capturar a sua saída em suas estruturas de dados python.
 
 .. code-block:: python
@@ -126,13 +122,13 @@ O módulo **urllib** permite acessar servidores HTTP por meios de requests GET
 e POST de maneira direta -- Tornando as urls acessíveis como um arquivo que
 possa ser lido. O **urlparse** permite a você trabalhar com partes de url e unir urls.
 
--urllib module docs
--ufile = urllib.urlopen(url) -- returns a file like object for that url
--text = ufile.read() -- can read from it, like a file (readlines() etc. also work)
--info = ufile.info() -- the meta info for that request. info.gettype() is the  mime time, e.g. 'text/html'
--baseurl = ufile.geturl() -- gets the "base" url for the request, which may be different from the original because of redirects
--urllib.urlretrieve(url, filename) -- downloads the url data to the given file path
--urlparse.urljoin(baseurl, url) -- given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.
+- urllib module docs
+- ufile = urllib.urlopen(url) -- returns a file like object for that url
+- text = ufile.read() -- can read from it, like a file (readlines() etc. also work)
+- info = ufile.info() -- the meta info for that request. info.gettype() is the  mime time, e.g. 'text/html'
+- baseurl = ufile.geturl() -- gets the "base" url for the request, which may be different from the original because of redirects
+- urllib.urlretrieve(url, filename) -- downloads the url data to the given file path
+- urlparse.urljoin(baseurl, url) -- given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.
 
 .. nextslide::
 
@@ -164,11 +160,41 @@ exibindo uma mensagem em caso de erro.
       except IOError:
         print 'problem reading url:', url
 
-Exercício
----------
+Exercício logpuzzle
+-------------------
 
-Tente resolver os exercícios 'logpuzzle.py' e 'babynames.py'.
+Você usuará o python para resolver dois enigmas!!!
 
-Download do Arquivo: :download:`logpuzzle.py <../code/logpuzzle/logpuzzle.py>`
+Utilizando o módulo urllib, os arquivos para este exercício estão no diretório
+"logpuzzle". Uma imagem de um animal foi quebrada em muitas imagens de franjas verticais estreitas. As imagens da faixa estão na internet
+em algum lugar, cada uma com sua própria url. As URLs estão ocultas em um arquivo de log do servidor web. Sua missão é encontrar as URLs
+e baixar todas as listras de imagens para recriar a imagem original.
 
-Download do Arquivo: :download:`babynames.py <../code/babynames/babynames.py>`
+.. nextslide::
+
+Os URLs das fatias estão ocultos dentro dos arquivos de log apache. Cada arquivo de log é de algum servidor
+e os URLs de fatia desejados estão ocultos dentro dos logs. O arquivo de log codifica de qual servidor ele vem:
+
+- O arquivo de log animal_code.google.com é do servidor code.google.com.
+- O arquivo de registro animial_code.google.com contém os dados para a imagem do puzzle "animal".
+
+Aqui está o que uma única linha do arquivo de log se parece:
+
+.. code-block:: shell
+
+    10.254.254.28 - - [06/Aug/2007:00:14:08 -0700] "GET /foo/talks/ HTTP/1.1"
+    200 5910 "-" "Mozilla/5.0 (X11; U; Linux i686 (x86_64); en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4"
+
+.. nextslide::
+
+Os primeiros números são o endereço do navegador solicitante. A parte mais interessante é o " caminho HTTP GET"
+que mostra o caminho de uma solicitação web recebida pelo servidor.
+
+O caminho em si nunca contém espaços e é separado do GET e HTTP por espaços (sugestão de regex: \\S (maiúsculas e minúsculas)
+coincide com qualquer caractere não espacial). Encontre as linhas no log onde a string "puzzle" aparece dentro do caminho, ignorando as muitas outras linhas no log.
+
+Exercício: Parte A
+-------------------
+
+
+Download do Arquivo: :download:`logpuzzle.zip <../code/logpuzzle/logpuzzle.zip>`

@@ -21,7 +21,7 @@ O método re.search() busca um padrão de expressões regulares e strings e real
 .. code-block:: python
 
     str = 'an example word:cat!!'
-    match = re.search(r'word:\\w\\w\\w', str)
+    match = re.search(r'word:\w\w\w', str)
     # If-statement after search() tests if it succeeded
     if match:
         print 'found', match.group() ## 'found word:cat'
@@ -77,12 +77,12 @@ As regras básicas de pesquisa de expressão regular dentro de uma string são:
   match = re.search(r'iii', 'piiig') =>  found, match.group() == "iii"
   match = re.search(r'igs', 'piiig') =>  not found, match == None
 
-  ## . = any char but \\n
+  ## . = any char but \n
   match = re.search(r'..g', 'piiig') =>  found, match.group() == "iig"
 
-  ## \\d = digit char, \\w = word char
-  match = re.search(r'\\d\\d\\d', 'p123g') =>  found, match.group() == "123"
-  match = re.search(r'\\w\\w\\w', '@@abcd!!') =>  found, match.group() == "abc"
+  ## \d = digit char, \w = word char
+  match = re.search(r'\d\d\d', 'p123g') =>  found, match.group() == "123"
+  match = re.search(r'\w\w\w', '@@abcd!!') =>  found, match.group() == "abc"
 
 .. nextslide::
 
@@ -113,14 +113,14 @@ Exemplos de repetições
 
   ## \\s* = zero or more whitespace chars
   ## Here look for 3 digits, possibly separated by whitespace.
-  match = re.search(r'\\d\\s*\\d\\s*\\d', 'xx1 2   3xx') =>  found, match.group() == "1 2   3"
-  match = re.search(r'\\d\\s*\\d\\s*\\d', 'xx12  3xx') =>  found, match.group() == "12  3"
-  match = re.search(r'\\d\\s*\\d\\s*\\d', 'xx123xx') =>  found, match.group() == "123"
+  match = re.search(r'\d\s*\d\s*\d', 'xx1 2   3xx') =>  found, match.group() == "1 2   3"
+  match = re.search(r'\d\s*\d\s*\d', 'xx12  3xx') =>  found, match.group() == "12  3"
+  match = re.search(r'\d\s*\d\s*\d', 'xx123xx') =>  found, match.group() == "123"
 
   ## ^ = matches the start of string, so this fails:
-  match = re.search(r'^b\\w+', 'foobar') =>  not found, match == None
+  match = re.search(r'^b\w+', 'foobar') =>  not found, match == None
   ## but without the ^ it succeeds:
-  match = re.search(r'b\\w+', 'foobar') =>  found, match.group() == "bar"
+  match = re.search(r'b\w+', 'foobar') =>  found, match.group() == "bar"
 
 
 Exemplos de emails
@@ -130,7 +130,7 @@ Suponha que você queira encontrar o endereço de e-mail dentro do string 'xyz a
 .. code-block:: python
 
   str = 'purple alice-b@google.com monkey dishwasher'
-  match = re.search(r'\\w+@\\w+', str)
+  match = re.search(r'\w+@\w+', str)
   if match:
     print match.group()  ## 'b@google'
 
@@ -143,7 +143,7 @@ Square brackets (colchetes) pode ser usado para indicar um conjunto de caractere
 
 .. code-block:: python
 
-  match = re.search(r'[\\w.-]+@[\\w.-]+', str)
+  match = re.search(r'[\w.-]+@[\w.-]+', str)
   if match:
     print match.group()  ## 'alice-b@google.com'
 
@@ -161,7 +161,7 @@ Neste caso, o parêntese não muda o que a busca irá pesquisar, em vez disso, e
 .. code-block:: python
 
   str = 'purple alice-b@google.com monkey dishwasher'
-  match = re.search('([\\w.-]+)@([\\w.-]+)', str)
+  match = re.search('([\w.-]+)@([\w.-]+)', str)
   if match:
     print match.group()   ## 'alice-b@google.com' (the whole match)
     print match.group(1)  ## 'alice-b' (the username, group 1)
@@ -183,7 +183,7 @@ findall() é provavelmente a função mais poderosa do módulo de re. Acima usam
   str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
 
   ## Here re.findall() returns a list of all the found email strings
-  emails = re.findall(r'[\\w\\.-]+@[\\w\\.-]+', str) ## ['alice@google.com', 'bob@abc.com']
+  emails = re.findall(r'[\w\.-]+@[\w\.-]+', str) ## ['alice@google.com', 'bob@abc.com']
   for email in emails:
     # do something with each found email string
     print email
@@ -206,7 +206,7 @@ O mecanismo grupo de parênteses ( ) pode ser combinado com findall(). Se o padr
 .. code-block:: python
 
   str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
-  tuples = re.findall(r'([\\w\\.-]+)@([\\w\\.-]+)', str)
+  tuples = re.findall(r'([\w\.-]+)@([\w\.-]+)', str)
   print tuples  ## [('alice', 'google.com'), ('bob', 'abc.com')]
   for tuple in tuples:
     print tuple[0]  ## username
@@ -259,14 +259,14 @@ Substituição (Opcional)
 
 A função re.sub(pat, replacement, str) pesquisa por todos os dados na string, e os substitui. O texto de substituição pode incluir '\\1', '\\2', que se referem ao texto do group(1), o group(2), e assim por diante a partir do texto encontrado originalmente.
 
-Aqui está um exemplo que procura todos os endereços de e-mail e modifica-os para manter o usuário (\\1), mas tem yo-yo-dyne.com como o domínio.
+Aqui está um exemplo que procura todos os endereços de e-mail e modifica-os para manter o usuário (\1), mas tem yo-yo-dyne.com como o domínio.
 
 .. code-block:: python
 
   str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
   ## re.sub(pat, replacement, str) -- returns new string with all replacements,
-  ## \\1 is group(1), \\2 group(2) in the replacement
-  print re.sub(r'([\\w\\.-]+)@([\\w\\.-]+)', r'\\1@yo-yo-dyne.com', str)
+  ## \1 is group(1), \2 group(2) in the replacement
+  print re.sub(r'([\w\.-]+)@([\w\.-]+)', r'\1@yo-yo-dyne.com', str)
   ## purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher
 
 Exercícios
@@ -274,6 +274,60 @@ Exercícios
 
 Exercícios de Expressões Regulares
 
-Extra - Tente resolver o exercício mimic.py nos exercícios básicos
+Realizem o download do Arquivo: :download:`babynames.zip <../code/babynames/babynames.zip>`
 
-Download do Arquivo: :download:`mimic.py <../code/basic/mimic.py>`
+A administração da Segurança Social tem um ranking com os dados dos nomes mais populares dos bebês nascidos em cada ano.
+
+Os arquivos baby1990.html baby1992.html ... contém html bruto, semelhante ao que você visita no site de segurança sociaL.  Dê uma olhada no html e pense em como você pode esbarrar os dados.
+
+.. nextslide::
+
+Part A: Extract
+
+O arquivo babynames.py, implemente a função extract_names (nome do arquivo) que leva o nome de arquivo de um arquivo baby1990.html e retorna os dados do arquivo como uma lista única 
+
+- a cadeia do ano no início da lista seguida pelo nome -rank cordas em ordem alfabética. ['2006', 'Aaliyah 91', 'Abagail 895', 'Aaron 57', ...].
+- Modifique main () para que ele chame sua função extract_names () e imprima o que retorna (o código da main já possui o algoritimo para a análise do argumento da linha de comando). 
+
+.. nextslide::
+
+- Note que para analisar páginas da Web em geral, expressões regulares não fazem um bom trabalho, mas essas páginas web têm um formato simples e consistente.
+- Em vez de tratar separadamente os nomes dos meninos e garotas, nós vamos trata-los juntos. 
+- Em alguns anos, um nome aparece mais de uma vez no html, mas usaremos apenas um número por nome. 
+- Opcional: torne o algoritmo inteligente sobre este caso e escolha o número que é menor.
+
+.. nextslide::
+
+Sugestão de implementação
+
+- Extraia todo o texto do arquivo e imprima-o
+- Encontre e extraia o ano e imprima
+- Extraia os nomes e os números de classificação e imprima-os
+- Obter os dados dos nomes em um dict e imprimi-lo
+- Construa o [ano, 'nomear classificação', ...] e imprimi-lo
+- Corrigir main () para usar a lista ExtractNames
+
+
+.. nextslide::
+
+Para tornar a lista em um texto resumo razoável, aqui está um uso inteligente da join: text = '\n'.join(mylist) + '\n'
+O texto de resumo deve ser assim para cada arquivo:
+
+.. code-block:: python
+
+    2006
+    Aaliyah 91
+    Aaron 57
+    Abagail 895
+    Abadia 695
+    Abbie 650
+ ...
+
+.. nextslide::
+
+Exercício B: Summary
+
+
+
+
+

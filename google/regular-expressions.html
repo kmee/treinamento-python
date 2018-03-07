@@ -176,7 +176,7 @@
 </div>
 <p>O método re.search() busca um padrão de expressões regulares e strings e realiza a busca dentro da string. Se a pesquisa for bem sucedida, search() retorna um objeto com dados ou None caso contrário. Portanto, a busca é geralmente seguida imediatamente por uma instrução if para testar se a busca foi bem-sucedida, como mostrado no exemplo a seguir que procura o padrão &#8216;word:&#8217; seguido por 3 letras (detalhes abaixo):</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;an example word:cat!!&#39;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;word:</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;word:\w\w\w&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="c1"># If-statement after search() tests if it succeeded</span>
 <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
     <span class="k">print</span> <span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="c1">## &#39;found word:cat&#39;</span>
@@ -222,12 +222,12 @@
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;iii&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;iii&quot;</span>
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;igs&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">match</span> <span class="o">==</span> <span class="bp">None</span>
 
-<span class="c1">## . = any char but \\n</span>
+<span class="c1">## . = any char but \n</span>
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;..g&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;iig&quot;</span>
 
-<span class="c1">## \\d = digit char, \\w = word char</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;p123g&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">w&#39;</span><span class="p">,</span> <span class="s1">&#39;@@abcd!!&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;abc&quot;</span>
+<span class="c1">## \d = digit char, \w = word char</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d&#39;</span><span class="p">,</span> <span class="s1">&#39;p123g&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w\w\w&#39;</span><span class="p">,</span> <span class="s1">&#39;@@abcd!!&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;abc&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -254,14 +254,14 @@
 
 <span class="c1">## \\s* = zero or more whitespace chars</span>
 <span class="c1">## Here look for 3 digits, possibly separated by whitespace.</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx1 2   3xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;1 2   3&quot;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx12  3xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;12  3&quot;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d</span><span class="se">\\</span><span class="s1">s*</span><span class="se">\\</span><span class="s1">d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx123xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\s*\d\s*\d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx1 2   3xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;1 2   3&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\s*\d\s*\d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx12  3xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;12  3&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\s*\d\s*\d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx123xx&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
 
 <span class="c1">## ^ = matches the start of string, so this fails:</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^b</span><span class="se">\\</span><span class="s1">w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">match</span> <span class="o">==</span> <span class="bp">None</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^b\w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">match</span> <span class="o">==</span> <span class="bp">None</span>
 <span class="c1">## but without the ^ it succeeds:</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;b</span><span class="se">\\</span><span class="s1">w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;bar&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;b\w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="n">found</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;bar&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -269,7 +269,7 @@
 <h2>Exemplos de emails<a class="headerlink" href="#exemplos-de-emails" title="Permalink to this headline">¶</a></h2>
 <p>Suponha que você queira encontrar o endereço de e-mail dentro do string &#8216;xyz <a class="reference external" href="mailto:alice-b&#37;&#52;&#48;google&#46;com">alice-b<span>&#64;</span>google<span>&#46;</span>com</a> purple monkey&#8217; . Iremos utilizar essa string como um exemplo de execução para demonstrar mais recursos de expressões regulares. Aqui está uma tentativa usando o padrão de r&#8217;\w+&#64;\w+&#8217;:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice-b@google.com monkey dishwasher&#39;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">w+@</span><span class="se">\\</span><span class="s1">w+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+@\w+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
   <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>  <span class="c1">## &#39;b@google&#39;</span>
 </pre></div>
@@ -279,7 +279,7 @@
 <div class="section" id="square-brackets">
 <h2>Square Brackets<a class="headerlink" href="#square-brackets" title="Permalink to this headline">¶</a></h2>
 <p>Square brackets (colchetes) pode ser usado para indicar um conjunto de caracteres, então [abc] combina &#8216;a&#8217; ou &#8216;b&#8217; ou &#8216;c&#8217;. Os códigos \w, \s etc trabalham dentro de colchetes também com a única exceção que ponto (.) significa apenas um ponto literalmente. Para o problema de e-mails, os colchetes são uma maneira fácil de adicionar &#8216;.&#8217; e &#8216;-&#8216; para o conjunto de caracteres que podem aparecer ao redor do &#64; com a expressão r&#8217;[\w.-]+&#64;[\w.-]+&#8217; para obter todo o e-mail:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[</span><span class="se">\\</span><span class="s1">w.-]+@[</span><span class="se">\\</span><span class="s1">w.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\w.-]+@[\w.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
   <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>  <span class="c1">## &#39;alice-b@google.com&#39;</span>
 </pre></div>
@@ -291,7 +291,7 @@
 <p>O recurso de &#8220;grupo&#8221; de uma expressão regular permite escolher partes do texto correspondente. Suponha que para o problema de e-mails que queremos extrair o nome do usuário e o domínio separadamente. Para fazer isso, adicionar parênteses () em torno do nome de usuário e do domínio, como este: r&#8217;([\w.-]+)&#64;([\w.-]+)&#8217;.</p>
 <p>Neste caso, o parêntese não muda o que a busca irá pesquisar, em vez disso, estabelecerá &#8220;grupos&#8221; lógicos dentro do texto a ser buscado. Em uma busca com sucesso, match.group(1) é o texto de partida correspondente ao primeiro parêntese esquerdo, e match.group(2) é o texto correspondente ao segundo parêntese esquerdo. O match.group() puro retornará o texto completo.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice-b@google.com monkey dishwasher&#39;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;([</span><span class="se">\\</span><span class="s1">w.-]+)@([</span><span class="se">\\</span><span class="s1">w.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;([\w.-]+)@([\w.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
   <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>   <span class="c1">## &#39;alice-b@google.com&#39; (the whole match)</span>
   <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## &#39;alice-b&#39; (the username, group 1)</span>
@@ -307,7 +307,7 @@
 <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
 
 <span class="c1">## Here re.findall() returns a list of all the found email strings</span>
-<span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+@[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="c1">## [&#39;alice@google.com&#39;, &#39;bob@abc.com&#39;]</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\w\.-]+@[\w\.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="c1">## [&#39;alice@google.com&#39;, &#39;bob@abc.com&#39;]</span>
 <span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
   <span class="c1"># do something with each found email string</span>
   <span class="k">print</span> <span class="n">email</span>
@@ -328,7 +328,7 @@
 <h2>findall e Groups<a class="headerlink" href="#findall-e-groups" title="Permalink to this headline">¶</a></h2>
 <p>O mecanismo grupo de parênteses ( ) pode ser combinado com findall(). Se o padrão inclui 2 ou mais grupos de parênteses, em seguida, em vez de retornar uma lista de strings, findall() retorna uma lista de tuples. Cada tuple representa uma busca padrão, e dentro dos dados das tuples, group(1), o group(2) ... Então, se 2 grupos de parênteses são adicionados ao padrão de e-mail, em seguida, findall() retorna uma lista de tuples, cada length 2 contém o nome de usuário e do domínio, por exemplo, (&#8216;Alice&#8217;, &#8216;google.com&#8217;).</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
-<span class="n">tuples</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)@([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">tuples</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w\.-]+)@([\w\.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">tuples</span>  <span class="c1">## [(&#39;alice&#39;, &#39;google.com&#39;), (&#39;bob&#39;, &#39;abc.com&#39;)]</span>
 <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="n">tuples</span><span class="p">:</span>
   <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">## username</span>
@@ -365,11 +365,11 @@
 <div class="section" id="substituicao-opcional">
 <h2>Substituição (Opcional)<a class="headerlink" href="#substituicao-opcional" title="Permalink to this headline">¶</a></h2>
 <p>A função re.sub(pat, replacement, str) pesquisa por todos os dados na string, e os substitui. O texto de substituição pode incluir &#8216;\1&#8217;, &#8216;\2&#8217;, que se referem ao texto do group(1), o group(2), e assim por diante a partir do texto encontrado originalmente.</p>
-<p>Aqui está um exemplo que procura todos os endereços de e-mail e modifica-os para manter o usuário (\1), mas tem yo-yo-dyne.com como o domínio.</p>
+<p>Aqui está um exemplo que procura todos os endereços de e-mail e modifica-os para manter o usuário (1), mas tem yo-yo-dyne.com como o domínio.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
 <span class="c1">## re.sub(pat, replacement, str) -- returns new string with all replacements,</span>
-<span class="c1">## \\1 is group(1), \\2 group(2) in the replacement</span>
-<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)@([</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">.-]+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">1@yo-yo-dyne.com&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="c1">## \1 is group(1), \2 group(2) in the replacement</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w\.-]+)@([\w\.-]+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1@yo-yo-dyne.com&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="c1">## purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher</span>
 </pre></div>
 </div>
@@ -377,8 +377,42 @@
 <div class="section" id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this headline">¶</a></h2>
 <p>Exercícios de Expressões Regulares</p>
-<p>Extra - Tente resolver o exercício mimic.py nos exercícios básicos</p>
-<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/mimic.py"><code class="xref download docutils literal"><span class="pre">mimic.py</span></code></a></p>
+<p>Realizem o download do Arquivo: <a class="reference download internal" href="../_downloads/babynames.zip"><code class="xref download docutils literal"><span class="pre">babynames.zip</span></code></a></p>
+<p>A administração da Segurança Social tem um ranking com os dados dos nomes mais populares dos bebês nascidos em cada ano.</p>
+<p>Os arquivos baby1990.html baby1992.html ... contém html bruto, semelhante ao que você visita no site de segurança sociaL.  Dê uma olhada no html e pense em como você pode esbarrar os dados.</p>
+<p>Part A: Extract</p>
+<p>O arquivo babynames.py, implemente a função extract_names (nome do arquivo) que leva o nome de arquivo de um arquivo baby1990.html e retorna os dados do arquivo como uma lista única</p>
+<ul class="simple">
+<li>a cadeia do ano no início da lista seguida pelo nome -rank cordas em ordem alfabética. [&#8216;2006&#8217;, &#8216;Aaliyah 91&#8217;, &#8216;Abagail 895&#8217;, &#8216;Aaron 57&#8217;, ...].</li>
+<li>Modifique main () para que ele chame sua função extract_names () e imprima o que retorna (o código da main já possui o algoritimo para a análise do argumento da linha de comando).</li>
+</ul>
+<ul class="simple">
+<li>Note que para analisar páginas da Web em geral, expressões regulares não fazem um bom trabalho, mas essas páginas web têm um formato simples e consistente.</li>
+<li>Em vez de tratar separadamente os nomes dos meninos e garotas, nós vamos trata-los juntos.</li>
+<li>Em alguns anos, um nome aparece mais de uma vez no html, mas usaremos apenas um número por nome.</li>
+<li>Opcional: torne o algoritmo inteligente sobre este caso e escolha o número que é menor.</li>
+</ul>
+<p>Sugestão de implementação</p>
+<ul class="simple">
+<li>Extraia todo o texto do arquivo e imprima-o</li>
+<li>Encontre e extraia o ano e imprima</li>
+<li>Extraia os nomes e os números de classificação e imprima-os</li>
+<li>Obter os dados dos nomes em um dict e imprimi-lo</li>
+<li>Construa o [ano, &#8216;nomear classificação&#8217;, ...] e imprimi-lo</li>
+<li>Corrigir main () para usar a lista ExtractNames</li>
+</ul>
+<p>Para tornar a lista em um texto resumo razoável, aqui está um uso inteligente da join: text = &#8216;n&#8217;.join(mylist) + &#8216;n&#8217;
+O texto de resumo deve ser assim para cada arquivo:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>   <span class="mi">2006</span>
+   <span class="n">Aaliyah</span> <span class="mi">91</span>
+   <span class="n">Aaron</span> <span class="mi">57</span>
+   <span class="n">Abagail</span> <span class="mi">895</span>
+   <span class="n">Abadia</span> <span class="mi">695</span>
+   <span class="n">Abbie</span> <span class="mi">650</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Exercício B: Summary</p>
 </div>
 </div>
 

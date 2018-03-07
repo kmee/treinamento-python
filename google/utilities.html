@@ -100,7 +100,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#running-external-processes-commands">Running External Processes &#8211; commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#excessoes">Excessões</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#http-urllib-and-urlparse">HTTP &#8211; urllib and urlparse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exercicio">Exercício</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercicio-logpuzzle">Exercício logpuzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercicio-parte-a">Exercício: Parte A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="objetos.html">Nomes e referências</a></li>
@@ -203,7 +204,7 @@ capturar sua saída.</p>
 <li>Há o commands.getstatus(), mas ele faz outra coisa, por isso não utilize.</li>
 </ul>
 <ul class="simple">
-<li>Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo &#8220;popen2&#8221; (<a class="reference external" href="http://docs.python.org/lib/module-popen2.html">http://docs.python.org/lib/module-popen2.html</a>)</li>
+<li>Se você gostaria de ter mais controle dos sub-processos que estão rodando, veja o módulo &#8220;popen2&#8221; <a class="reference external" href="http://docs.python.org/lib/module-popen2.html">http://docs.python.org/lib/module-popen2.html</a></li>
 <li>Há também o simples os.system(cmd), que executa o comando e retorna sua saída e retorna seu código de erro. Isso funciona se você deseja executar o comando, mas não precisa capturar a sua saída em suas estruturas de dados python.</li>
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Given a dir path, run an external &#39;ls -l&#39; on it --</span>
@@ -257,13 +258,15 @@ a sintaxe <code class="docutils literal"><span class="pre">except</span> <span c
 <p>O módulo <strong>urllib</strong> permite acessar servidores HTTP por meios de requests GET
 e POST de maneira direta &#8211; Tornando as urls acessíveis como um arquivo que
 possa ser lido. O <strong>urlparse</strong> permite a você trabalhar com partes de url e unir urls.</p>
-<p>-urllib module docs
--ufile = urllib.urlopen(url) &#8211; returns a file like object for that url
--text = ufile.read() &#8211; can read from it, like a file (readlines() etc. also work)
--info = ufile.info() &#8211; the meta info for that request. info.gettype() is the  mime time, e.g. &#8216;text/html&#8217;
--baseurl = ufile.geturl() &#8211; gets the &#8220;base&#8221; url for the request, which may be different from the original because of redirects
--urllib.urlretrieve(url, filename) &#8211; downloads the url data to the given file path
--urlparse.urljoin(baseurl, url) &#8211; given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.</p>
+<ul class="simple">
+<li>urllib module docs</li>
+<li>ufile = urllib.urlopen(url) &#8211; returns a file like object for that url</li>
+<li>text = ufile.read() &#8211; can read from it, like a file (readlines() etc. also work)</li>
+<li>info = ufile.info() &#8211; the meta info for that request. info.gettype() is the  mime time, e.g. &#8216;text/html&#8217;</li>
+<li>baseurl = ufile.geturl() &#8211; gets the &#8220;base&#8221; url for the request, which may be different from the original because of redirects</li>
+<li>urllib.urlretrieve(url, filename) &#8211; downloads the url data to the given file path</li>
+<li>urlparse.urljoin(baseurl, url) &#8211; given a url that may or may not be full, and the baseurl of the page it comes from, return a full url. Use geturl() above to provide the base url.</li>
+</ul>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">## Given a url, try to retrieve it. If it&#39;s text/html,</span>
 <span class="c1">## print its base url and its text.</span>
 <span class="k">def</span> <span class="nf">wget</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
@@ -290,11 +293,32 @@ exibindo uma mensagem em caso de erro.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercicio">
-<h2>Exercício<a class="headerlink" href="#exercicio" title="Permalink to this headline">¶</a></h2>
-<p>Tente resolver os exercícios &#8216;logpuzzle.py&#8217; e &#8216;babynames.py&#8217;.</p>
-<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/logpuzzle.py"><code class="xref download docutils literal"><span class="pre">logpuzzle.py</span></code></a></p>
-<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/babynames.py"><code class="xref download docutils literal"><span class="pre">babynames.py</span></code></a></p>
+<div class="section" id="exercicio-logpuzzle">
+<h2>Exercício logpuzzle<a class="headerlink" href="#exercicio-logpuzzle" title="Permalink to this headline">¶</a></h2>
+<p>Você usuará o python para resolver dois enigmas!!!</p>
+<p>Utilizando o módulo urllib, os arquivos para este exercício estão no diretório
+&#8220;logpuzzle&#8221;. Uma imagem de um animal foi quebrada em muitas imagens de franjas verticais estreitas. As imagens da faixa estão na internet
+em algum lugar, cada uma com sua própria url. As URLs estão ocultas em um arquivo de log do servidor web. Sua missão é encontrar as URLs
+e baixar todas as listras de imagens para recriar a imagem original.</p>
+<p>Os URLs das fatias estão ocultos dentro dos arquivos de log apache. Cada arquivo de log é de algum servidor
+e os URLs de fatia desejados estão ocultos dentro dos logs. O arquivo de log codifica de qual servidor ele vem:</p>
+<ul class="simple">
+<li>O arquivo de log animal_code.google.com é do servidor code.google.com.</li>
+<li>O arquivo de registro animial_code.google.com contém os dados para a imagem do puzzle &#8220;animal&#8221;.</li>
+</ul>
+<p>Aqui está o que uma única linha do arquivo de log se parece:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="m">10</span>.254.254.28 - - <span class="o">[</span><span class="m">06</span>/Aug/2007:00:14:08 -0700<span class="o">]</span> <span class="s2">&quot;GET /foo/talks/ HTTP/1.1&quot;</span>
+<span class="m">200</span> <span class="m">5910</span> <span class="s2">&quot;-&quot;</span> <span class="s2">&quot;Mozilla/5.0 (X11; U; Linux i686 (x86_64); en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4&quot;</span>
+</pre></div>
+</div>
+<p>Os primeiros números são o endereço do navegador solicitante. A parte mais interessante é o &#8221; caminho HTTP GET&#8221;
+que mostra o caminho de uma solicitação web recebida pelo servidor.</p>
+<p>O caminho em si nunca contém espaços e é separado do GET e HTTP por espaços (sugestão de regex: \S (maiúsculas e minúsculas)
+coincide com qualquer caractere não espacial). Encontre as linhas no log onde a string &#8220;puzzle&#8221; aparece dentro do caminho, ignorando as muitas outras linhas no log.</p>
+</div>
+<div class="section" id="exercicio-parte-a">
+<h2>Exercício: Parte A<a class="headerlink" href="#exercicio-parte-a" title="Permalink to this headline">¶</a></h2>
+<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/logpuzzle.zip"><code class="xref download docutils literal"><span class="pre">logpuzzle.zip</span></code></a></p>
 </div>
 </div>
 
