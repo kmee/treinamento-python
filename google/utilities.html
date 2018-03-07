@@ -101,7 +101,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#excessoes">Excessões</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#http-urllib-and-urlparse">HTTP &#8211; urllib and urlparse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercicio-logpuzzle">Exercício logpuzzle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exercicio-parte-a">Exercício: Parte A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercicio-parte-a">Exercício Parte A:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercicio-parte-b">Exercicio Parte B:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parte-c-descodificacao-da-fatia-de-imagem">Parte C - Descodificação da fatia de imagem</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="objetos.html">Nomes e referências</a></li>
@@ -315,10 +317,81 @@ e os URLs de fatia desejados estão ocultos dentro dos logs. O arquivo de log co
 que mostra o caminho de uma solicitação web recebida pelo servidor.</p>
 <p>O caminho em si nunca contém espaços e é separado do GET e HTTP por espaços (sugestão de regex: \S (maiúsculas e minúsculas)
 coincide com qualquer caractere não espacial). Encontre as linhas no log onde a string &#8220;puzzle&#8221; aparece dentro do caminho, ignorando as muitas outras linhas no log.</p>
+<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/logpuzzle.zip"><code class="xref download docutils literal"><span class="pre">logpuzzle.zip</span></code></a></p>
 </div>
 <div class="section" id="exercicio-parte-a">
-<h2>Exercício: Parte A<a class="headerlink" href="#exercicio-parte-a" title="Permalink to this headline">¶</a></h2>
-<p>Download do Arquivo: <a class="reference download internal" href="../_downloads/logpuzzle.zip"><code class="xref download docutils literal"><span class="pre">logpuzzle.zip</span></code></a></p>
+<h2>Exercício Parte A:<a class="headerlink" href="#exercicio-parte-a" title="Permalink to this headline">¶</a></h2>
+<p><strong>Arquivo de registro para urls</strong></p>
+<p>Complete a função read_urls (filename) que extrai as URLs do enigma dentro de
+um arquivo de log. Encontre todos os URL do caminho do &#8220;enigma&#8221; no arquivo de
+registro. Combine o caminho de cada url com o nome do servidor do nome do arquivo
+para formar uma URL completa, por exemplo, &#8220;<a class="reference external" href="http://www.example.com/path/puzzle/from/inside/file">http://www.example.com/path/puzzle/from/inside/file</a>&#8221;.</p>
+<p>Exiba as URLs que aparecem mais de uma vez. A função read_urls () deve retornar
+a lista de URLs completos, ordenados em ordem alfabética e sem duplicatas. Tomar
+as urnas em ordem alfabética renderá as fatias de imagem na ordem correta da
+esquerda para a direita para recriar a imagem animal original. No caso mais
+simples, main () deve apenas imprimir as urls, uma por linha.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./logpuzzle.py animal_code.google.com
+http://code.google.com/something/puzzle-animal-baaa.jpg
+http://code.google.com/something/puzzle-animal-baab.jpg
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercicio-parte-b">
+<h2>Exercicio Parte B:<a class="headerlink" href="#exercicio-parte-b" title="Permalink to this headline">¶</a></h2>
+<p><strong>Baixe Imagens de Puzzle</strong></p>
+<p>Complete a função download_images () que leva uma lista ordenada de urls e um
+diretório. Baixe a imagem de cada url para o diretório fornecido, criando o
+primeiro diretório se necessário (consulte o módulo &#8220;os&#8221; para criar um
+diretório e &#8220;urllib.urlretrieve ()&#8221; para fazer o download de uma URL).
+Nomeie os arquivos de imagem locais com um esquema simples como &#8220;img0&#8221;,
+&#8220;img1&#8221;, &#8220;img2&#8221; e assim por diante. Você pode imprimir uma pequena linha de
+saída de status &#8220;Recuperando ...&#8221; enquanto baixa cada imagem, pois pode
+ser lento e é bom ter alguma indicação de que o programa está funcionando.
+Cada imagem é uma pequena fatia vertical do original. Como colocar as fatias
+juntas para recriar o original? Pode ser resolvido com um pequeno html
+(o conhecimento de HTML não é necessário).</p>
+<p>A função download_images () também deve criar um arquivo index.html no diretório
+com uma tag * img * para mostrar cada arquivo de imagem local. As etiquetas
+img devem estar em uma linha juntas sem separação. Desta forma, o navegador
+exibe todas as fatias em conjunto de forma transparente. Você não precisa
+de conhecimento de HTML para fazer isso; basta criar um arquivo index.html
+que se pareça com isto:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src </span><span class="o">=</span> <span class="s">&quot;/ edu / python / exercícios / img0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src </span><span class="o">=</span> <span class="s">&quot;/ edu / python / exercícios / img1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src </span><span class="o">=</span> <span class="s">&quot;/ edu / python / exercises / img2&quot;</span><span class="p">&gt;</span>
+     ...
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Aqui está o que você vai obter quando você pode baixar o quebra-cabeça animal:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./logpuzzle.py --todir animaldir animal_code.google.com
+$ ls animaldir
+img0 img1 img2 img3 img4 img5 img6 img7 img8 img9 index.html
+</pre></div>
+</div>
+<p>Quando tudo está funcionando, abrir o index.html em um navegador deve
+revelar a imagem animal original. O que é o animal na imagem?</p>
+</div>
+<div class="section" id="parte-c-descodificacao-da-fatia-de-imagem">
+<h2>Parte C - Descodificação da fatia de imagem<a class="headerlink" href="#parte-c-descodificacao-da-fatia-de-imagem" title="Permalink to this headline">¶</a></h2>
+<p>O segundo quebra-cabeça envolve uma imagem de um lugar muito famoso, mas
+depende de algumas classificações personalizadas. Para o primeiro
+quebra-cabeça, as URLs podem ser ordenadas alfabeticamente para ordenar as
+imagens corretamente.</p>
+<p>No tipo, o URL inteiro é usado. No entanto, diremos que se a url terminar
+no padrão &#8220;- wordchars - wordchars .jpg&#8221;, por exemplo,
+&#8220;<a class="reference external" href="http://example.com/foo/puzzle/bar-abab-baaa.jpg">http://example.com/foo/puzzle/bar-abab-baaa.jpg</a>&#8221;, então a url deve ser
+representado pela segunda palavra do tipo (por exemplo, &#8220;baaa&#8221;). Então,
+ordenar uma lista de urls, cada uma com o padrão word-word.jpg deve ordenar
+as urls pela segunda palavra.</p>
+<p>Estenda o seu código para ordenar tais URLs corretamente e, em seguida,
+você poderá decodificar o segundo puzzle do lugar_code.google.com que
+mostra um lugar famoso. Qual lugar mostra?</p>
 </div>
 </div>
 
